@@ -13,13 +13,13 @@ function App() {
           className="absolute min-w-full min-h-full object-cover"
         >
           <source 
-            src="https://player.vimeo.com/external/370467553.sd.mp4?s=96de8b923170ccd7992d1367e4d4f58da19602d3&profile_id=164&oauth2_token_id=57447761" 
+            src="https://video-previews.elements.envatousercontent.com/files/b5a0446c-3bd1-42e8-b3fc-7c72ef396731/video_preview_h264.mp4" 
             type="video/mp4" 
           />
           Your browser does not support the video tag.
         </video>
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div className="absolute inset-0  bg-opacity-40"></div>
       </div>
 
       {/* Navigation */}
