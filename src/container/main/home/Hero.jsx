@@ -1,16 +1,17 @@
 import React from 'react';
 import { Search, Map, Menu } from 'lucide-react';
+import Header from '../../../components/Header';
 
 function App() {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-[95vh]">
       {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
+      <div className="absolute inset-0 w-full  overflow-hidden">
         <video 
           autoPlay 
           loop 
           muted 
-          className="absolute min-w-full min-h-full object-cover"
+          className="absolute min-w-full min-h-[95vh] object-cover"
         >
           <source 
             src="https://video-previews.elements.envatousercontent.com/files/b5a0446c-3bd1-42e8-b3fc-7c72ef396731/video_preview_h264.mp4" 
@@ -19,35 +20,9 @@ function App() {
           Your browser does not support the video tag.
         </video>
         {/* Overlay */}
-        <div className="absolute inset-0  bg-opacity-40"></div>
+        <div className="absolute inset-0 bg-opacity"></div>
       </div>
-
-      {/* Navigation */}
-      <nav className="relative z-10 flex items-center justify-between px-6 py-4">
-        <div className="flex items-center">
-          <div className="text-white text-2xl font-bold">KANHA</div>
-        </div>
-        
-        <div className="hidden md:flex items-center space-x-8">
-          <a href="#" className="text-white hover:text-gray-200">Discover</a>
-          <a href="#" className="text-white hover:text-gray-200">Protect</a>
-          <a href="#" className="text-white hover:text-gray-200">Visit</a>
-          <a href="#" className="text-white hover:text-gray-200">Shop</a>
-        </div>
-
-        <div className="flex items-center space-x-6">
-          <button className="text-white hover:text-gray-200">
-            <Search size={24} />
-          </button>
-          <button className="text-white hover:text-gray-200">
-            <Map size={24} />
-          </button>
-          <button className="md:hidden text-white hover:text-gray-200">
-            <Menu size={24} />
-          </button>
-        </div>
-      </nav>
-
+      <Header/>
       {/* Main Content */}
       <main className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4">
         <h1 className="text-6xl md:text-8xl font-bold text-white mb-4">
