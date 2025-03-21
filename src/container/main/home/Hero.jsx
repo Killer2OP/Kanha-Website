@@ -1,5 +1,6 @@
 import React from "react";
 import { Search, Map, Menu } from "lucide-react";
+import Header from "../../../components/Header";
 
 const navLinks = ["Discover", "Protect", "Visit", "Shop"];
 
@@ -25,39 +26,10 @@ function App() {
         <div className="absolute inset-0 bg-black/80"></div>
       </div>
 
-      {/* Navigation */}
-      <nav className="relative z-10 flex items-center justify-between px-6 py-4">
-        <h1 className="text-white text-2xl font-bold">KANHA</h1>
-
-        <div className="hidden md:flex space-x-8">
-          {navLinks.map((link) => (
-            <a key={link} href="#" className="text-white hover:text-gray-200">
-              {link}
-            </a>
-          ))}
-        </div>
-
-        <div className="flex items-center space-x-6">
-          <button
-            aria-label="Search"
-            className="text-white hover:text-gray-200"
-          >
-            <Search size={24} />
-          </button>
-          <button aria-label="Map" className="text-white hover:text-gray-200">
-            <Map size={24} />
-          </button>
-          <button
-            aria-label="Menu"
-            className="md:hidden text-white hover:text-gray-200"
-          >
-            <Menu size={24} />
-          </button>
-        </div>
-      </nav>
+      <Header/>
 
       {/* Main Content */}
-      <main className="relative z-10 flex flex-col items-center justify-center min-h-[95vh] text-center px-4">
+      <main className="relative z-10 flex flex-col items-center justify-center min-h-[90vh] text-center px-4">
         <h1 className="text-6xl md:text-8xl font-bold text-white mb-4">
           KANHA
         </h1>
