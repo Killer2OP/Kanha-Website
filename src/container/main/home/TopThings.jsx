@@ -1,46 +1,62 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Beef as Jeep, Option as Lion, Bird, Truck } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Beef as Jeep,
+  Option as Lion,
+  Bird,
+  Truck,
+  Mountain,
+  TreePalm,
+  TreePineIcon,
+  TreePine,
+  Car,
+  PlaneTakeoff,
+  TreeDeciduous,
+} from "lucide-react";
 
 const TopThings = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  
+
   const activities = [
     {
       name: "Jungle Safari in Kanha",
-      description: "Exploring the interiors of a dense wild forest always fascinates wildlife lovers and they visit such forest where they can explore.",
-      image: "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?q=80&w=1374&auto=format&fit=crop",
+      description:
+        "Exploring the interiors of a dense wild forest always fascinates wildlife lovers and they visit such forest where they can explore.",
+      image: "../assets/Tiger.jpg",
       color: "text-orange-400",
-      icon: Lion
+      icon: TreePalm,
     },
     {
       name: "Jeep Safari Inside Kanha",
-      description: "Exploring the interiors of a dense wild forest always fascinates wildlife lovers and they visit such forest where they can explore.",
-      image: "https://images.unsplash.com/photo-1484406566174-9da000fda645?q=80&w=1469&auto=format&fit=crop",
+      description:
+        "Exploring the interiors of a dense wild forest always fascinates wildlife lovers and they visit such forest where they can explore.",
+      image: "../assets/deer.jpg",
       color: "text-green-400",
-      icon: Jeep
+      icon: Car,
     },
     {
       name: "Birds Watching",
-      description: "Exploring the interiors of a dense wild forest always fascinates wildlife lovers and they visit such forest where they can explore.",
-      image: "https://images.unsplash.com/photo-1444464666168-49d633b86797?q=80&w=1469&auto=format&fit=crop",
+      description:
+        "Exploring the interiors of a dense wild forest always fascinates wildlife lovers and they visit such forest where they can explore.",
+      image: "../assets/bird.jpg",
       color: "text-yellow-400",
-      icon: Bird
+      icon: Bird,
     },
     {
       name: "Canter Wildlife Safari",
-      description: "Exploring the interiors of a dense wild forest always fascinates wildlife lovers and they visit such forest where they can explore.",
-      image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=1468&auto=format&fit=crop",
+      description:
+        "Exploring the interiors of a dense wild forest always fascinates wildlife lovers and they visit such forest where they can explore.",
+      image: "../assets/Jeep.jpg",
       color: "text-blue-400",
-      icon: Truck
-    }
+      icon: TreeDeciduous,
+    },
   ];
 
   return (
     <div className="flex flex-col h-screen">
       {/* Main Heading */}
       <div className="bg-emerald-950 py-8 text-center relative z-20">
-        <motion.h1 
+        <motion.h1
           className="text-5xl font-bold text-white"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -56,13 +72,13 @@ const TopThings = () => {
         {activities.map((activity, index) => (
           <motion.div
             key={index}
-            className="absolute inset-0 w-full h-full"
+            className="absolute inset-0 w-full h-"
             initial={{ opacity: index === 0 ? 1 : 0 }}
             animate={{ opacity: activeIndex === index ? 1 : 0 }}
             transition={{ duration: 0.7 }}
           >
-            <img 
-              src={activity.image} 
+            <img
+              src={activity.image}
               alt={activity.name}
               className="w-full h-full object-cover object-center"
             />
@@ -83,37 +99,40 @@ const TopThings = () => {
               {index > 0 && (
                 <div className="absolute inset-y-0 left-0 w-px bg-white/20 z-20"></div>
               )}
-              
+
               <div className="text-center px-8 relative z-10">
                 <motion.div
                   className="flex justify-center mb-4"
                   initial={{ scale: 0.8 }}
-                  animate={{ 
+                  animate={{
                     scale: activeIndex === index ? 1.2 : 1,
-                    color: activeIndex === index ? activity.color.replace('text-', '') : '#fff'
+                    color:
+                      activeIndex === index
+                        ? activity.color.replace("text-", "")
+                        : "#fff",
                   }}
                   transition={{ duration: 0.3 }}
                 >
                   <activity.icon size={32} />
                 </motion.div>
-                
+
                 <motion.h2
                   className={`text-2xl font-bold mb-3 transition-colors duration-300 ${
-                    activeIndex === index ? activity.color : 'text-white'
+                    activeIndex === index ? activity.color : "text-white"
                   }`}
                   initial={{ y: 0 }}
-                  animate={{ 
+                  animate={{
                     y: activeIndex === index ? -10 : 0,
-                    scale: activeIndex === index ? 1.1 : 1
+                    scale: activeIndex === index ? 1.1 : 1,
                   }}
                   transition={{ duration: 0.4 }}
                 >
                   {activity.name}
                 </motion.h2>
-                
+
                 <motion.p
                   className={`text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-                    activeIndex === index ? 'text-white' : 'text-gray-300'
+                    activeIndex === index ? "text-white" : "text-gray-300"
                   }`}
                   initial={{ y: 20 }}
                   animate={{ y: activeIndex === index ? 0 : 20 }}
@@ -121,21 +140,24 @@ const TopThings = () => {
                 >
                   {activity.description}
                 </motion.p>
-                
+
                 {activeIndex === index && (
                   <motion.div
-                    className={`mt-4 h-0.5 w-12 mx-auto ${activity.color.replace('text-', 'bg-')}`}
+                    className={`mt-4 h-0.5 w-12 mx-auto ${activity.color.replace(
+                      "text-",
+                      "bg-"
+                    )}`}
                     initial={{ width: 0 }}
-                    animate={{ width: '3rem' }}
+                    animate={{ width: "3rem" }}
                     transition={{ duration: 0.4 }}
                   ></motion.div>
                 )}
               </div>
 
               {/* Hover overlay */}
-              <div 
+              <div
                 className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${
-                  activeIndex === index ? 'opacity-0' : 'opacity-100'
+                  activeIndex === index ? "opacity-0" : "opacity-100"
                 }`}
               ></div>
             </div>
