@@ -8,7 +8,7 @@ function Header() {
     const navItems = [
         { name: "Home", icon: Home, path: "/" },
         { name: "Online Safari Booking", icon: PawPrint, path: "/safari-booking" },
-        { name: "Tour Packages", icon: Compass, path: "#" },
+        { name: "Tour Packages", icon: Compass, path: "/tour-packages" },
         { name: "Hotel in Kanha", icon: Hotel, path: "#" },
         { name: "Pay Now", icon: CreditCard, path: "#" }
     ];
@@ -53,7 +53,7 @@ function Header() {
                 <div className="hidden md:flex items-center md:justify-evenly space-x-8">
                     {
                         navItems.map((item, index) => {
-                            return <a key={index} href={item.path} className="text-white hover:text-gray-200">{item.name}</a>                        
+                            return <Link key={index} to={item.path} className="text-white hover:text-gray-200">{item.name}</Link>                        
                         })
                     }
                 </div>
@@ -96,9 +96,9 @@ function Header() {
                     {   
                         navItems.map((item, index) => (
                             currentPath.pathname != item.path && (
-                                <a
+                                <Link
                                     key={index}
-                                    href={item.path}
+                                    to={item.path}
                                     className="flex items-center text-white text-lg font-medium py-4 hover:text-amber-400 transition-colors duration-200 group"
                                 >
                                     <item.icon
@@ -106,7 +106,7 @@ function Header() {
                                         className="mr-4 stroke-current group-hover:scale-110 transition-transform duration-200"
                                     />
                                     {item.name}
-                                </a>
+                                </Link>
                             )
                         ))
                     }

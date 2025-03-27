@@ -485,7 +485,7 @@ function App() {
                                     ))}
                                 </ul>
                                 <RouterLink
-                                    to="/book"
+                                    to="/tour-packages"
                                     className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 group-hover:bg-emerald-500"
                                 >
                                     Book Now
