@@ -55,7 +55,7 @@ function App() {
           className="w-48 sm:w-64 md:w-80 lg:w-96 xl:w-[500px] mx-auto object-contain"
         />
 
-        <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-jungle text-white tracking-widest mt-4">
+        <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-jungle text-white tracking-widest">
           NATIONAL PARK
         </h2>
       </main>
