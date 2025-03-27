@@ -1,1 +1,156 @@
 @import "tailwindcss";
+
+/* Import Tailwind */
+@import "tailwindcss";
+
+/* 3D Transform Utilities (from your code) */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Card Container */
+.card {
+  width: 100%;
+  max-width: 400px; /* Adjust as needed */
+  height: 500px; /* Adjust to fit calendar/form */
+  position: relative;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* Flip the card when toggled (e.g., via JS or hover) */
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back Sides */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Calendar Styles (First Code) */
+.safari-calendar.react-calendar {
+  @apply w-full border-none bg-black/70 font-sans p-0 rounded-2xl overflow-hidden;
+  backdrop-filter: blur(12px);
+}
+
+.safari-calendar .react-calendar__navigation {
+  @apply mb-4 flex items-center px-4 py-2 bg-black/20;
+}
+
+.safari-calendar .react-calendar__navigation button {
+  @apply text-white text-base p-2 bg-transparent hover:bg-white/10 hover:text-emerald-500 rounded-xl min-w-[40px] mx-0.5;
+}
+
+.safari-calendar .react-calendar__navigation button:disabled {
+  @apply opacity-35 bg-transparent;
+}
+
+.safari-calendar .react-calendar__navigation__label {
+  @apply text-white font-semibold text-lg;
+}
+
+.safari-calendar .react-calendar__month-view__weekdays {
+  @apply text-center uppercase font-semibold text-xs mb-2 bg-black/20 py-2;
+}
+
+.safari-calendar .react-calendar__month-view__weekdays__weekday {
+  @apply p-2 text-emerald-300;
+}
+
+.safari-calendar .react-calendar__month-view__weekdays__weekday abbr {
+  @apply no-underline cursor-default;
+}
+
+.safari-calendar .react-calendar__month-view__days {
+  @apply p-2;
+}
+
+.safari-calendar .react-calendar__month-view__days__day {
+  @apply text-white p-2 font-medium text-sm;
+}
+
+.safari-calendar .react-calendar__tile {
+  @apply rounded-xl p-2 font-medium relative bg-transparent;
+}
+
+.safari-calendar .react-calendar__tile:enabled:hover,
+.safari-calendar .react-calendar__tile:enabled:focus {
+  @apply bg-white/15;
+}
+
+.safari-calendar .react-calendar__tile--active {
+  @apply bg-emerald-600 text-white font-semibold;
+}
+
+.safari-calendar .react-calendar__tile--now {
+  @apply bg-emerald-500/25 font-semibold;
+}
+
+.safari-calendar .react-calendar__tile--now:enabled:hover,
+.safari-calendar .react-calendar__tile--now:enabled:focus {
+  @apply bg-emerald-500/35;
+}
+
+.safari-calendar .react-calendar__month-view__days__day--neighboringMonth {
+  @apply text-white/35;
+}
+
+.safari-calendar .react-calendar__tile:disabled {
+  @apply opacity-35 cursor-not-allowed bg-white/5;
+}
+
+/* Form Styles (Back Side) */
+.card-back {
+  transform: rotateY(180deg);
+  background: rgba(0, 0, 0, 0.7); /* Match calendar's bg-black/70 */
+  backdrop-filter: blur(12px); /* Match calendar's blur */
+  border-radius: 1rem; /* Match rounded-2xl */
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  @apply w-full max-w-sm;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  @apply mt-1 block w-full rounded-xl border border-white/10 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200 bg-white/5 backdrop-blur-sm;
+  padding: 0.75rem;
+  color: white;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+button[type="submit"] {
+  @apply mt-4 w-full bg-emerald-600 text-white font-semibold py-2 rounded-xl hover:bg-emerald-700;
+}
