@@ -45,10 +45,10 @@ function App() {
 
       {/* Main Content */}
       <main className="relative z-10 flex flex-col items-center justify-center w-full h-full text-center px-6">
-        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-2 sm:mb-4">
+        <h1 className="font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white mb-2 sm:mb-4 tracking-wide">
           KANHA
         </h1>
-        <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-light text-white tracking-wide sm:tracking-widest mb-6">
+        <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-jungle text-white tracking-widest mb-6">
           NATIONAL PARK
         </h2>
 
