@@ -10,7 +10,7 @@ function App() {
       setVideoSrc(
         window.innerWidth <= 768
           ? "https://video-previews.elements.envatousercontent.com/files/a9e7060d-7228-421d-b720-64d426b8d50f/video_preview_h264.mp4"
-          : "https://video-previews.elements.envatousercontent.com/files/ebea1fc7-ae5a-4e87-8880-745ea7d5586b/video_preview_h264.mp4"
+          : "../assets/KanhaBg.mp4"
       );
     };
 

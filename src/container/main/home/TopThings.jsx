@@ -1,16 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Beef as Jeep,
-  Option as Lion,
   Bird,
-  Truck,
-  Mountain,
   TreePalm,
-  TreePineIcon,
-  TreePine,
   Car,
-  PlaneTakeoff,
   TreeDeciduous,
 } from "lucide-react";
 
@@ -23,15 +16,15 @@ const TopThings = () => {
       description:
         "Exploring the interiors of a dense wild forest always fascinates wildlife lovers and they visit such forest where they can explore.",
       image: "../assets/Tiger.jpg",
-      color: "text-orange-400",
+      color: "text-orange-500",
       icon: TreePalm,
     },
     {
       name: "Jeep Safari Inside Kanha",
       description:
         "Exploring the interiors of a dense wild forest always fascinates wildlife lovers and they visit such forest where they can explore.",
-      image: "../assets/deer.jpg",
-      color: "text-green-400",
+      image: "../assets/Jeep.jpg",
+      color: "text-yellow-400",
       icon: Car,
     },
     {
@@ -46,8 +39,8 @@ const TopThings = () => {
       name: "Canter Wildlife Safari",
       description:
         "Exploring the interiors of a dense wild forest always fascinates wildlife lovers and they visit such forest where they can explore.",
-      image: "../assets/Jeep.jpg",
-      color: "text-blue-400",
+      image: "../assets/deer.jpg",
+      color: "text-green-400",
       icon: TreeDeciduous,
     },
   ];

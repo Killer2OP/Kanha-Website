@@ -100,7 +100,7 @@ function App() {
         <div
             className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 relative bg-fixed bg-no-repeat bg-cover"
             style={{
-                backgroundImage: "url('https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/4f/7f/89/aa/89/v1_E10/E108KNPH.jpg?w=1600&cf_fit=scale-down&mark-alpha=18&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark4.png&q=85&format=auto&s=daec7800c365e0b1de71accbe90650a1391881360fdeb1c357d00db906e0ec6d')",
+                backgroundImage: "url('../assets/Plants.jpg')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
             }}
