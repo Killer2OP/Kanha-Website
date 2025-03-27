@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './pages/Home'
 import MapViewPage from './pages/MapView'
+import OnlineSafariBooking from './pages/OnlineSafariBooking'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/map" element={<MapViewPage />} />
+        <Route path="/safari-booking" element={<OnlineSafariBooking />} />
       </Routes>
     </BrowserRouter>
   )

@@ -7,7 +7,7 @@ function Header() {
     
     const navItems = [
         { name: "Home", icon: Home, path: "/" },
-        { name: "Online Safari Booking", icon: PawPrint, path: "#" },
+        { name: "Online Safari Booking", icon: PawPrint, path: "/safari-booking" },
         { name: "Tour Packages", icon: Compass, path: "#" },
         { name: "Hotel in Kanha", icon: Hotel, path: "#" },
         { name: "Pay Now", icon: CreditCard, path: "#" }
