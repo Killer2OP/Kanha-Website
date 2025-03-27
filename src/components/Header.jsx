@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Map, Menu, Search, X, Home, PawPrint, Compass, Hotel, CreditCard } from 'lucide-react';
+import { Map, Menu, X, Home, PawPrint, Compass, Hotel, CreditCard } from 'lucide-react';
 import { useMediaQuery } from "react-responsive";
 import { Link, useLocation } from 'react-router-dom';
 
@@ -59,10 +59,6 @@ function Header() {
                 </div>
 
                 <div className="flex items-center space-x-6">
-                    
-                    <button className="text-white hover:text-gray-200">
-                        <Search size={24} />
-                    </button>
                     
                     <Link to="/map" className="text-white hover:text-gray-200">
                         <Map size={24} />
