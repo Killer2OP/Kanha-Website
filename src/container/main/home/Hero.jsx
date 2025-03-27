@@ -4,14 +4,13 @@ import Header from "../../../components/Header";
 
 function App() {
   const [videoSrc, setVideoSrc] = useState("");
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 768);
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setVideoSrc(
-        window.innerWidth <= 768
-          ? "https://video-previews.elements.envatousercontent.com/files/a9e7060d-7228-421d-b720-64d426b8d50f/video_preview_h264.mp4"
-          : "../assets/KanhaBg.mp4"
-      );
+      const isLarge = window.innerWidth > 768;
+      setIsLargeScreen(isLarge);
+      setVideoSrc(isLarge ? "/assets/KanhaBg.mp4" : "/assets/KanhaBg.mp4"); // Ensure correct path and case
     };
 
     checkScreenSize();
@@ -20,7 +19,7 @@ function App() {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full md:h-screen h-[60vh] overflow-hidden flex flex-col">
       {/* Full-Screen Background Video */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         {videoSrc && (
@@ -31,36 +30,46 @@ function App() {
             playsInline
             muted
             preload="auto"
-            className="absolute inset-0 w-full h-full object-cover"
+            crossOrigin="anonymous"
+            className={`absolute inset-0 object-cover ${
+              isLargeScreen ? "w-[105%] h-[105%]" : "w-full h-full"
+            }`}
           >
             <source src={videoSrc} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         )}
+        {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/60 sm:bg-black/50 md:bg-black/40"></div>
       </div>
 
       {/* Header */}
-      <Header />
+      <Header className="relative z-10" />
 
       {/* Main Content */}
-      <main className="relative z-10 flex flex-col items-center justify-center w-full h-full text-center px-6">
-        <h1 className="font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white mb-2 sm:mb-4 tracking-wide">
-          KANHA
-        </h1>
-        <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-jungle text-white tracking-widest mb-6">
+      <main className="relative z-10 flex flex-col items-center justify-center w-full h-full text-center px-4 sm:px-8 md:px-12">
+        {/* Overlay Image */}
+        <img
+          src="/assets/Kanha.png"
+          alt="Overlay"
+          className="w-48 sm:w-64 md:w-80 lg:w-96 xl:w-[500px] mx-auto object-contain"
+        />
+
+        <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-jungle text-white tracking-widest mt-4">
           NATIONAL PARK
         </h2>
-
-        {/* Footer Details */}
-        <div className="absolute bottom-8 sm:bottom-10 left-6 right-6 flex flex-col sm:flex-row sm:justify-between items-center text-white text-xs sm:text-sm md:text-base">
-          <div className="flex items-center mb-6 sm:mb-0">
-            <Map size={20} className="mr-2" />
-            <span>Madhya Pradesh, India</span>
-          </div>
-          <div className="text-center sm:text-right">© Wildlife India</div>
-        </div>
       </main>
+
+      {/* Footer Details - Now Left & Right Aligned */}
+      <footer className="absolute bottom-4 sm:bottom-6 w-full px-6 flex flex-row items-center justify-between text-white text-xs sm:text-sm md:text-base">
+        {/* Location */}
+        <div className="flex items-center">
+          <Map size={20} className="mr-2" />
+          <span>Madhya Pradesh, India</span>
+        </div>
+        {/* Copyright */}
+        <div className="text-right">© Wildlife India</div>
+      </footer>
     </div>
   );
 }

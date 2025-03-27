@@ -4,10 +4,9 @@ import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 const Footer = () => {
   return (
     <footer
-      className="text-gray-300 bg-no-repeat bg-cover bg-center py-12 relative before:content-[''] before:absolute before:inset-0 before:bg-black/75"
+      className="text-gray-300 bg-no-repeat bg-cover bg-center py-12 relative before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-black before:via-black/90 before:to-black/70"
       style={{
-        backgroundImage:
-          "url('https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/4b/0a/fd/08/35/v1_E10/E10A3J3E.jpg?w=1600&cf_fit=scale-down&mark-alpha=18&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark4.png&q=85&format=auto&s=332262f3523f02d0d86e973fb60bffd984d966ace623ce6872b1e50b5f1e2fb7')",
+        backgroundImage: "url('../assets/Footer.jpg')",
       }}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6">
