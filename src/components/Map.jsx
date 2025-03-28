@@ -3,16 +3,38 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet';
 
-// Fix for default marker icons in React Leaflet
-const defaultIcon = new Icon({
-  iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
-  iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-});
+// Create custom icons for different categories
+const createCustomIcon = (color) => {
+  return new Icon({
+    iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`,
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+};
+
+// Map of category types to colors
+const categoryIcons = {
+  forests: createCustomIcon('green'),
+  lakes: createCustomIcon('blue'),
+  mountains: createCustomIcon('green'),
+  history: createCustomIcon('grey'),
+  parking: createCustomIcon('blue'),
+  camping: createCustomIcon('orange'),
+  hotels: createCustomIcon('violet'),
+  // Default icon for any unmapped categories
+  default: new Icon({
+    iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+    iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
+    shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  })
+};
 
 const MapView = ({ locations = [], center = [22.2777, 80.6199], zoom = 12 }) => {
   return (
@@ -30,7 +52,7 @@ const MapView = ({ locations = [], center = [22.2777, 80.6199], zoom = 12 }) => 
         <Marker
           key={location.id}
           position={location.coordinates}
-          icon={defaultIcon}
+          icon={categoryIcons[location.type] || categoryIcons.default}
         >
           <Popup>
             <div className="p-2">

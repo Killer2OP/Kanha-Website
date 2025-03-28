@@ -84,7 +84,7 @@ const Footer = () => {
                 placeholder="Email*"
                 className="w-full px-4 py-3 bg-transparent border border-gray-700 text-gray-400 text-sm focus:outline-none focus:border-yellow-500 transition-colors rounded"
               />
-              <button className="w-full bg-red-500 text-white py-3 text-sm font-medium hover:bg-red-600 transition-colors rounded">
+              <button className="w-full bg-emerald-500 text-white py-3 text-sm font-medium hover:bg-red-600 transition-colors rounded">
                 Submit
               </button>
             </div>
@@ -99,7 +99,7 @@ const Footer = () => {
               <a
                 key={index}
                 href="#"
-                className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
+                className="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
               >
                 <Icon className="w-5 h-5 text-black" />
               </a>

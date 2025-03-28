@@ -10,7 +10,7 @@ function Header() {
         { name: "Online Safari Booking", icon: PawPrint, path: "/safari-booking" },
         { name: "Tour Packages", icon: Compass, path: "/tour-packages" },
         { name: "Hotel in Kanha", icon: Hotel, path: "/hotel-in-kanha" },
-        // { name: "Pay Now", icon: CreditCard, path: "#" }
+        { name: "Pay Now", icon: CreditCard, path: "/pay-now" }
     ];
 
 
@@ -60,10 +60,10 @@ function Header() {
 
                 <div className="flex items-center space-x-6">
                     
-                    <Link to="/map" className="text-white hover:text-gray-200">
-                        <Map size={24} />
+                    <Link to="/map" className="flex items-center text-white hover:text-gray-200">
+                        <Map size={24} className="mr-2" />
+                        Map
                     </Link>
-                    
                     <button
                         className="md:hidden text-white hover:text-gray-200"
                         onClick={toggleMobileMenu}
