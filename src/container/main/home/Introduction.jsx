@@ -207,7 +207,7 @@ function App() {
 
     return (
         <div
-            className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 relative bg-fixed bg-no-repeat bg-cover"
+            className="min-h-screen py-12 mx-auto px-2 sm:px-4 relative bg-fixed bg-no-repeat bg-cover"
             style={{
                 backgroundImage: "url('https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/Plants.jpg')",
                 backgroundSize: 'cover',
@@ -219,7 +219,7 @@ function App() {
 
             <div className="max-w-7xl mx-auto relative z-10 space-y-8">
                 {/* Introduction Card */}
-                <div className="relative rounded-3xl overflow-hidden p-8 sm:p-10 lg:p-12 backdrop-blur-xl bg-green-900/20 border border-white/10 shadow-xl">
+                <div className="relative rounded-3xl overflow-hidden p-4 sm:p-10 lg:p-12 backdrop-blur-xl bg-green-900/20 border border-white/10 shadow-xl">
                     <h3 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-6 drop-shadow-lg">
                         Welcome to Kanha National Park
                     </h3>
@@ -235,22 +235,22 @@ function App() {
                 </div>
 
                 {/* Hotel Booking Card */}
-                <div className="relative rounded-3xl overflow-hidden p-8 sm:p-10 lg:p-12 backdrop-blur-xl bg-green-900/20 border border-white/10 shadow-xl">
+                <div className="relative rounded-3xl overflow-hidden p-4 sm:p-10 lg:p-12 backdrop-blur-xl bg-green-900/20 border border-white/10 shadow-xl">
                     <div className="flex items-center justify-center mb-6">
                         <div className="bg-emerald-600 p-3 rounded-lg mr-3">
                             <Hotel className="h-6 w-6 text-white" />
                         </div>
-                            <h4 className="text-4xl sm:text-5xl font-semibold text-white drop-shadow-md">Hotel Booking</h4>
+                        <h4 className="text-4xl sm:text-5xl font-semibold text-white drop-shadow-md">Hotel Booking</h4>
                     </div>
                     <p className="text-gray-200 text-lg leading-relaxed font-medium text-center mb-4">
-                    Experience the wild in style at Kanha National Park! From luxury resorts to budget stays, find your perfect getaway.
+                        Experience the wild in style at Kanha National Park! From luxury resorts to budget stays, find your perfect getaway.
                     </p>
                     <p className="text-[24px] font-semibold text-emerald-300 mb-8"> <span className='text-amber-400'> 5-Star </span> Luxury Accommodations</p>
 
-                    <div className="grid md:grid-cols-3 gap-6">
+                    <div className="grid md:grid-cols-2 gap-6">
                         {hotels.map((hotel) => {
                             const currentImageIndex = useSlideshow(hotel.images);
-                            
+
                             return (
                                 <div key={hotel.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:bg-white/10 transition-all duration-300">
                                     <div className="relative h-48 overflow-hidden">
@@ -259,9 +259,8 @@ function App() {
                                                 key={index}
                                                 src={image}
                                                 alt={`${hotel.name} - View ${index + 1}`}
-                                                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-                                                    index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                                                }`}
+                                                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                                                    }`}
                                             />
                                         ))}
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -285,7 +284,7 @@ function App() {
                                             ))}
                                         </div>
                                         <p className="text-emerald-300 font-semibold mt-2">{hotel.price}</p>
-                                        <Link 
+                                        <Link
                                             to='/hotel-in-kanha'
                                             className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 mt-3"
                                         >
@@ -294,17 +293,17 @@ function App() {
                                     </div>
                                 </div>
                             );
-                        })}                 
+                        })}
                     </div>
-                    
+
                     {/* 4-Star Hotels Section */}
                     <div className="mt-10">
                         <p className="text-[24px] font-semibold text-emerald-300 mb-6"> <span className='text-amber-400'> 4-Star </span> Comfortable Stays</p>
-                        
-                        <div className="grid md:grid-cols-3 gap-6">
+
+                        <div className="grid md:grid-cols-2 gap-6">
                             {fourStarHotels.map((hotel) => {
                                 const currentImageIndex = useSlideshow(hotel.images);
-                                
+
                                 return (
                                     <div key={hotel.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:bg-white/10 transition-all duration-300">
                                         <div className="relative h-48 overflow-hidden">
@@ -313,9 +312,8 @@ function App() {
                                                     key={index}
                                                     src={image}
                                                     alt={`${hotel.name} - View ${index + 1}`}
-                                                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-                                                        index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                                                    }`}
+                                                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                                                        }`}
                                                 />
                                             ))}
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -339,7 +337,7 @@ function App() {
                                                 ))}
                                             </div>
                                             <p className="text-emerald-300 font-semibold mt-2">{hotel.price}</p>
-                                            <Link 
+                                            <Link
                                                 to='/hotel-in-kanha'
                                                 className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 mt-3"
                                             >
@@ -351,15 +349,15 @@ function App() {
                             })}
                         </div>
                     </div>
-                    
+
                     {/* 3-Star Hotels Section */}
                     <div className="mt-10">
                         <p className="text-[24px] font-semibold text-emerald-300 mb-6"><span className='text-amber-400'> 3-Star </span> Budget-Friendly Options</p>
-                        
-                        <div className="grid md:grid-cols-3 gap-6">
+
+                        <div className="grid md:grid-cols-2 gap-6">
                             {threeStarHotels.map((hotel) => {
                                 const currentImageIndex = useSlideshow(hotel.images);
-                                
+
                                 return (
                                     <div key={hotel.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:bg-white/10 transition-all duration-300">
                                         <div className="relative h-48 overflow-hidden">
@@ -368,9 +366,8 @@ function App() {
                                                     key={index}
                                                     src={image}
                                                     alt={`${hotel.name} - View ${index + 1}`}
-                                                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-                                                        index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                                                    }`}
+                                                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                                                        }`}
                                                 />
                                             ))}
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -394,7 +391,7 @@ function App() {
                                                 ))}
                                             </div>
                                             <p className="text-emerald-300 font-semibold mt-2">{hotel.price}</p>
-                                            <Link 
+                                            <Link
                                                 to='/hotel-in-kanha'
                                                 className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 mt-3"
                                             >
@@ -409,7 +406,7 @@ function App() {
                 </div>
 
                 {/* Safari Booking Card */}
-                <div className="relative rounded-3xl overflow-hidden pt-4 p-4 sm:p-5 lg:p-6 backdrop-blur-xl bg-green-900/20 border border-white/10 shadow-xl">
+                <div className="relative rounded-3xl overflow-hidden pt-4 p-4 sm:p-10 lg:p-12 backdrop-blur-xl bg-green-900/20 border border-white/10 shadow-xl">
                     <div className="flex items-center mb-6 justify-center">
                         <div className="bg-emerald-600 p-3 rounded-lg mr-4">
                             <Camera className="h-6 w-6 text-white" />
@@ -422,13 +419,13 @@ function App() {
                         safaris offer prime wildlife sightings, guided by expert naturalists. Book online easily, with
                         Indian nationals advised to reserve 30 days ahead and foreign nationals 90 days in advance.
                     </p>
-                    
+
                     {/* Safari Booking Calendar */}
-                        <SafariBooking/>
+                    <SafariBooking />
                 </div>
 
                 {/* Tour Packages Card */}
-                <div className="relative rounded-3xl overflow-hidden p-8 sm:p-10 lg:p-12 backdrop-blur-xl bg-green-900/20 border border-white/10 shadow-xl">
+                <div className="relative rounded-3xl overflow-hidden p-4 sm:p-10 lg:p-12 backdrop-blur-xl bg-green-900/20 border border-white/10 shadow-xl">
                     <div className="flex items-center mb-6 justify-center">
                         <div className="bg-emerald-600 p-3 rounded-lg mr-4">
                             <Compass className="h-6 w-6 text-white" />
@@ -461,7 +458,7 @@ function App() {
                                 <Link
                                     to="/tour-packages"
                                     className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 group-hover:bg-emerald-500"
-                                    >
+                                >
                                     Book Now
                                 </Link>
                             </div>
