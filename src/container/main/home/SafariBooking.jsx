@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import { format } from 'date-fns';
-import { Camera, Clock, Moon, Sunrise, ChevronDown } from 'lucide-react';
+import {Clock, Moon, Sunrise, ChevronDown } from 'lucide-react';
 import 'react-calendar/dist/Calendar.css';
 
 function App() {
     const [date, setDate] = useState(new Date());
     const [isFlipped, setIsFlipped] = useState(false);
+    
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -15,27 +16,6 @@ function App() {
         safariType: '',
         guests: '1'
     });
-
-    const safariTypes = {
-        morning: {
-            title: 'Morning Safari',
-            time: '6:00 AM - 11:30 AM', // Updated to match the tariff image
-            description: 'Best for wildlife activity and photography',
-            priceIndian: 2500,
-            priceForeign: 5000,
-            icon: Sunrise,
-            colorClass: 'text-amber-400'
-        },
-        evening: {
-            title: 'Evening Safari',
-            time: '3:00 PM - 6:00 PM', // Updated to match the tariff image
-            description: 'Perfect for sunset views and predator sightings',
-            priceIndian: 2000,
-            priceForeign: 4000,
-            icon: Moon,
-            colorClass: 'text-indigo-400'
-        }
-    };
 
     const tariffDetails = {
         weekdaysCoreZones: {
@@ -73,6 +53,40 @@ function App() {
             evening: '3:00 PM to 6:00 PM'
         }
     };
+    
+    const tariffData = [
+        {
+            title: "Weekdays Core Zones",
+            details: tariffDetails.weekdaysCoreZones
+        },
+        {
+            title: "Weekends Core Zones",
+            details: tariffDetails.weekendsCoreZones
+        }
+    ];
+    
+    const safariTypes = {
+        morning: {
+            title: 'Morning Safari',
+            time: '6:00 AM - 11:30 AM', // Updated to match the tariff image
+            description: 'Best for wildlife activity and photography',
+            priceIndian: 2500,
+            priceForeign: 5000,
+            icon: Sunrise,
+            colorClass: 'text-amber-400'
+        },
+        evening: {
+            title: 'Evening Safari',
+            time: '3:00 PM - 6:00 PM', // Updated to match the tariff image
+            description: 'Perfect for sunset views and predator sightings',
+            priceIndian: 2000,
+            priceForeign: 4000,
+            icon: Moon,
+            colorClass: 'text-indigo-400'
+        }
+    };
+
+  
 
     const handleDateChange = (value) => {
         setDate(value);
@@ -115,47 +129,18 @@ function App() {
                 </p>
 
                 <div className="space-y-4">
-                    <div>
-                        <h3 className="text-lg font-semibold">Weekdays Core Zones</h3>
-                        <p>Indian: ₹{tariffDetails.weekdaysCoreZones.indian}</p>
-                        <p>Foreigner: ₹{tariffDetails.weekdaysCoreZones.foreign}</p>
-                        <p>Zones: {tariffDetails.weekdaysCoreZones.zones.join(', ')}</p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-lg font-semibold">Weekends Core Zones</h3>
-                        <p>Indian: ₹{tariffDetails.weekendsCoreZones.indian}</p>
-                        <p>Foreigner: ₹{tariffDetails.weekendsCoreZones.foreign}</p>
-                        <p>Zones: {tariffDetails.weekendsCoreZones.zones.join(', ')}</p>
-                    </div>
-                    {/* 
-          <div>
-            <h3 className="text-lg font-semibold">Weekdays Buffer Zones</h3>
-            <p>Indian: ₹{tariffDetails.weekdaysBufferZones.indian}</p>
-            <p>Foreigner: ₹{tariffDetails.weekdaysBufferZones.foreign}</p>
-            <p>Zones: {tariffDetails.weekdaysBufferZones.zones.join(', ')}</p>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold">Weekends Buffer Zones</h3>
-            <p>Indian: ₹{tariffDetails.weekendsBufferZones.indian}</p>
-            <p>Foreigner: ₹{tariffDetails.weekendsBufferZones.foreign}</p>
-            <p>Zones: {tariffDetails.weekendsBufferZones.zones.join(', ')}</p>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold">Weekdays Sharing Core Zones</h3>
-            <p>Indian: ₹{tariffDetails.weekdaysSharingCoreZones.indian}</p>
-            <p>Foreigner: ₹{tariffDetails.weekdaysSharingCoreZones.foreign}</p>
-            <p>Zones: {tariffDetails.weekdaysSharingCoreZones.zones.join(', ')}</p>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold">Weekends Sharing Core Zones</h3>
-            <p>Indian: ₹{tariffDetails.weekendsSharingCoreZones.indian}</p>
-            <p>Foreigner: ₹{tariffDetails.weekendsSharingCoreZones.foreign}</p>
-            <p>Zones: {tariffDetails.weekendsSharingCoreZones.zones.join(', ')}</p>
-          </div> */}
+                
+                    {
+                        tariffData.map( (item, index) => (
+                            <div key={index}>
+                                <h3 className="text-lg font-semibold">{item.title}</h3>
+                                <p>Indian: ₹{item.details.indian}</p>
+                                <p>Foreigner: ₹{item.details.foreign}</p>
+                                <p>Zones: {item.details.zones.join(', ')}</p>
+                            </div>
+                        ))
+                    }
+                   
 
                     <div>
                         <h3 className="text-lg font-semibold">Timings</h3>

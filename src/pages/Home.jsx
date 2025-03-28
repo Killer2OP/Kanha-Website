@@ -9,16 +9,16 @@ import History from '../container/main/home/History'
 
 
 function home() {
-  return (
-  <>
-  <Hero/>
-  <Introduction/>
-  <TopThings/>
-  <History/>
-  <GeoDetails/>
-  <Footer/>
-  </>
-  )
+    return (
+        <>
+            <Hero />
+            <Introduction />
+            <TopThings />
+            <History />
+            <GeoDetails />
+            <Footer />
+        </>
+    )
 }
 
 export default home;
