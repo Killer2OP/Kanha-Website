@@ -247,7 +247,7 @@ function App() {
                     </p>
                     <p className="text-[24px] font-semibold text-emerald-300 mb-8"> <span className='text-amber-400'> 5-Star </span> Luxury Accommodations</p>
 
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid md:grid-cols-3 gap-6">
                         {hotels.map((hotel) => {
                             const currentImageIndex = useSlideshow(hotel.images);
 
@@ -300,7 +300,7 @@ function App() {
                     <div className="mt-10">
                         <p className="text-[24px] font-semibold text-emerald-300 mb-6"> <span className='text-amber-400'> 4-Star </span> Comfortable Stays</p>
 
-                        <div className="grid md:grid-cols-2 gap-6">
+                        <div className="grid md:grid-cols-3 gap-6">
                             {fourStarHotels.map((hotel) => {
                                 const currentImageIndex = useSlideshow(hotel.images);
 
@@ -354,7 +354,7 @@ function App() {
                     <div className="mt-10">
                         <p className="text-[24px] font-semibold text-emerald-300 mb-6"><span className='text-amber-400'> 3-Star </span> Budget-Friendly Options</p>
 
-                        <div className="grid md:grid-cols-2 gap-6">
+                        <div className="grid md:grid-cols-3 gap-6">
                             {threeStarHotels.map((hotel) => {
                                 const currentImageIndex = useSlideshow(hotel.images);
 
