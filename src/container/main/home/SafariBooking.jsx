@@ -114,9 +114,19 @@ function App() {
 
     const getPrice = () => {
         if (!formData.safariType) return 0;
-        const safari = safariTypes[formData.safariType];
-        const basePrice = formData.nationality === 'indian' ? safari.priceIndian : safari.priceForeign;
-        return basePrice * parseInt(formData.guests);
+        
+        // Check if the selected date is a weekend (Saturday or Sunday)
+        const isWeekend = date.getDay() === 0 || date.getDay() === 6;
+        
+        // Get the appropriate price based on nationality and whether it's a weekend
+        let basePrice = 0;
+        if (formData.nationality === 'indian') {
+            basePrice = isWeekend ? tariffDetails.weekendsCoreZones.indian : tariffDetails.weekdaysCoreZones.indian;
+        } else {
+            basePrice = isWeekend ? tariffDetails.weekendsCoreZones.foreign : tariffDetails.weekdaysCoreZones.foreign;
+        }
+        
+        return basePrice;
     };
 
     return (
