@@ -10,7 +10,7 @@ function App() {
     const checkScreenSize = () => {
       const isLarge = window.innerWidth > 768;
       setIsLargeScreen(isLarge);
-      setVideoSrc(isLarge ? "/assets/KanhaBg.mp4" : "/assets/KanhaBg.mp4"); // Ensure correct path and case
+      setVideoSrc(isLarge ? "https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/KanhaBg.mp4" : "https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/KanhaBg.mp4"); // Ensure correct path and case
     };
 
     checkScreenSize();
@@ -19,7 +19,7 @@ function App() {
   }, []);
 
   return (
-    <div className="relative w-full md:h-screen h-[60vh] overflow-hidden flex flex-col">
+    <div className="relative w-full md:h-screen h-[75vh] overflow-hidden flex flex-col">
       {/* Full-Screen Background Video */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         {videoSrc && (
@@ -50,7 +50,7 @@ function App() {
       <main className="relative z-10 flex flex-col items-center justify-center w-full h-full text-center px-4 sm:px-8 md:px-12">
         {/* Overlay Image */}
         <img
-          src="/assets/Kanha.png"
+          src="https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/Kanha.png"
           alt="Overlay"
           className="w-48 sm:w-64 md:w-80 lg:w-96 xl:w-[500px] mx-auto object-contain"
         />

@@ -106,9 +106,9 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-6">
+    <div className="flex flex-col lg:flex-row gap-6">
       {/* Tariff Details Section */}
-      <div className="flex-[1.5] bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-4 text-white max-h-[450px] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-green-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300">
+      <div className="flex-[1.5] bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-4 text-white max-h-[450px] md:max-h-[350px] lg:max-h-[450px] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-green-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300">
         <h2 className="text-2xl font-bold mb-4">Kanha National Park Safari Tariff</h2>
         <p className="text-yellow-300 mb-4">
            You May Reserve Your Seats and Accommodation NOW.
@@ -166,27 +166,23 @@ function App() {
         </div>
       </div>
 
-      {/* Existing Calendar and Booking Form Section */}
-      <div className="flex-[1.5]">
-        <div className="relative min-h-[550px] perspective-1000">
-          <div
-            className={`absolute inset-0 duration-700 preserve-3d ${
-              isFlipped ? 'rotate-y-180' : ''
-            }`}
-          >
+      {/* Calendar and Booking Form Section */}
+      <div className="flex-[1.5] md:max-w-2xl lg:max-w-none mx-auto w-full">
+        <div className="relative min-h-[550px] md:min-h-[600px] perspective-1000">
+          <div className={`absolute inset-0 duration-700 preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
             {/* Front - Calendar */}
-            <div className="absolute inset-0 max-h-4/5 max-w-xl mx-auto bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-3 backface-hidden">
+            <div className="absolute inset-0 max-h-4/5 mx-auto bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-3 md:p-6 backface-hidden">
               <h2 className="text-2xl font-bold text-white mb-6">Select Your Safari Date</h2>
               <Calendar
                 onChange={handleDateChange}
                 value={date}
-                className="w-full border-none safari-calendar"
+                className="w-full border-none safari-calendar md:text-lg"
                 minDate={new Date()}
               />
             </div>
 
             {/* Back - Booking Form */}
-            <div className="absolute inset-0 bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-3 m-1 overflow-y-clip backface-hidden rotate-y-180">
+            <div className="absolute inset-0 bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-3 md:p-6 m-1 backface-hidden rotate-y-180">
               <div className="flex justify-between items-center mb-6 px-6">
                 <h2 className="text-2xl font-bold text-white">Booking Details</h2>
                 <button
@@ -197,11 +193,10 @@ function App() {
                 </button>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6 overflow-y-auto max-h-[calc(100dvh-300px)] px-6 [&::-webkit-scrollbar]:w-2
-                [&::-webkit-scrollbar-track]:rounded-full
-                [&::-webkit-scrollbar-track]:bg-green-100
-                [&::-webkit-scrollbar-thumb]:rounded-full
-                [&::-webkit-scrollbar-thumb]:bg-emerald-300">
+              <form 
+                onSubmit={handleSubmit} 
+                className="space-y-6 md:space-y-8 px-4 md:px-6 h-[calc(100%-80px)] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-green-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300"
+              >
                 <div className="text-white">
                   <label className="block text-lg font-medium mb-2">Selected Date</label>
                   <div className="text-emerald-300 text-xl font-semibold">
@@ -352,9 +347,9 @@ function App() {
 
                 <button
                   type="submit"
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 px-8 rounded-xl transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2 text-lg font-semibold"
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 md:py-4 px-8 rounded-xl transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2 text-lg font-semibold"
                 >
-                  <Clock className="size-5" />
+                  <Clock className="size-5 md:size-6" />
                   Confirm Booking
                 </button>
               </form>

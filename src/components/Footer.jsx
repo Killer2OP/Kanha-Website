@@ -6,7 +6,7 @@ const Footer = () => {
     <footer
       className="text-gray-300 bg-no-repeat bg-cover bg-center py-12 relative before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-black before:via-black/90 before:to-black/70"
       style={{
-        backgroundImage: "url('../assets/Footer.jpg')",
+        backgroundImage: "url('https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/Footer.jpg')",
       }}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6">

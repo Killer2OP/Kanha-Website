@@ -207,15 +207,15 @@ function MapViewPage() {
       <Header />
       
       {/* Map content */}
-      <div className="absolute inset-0 flex translate-y-21"> 
-        <div className="p-4 z-10">
+      <div className="absolute inset-0 flex flex-col md:flex-row translate-y-21"> 
+        <div className="w-full md:w-auto p-2 md:p-4 z-10">
           <MapFilters
             filters={filters}
             onFilterChange={handleFilterChange}
             onSelectAll={handleSelectAll}
           />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 h-[calc(100vh-200px)] md:h-auto">
           <MapView
             locations={filteredLocations}
             center={[22.2777, 80.6199]}

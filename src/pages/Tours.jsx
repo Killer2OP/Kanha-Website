@@ -1,6 +1,6 @@
-import React from 'react';
+import React ,{useEffect} from 'react';
 import { Compass, ChevronRight, MapPin, Calendar, Car } from 'lucide-react';
-
+import { useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -72,11 +72,18 @@ const packages = [
 ];
 
 function App() {
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div 
       className="min-h-screen bg-fixed bg-cover bg-center relative"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('../assets/Jungle.jpg')`
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/Jungle.jpg')`
       }}
     >
       <Header />

@@ -15,7 +15,7 @@ const TopThings = () => {
       name: "Jungle Safari in Kanha",
       description:
         "Exploring the interiors of a dense wild forest always fascinates wildlife lovers and they visit such forest where they can explore.",
-      image: "../assets/Tiger.jpg",
+      image: "https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/Tiger.jpg",
       color: "text-orange-500",
       icon: TreePalm,
     },
@@ -23,7 +23,7 @@ const TopThings = () => {
       name: "Jeep Safari Inside Kanha",
       description:
         "Exploring the interiors of a dense wild forest always fascinates wildlife lovers and they visit such forest where they can explore.",
-      image: "../assets/Jeep.jpg",
+      image: "https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/Jeep.jpg",
       color: "text-yellow-400",
       icon: Car,
     },
@@ -31,7 +31,7 @@ const TopThings = () => {
       name: "Birds Watching",
       description:
         "Exploring the interiors of a dense wild forest always fascinates wildlife lovers and they visit such forest where they can explore.",
-      image: "../assets/bird.jpg",
+      image: "https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/bird.jpg",
       color: "text-yellow-400",
       icon: Bird,
     },
@@ -39,7 +39,7 @@ const TopThings = () => {
       name: "Canter Wildlife Safari",
       description:
         "Exploring the interiors of a dense wild forest always fascinates wildlife lovers and they visit such forest where they can explore.",
-      image: "../assets/deer.jpg",
+      image: "https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/deer.jpg",
       color: "text-green-400",
       icon: TreeDeciduous,
     },

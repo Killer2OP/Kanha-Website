@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Camera, ChevronRight, Compass, Hotel, Moon, Sunrise, Wifi, Coffee, Car, Bath, Utensils } from "lucide-react"
-import { Link as RouterLink } from 'react-router-dom';
+import { Camera, ChevronRight, Compass, Hotel, Wifi, Coffee, Car, Bath, Utensils } from "lucide-react"
+import { Link } from 'react-router-dom';
 import SafariBooking from '../home/SafariBooking'
 
 function App() {
@@ -82,6 +82,115 @@ function App() {
         }
     ];
 
+    const fourStarHotels = [
+        {
+            id: 1,
+            name: "Kanha Jungle Lodge",
+            description: "Comfortable rooms with jungle views, guided nature walks, and authentic regional cuisine.",
+            price: "From ₹7,500 per night",
+            images: [
+                "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+                "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+                "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+            ],
+            features: [
+                { icon: <Wifi className="h-4 w-4" />, text: "Free WiFi" },
+                { icon: <Coffee className="h-4 w-4" />, text: "Buffet Meals" },
+                { icon: <Car className="h-4 w-4" />, text: "Safari Booking" },
+                { icon: <Utensils className="h-4 w-4" />, text: "Outdoor Dining" }
+            ]
+        },
+        {
+            id: 2,
+            name: "Kanha Safari Lodge",
+            description: "Spacious cottages with private balconies, swimming pool, and evening cultural programs.",
+            price: "From ₹6,800 per night",
+            images: [
+                "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+                "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+                "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+            ],
+            features: [
+                { icon: <Wifi className="h-4 w-4" />, text: "WiFi Zones" },
+                { icon: <Coffee className="h-4 w-4" />, text: "Room Service" },
+                { icon: <Bath className="h-4 w-4" />, text: "Swimming Pool" },
+                { icon: <Car className="h-4 w-4" />, text: "Safari Transport" }
+            ]
+        },
+        {
+            id: 3,
+            name: "Kanha Riverside Resort",
+            description: "Riverside location with scenic views, comfortable rooms, and outdoor dining experiences.",
+            price: "From ₹6,500 per night",
+            images: [
+                "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+                "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+                "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+            ],
+            features: [
+                { icon: <Wifi className="h-4 w-4" />, text: "Limited WiFi" },
+                { icon: <Utensils className="h-4 w-4" />, text: "Riverside Dining" },
+                { icon: <Car className="h-4 w-4" />, text: "Safari Booking" },
+                { icon: <Coffee className="h-4 w-4" />, text: "Breakfast Included" }
+            ]
+        }
+    ];
+
+    // New 3-Star hotels array
+    const threeStarHotels = [
+        {
+            id: 1,
+            name: "Kanha Forest Lodge",
+            description: "Simple, clean accommodations with basic amenities and helpful staff for safari arrangements.",
+            price: "From ₹3,500 per night",
+            images: [
+                "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+                "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+                "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+            ],
+            features: [
+                { icon: <Wifi className="h-4 w-4" />, text: "Common Area WiFi" },
+                { icon: <Coffee className="h-4 w-4" />, text: "Breakfast" },
+                { icon: <Car className="h-4 w-4" />, text: "Safari Assistance" },
+                { icon: <Utensils className="h-4 w-4" />, text: "Basic Dining" }
+            ]
+        },
+        {
+            id: 2,
+            name: "Kanha Safari Inn",
+            description: "Budget-friendly option with comfortable beds, clean rooms, and safari booking assistance.",
+            price: "From ₹2,800 per night",
+            images: [
+                "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+                "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+                "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+            ],
+            features: [
+                { icon: <Wifi className="h-4 w-4" />, text: "Limited WiFi" },
+                { icon: <Coffee className="h-4 w-4" />, text: "Tea/Coffee" },
+                { icon: <Car className="h-4 w-4" />, text: "Safari Booking" },
+                { icon: <Bath className="h-4 w-4" />, text: "Private Bathroom" }
+            ]
+        },
+        {
+            id: 3,
+            name: "Kanha Budget Stay",
+            description: "No-frills accommodation with essential amenities and friendly service at an affordable price.",
+            price: "From ₹2,000 per night",
+            images: [
+                "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+                "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+                "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+            ],
+            features: [
+                { icon: <Wifi className="h-4 w-4" />, text: "Basic WiFi" },
+                { icon: <Coffee className="h-4 w-4" />, text: "Simple Breakfast" },
+                { icon: <Car className="h-4 w-4" />, text: "Transport Assistance" },
+                { icon: <Utensils className="h-4 w-4" />, text: "Local Food" }
+            ]
+        }
+    ];
+
     // Custom hook for managing slideshows
     const useSlideshow = (images) => {
         const [currentIndex, setCurrentIndex] = useState(0);
@@ -100,7 +209,7 @@ function App() {
         <div
             className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 relative bg-fixed bg-no-repeat bg-cover"
             style={{
-                backgroundImage: "url('../assets/Plants.jpg')",
+                backgroundImage: "url('https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/Plants.jpg')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
             }}
@@ -176,9 +285,12 @@ function App() {
                                             ))}
                                         </div>
                                         <p className="text-emerald-300 font-semibold mt-2">{hotel.price}</p>
-                                        <RouterLink to={`/hotels/${hotel.id}`} className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 mt-3">
+                                        <Link 
+                                            to='/hotel-in-kanha'
+                                            className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 mt-3"
+                                        >
                                             View Options
-                                        </RouterLink>
+                                        </Link>
                                     </div>
                                 </div>
                             );
@@ -190,122 +302,53 @@ function App() {
                         <p className="text-[24px] font-semibold text-emerald-300 mb-6"> <span className='text-amber-400'> 4-Star </span> Comfortable Stays</p>
                         
                         <div className="grid md:grid-cols-3 gap-6">
-                            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:bg-white/10 transition-all duration-300">
-                                <div className="relative h-48 overflow-hidden">
-                                    <img 
-                                        src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
-                                        alt="Kanha Jungle Lodge" 
-                                        className="absolute inset-0 w-full h-full object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                                    <div className="absolute bottom-0 left-0 p-4">
-                                        <h5 className="text-xl font-bold text-white">Kanha Jungle Lodge</h5>
-                                    </div>
-                                </div>
-                                <div className="p-4">
-                                    <p className="text-gray-300 text-sm mb-3">Comfortable rooms with jungle views, guided nature walks, and authentic regional cuisine.</p>
-                                    <div className="grid grid-cols-2 gap-x-2 gap-y-1 mb-3">
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Wifi className="h-4 w-4" /></span>
-                                            Free WiFi
+                            {fourStarHotels.map((hotel) => {
+                                const currentImageIndex = useSlideshow(hotel.images);
+                                
+                                return (
+                                    <div key={hotel.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:bg-white/10 transition-all duration-300">
+                                        <div className="relative h-48 overflow-hidden">
+                                            {hotel.images.map((image, index) => (
+                                                <img
+                                                    key={index}
+                                                    src={image}
+                                                    alt={`${hotel.name} - View ${index + 1}`}
+                                                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                                                        index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                                                    }`}
+                                                />
+                                            ))}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                            <div className="absolute bottom-0 left-0 p-4">
+                                                <h5 className="text-xl font-bold text-white">{hotel.name}</h5>
+                                            </div>
+                                            {/* Image counter */}
+                                            <div className="absolute top-2 right-2 bg-black/50 px-2 py-1 rounded-full text-xs text-white">
+                                                {currentImageIndex + 1}/{hotel.images.length}
+                                            </div>
                                         </div>
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Coffee className="h-4 w-4" /></span>
-                                            Buffet Meals
-                                        </div>
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Car className="h-4 w-4" /></span>
-                                            Safari Booking
-                                        </div>
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Utensils className="h-4 w-4" /></span>
-                                            Outdoor Dining
-                                        </div>
-                                    </div>
-                                    <p className="text-emerald-300 font-semibold mt-2">From ₹7,500 per night</p>
-                                    <RouterLink to="/hotels/4" className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 mt-3">
-                                        View Options
-                                    </RouterLink>
-                                </div>
-                            </div>
-                            
-                            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:bg-white/10 transition-all duration-300">
-                                <div className="relative h-48 overflow-hidden">
-                                    <img 
-                                        src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
-                                        alt="Kanha Safari Lodge" 
-                                        className="absolute inset-0 w-full h-full object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                                    <div className="absolute bottom-0 left-0 p-4">
-                                        <h5 className="text-xl font-bold text-white">Kanha Safari Lodge</h5>
-                                    </div>
-                                </div>
-                                <div className="p-4">
-                                    <p className="text-gray-300 text-sm mb-3">Spacious cottages with private balconies, swimming pool, and evening cultural programs.</p>
-                                    <div className="grid grid-cols-2 gap-x-2 gap-y-1 mb-3">
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Wifi className="h-4 w-4" /></span>
-                                            WiFi Zones
-                                        </div>
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Coffee className="h-4 w-4" /></span>
-                                            Room Service
-                                        </div>
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Bath className="h-4 w-4" /></span>
-                                            Swimming Pool
-                                        </div>
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Car className="h-4 w-4" /></span>
-                                            Safari Transport
+                                        <div className="p-4">
+                                            <p className="text-gray-300 text-sm mb-3">{hotel.description}</p>
+                                            {/* Features - Modified to display in grid */}
+                                            <div className="grid grid-cols-2 gap-x-2 gap-y-1 mb-3">
+                                                {hotel.features.map((feature, index) => (
+                                                    <div key={index} className="flex items-center text-gray-300 text-sm">
+                                                        <span className="text-emerald-400 mr-2">{feature.icon}</span>
+                                                        {feature.text}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                            <p className="text-emerald-300 font-semibold mt-2">{hotel.price}</p>
+                                            <Link 
+                                                to='/hotel-in-kanha'
+                                                className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 mt-3"
+                                            >
+                                                View Options
+                                            </Link>
                                         </div>
                                     </div>
-                                    <p className="text-emerald-300 font-semibold mt-2">From ₹6,800 per night</p>
-                                    <RouterLink to="/hotels/5" className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 mt-3">
-                                        View Options
-                                    </RouterLink>
-                                </div>
-                            </div>
-                            
-                            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:bg-white/10 transition-all duration-300">
-                                <div className="relative h-48 overflow-hidden">
-                                    <img 
-                                        src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
-                                        alt="Kanha Riverside Resort" 
-                                        className="absolute inset-0 w-full h-full object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                                    <div className="absolute bottom-0 left-0 p-4">
-                                        <h5 className="text-xl font-bold text-white">Kanha Riverside Resort</h5>
-                                    </div>
-                                </div>
-                                <div className="p-4">
-                                    <p className="text-gray-300 text-sm mb-3">Riverside location with scenic views, comfortable rooms, and outdoor dining experiences.</p>
-                                    <div className="grid grid-cols-2 gap-x-2 gap-y-1 mb-3">
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Wifi className="h-4 w-4" /></span>
-                                            Limited WiFi
-                                        </div>
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Utensils className="h-4 w-4" /></span>
-                                            Riverside Dining
-                                        </div>
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Car className="h-4 w-4" /></span>
-                                            Safari Booking
-                                        </div>
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Coffee className="h-4 w-4" /></span>
-                                            Breakfast Included
-                                        </div>
-                                    </div>
-                                    <p className="text-emerald-300 font-semibold mt-2">From ₹6,500 per night</p>
-                                    <RouterLink to="/hotels/6" className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 mt-3">
-                                        View Options
-                                    </RouterLink>
-                                </div>
-                            </div>
+                                );
+                            })}
                         </div>
                     </div>
                     
@@ -314,122 +357,53 @@ function App() {
                         <p className="text-[24px] font-semibold text-emerald-300 mb-6"><span className='text-amber-400'> 3-Star </span> Budget-Friendly Options</p>
                         
                         <div className="grid md:grid-cols-3 gap-6">
-                            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:bg-white/10 transition-all duration-300">
-                                <div className="relative h-48 overflow-hidden">
-                                    <img 
-                                        src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
-                                        alt="Kanha Forest Lodge" 
-                                        className="absolute inset-0 w-full h-full object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                                    <div className="absolute bottom-0 left-0 p-4">
-                                        <h5 className="text-xl font-bold text-white">Kanha Forest Lodge</h5>
-                                    </div>
-                                </div>
-                                <div className="p-4">
-                                    <p className="text-gray-300 text-sm mb-3">Simple, clean accommodations with basic amenities and helpful staff for safari arrangements.</p>
-                                    <div className="grid grid-cols-2 gap-x-2 gap-y-1 mb-3">
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Wifi className="h-4 w-4" /></span>
-                                            Common Area WiFi
+                            {threeStarHotels.map((hotel) => {
+                                const currentImageIndex = useSlideshow(hotel.images);
+                                
+                                return (
+                                    <div key={hotel.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:bg-white/10 transition-all duration-300">
+                                        <div className="relative h-48 overflow-hidden">
+                                            {hotel.images.map((image, index) => (
+                                                <img
+                                                    key={index}
+                                                    src={image}
+                                                    alt={`${hotel.name} - View ${index + 1}`}
+                                                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                                                        index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                                                    }`}
+                                                />
+                                            ))}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                            <div className="absolute bottom-0 left-0 p-4">
+                                                <h5 className="text-xl font-bold text-white">{hotel.name}</h5>
+                                            </div>
+                                            {/* Image counter */}
+                                            <div className="absolute top-2 right-2 bg-black/50 px-2 py-1 rounded-full text-xs text-white">
+                                                {currentImageIndex + 1}/{hotel.images.length}
+                                            </div>
                                         </div>
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Coffee className="h-4 w-4" /></span>
-                                            Breakfast
-                                        </div>
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Car className="h-4 w-4" /></span>
-                                            Safari Assistance
-                                        </div>
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Utensils className="h-4 w-4" /></span>
-                                            Basic Dining
-                                        </div>
-                                    </div>
-                                    <p className="text-emerald-300 font-semibold mt-2">From ₹3,500 per night</p>
-                                    <RouterLink to="/hotels/7" className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 mt-3">
-                                        View Options
-                                    </RouterLink>
-                                </div>
-                            </div>
-                            
-                            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:bg-white/10 transition-all duration-300">
-                                <div className="relative h-48 overflow-hidden">
-                                    <img 
-                                        src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
-                                        alt="Kanha Safari Inn" 
-                                        className="absolute inset-0 w-full h-full object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                                    <div className="absolute bottom-0 left-0 p-4">
-                                        <h5 className="text-xl font-bold text-white">Kanha Safari Inn</h5>
-                                    </div>
-                                </div>
-                                <div className="p-4">
-                                    <p className="text-gray-300 text-sm mb-3">Budget-friendly option with comfortable beds, clean rooms, and safari booking assistance.</p>
-                                    <div className="grid grid-cols-2 gap-x-2 gap-y-1 mb-3">
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Wifi className="h-4 w-4" /></span>
-                                            Limited WiFi
-                                        </div>
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Coffee className="h-4 w-4" /></span>
-                                            Tea/Coffee
-                                        </div>
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Car className="h-4 w-4" /></span>
-                                            Safari Booking
-                                        </div>
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Bath className="h-4 w-4" /></span>
-                                            Private Bathroom
+                                        <div className="p-4">
+                                            <p className="text-gray-300 text-sm mb-3">{hotel.description}</p>
+                                            {/* Features - Modified to display in grid */}
+                                            <div className="grid grid-cols-2 gap-x-2 gap-y-1 mb-3">
+                                                {hotel.features.map((feature, index) => (
+                                                    <div key={index} className="flex items-center text-gray-300 text-sm">
+                                                        <span className="text-emerald-400 mr-2">{feature.icon}</span>
+                                                        {feature.text}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                            <p className="text-emerald-300 font-semibold mt-2">{hotel.price}</p>
+                                            <Link 
+                                                to='/hotel-in-kanha'
+                                                className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 mt-3"
+                                            >
+                                                View Options
+                                            </Link>
                                         </div>
                                     </div>
-                                    <p className="text-emerald-300 font-semibold mt-2">From ₹2,800 per night</p>
-                                    <RouterLink to="/hotels/8" className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 mt-3">
-                                        View Options
-                                    </RouterLink>
-                                </div>
-                            </div>
-                            
-                            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:bg-white/10 transition-all duration-300">
-                                <div className="relative h-48 overflow-hidden">
-                                    <img 
-                                        src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" 
-                                        alt="Kanha Budget Stay" 
-                                        className="absolute inset-0 w-full h-full object-cover"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                                    <div className="absolute bottom-0 left-0 p-4">
-                                        <h5 className="text-xl font-bold text-white">Kanha Budget Stay</h5>
-                                    </div>
-                                </div>
-                                <div className="p-4">
-                                    <p className="text-gray-300 text-sm mb-3">No-frills accommodation with essential amenities and friendly service at an affordable price.</p>
-                                    <div className="grid grid-cols-2 gap-x-2 gap-y-1 mb-3">
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Wifi className="h-4 w-4" /></span>
-                                            Basic WiFi
-                                        </div>
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Coffee className="h-4 w-4" /></span>
-                                            Simple Breakfast
-                                        </div>
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Car className="h-4 w-4" /></span>
-                                            Transport Assistance
-                                        </div>
-                                        <div className="flex items-center text-gray-300 text-sm">
-                                            <span className="text-emerald-400 mr-2"><Utensils className="h-4 w-4" /></span>
-                                            Local Food
-                                        </div>
-                                    </div>
-                                    <p className="text-emerald-300 font-semibold mt-2">From ₹2,000 per night</p>
-                                    <RouterLink to="/hotels/9" className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 mt-3">
-                                        View Options
-                                    </RouterLink>
-                                </div>
-                            </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
@@ -484,12 +458,12 @@ function App() {
                                         </li>
                                     ))}
                                 </ul>
-                                <RouterLink
+                                <Link
                                     to="/tour-packages"
                                     className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 group-hover:bg-emerald-500"
-                                >
+                                    >
                                     Book Now
-                                </RouterLink>
+                                </Link>
                             </div>
                         ))}
                     </div>
@@ -498,5 +472,4 @@ function App() {
         </div>
     );
 }
-
 export default App;

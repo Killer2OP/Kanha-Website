@@ -9,8 +9,8 @@ function Header() {
         { name: "Home", icon: Home, path: "/" },
         { name: "Online Safari Booking", icon: PawPrint, path: "/safari-booking" },
         { name: "Tour Packages", icon: Compass, path: "/tour-packages" },
-        { name: "Hotel in Kanha", icon: Hotel, path: "#" },
-        { name: "Pay Now", icon: CreditCard, path: "#" }
+        { name: "Hotel in Kanha", icon: Hotel, path: "/hotel-in-kanha" },
+        // { name: "Pay Now", icon: CreditCard, path: "#" }
     ];
 
 

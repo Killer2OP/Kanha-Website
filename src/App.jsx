@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import MapViewPage from './pages/MapView'
 import OnlineSafariBooking from './pages/OnlineSafariBooking'
 import Tours from './pages/Tours'
+import Hotels from './pages/Hotels'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/map" element={<MapViewPage />} />
         <Route path="/safari-booking" element={<OnlineSafariBooking />} />
         <Route path="/tour-packages" element={<Tours />} />
+        <Route path="/hotel-in-kanha" element={<Hotels />} />
       </Routes>
     </BrowserRouter>
   )

@@ -20,7 +20,7 @@ const MapView = ({ locations = [], center = [22.2777, 80.6199], zoom = 12 }) => 
       center={center}
       zoom={zoom}
       className="w-full h-full rounded-lg"
-      style={{ height: '100vh' }}
+      style={{ height: '100%', minHeight: '400px' }}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -33,9 +33,9 @@ const MapView = ({ locations = [], center = [22.2777, 80.6199], zoom = 12 }) => 
           icon={defaultIcon}
         >
           <Popup>
-            <div>
-              <h3 className="font-bold">{location.name}</h3>
-              {location.description && <p>{location.description}</p>}
+            <div className="p-2">
+              <h3 className="text-sm md:text-base font-bold mb-1">{location.name}</h3>
+              {location.description && <p className="text-xs md:text-sm">{location.description}</p>}
             </div>
           </Popup>
         </Marker>
