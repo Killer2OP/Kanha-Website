@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import { format } from 'date-fns';
-import {Clock, Moon, Sunrise, ChevronDown } from 'lucide-react';
+import {Clock, ChevronDown } from 'lucide-react';
 import 'react-calendar/dist/Calendar.css';
+import { tariffDetails, tariffData, safariTypes } from './SafariBookingData';
 
 function App() {
+    
     const [date, setDate] = useState(new Date());
     const [isFlipped, setIsFlipped] = useState(false);
     
@@ -17,76 +19,6 @@ function App() {
         guests: '1'
     });
 
-    const tariffDetails = {
-        weekdaysCoreZones: {
-            indian: 7900,
-            foreign: 13000,
-            zones: ['Kanha', 'Kisli', 'Mukki', 'Sarhi']
-        },
-        weekendsCoreZones: {
-            indian: 8900,
-            foreign: 15000,
-            zones: ['Kanha', 'Kisli', 'Mukki', 'Sarhi']
-        },
-        weekdaysBufferZones: {
-            indian: 7000,
-            foreign: 8000,
-            zones: ['Khapa', 'Khatiya', 'Phen', 'Sijora']
-        },
-        weekendsBufferZones: {
-            indian: 8000,
-            foreign: 9000,
-            zones: ['Khapa', 'Khatiya', 'Phen', 'Sijora']
-        },
-        weekdaysSharingCoreZones: {
-            indian: 1800,
-            foreign: 2000,
-            zones: ['Kanha', 'Kisli', 'Mukki', 'Sarhi']
-        },
-        weekendsSharingCoreZones: {
-            indian: 2200,
-            foreign: 2400,
-            zones: ['Kanha', 'Kisli', 'Mukki', 'Sarhi']
-        },
-        timings: {
-            morning: '6:00 AM to 11:30 AM',
-            evening: '3:00 PM to 6:00 PM'
-        }
-    };
-    
-    const tariffData = [
-        {
-            title: "Weekdays Core Zones",
-            details: tariffDetails.weekdaysCoreZones
-        },
-        {
-            title: "Weekends Core Zones",
-            details: tariffDetails.weekendsCoreZones
-        }
-    ];
-    
-    const safariTypes = {
-        morning: {
-            title: 'Morning Safari',
-            time: '6:00 AM - 11:30 AM', // Updated to match the tariff image
-            description: 'Best for wildlife activity and photography',
-            priceIndian: 2500,
-            priceForeign: 5000,
-            icon: Sunrise,
-            colorClass: 'text-amber-400'
-        },
-        evening: {
-            title: 'Evening Safari',
-            time: '3:00 PM - 6:00 PM', // Updated to match the tariff image
-            description: 'Perfect for sunset views and predator sightings',
-            priceIndian: 2000,
-            priceForeign: 4000,
-            icon: Moon,
-            colorClass: 'text-indigo-400'
-        }
-    };
-
-  
 
     const handleDateChange = (value) => {
         setDate(value);
@@ -132,7 +64,9 @@ function App() {
     return (
         <div className="flex flex-col lg:flex-row gap-6">
             {/* Tariff Details Section */}
-            <div className="flex-[1.5]  min-h-[500px] bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-4 text-white max-h-[450px] md:max-h-[350px] lg:max-h-[450px] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-green-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300">
+            <div className="flex-[1.5] min-h-[480px] max-h-[450px] md:max-h-[350px] lg:max-h-[450px]  
+                bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-4 text-white 
+                overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-green-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300">
                 <h2 className="text-2xl font-bold mb-4">Kanha National Park Safari Tariff</h2>
                 <p className="text-yellow-300 mb-4">
                     You May Reserve Your Seats and Accommodation NOW.
@@ -163,7 +97,7 @@ function App() {
 
             {/* Calendar and Booking Form Section */}
             <div className="flex-[1.5] min-h-[480px] md:max-w-2xl lg:max-w-none mx-auto w-full">
-                <div className="relative min-h-[550px] md:min-h-[600px] perspective-1000">
+                <div className="relative min-h-[600px] md:min-h-[600px] perspective-1000">
                     <div className={`absolute inset-0 duration-700 preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
                         {/* Front - Calendar */}
                         <div className="absolute inset-0 max-h-4/5 mx-auto bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-3 md:p-6 backface-hidden">
