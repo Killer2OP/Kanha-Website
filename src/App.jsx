@@ -1,24 +1,14 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider, Helmet } from "react-helmet-async";
-
-<<<<<<< Updated upstream
-import Home from './pages/Home';
-import MapViewPage from './pages/MapView';
-import OnlineSafariBooking from './pages/OnlineSafariBooking';
-import Tours from './pages/Tours';
-import Hotels from './pages/Hotels';
-import HotelDetail from './pages/HotelDetail';
-import PayNow from './pages/PayNow';
-=======
 import Home from "./pages/Home";
 import MapViewPage from "./pages/MapView";
 import OnlineSafariBooking from "./pages/OnlineSafariBooking";
 import Tours from "./pages/Tours";
 import Hotels from "./pages/Hotels";
+import HotelDetail from "./pages/HotelDetail";
 import PayNow from "./pages/PayNow";
 import Contact from "./container/main/contact-us/Contact";
->>>>>>> Stashed changes
 
 // ScrollToTop component to scroll to top on route change
 function ScrollToTop() {
@@ -115,8 +105,8 @@ function App() {
               </>
             }
           />
-          <Route 
-            path="/hotel-in-kanha/:slug" 
+          <Route
+            path="/hotel-in-kanha/:slug"
             element={
               <>
                 <Helmet>
@@ -128,15 +118,12 @@ function App() {
                 </Helmet>
                 <HotelDetail />
               </>
-            } 
+            }
           />
-          
+
           <Route path="/pay-now" element={<PayNow />} />
-<<<<<<< Updated upstream
-=======
           <Route path="/contact-us" element={<Contact />} />
           {/* 404 route - always keep this last */}
->>>>>>> Stashed changes
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
