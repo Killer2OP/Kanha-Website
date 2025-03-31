@@ -269,19 +269,22 @@ function Hotels() {
                           <span>{hotel.location}</span>
                         </div>
                       </div>
-                      <div className="text-right">
-                        <div className="flex items-center gap-1 mb-2">
+                      <div className="text-center">
+                        <div className="flex flex-wrap md:flex-nowrap items-center gap-2 mb-2">
                           <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                           <span className="text-white font-bold">
                             {hotel.rating}
                           </span>
-                          <span className="text-emerald-300">
-                            ({hotel.reviews} reviews)
+                          <span className="text-emerald-300 whitespace-nowrap">
+                            ({hotel.reviews} Reviews)
                           </span>
                         </div>
-                        <div className="text-emerald-300 text-2xl font-bold">
+                        <div className="text-emerald-300 text-xl md:text-2xl font-bold">
                           {hotel.price}
-                          <span className="text-sm font-normal"> / night</span>
+                          <span className="text-xs md:text-[18px] font-normal">
+                            {" "}
+                            / Night
+                          </span>
                         </div>
                       </div>
                     </div>

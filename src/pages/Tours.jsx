@@ -88,7 +88,7 @@ function App() {
 
   return (
     <div
-      className="min-h-screen bg-fixed bg-cover bg-center relative"
+      className="bg-fixed bg-cover  bg-center relative"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/Jungle.jpg')`,
       }}
@@ -113,12 +113,12 @@ function App() {
         {/* Tour Packages Section */}
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-b bg-green-900/20 backdrop-blur-lg rounded-3xl"></div>
-          <div className="relative mb-12 text-center pt-8 p-2">
+          <div className="relative mb-6 text-center pt-8 p-6">
             <div className="flex items-center justify-center mb-6">
-              <div className="bg-emerald-500 p-3 rounded-lg mr-4">
-                <Compass className="h-6 w-6 text-white" />
+              <div className="bg-emerald-500 p-3 rounded-lg mr-2">
+                <Compass className="h-5 w-5 md:h-6 md:w-6 text-white" />
               </div>
-              <h2 className="text-3xl sm:text-4xl font-semibold text-white">
+              <h2 className="text-4xl md:text-5xl font-semibold text-white">
                 Available Tour Packages
               </h2>
             </div>
@@ -131,7 +131,7 @@ function App() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 p-2">
+          <div className="grid md:grid-cols-2 gap-6 p-4 md:p-6">
             {packages.map((pkg, index) => (
               <div
                 key={index}
