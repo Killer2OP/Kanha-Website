@@ -1,12 +1,14 @@
 import React from "react";
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer
       className="text-gray-300 bg-no-repeat bg-cover bg-center py-12 relative before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-black before:via-black/90 before:to-black/70"
       style={{
-        backgroundImage: "url('https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/Footer.jpg')",
+        backgroundImage:
+          "url('https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/Footer.jpg')",
       }}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -35,18 +37,21 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2">
               {[
-                "Privacy Policy",
-                "FAQ'S",
-                "News",
-                "Contact Us",
-                "Site Map",
+                { name: "Privacy Policy", link: "/privacy-policy" },
+                { name: "FAQ'S", link: "/faqs" },
+                { name: "News", link: "/news" },
+                {
+                  name: "Contact Us",
+                  link: "/contact-us",
+                },
+                { name: "Site Map", link: "/sitemap" },
               ].map((item) => (
-                <li key={item}>
+                <li key={item.name}>
                   <a
-                    href="#"
+                    href={item.link}
                     className="text-gray-400 text-sm tracking-wide hover:text-green-500 transition-colors"
                   >
-                    {item}
+                    {item.name}
                   </a>
                 </li>
               ))}
@@ -55,7 +60,9 @@ const Footer = () => {
 
           {/* Things to do */}
           <div className="uppercase">
-            <h3 className="text-lg font-semibold text-white mb-4">Things to do</h3>
+            <h3 className="text-lg font-semibold text-white mb-4">
+              Things to do
+            </h3>
             <ul className="space-y-2">
               {[
                 "Ultimate Safari",
