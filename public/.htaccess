@@ -1,13 +1,17 @@
-# Enable rewrite engine
+# Enable Rewrite Engine
 RewriteEngine On
 RewriteBase /
 
-# Redirect all requests to index.html except existing files and directories
+# Redirect all requests to index.html except existing files and directories (for Single Page Applications)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /index.html [L,QSA]
 
-# Ensure proper caching for performance
+# Custom Error Pages
+ErrorDocument 404 /404-page.html
+ErrorDocument 403 /403-page.html
+
+# Enable Caching for Performance Optimization
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/jpeg "access plus 1 month"
@@ -18,43 +22,58 @@ RewriteRule ^(.*)$ /index.html [L,QSA]
   ExpiresByType text/css "access plus 1 week"
   ExpiresByType application/javascript "access plus 1 week"
   ExpiresByType application/json "access plus 1 day"
-  # Cache font files
   ExpiresByType font/ttf "access plus 1 year"
   ExpiresByType font/otf "access plus 1 year"
   ExpiresByType font/woff "access plus 1 year"
   ExpiresByType font/woff2 "access plus 1 year"
-  ExpiresByType application/font-woff "access plus 1 year"
-  ExpiresByType application/font-woff2 "access plus 1 year"
 </IfModule>
 
-# Enable compression
+# Enable Compression for Text-Based Resources
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml application/xhtml+xml application/rss+xml font/ttf font/otf font/woff font/woff2
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml application/rss+xml font/ttf font/otf font/woff font/woff2
 </IfModule>
 
-# Add security headers
+# Security Headers
 <IfModule mod_headers.c>
-  # Prevent clickjacking
-  Header set X-Frame-Options "SAMEORIGIN"
-  # XSS protection
-  Header set X-XSS-Protection "1; mode=block"
-  # Prevent MIME-type sniffing
-  Header set X-Content-Type-Options "nosniff"
-  # Content Security Policy - uncomment and customize as needed
-  # Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;"
+  Header set X-Frame-Options "SAMEORIGIN" # Prevent Clickjacking
+  Header set X-XSS-Protection "1; mode=block" # Enable XSS Protection
+  Header set X-Content-Type-Options "nosniff" # Prevent MIME Type Sniffing
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS # Enforce HTTPS with HSTS
 </IfModule>
 
-# Disable directory listing
+# Content Security Policy (CSP) - Uncomment and customize as needed
+# <IfModule mod_headers.c>
+#   Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:;"
+# </IfModule>
+
+# Disable Directory Listing
 Options -Indexes
 
-# Prevent access to specific files
-<FilesMatch "(\.env|\.gitignore|package\.json|package-lock\.json|yarn\.lock|README\.md)$">
-  Order allow,deny
-  Deny from all
+# Restrict Access to Sensitive Files
+<FilesMatch "(\.env|\.gitignore|package\.json|package-lock\.json|yarn\.lock|README\.md|wp-config\.php)$">
+  Require all denied
 </FilesMatch>
 
-# Performance optimization - remove ETags
+# Block Specific HTTP Methods (Optional for Security)
+<IfModule mod_rewrite.c>
+  RewriteCond %{REQUEST_METHOD} !^(GET|POST|HEAD)
+  RewriteRule .* - [F]
+</IfModule>
+
+# Remove ETags for Better Caching Behavior
 <IfModule mod_headers.c>
   Header unset ETag
 </IfModule>
 FileETag None
+
+# Redirect HTTP to HTTPS (Force SSL)
+<IfModule mod_rewrite.c>
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Restrict Access by IP (Optional)
+<RequireAny>
+Require ip YOUR_IP_ADDRESS_HERE
+Require ip ANOTHER_IP_ADDRESS_HERE
+</RequireAny>
