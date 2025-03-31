@@ -11,7 +11,7 @@ const Footer = () => {
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Contact Info Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 pb-10 border-b border-gray-800">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-24  pb-10 border-b border-gray-800">
           {/* Logo and Description */}
           <div>
             <div className="flex items-center">
@@ -29,7 +29,7 @@ const Footer = () => {
           </div>
 
           {/* Navigation */}
-          <div>
+          <div className="uppercase">
             <h3 className="text-lg font-semibold text-white mb-4">
               Information
             </h3>
@@ -44,7 +44,7 @@ const Footer = () => {
                 <li key={item}>
                   <a
                     href="#"
-                    className="text-gray-400 uppercase text-sm tracking-wide hover:text-green-500 transition-colors"
+                    className="text-gray-400 text-sm tracking-wide hover:text-green-500 transition-colors"
                   >
                     {item}
                   </a>
@@ -53,9 +53,9 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Tours */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Tours</h3>
+          {/* Things to do */}
+          <div className="uppercase">
+            <h3 className="text-lg font-semibold text-white mb-4">Things to do</h3>
             <ul className="space-y-2">
               {[
                 "Ultimate Safari",
@@ -75,19 +75,26 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Subscribe Section */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Subscribe</h3>
-            <div className="space-y-4">
-              <input
-                type="email"
-                placeholder="Email*"
-                className="w-full px-4 py-3 bg-transparent border border-gray-700 text-gray-400 text-sm focus:outline-none focus:border-yellow-500 transition-colors rounded"
-              />
-              <button className="w-full bg-emerald-500 text-white py-3 text-sm font-medium hover:bg-red-600 transition-colors rounded">
-                Submit
-              </button>
-            </div>
+          {/* Tours */}
+          <div className="uppercase">
+            <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
+            <ul className="space-y-2">
+              {[
+                "Online Safari Bookingi",
+                "Tour Packages",
+                "Hotels in Kanha",
+                "Pay Mow",
+              ].map((tour) => (
+                <li key={tour}>
+                  <a
+                    href="#"
+                    className="text-gray-400 text-sm tracking-wide hover:text-green-500 transition-colors"
+                  >
+                    {tour}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 

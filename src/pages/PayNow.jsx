@@ -161,27 +161,47 @@ function PayNow() {
               ></textarea>
             </div>
             
-            <div className="mt-8">
-              <div className="flex flex-col items-center">
-                <h3 className="text-lg font-medium text-white mb-4">Pay Now</h3>
-                <div className="flex items-center justify-center mb-4 bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-                  <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png" alt="PayPal" className="h-8 mx-2" />
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa" className="h-6 mx-2" />
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard" className="h-8 mx-2" />
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png" alt="American Express" className="h-8 mx-2" />
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/RuPay.svg" alt="RuPay" className="h-6 mx-2" />
+            <div className="mt-8 w-full">
+              <div className="flex flex-col items-center w-full">
+                <h3 className="text-lg md:text-xl font-medium text-white mb-4">Pay Now</h3>
+                <div className="flex flex-wrap items-center justify-center gap-4 mb-4 bg-white/10 p-4 rounded-lg backdrop-blur-sm w-full max-w-2xl">
+                  <img 
+                    src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png" 
+                    alt="PayPal" 
+                    className="h-6 sm:h-8 object-contain" 
+                  />
+                  <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" 
+                    alt="Visa" 
+                    className="h-4 sm:h-6 object-contain" 
+                  />
+                  <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" 
+                    alt="Mastercard" 
+                    className="h-6 sm:h-8 object-contain" 
+                  />
+                  <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png" 
+                    alt="American Express" 
+                    className="h-6 sm:h-8 object-contain" 
+                  />
+                  <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/d/d1/RuPay.svg" 
+                    alt="RuPay" 
+                    className="h-4 sm:h-6 object-contain" 
+                  />
                 </div>
                 <div className="flex items-center text-green-400 mb-4">
-                  <Lock size={20} className="mr-2" />
-                  <span className="text-sm">Secure Payment Processing</span>
+                  <Lock size={16} className="mr-2 sm:mr-3" />
+                  <span className="text-xs sm:text-sm">Secure Payment Processing</span>
                 </div>
               </div>
               
               <button
                 type="submit"
-                className="w-full md:w-auto md:mx-auto md:px-12 py-3 bg-emerald-600 text-white font-medium rounded-md hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 transition-colors duration-200 flex items-center justify-center"
+                className="w-full sm:w-auto sm:min-w-[200px] mx-auto px-6 sm:px-12 py-2.5 sm:py-3 bg-emerald-600 text-white text-sm sm:text-base font-medium rounded-md hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 transition-colors duration-200 flex items-center justify-center"
               >
-                <CreditCard size={20} className="mr-2" />
+                <CreditCard size={16} className="mr-2 sm:mr-3" />
                 CONTINUE TO PAYMENT
               </button>
             </div>
