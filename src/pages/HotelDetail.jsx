@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Star, MapPin, Check, Share, Calendar, Users } from "lucide-react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
@@ -10,14 +10,38 @@ function HotelDetail() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const [showAllPhotos, setShowAllPhotos] = useState(false);
-  const [checkInDate, setCheckInDate] = useState("4/6/2025");
-  const [checkOutDate, setCheckOutDate] = useState("4/11/2025");
+  const today = new Date();
+  const [checkInDate, setCheckInDate] = useState(`${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`);
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const [checkOutDate, setCheckOutDate] = useState(`${tomorrow.getMonth() + 1}/${tomorrow.getDate()}/${tomorrow.getFullYear()}`);
   const [guests, setGuests] = useState(1);
   const [showGuestDropdown, setShowGuestDropdown] = useState(false);
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [isBookingConfirmed, setIsBookingConfirmed] = useState(false);
   
+  // Add refs to handle outside clicks
+  const guestDropdownRef = useRef(null);
+  const datePickerRef = useRef(null);
+  
   const hotel = allHotels.find((h) => h.slug === slug);
+  
+  // Handle clicks outside the dropdowns
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (guestDropdownRef.current && !guestDropdownRef.current.contains(event.target)) {
+        setShowGuestDropdown(false);
+      }
+      if (datePickerRef.current && !datePickerRef.current.contains(event.target)) {
+        setShowDatePicker(false);
+      }
+    }
+    
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -30,11 +54,39 @@ function HotelDetail() {
       </div>
     );
   }
+
+  // Generate date options for the next 6 months
+  const generateDateOptions = (startFromDate) => {
+    const dates = [];
+    const today = startFromDate || new Date();
+    const endDate = new Date();
+    endDate.setMonth(today.getMonth() + 6); // 6 months from today or start date
+    
+    const currentDate = new Date(today);
+    while (currentDate <= endDate) {
+      const formattedDate = `${currentDate.getMonth() + 1}/${currentDate.getDate()}/${currentDate.getFullYear()}`;
+      dates.push(formattedDate);
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+    
+    return dates;
+  };
   
   // Calculate total price
-  const nights = 5; // Default to 5 nights
+  const calculateNights = () => {
+    const checkin = new Date(checkInDate);
+    const checkout = new Date(checkOutDate);
+    const timeDiff = checkout.getTime() - checkin.getTime();
+    const nightCount = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    return nightCount > 0 ? nightCount : 5; // Default to 5 nights if dates are invalid
+  };
+  
+  const nights = calculateNights();
   const pricePerNight = parseInt(hotel.price.replace(/[^0-9]/g, ""));
-  const totalPrice = pricePerNight * nights;
+  // Add 10% to base price for each guest after the first one
+  const guestPriceMultiplier = 1 + ((guests - 1) * 0.1);
+  const adjustedPricePerNight = Math.round(pricePerNight * guestPriceMultiplier);
+  const totalPrice = adjustedPricePerNight * nights;
   const serviceFee = Math.round(totalPrice * 0.15); // 15% service fee
   const totalBeforeTaxes = totalPrice + serviceFee;
   
@@ -60,7 +112,25 @@ function HotelDetail() {
   
   const handleGuestChange = (newGuests) => {
     setGuests(newGuests);
-    setShowGuestDropdown(false);
+    // Don't close dropdown automatically to allow multiple adjustments
+  };
+  
+  // Add date selection handlers
+  const handleDateSelect = (type, date) => {
+    if (type === 'checkin') {
+      setCheckInDate(date);
+      // If checkout date is before new checkin date, adjust checkout
+      const checkinDate = new Date(date);
+      const checkoutDate = new Date(checkOutDate);
+      if (checkoutDate <= checkinDate) {
+        // Set checkout to checkin + 1 day
+        checkinDate.setDate(checkinDate.getDate() + 1);
+        const newCheckout = `${checkinDate.getMonth() + 1}/${checkinDate.getDate()}/${checkinDate.getFullYear()}`;
+        setCheckOutDate(newCheckout);
+      }
+    } else {
+      setCheckOutDate(date);
+    }
   };
   
   const handleReserve = () => {
@@ -313,7 +383,7 @@ function HotelDetail() {
               </div>
               
               {/* Booking Form */}
-              <div className="border border-gray-300 rounded-lg overflow-hidden mb-4">
+              <div className="border border-gray-300 rounded-lg overflow-hidden mb-4 relative">
                 <div className="grid grid-cols-2 divide-x divide-gray-300">
                   <div 
                     className="p-3 cursor-pointer hover:bg-gray-50"
@@ -330,6 +400,80 @@ function HotelDetail() {
                     <div className="text-sm">{checkOutDate}</div>
                   </div>
                 </div>
+                
+                {/* Date Picker Dropdown */}
+                {showDatePicker && (
+                  <div 
+                    ref={datePickerRef}
+                    className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+                    onClick={() => setShowDatePicker(false)}
+                  >
+                    <div 
+                      className="bg-white rounded-xl shadow-xl p-6 max-w-md w-full mx-4"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <div className="flex justify-between items-center mb-6">
+                        <h3 className="font-bold text-xl text-gray-900">Select Dates</h3>
+                        <button 
+                          onClick={() => setShowDatePicker(false)}
+                          className="text-gray-500 hover:text-gray-700 rounded-full p-1 hover:bg-gray-100"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
+                      
+                      <div className="space-y-6">
+                        <div>
+                          <h4 className="font-medium mb-3 text-gray-800">Check-in Date</h4>
+                          <div className="grid grid-cols-3 gap-2">
+                            {generateDateOptions().slice(0, 6).map((date) => (
+                              <button
+                                key={`checkin-${date}`}
+                                onClick={() => handleDateSelect('checkin', date)}
+                                className={`p-3 border rounded-lg text-sm transition-colors ${
+                                  checkInDate === date 
+                                    ? 'bg-emerald-100 border-emerald-500 text-emerald-700 font-medium' 
+                                    : 'border-gray-300 hover:border-emerald-300 hover:bg-emerald-50'
+                                }`}
+                              >
+                                {date}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-medium mb-3 text-gray-800">Check-out Date</h4>
+                          <div className="grid grid-cols-3 gap-2">
+                            {generateDateOptions(new Date(checkInDate)).slice(1, 7).map((date) => (
+                              <button
+                                key={`checkout-${date}`}
+                                onClick={() => handleDateSelect('checkout', date)}
+                                className={`p-3 border rounded-lg text-sm transition-colors ${
+                                  checkOutDate === date 
+                                    ? 'bg-emerald-100 border-emerald-500 text-emerald-700 font-medium' 
+                                    : 'border-gray-300 hover:border-emerald-300 hover:bg-emerald-50'
+                                }`}
+                              >
+                                {date}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <button 
+                        className="mt-6 w-full bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors"
+                        onClick={() => setShowDatePicker(false)}
+                      >
+                        Apply Dates
+                      </button>
+                    </div>
+                  </div>
+                )}
+                
                 <div 
                   className="border-t border-gray-300 p-3 cursor-pointer hover:bg-gray-50 relative"
                   onClick={() => setShowGuestDropdown(!showGuestDropdown)}
@@ -341,44 +485,55 @@ function HotelDetail() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                     </svg>
                   </div>
-                  
-                  {/* Guest Dropdown */}
-                  {showGuestDropdown && (
-                    <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-b-lg shadow-lg p-4 z-10">
-                      <div className="flex justify-between items-center mb-4">
-                        <div>
-                          <div className="font-medium">Adults</div>
-                          <div className="text-sm text-gray-600">Age 13+</div>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <button 
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              if (guests > 1) handleGuestChange(guests - 1);
-                            }}
-                            className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-700 hover:border-gray-500"
-                          >
-                            -
-                          </button>
-                          <span className="w-6 text-center">{guests}</span>
-                          <button 
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              if (guests < hotel.guests) handleGuestChange(guests + 1);
-                            }}
-                            className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-700 hover:border-gray-500"
-                          >
-                            +
-                          </button>
-                        </div>
-                      </div>
-                      <div className="text-xs text-gray-500">
-                        This place has a maximum of {hotel.guests} guests, not including infants.
-                      </div>
-                    </div>
-                  )}
                 </div>
               </div>
+              
+              {/* Guest Dropdown - Moved outside the booking form for better positioning */}
+              {showGuestDropdown && (
+                <div 
+                  ref={guestDropdownRef}
+                  className="absolute z-20 left-0 right-0 bg-white border border-gray-300 rounded-lg shadow-lg p-4 mt-1"
+                  style={{ top: 'auto' }}
+                  onClick={(e) => e.stopPropagation()} 
+                >
+                  <div className="flex justify-between items-center mb-4">
+                    <div>
+                      <div className="font-medium">Adults</div>
+                      <div className="text-sm text-gray-600">Age 13+</div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (guests > 1) handleGuestChange(guests - 1);
+                        }}
+                        className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-700 hover:border-gray-500"
+                      >
+                        -
+                      </button>
+                      <span className="w-6 text-center">{guests}</span>
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (guests < hotel.guests) handleGuestChange(guests + 1);
+                        }}
+                        className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-700 hover:border-gray-500"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <div className="text-xs text-gray-500">
+                    This place has a maximum of {hotel.guests} guests, not including infants.
+                  </div>
+                  <button 
+                    className="mt-4 w-full bg-emerald-600 text-white py-2 rounded-md hover:bg-emerald-700"
+                    onClick={() => setShowGuestDropdown(false)}
+                  >
+                    Apply
+                  </button>
+                </div>
+              )}
               
               <button 
                 onClick={handleReserve}
@@ -399,11 +554,16 @@ function HotelDetail() {
               {/* Price Breakdown */}
               <div className="space-y-4">
                 <div className="flex justify-between">
-                  <div className="underline">{hotel.price} x 5 nights</div>
+                  <div className="underline">₹{adjustedPricePerNight.toLocaleString()} x {nights} night{nights !== 1 ? 's' : ''}</div>
                   <div>₹{totalPrice.toLocaleString()}</div>
                 </div>
+                {guests > 1 && (
+                  <div className="flex justify-between text-sm text-gray-600">
+                    <div>Includes guest fee for {guests - 1} additional guest{guests > 2 ? 's' : ''}</div>
+                  </div>
+                )}
                 <div className="flex justify-between">
-                  <div className="underline">service fee</div>
+                  <div className="underline">Service fee</div>
                   <div>₹{serviceFee.toLocaleString()}</div>
                 </div>
                 <div className="flex justify-between pt-4 border-t border-gray-200 font-semibold">

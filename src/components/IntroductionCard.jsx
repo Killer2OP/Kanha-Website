@@ -5,9 +5,9 @@ const IntroductionCard = () => {
         <div className="relative flex flex-col lg:flex-row-reverse items-center gap-4 sm:gap-7 lg:gap-0 rounded-3xl overflow-hidden p-8 sm:p-10 lg:p-12  backdrop-blur-xl bg-green-900/20 border border-white/10 shadow-xl">
 
             {/* Image */}
-            <div className="lg:w-[50]  lg:mt-0 lg:ml-8">
+            <div className="lg:w-1/2  lg:mt-0 lg:ml-8">
                 <img
-                    src="../assets/TigerIntro.png"
+                    src="https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/TigerIntro.png"
                     alt="Kanha National Park"
                     className="shadow-lg w-full object-cover"
                 />
