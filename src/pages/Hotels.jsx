@@ -1,84 +1,34 @@
 import React, { useState, useEffect } from "react";
-import { Star, MapPin, Check, Filter, ArrowUpDown } from "lucide-react";
-import { useLocation } from "react-router-dom";
+import { Star, MapPin, Check, Filter, ArrowUpDown, ChevronLeft, ChevronRight } from "lucide-react";
+import { useLocation, Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-
-const allHotels = [
-  {
-    name: "Krishna Jungle Resort Kanha",
-    rating: 3.9,
-    stars: 3,
-    reviews: 180,
-    location: "Mandla , Khatia Gate",
-    address: "Chawdiganj - Kanha Rd, Mandla, Madhya Pradesh 481758",
-    price: "₹5,500",
-    image:
-      "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&q=80&w=800",
-    amenities: [
-      "Cancellation Policy",
-      "Breakfast Included",
-      "Free Wifi",
-      "Swimming Pool",
-    ],
-    featured: true,
-  },
-  {
-    name: "Tuli Tiger Resort Kanha",
-    rating: 4.3,
-    stars: 4,
-    reviews: 400,
-    location: "Mocha , Khatia Gate",
-    address: "Kanha National Park, Village: Mocha, Madhya Pradesh 481111",
-    price: "₹12,500",
-    image:
-      "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&q=80&w=800",
-    amenities: [
-      "Cancellation Policy",
-      "Breakfast Included",
-      "Spa",
-      "Restaurant",
-    ],
-    featured: true,
-  },
-  {
-    name: "Kanha Earth Lodge",
-    rating: 4.5,
-    stars: 5,
-    reviews: 320,
-    location: "Near Mukki Gate",
-    address: "Village Kuchwahi, Near Mukki Gate, Madhya Pradesh 481768",
-    price: "₹15,500",
-    image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800",
-    amenities: ["Luxury Rooms", "All Meals", "Safari Booking", "Pool"],
-    featured: true,
-  },
-  {
-    name: "Chitvan Jungle Lodge",
-    rating: 4.2,
-    stars: 4,
-    reviews: 250,
-    location: "Near Khatia Gate",
-    address: "Khatia Village, Kanha National Park, MP 481768",
-    price: "₹9,500",
-    image:
-      "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80&w=800",
-    amenities: ["Free Breakfast", "Wifi", "Garden", "Restaurant"],
-  },
-];
+import { allHotels } from "../data/hotels"; // Import allHotels from data file
 
 function Hotels() {
   const [selectedStars, setSelectedStars] = useState([]);
   const [priceRange, setPriceRange] = useState([0, 20000]);
-  const [hotels, setHotels] = useState(allHotels);
+  const [hotels, setHotels] = useState(allHotels); // Use imported allHotels
   const [sortBy, setSortBy] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [hotelsPerPage] = useState(5);
 
   const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, currentPage]);
+
+  // Calculate current hotels to display
+  const indexOfLastHotel = currentPage * hotelsPerPage;
+  const indexOfFirstHotel = indexOfLastHotel - hotelsPerPage;
+  const currentHotels = hotels.slice(indexOfFirstHotel, indexOfLastHotel);
+  const totalPages = Math.ceil(hotels.length / hotelsPerPage);
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const nextPage = () => setCurrentPage(prev => Math.min(prev + 1, totalPages));
+  const prevPage = () => setCurrentPage(prev => Math.max(prev - 1, 1));
 
   const handleSort = (criteria) => {
     setSortBy(criteria);
@@ -151,7 +101,7 @@ function Hotels() {
     >
       <Header />
 
-      {/* Hero Section */}
+      {/* Hero Section - unchanged */}
       <div className="relative pt-32 pb-16">
         <div className="relative flex flex-col items-center justify-center text-center px-4">
           <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6">
@@ -168,11 +118,11 @@ function Hotels() {
 
       <div className="relative max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-16">
         <div className="relative">
-          <div className="absolute inset-0 bg-emerald-900/30 backdrop-blur-lg rounded-3xl"></div>
+          <div className="absolute inset-0 bg-emerald-900/10 backdrop-blur-lg rounded-3xl"></div>
 
-          {/* Filter and Sort Section */}
+          {/* Filter and Sort Section - unchanged */}
           <div className="relative mb-4 space-y-4 px-4 md:px-6 py-6 ">
-            <div className="flex flex-wrap items-center justify-between gap-4 bg-emerald-900/50 py-4 px-4 rounded-xl">
+            <div className="flex flex-wrap items-center justify-between gap-4 bg-emerald-900/20 py-4 px-4 rounded-xl">
               {/* Star Filter */}
               <div className="flex items-center gap-4">
                 <Filter className="h-5 w-5 text-emerald-400" />
@@ -235,16 +185,16 @@ function Hotels() {
             </div>
           </div>
 
-          {/* Hotels List */}
+          {/* Hotels List - modified to use currentHotels instead of hotels */}
           <div className="relative space-y-4 px-4 md:px-6 pb-6 md:pb-6">
-            {hotels.map((hotel, index) => (
+            {currentHotels.map((hotel, index) => (
               <div
                 key={index}
-                className="bg-emerald-900/30 backdrop-blur-lg rounded-2xl overflow-hidden border border-emerald-500/20"
+                className="bg-emerald-950/10 backdrop-blur-lg rounded-2xl overflow-hidden border border-emerald-500/20"
               >
                 <div className="grid md:grid-cols-3 gap-6">
                   {/* Hotel Image */}
-                  <div className="relative h-64 md:h-full">
+                  <Link to={`/hotel/${hotel.id}`} className="relative h-64 md:h-full">
                     <img
                       src={hotel.image}
                       alt={hotel.name}
@@ -255,15 +205,17 @@ function Hotels() {
                         Featured
                       </div>
                     )}
-                  </div>
+                  </Link>
 
                   {/* Hotel Details */}
                   <div className="p-6 md:col-span-2">
                     <div className="flex justify-between items-start mb-4">
                       <div>
-                        <h3 className="text-2xl font-bold text-white mb-2">
-                          {hotel.name}
-                        </h3>
+                        <Link to={`/hotel-in-kanha/${hotel.slug}`} className="hover:text-emerald-300 transition-colors">
+                          <h3 className="text-2xl font-bold text-white mb-2">
+                            {hotel.name}
+                          </h3>
+                        </Link>
                         <div className="flex items-center gap-2 text-emerald-300 mb-2">
                           <MapPin className="h-4 w-4" />
                           <span>{hotel.location}</span>
@@ -305,13 +257,58 @@ function Hotels() {
                       ))}
                     </div>
 
-                    <button className="w-full md:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 font-semibold text-sm">
+                    <Link to={`/hotel-in-kanha/${hotel.slug}`} className="inline-block w-full md:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 font-semibold text-sm text-center">
                       Book Now
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
             ))}
+            
+            {/* Pagination Component */}
+            {hotels.length > hotelsPerPage && (
+              <div className="flex justify-center items-center mt-8 space-x-2">
+                <button 
+                  onClick={prevPage} 
+                  disabled={currentPage === 1}
+                  className={`flex items-center justify-center w-10 h-10 rounded-full ${
+                    currentPage === 1 
+                      ? 'bg-emerald-800/50 text-emerald-300/50 cursor-not-allowed' 
+                      : 'bg-emerald-600 text-white hover:bg-emerald-700'
+                  } transition-colors duration-200`}
+                >
+                  <ChevronLeft size={20} />
+                </button>
+                
+                <div className="flex space-x-1">
+                  {Array.from({ length: totalPages }, (_, i) => (
+                    <button
+                      key={i + 1}
+                      onClick={() => paginate(i + 1)}
+                      className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200 ${
+                        currentPage === i + 1
+                          ? 'bg-emerald-500 text-white'
+                          : 'bg-emerald-900/50 text-emerald-100 hover:bg-emerald-800'
+                      }`}
+                    >
+                      {i + 1}
+                    </button>
+                  ))}
+                </div>
+                
+                <button 
+                  onClick={nextPage} 
+                  disabled={currentPage === totalPages}
+                  className={`flex items-center justify-center w-10 h-10 rounded-full ${
+                    currentPage === totalPages 
+                      ? 'bg-emerald-800/50 text-emerald-300/50 cursor-not-allowed' 
+                      : 'bg-emerald-600 text-white hover:bg-emerald-700'
+                  } transition-colors duration-200`}
+                >
+                  <ChevronRight size={20} />
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

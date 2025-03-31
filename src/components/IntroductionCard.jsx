@@ -9,7 +9,7 @@ const IntroductionCard = () => {
                 <img
                     src="../assets/TigerIntro.png"
                     alt="Kanha National Park"
-                    className="rounded-2xl shadow-lg w-full object-cover"
+                    className="shadow-lg w-full object-cover"
                 />
             </div>
 

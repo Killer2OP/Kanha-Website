@@ -7,6 +7,7 @@ import MapViewPage from './pages/MapView';
 import OnlineSafariBooking from './pages/OnlineSafariBooking';
 import Tours from './pages/Tours';
 import Hotels from './pages/Hotels';
+import HotelDetail from './pages/HotelDetail';
 import PayNow from './pages/PayNow';
 
 // ScrollToTop component to scroll to top on route change
@@ -104,8 +105,23 @@ function App() {
               </>
             } 
           />
+          <Route 
+            path="/hotel-in-kanha/:slug" 
+            element={
+              <>
+                <Helmet>
+                  <link
+                    rel="preload"
+                    href="https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/Resort.jpg"
+                    as="image"
+                  />
+                </Helmet>
+                <HotelDetail />
+              </>
+            } 
+          />
+          
           <Route path="/pay-now" element={<PayNow />} />
-          {/* 404 route - always keep this last */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
