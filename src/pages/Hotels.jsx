@@ -171,7 +171,7 @@ function Hotels() {
           <div className="absolute inset-0 bg-emerald-900/30 backdrop-blur-lg rounded-3xl"></div>
 
           {/* Filter and Sort Section */}
-          <div className="relative mb-8 space-y-4">
+          <div className="relative mb-4 space-y-4 px-4 md:px-6 py-6 ">
             <div className="flex flex-wrap items-center justify-between gap-4 bg-emerald-900/50 py-4 px-4 rounded-xl">
               {/* Star Filter */}
               <div className="flex items-center gap-4">
@@ -236,7 +236,7 @@ function Hotels() {
           </div>
 
           {/* Hotels List */}
-          <div className="relative space-y-6 px-2">
+          <div className="relative space-y-4 px-4 md:px-6 pb-6 md:pb-6">
             {hotels.map((hotel, index) => (
               <div
                 key={index}
