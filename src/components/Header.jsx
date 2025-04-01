@@ -20,6 +20,7 @@ function Header() {
     { name: "Tour Packages", icon: Compass, path: "/tour-packages" },
     { name: "Hotel in Kanha", icon: Hotel, path: "/hotel-in-kanha" },
     { name: "Pay Now", icon: CreditCard, path: "/pay-now" },
+    { name: "Contact Us", icon: CreditCard, path: "/contact-us" },
   ];
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

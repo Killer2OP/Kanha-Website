@@ -10,7 +10,11 @@ function App() {
     const checkScreenSize = () => {
       const isLarge = window.innerWidth > 768;
       setIsLargeScreen(isLarge);
-      setVideoSrc(isLarge ? "https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/KanhaBg.mp4" : "https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/KanhaBg.mp4"); // Ensure correct path and case
+      setVideoSrc(
+        isLarge
+          ? "https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/KanhaBg.mp4"
+          : "https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/KanhaBg.mp4"
+      ); // Ensure correct path and case
     };
 
     checkScreenSize();
@@ -47,9 +51,8 @@ function App() {
       <main className="relative z-10 flex flex-col items-center justify-center w-full h-full text-center px-4 sm:px-8 md:px-12">
         <img
           src="https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/Kanha.png"
-          alt="Overlay"
-          width="500" // Replace with actual width
-          height="500" // Replace with actual height
+          width="400px" // Replace with actual width
+          height="auto" // Replace with actual height
           className="w-48 sm:w-64 md:w-80 lg:w-96 xl:w-[500px] mx-auto object-contain"
         />
         <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-jungle text-white tracking-widest">
