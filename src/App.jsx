@@ -10,6 +10,11 @@ import Hotels from "./pages/Hotels";
 import HotelDetail from "./pages/HotelDetail";
 import PayNow from "./pages/PayNow";
 import Contact from "./container/main/contact-us/Contact";
+import ProtectedRoute from "./pages/Admin/components/ProtectedRoute";
+
+// Admin Panel Routes
+import AdminLogin from "./pages/Admin/AdminLogin";
+import AdminDashboard from "./pages/Admin/AdminDashboard";
 
 // ScrollToTop component to scroll to top on route change
 function ScrollToTop() {
@@ -124,6 +129,17 @@ function App() {
           <Route path="/tour/:tourId" element={<TourDetail />} />
           <Route path="/pay-now" element={<PayNow />} />
           <Route path="/contact-us" element={<Contact />} />
+          
+          {/* Admin Routes */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route 
+            path="/admin/dashboard" 
+            element={
+              <ProtectedRoute>
+                <AdminDashboard />
+              </ProtectedRoute>
+            } 
+          />
           {/* 404 route - always keep this last */}
           <Route path="*" element={<NotFound />} />
         </Routes>

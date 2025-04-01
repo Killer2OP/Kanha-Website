@@ -138,7 +138,7 @@ function HotelDetail() {
     // In a real app, this would proceed to payment
     setTimeout(() => {
       alert(`Booking confirmed for ${hotel.name}!\nCheck-in: ${checkInDate}\nCheck-out: ${checkOutDate}\nGuests: ${guests}`);
-      navigate('/hotels');
+      navigate('hotel-in-kanha');
     }, 1000);
   };
   

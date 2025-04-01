@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { ArrowLeft, Calendar, Car, Check } from "lucide-react";
+import { ArrowLeft, Calendar, Car, Check, Users, Phone, Mail } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import tourPackages from "../data/tourPackages";
@@ -10,6 +10,16 @@ function TourDetail() {
   const navigate = useNavigate();
   const [tour, setTour] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [showBookingForm, setShowBookingForm] = useState(false);
+  const [bookingData, setBookingData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    guests: 1,
+    date: "",
+    specialRequests: "",
+  });
+  const [bookingSuccess, setBookingSuccess] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,6 +33,39 @@ function TourDetail() {
     
     setLoading(false);
   }, [tourId]);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setBookingData({
+      ...bookingData,
+      [name]: value,
+    });
+  };
+
+  const handleBookingSubmit = (e) => {
+    e.preventDefault();
+    
+    // In a real app, this would send the booking data to a backend
+    console.log("Booking submitted:", {
+      tour: tour.title,
+      tourId: tour.id,
+      ...bookingData,
+    });
+    
+    // Show success message
+    setBookingSuccess(true);
+    setShowBookingForm(false);
+    
+    // Reset form
+    setBookingData({
+      name: "",
+      email: "",
+      phone: "",
+      guests: 1,
+      date: "",
+      specialRequests: "",
+    });
+  };
 
   if (loading) {
     return (
@@ -140,12 +183,150 @@ function TourDetail() {
             </div>
 
             <div className="flex justify-center">
-              <button className="px-8 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-colors font-semibold text-lg">
+              <button 
+                onClick={() => setShowBookingForm(true)}
+                className="px-8 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-colors font-semibold text-lg"
+              >
                 Book This Tour Now
               </button>
             </div>
           </div>
         </div>
+        
+        {/* Booking Success Message */}
+        {bookingSuccess && (
+          <div className="mt-8 bg-green-800/30 backdrop-blur-lg border border-green-500/20 rounded-xl p-6 text-center">
+            <h3 className="text-2xl font-semibold text-white mb-2">Booking Request Received!</h3>
+            <p className="text-green-300 mb-4">
+              Thank you for booking with us. We will contact you shortly to confirm your tour details.
+            </p>
+            <button
+              onClick={() => setBookingSuccess(false)}
+              className="px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors"
+            >
+              Close
+            </button>
+          </div>
+        )}
+        
+        {/* Booking Form Modal */}
+        {showBookingForm && (
+          <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+            <div className="bg-emerald-800/90 border border-emerald-500/20 rounded-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+              <div className="p-6">
+                <div className="flex justify-between items-center mb-6">
+                  <h3 className="text-2xl font-semibold text-white">
+                    Book Your Tour
+                  </h3>
+                  <button
+                    onClick={() => setShowBookingForm(false)}
+                    className="text-emerald-300 hover:text-white transition-colors"
+                  >
+                    &times;
+                  </button>
+                </div>
+                
+                <form onSubmit={handleBookingSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-emerald-300 mb-2">Full Name</label>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          name="name"
+                          value={bookingData.name}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full p-3 bg-emerald-900/50 border border-emerald-500/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                          placeholder="Your full name"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label className="block text-emerald-300 mb-2">Email Address</label>
+                      <div className="relative">
+                        <input
+                          type="email"
+                          name="email"
+                          value={bookingData.email}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full p-3 bg-emerald-900/50 border border-emerald-500/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                          placeholder="Your email address"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label className="block text-emerald-300 mb-2">Phone Number</label>
+                      <div className="relative">
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={bookingData.phone}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full p-3 bg-emerald-900/50 border border-emerald-500/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                          placeholder="Your phone number"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label className="block text-emerald-300 mb-2">Number of Guests</label>
+                      <div className="relative">
+                        <input
+                          type="number"
+                          name="guests"
+                          value={bookingData.guests}
+                          onChange={handleInputChange}
+                          min="1"
+                          required
+                          className="w-full p-3 bg-emerald-900/50 border border-emerald-500/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label className="block text-emerald-300 mb-2">Preferred Date</label>
+                      <div className="relative">
+                        <input
+                          type="date"
+                          name="date"
+                          value={bookingData.date}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full p-3 bg-emerald-900/50 border border-emerald-500/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-emerald-300 mb-2">Special Requests (Optional)</label>
+                    <textarea
+                      name="specialRequests"
+                      value={bookingData.specialRequests}
+                      onChange={handleInputChange}
+                      className="w-full h-32 p-3 bg-emerald-900/50 border border-emerald-500/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                      placeholder="Any special requests or requirements..."
+                    ></textarea>
+                  </div>
+                  
+                  <div className="pt-4">
+                    <button
+                      type="submit"
+                      className="w-full px-8 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-colors font-semibold text-lg"
+                    >
+                      Submit Booking Request
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       <Footer />
