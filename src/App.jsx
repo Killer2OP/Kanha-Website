@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import MapViewPage from "./pages/MapView";
 import OnlineSafariBooking from "./pages/OnlineSafariBooking";
 import Tours from "./pages/Tours";
+import TourDetail from "./pages/TourDetail";
 import Hotels from "./pages/Hotels";
 import HotelDetail from "./pages/HotelDetail";
 import PayNow from "./pages/PayNow";
@@ -120,7 +121,7 @@ function App() {
               </>
             }
           />
-
+          <Route path="/tour/:tourId" element={<TourDetail />} />
           <Route path="/pay-now" element={<PayNow />} />
           <Route path="/contact-us" element={<Contact />} />
           {/* 404 route - always keep this last */}

@@ -565,7 +565,7 @@ export const allHotels = [
         location: "Kareli",
         address: "13.4 km drive to Mukki gate, Kanha National Park",
         price: "₹12,915",
-        image: "https://r1imghtlak.mmtcdn.com/3a1c8f6c548811ea9d1d0242ac110002.jpg",
+        image: "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202402131141503685-f2e81a5a-d4fb-4a4a-b109-2adc42eda770.jpg",
         amenities: [
           "Swimming Pool",
           "Restaurant",
@@ -575,11 +575,12 @@ export const allHotels = [
         featured: true,
         description: "An idyllic escape for wildlife enthusiasts, the property features spacious, tasteful cottages and all-day dining. Enjoy a luxurious stay with complimentary breakfast and lunch or dinner included in your package.",
         images: [
-          "https://r1imghtlak.mmtcdn.com/3a1c8f6c548811ea9d1d0242ac110002.jpg",
-          "https://r1imghtlak.mmtcdn.com/b29778ccb6d211ea861e0242ac11000d.jpg",
-          "https://r1imghtlak.mmtcdn.com/ab136174b6d211eab61f0242ac11001e.jpg",
-          "https://r1imghtlak.mmtcdn.com/f39ebae4b62511eb8a620242ac110005.jfif",
-          "https://r1imghtlak.mmtcdn.com/475cf98a548811ea9d1d0242ac110002.jpg"
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202402131141503685-f2e81a5a-d4fb-4a4a-b109-2adc42eda770.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202402131141503685-8f66cd5f-efe4-4cdb-bbb0-3fb410bfabe0.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202402131141503685-2ba5fb50-f8aa-4969-898b-a221f50aa8e3.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202402131141503685-d270bea1-43cd-4578-98bc-381bb946cd3e.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202402131141503685-f9690aec-cb7c-4f5d-b247-0072fc7a2be0.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202402131141503685-ecde8dac-c90a-4ea2-90cd-b1622e78176d.jpg"
         ],
         bedrooms: 1,
         beds: 2,
@@ -664,6 +665,529 @@ export const allHotels = [
           "Late Check-Out",
           "Complimentary Hi-Tea",
           "Trekking & Nature Walk"
+        ]
+      },
+      {
+        id: 11,
+        name: "Tathastu Kanha",
+        slug: "tathastu-kanha",
+        rating: 4.3,
+        stars: 4,
+        reviews: 42,
+        location: "Gudma",
+        address: "9.3 km drive to Mukki gate, Kanha National Park",
+        price: "₹11,985",
+        image: "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201805301341003881-d06433a497a311e8a02302f436bd30f4.jpg",
+        amenities: [
+          "Spa",
+          "Swimming Pool",
+          "Restaurant",
+          "Bonfire",
+        ],
+        featured: true,
+        description: "Unwind among the tranquil serenity of the sal and bamboo forests in all their glory at Tathastu Kanha, close to the Kanha National Park - the renowned tiger reserve. Enjoy luxury cottages with garden views and excellent dining options.",
+        images: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201805301341003881-d06433a497a311e8a02302f436bd30f4.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/201805301341003881-28-14259630fad911ed8e110a58a9feac02.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201805301341003881-33fdce90fada11edb6b40a58a9feac02.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201805301341003881-789dcf2efad911ed944c0a58a9feac02.jpg",
+          "https://r1imghtlak.mmtcdn.com/931d55f4522611eabce30242ac110004.jpg"
+        ],
+        bedrooms: 1,
+        beds: 2,
+        bathrooms: 1,
+        guests: 2,
+        features: [
+          {
+            title: "Luxury Cottages",
+            description: "Comfortable 400 sq.ft (37 sq.mt) cottages with garden views and double beds."
+          },
+          {
+            title: "Yurts",
+            description: "Unique 225 sq.ft (21 sq.mt) accommodations with jungle views and king beds."
+          },
+          {
+            title: "Luxury Family Room",
+            description: "Spacious 510 sq.ft (47 sq.mt) rooms with garden views, double beds and bathtub."
+          }
+        ],
+        roomTypes: [
+          {
+            name: "Luxury Cottages",
+            size: "400 sq.ft (37 sq.mt)",
+            bedType: "Double Bed",
+            price: "₹11,985",
+            amenities: [
+              "Garden View",
+              "Wi-Fi",
+              "Air Conditioning",
+              "Daily Housekeeping",
+              "Room Service",
+              "Mineral Water",
+              "Laundry Service"
+            ]
+          },
+          {
+            name: "Yurts",
+            size: "225 sq.ft (21 sq.mt)",
+            bedType: "King Bed",
+            price: "₹12,914",
+            amenities: [
+              "Jungle View",
+              "Study Room",
+              "Wi-Fi",
+              "Mineral Water",
+              "Air Conditioning",
+              "Room Service",
+              "Daily Housekeeping"
+            ]
+          },
+          {
+            name: "Luxury Family Room",
+            size: "510 sq.ft (47 sq.mt)",
+            bedType: "Double Bed",
+            price: "₹18,630",
+            amenities: [
+              "Garden View",
+              "Bathtub",
+              "Wi-Fi",
+              "Air Conditioning",
+              "Daily Housekeeping",
+              "Room Service",
+              "Mineral Water",
+              "Laundry Service"
+            ]
+          }
+        ],
+        fullAmenities: [
+          "Garden view",
+          "Jungle view",
+          "Bathtub",
+          "Wi-Fi",
+          "Free parking on premises",
+          "TV",
+          "Swimming Pool",
+          "Air conditioning",
+          "Restaurant",
+          "Room service",
+          "Spa",
+          "Bonfire",
+          "Fireplace",
+          "Indoor Games",
+          "Daily Housekeeping",
+          "Mineral Water",
+          "Laundry Service",
+          "Study Room",
+          "Food and Dining",
+          "10% off on Food & Beverage services",
+          "15% Discount On Meal Upgrade",
+          "Free Breakfast",
+          "Free Lunch Or Dinner",
+          "Free Trekking & Nature Walk",
+          "Complimentary Welcome Drink on arrival",
+          "Complimentary Hi-Tea"
+        ]
+      },
+      {
+        id: 12,
+        name: "The Celebration Van Villas",
+        slug: "celebration-van-villas",
+        rating: 3.8,
+        stars: 4,
+        reviews: 28,
+        location: "Mocha",
+        address: "4.8 km drive to Khatia gate, Kanha National Park",
+        price: "₹9,660",
+        image: "https://r1imghtlak.mmtcdn.com/850390866ed111e78bf60a4cef95d023.jpg",
+        amenities: [
+          "Swimming Pool",
+          "Restaurant",
+          "Bonfire",
+          "Lounge"
+        ],
+        featured: false,
+        description: "Set amongst nature, the resort allows you to experience flora and fauna at their best. While the team greets you with the best hospitality, this wildlife resort makes your trip the memorable one indeed.",
+        images: [
+          "https://r1imghtlak.mmtcdn.com/850390866ed111e78bf60a4cef95d023.jpg",
+          "https://r1imghtlak.mmtcdn.com/faf996e8260411ec8bc10a58a9feac02.jpeg",
+          "https://r1imghtlak.mmtcdn.com/4a4ba602480b11e5aef65ee5da2daa2a.jfif",
+          "https://r1imghtlak.mmtcdn.com/6f0b0b8c6ed211e78f69025f77df004f.jpg",
+          "https://r1imghtlak.mmtcdn.com/6451ac18260311ec85c20a58a9feac02.jpeg"
+        ],
+        bedrooms: 1,
+        beds: 1,
+        bathrooms: 1,
+        guests: 2,
+        features: [
+          {
+            title: "Deluxe Room",
+            description: "Cozy 220 sq.ft (20 sq.mt) room with king bed and modern amenities."
+          },
+          {
+            title: "Suite Room",
+            description: "Spacious 330 sq.ft (31 sq.mt) suite with jungle view and king bed."
+          },
+          {
+            title: "All-inclusive meals",
+            description: "Enjoy complimentary breakfast, lunch, and dinner during your stay."
+          }
+        ],
+        roomTypes: [
+          {
+            name: "Deluxe Room",
+            size: "220 sq.ft (20 sq.mt)",
+            bedType: "King Bed",
+            price: "₹9,660",
+            amenities: [
+              "Heater",
+              "Air Conditioning",
+              "Iron/Ironing Board",
+              "Smoking Room",
+              "Daily Housekeeping",
+              "Bathroom"
+            ]
+          },
+          {
+            name: "Suite Room",
+            size: "330 sq.ft (31 sq.mt)",
+            bedType: "King Bed",
+            price: "₹11,054",
+            amenities: [
+              "Jungle View",
+              "Heater",
+              "Mineral Water - additional charge",
+              "Iron/Ironing Board",
+              "Daily Housekeeping",
+              "Bathroom",
+              "In-room Dining"
+            ]
+          }
+        ],
+        fullAmenities: [
+          "Jungle view",
+          "Heater",
+          "Air Conditioning",
+          "Iron/Ironing Board",
+          "Smoking Room",
+          "Daily Housekeeping",
+          "Bathroom",
+          "In-room Dining",
+          "Swimming Pool",
+          "Restaurant",
+          "Indoor Games",
+          "Bonfire",
+          "Fireplace",
+          "Kids Play Area",
+          "Lounge",
+          "Complimentary Breakfast",
+          "Complimentary Lunch",
+          "Complimentary Dinner",
+          "Non-Refundable",
+          "Location & Surroundings",
+          "Property Highlights"
+        ]
+      },
+      {
+        id: 13,
+        name: "Sterling Kanha",
+        slug: "sterling-kanha",
+        rating: 4.0,
+        stars: 4,
+        reviews: 767,
+        location: "Mocha",
+        address: "5.7 km drive to Khatia gate, Kanha National Park",
+        price: "₹6,460",
+        image: "https://r1imghtlak.mmtcdn.com/f27ff7a0f5e811e785a20224510f5e5b.jpg",
+        amenities: [
+          "Swimming Pool",
+          "Restaurant",
+          "Jungle Safari",
+          "Fireplace"
+        ],
+        featured: true,
+        description: "Embrace nature in this 8.5-acre retreat, boasting a natural pool, encircled by majestic Sal trees for an unforgettable holiday. Enjoy special last minute deals and a variety of room options with all-inclusive meal packages.",
+        images: [
+          "https://r1imghtlak.mmtcdn.com/f27ff7a0f5e811e785a20224510f5e5b.jpg",
+          "https://r1imghtlak.mmtcdn.com/435a5360f5e811e7b99802155a238f12.jpg",
+          "https://r1imghtlak.mmtcdn.com/8f5c2f18f5e811e7ba030a209fbd0127.jpg",
+          "https://r1imghtlak.mmtcdn.com/de66dcf2f5e811e7b5640a604e3b7738.jpg",
+          "https://r1imghtlak.mmtcdn.com/516ac822f5e811e79dcd0a9df65c8753.jpg"
+        ],
+        bedrooms: 1,
+        beds: 1,
+        bathrooms: 1,
+        guests: 2,
+        features: [
+          {
+            title: "Natural setting",
+            description: "Set in an 8.5-acre retreat surrounded by majestic Sal trees and natural beauty."
+          },
+          {
+            title: "Last minute deals",
+            description: "Special discounts available for last-minute bookings, subject to availability."
+          },
+          {
+            title: "All-inclusive options",
+            description: "Choose from various meal packages including breakfast, lunch, and dinner."
+          }
+        ],
+        roomTypes: [
+          {
+            name: "Classic tent with sitout",
+            size: "300 sq.ft (28 sq.mt)",
+            bedType: "King Bed",
+            price: "₹6,460",
+            amenities: [
+              "Mineral Water",
+              "Air Conditioning",
+              "Room Service",
+              "Bathroom",
+              "Daily Housekeeping",
+              "Laundry Service"
+            ]
+          },
+          {
+            name: "Premier Room",
+            size: "450 sq.ft (42 sq.mt)",
+            bedType: "1 King bed or 2 Twin Bed(s)",
+            price: "₹6,935",
+            amenities: [
+              "Wi-Fi",
+              "Room Service",
+              "Daily Housekeeping",
+              "Laundry Service",
+              "Bathroom",
+              "Air Conditioning"
+            ]
+          },
+          {
+            name: "Privilege Suite",
+            size: "615 sq.ft (57 sq.mt)",
+            bedType: "King Bed",
+            price: "₹7,410",
+            amenities: [
+              "Forest View",
+              "Wi-Fi",
+              "Air Conditioning",
+              "Room Service",
+              "Housekeeping",
+              "Mineral Water",
+              "Bathroom"
+            ]
+          }
+        ],
+        fullAmenities: [
+          "Forest view",
+          "Wi-Fi",
+          "Air Conditioning",
+          "Room Service",
+          "Bathroom",
+          "Daily Housekeeping",
+          "Laundry Service",
+          "Mineral Water",
+          "Swimming Pool",
+          "Restaurant",
+          "Indoor Games",
+          "Jungle Safari",
+          "Fireplace",
+          "Breakfast included",
+          "Lunch Or Dinner included",
+          "Non-Refundable",
+          "Food and Dining",
+          "Location & Surroundings",
+          "Complimentary Hi-Tea",
+          "Complimentary INR 500 Hotel Voucher redeemable on Food & Beverages",
+          "Signature Activities & Experiences",
+          "Free Breakfast",
+          "Free Lunch Or Dinner",
+          "Free Trekking & Nature Walk",
+          "Last Minute Deal"
+        ]
+      },
+      {
+        id: 14,
+        name: "Surwahi Social Ecoestate Kanha Homestay",
+        slug: "surwahi-social-ecoestate-kanha-homestay",
+        rating: 4.8,
+        stars: 4,
+        reviews: 11,
+        location: "Baihar",
+        address: "29.4 km drive to Mukki gate, Kanha National Park",
+        price: "₹4,713",
+        image: "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202101051735207916-c76e759d-7736-4c54-898f-4458541d8f65.jpg",
+        amenities: [
+          "Shared Swimming Pool",
+          "Shared Kitchen",
+          "Barbeque",
+          "Bonfire"
+        ],
+        featured: false,
+        description: "Rooms in a homestay offering a kitchen, jungle safaris, Wi-Fi & parking. Private access to a Bedroom & Bathroom, shared access to Living room, Kitchen & other common spaces with fellow guests.",
+        images: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202101051735207916-c76e759d-7736-4c54-898f-4458541d8f65.jpg",
+          "https://r1imghtlak.mmtcdn.com/49e2fca6-9083-43ba-9ba9-969be9cb9816.jpeg",
+          "https://r1imghtlak.mmtcdn.com/8f5c2f18f5e811e7ba030a209fbd0127.jpg",
+          "https://r1imghtlak.mmtcdn.com/a5fee6a5-1a38-4427-a48a-735646ba5b73.JPG",
+          "https://r1imghtlak.mmtcdn.com/1279e153-7c77-44ca-9042-b7b79fc46796.jpg"
+        ],
+        bedrooms: 1,
+        beds: 1,
+        bathrooms: 1,
+        guests: 2,
+        features: [
+          {
+            title: "Homestay experience",
+            description: "Enjoy a more authentic stay with private bedroom and bathroom but shared common areas."
+          },
+          {
+            title: "Family Suite with Air Cooler",
+            description: "Spacious 600 sq.ft (56 sq.mt) room with garden view and king bed."
+          },
+          {
+            title: "Flexible meal options",
+            description: "Choose from breakfast-only or all-inclusive packages with lunch and dinner."
+          }
+        ],
+        roomTypes: [
+          {
+            name: "Family Suite with Air Cooler",
+            size: "600 sq.ft (56 sq.mt)",
+            bedType: "King Bed",
+            price: "₹4,713",
+            amenities: [
+              "Garden View",
+              "Heater",
+              "Daily Housekeeping",
+              "Iron/Ironing Board",
+              "Laundry Service",
+              "Wi-Fi",
+              "Bathroom"
+            ]
+          }
+        ],
+        fullAmenities: [
+          "Garden view",
+          "Heater",
+          "Daily Housekeeping",
+          "Iron/Ironing Board",
+          "Laundry Service",
+          "Wi-Fi",
+          "Bathroom",
+          "Shared Swimming Pool",
+          "Shared Kitchen",
+          "Shared Living Room",
+          "Pool/Beach towels",
+          "Barbeque",
+          "Bonfire",
+          "Caretaker",
+          "Indoor Games",
+          "Fireplace",
+          "Shared Parking",
+          "Free Breakfast",
+          "Free Lunch Or Dinner",
+          "Non-Refundable",
+          "Can accommodate 3 more guests at extra cost"
+        ]
+      },
+      {
+        id: 15,
+        name: "MPT Jungle Resort Sarhi, Kanha",
+        slug: "mpt-jungle-resort-sarhi-kanha",
+        rating: 4.5,
+        stars: 3,
+        reviews: 300,
+        location: "Bichhiya",
+        address: "About a minute walk to Sarhi Gate, Kanha National Park",
+        price: "₹3,870",
+        image: "https://r1imghtlak.mmtcdn.com/6bb56f280e8a11e989940242ac110002.jpg",
+        amenities: [
+          "Swimming Pool",
+          "Gym",
+          "Restaurant",
+          "Lounge",
+        ],
+        featured: true,
+        description: "Nestled in the lap of green highlands, a mystic mountain view resort, luxuriously designed rooms, a jungle safari, and a host of other amenities.",
+        images: [
+          "https://r1imghtlak.mmtcdn.com/6bb56f280e8a11e989940242ac110002.jpg",
+          "https://r1imghtlak.mmtcdn.com/d0cb863c0e8911e9868a0242ac110002.jpg",
+          "https://r1imghtlak.mmtcdn.com/06f2971af23c11e8b4a60242ac110002.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201811271754095462-83119d4420db11eba9280242ac110002.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201811271754095462-24588df201a511ecab6e0a58a9feac02.jpg"
+        ],
+        bedrooms: 1,
+        beds: 1,
+        bathrooms: 1,
+        guests: 2,
+        features: [
+          {
+            title: "Mountain view setting",
+            description: "Enjoy the beautiful views of green highlands and mystic mountains from your room."
+          },
+          {
+            title: "All-inclusive meals",
+            description: "Free breakfast, lunch, and dinner included with your stay."
+          },
+          {
+            title: "Excellent location",
+            description: "Just a minute's walk to Sarhi Gate entrance of Kanha National Park."
+          }
+        ],
+        roomTypes: [
+          {
+            name: "AC Dlx",
+            size: "1938 sq.ft (180 sq.mt)",
+            bedType: "Double Bed",
+            price: "₹3,870",
+            amenities: [
+              "Valley View",
+              "Air Conditioning",
+              "Housekeeping",
+              "Bathroom",
+              "Room Service",
+              "Air Purifier",
+              "Mineral Water - additional charge"
+            ]
+          },
+          {
+            name: "Super Deluxe Room",
+            size: "2150 sq.ft (200 sq.mt)",
+            bedType: "Double Bed",
+            price: "₹4,174",
+            amenities: [
+              "Jungle View",
+              "Mineral Water",
+              "Bathroom",
+              "Air Conditioning",
+              "Housekeeping",
+              "Room Service",
+              "Iron/Ironing Board"
+            ]
+          }
+        ],
+        fullAmenities: [
+          "Valley view",
+          "Jungle view",
+          "Air Conditioning",
+          "Housekeeping",
+          "Bathroom",
+          "Room Service",
+          "Air Purifier",
+          "Mineral Water",
+          "Iron/Ironing Board",
+          "Swimming Pool",
+          "Gym",
+          "Restaurant",
+          "Indoor Games",
+          "Lounge",
+          "Yoga",
+          "Free Breakfast",
+          "Free Lunch",
+          "Free Dinner",
+          "Non-Refundable",
+          "Bank of Baroda Credit Card NoCost EMI Paymode Offer",
+          "Property Highlights",
+          "Location & Surroundings"
         ]
       }
     ];
