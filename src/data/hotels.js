@@ -363,5 +363,307 @@ export const allHotels = [
         "Laundry service",
         "Security cameras on property"
       ]
-    }
-  ];
+    },
+    {
+      id: 7,
+      name: "Banjaar Tola, A Taj Safari",
+      slug: "banjaar-tola-taj-safari",
+      rating: 4.5,
+      stars: 5,
+      reviews: 44,
+      location: "Manjitola",
+      address: "2.6 km drive to Mukki gate, Kanha National Park",
+      price: "₹35,000",
+      image: "https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/bgdefault_bg.jpg",
+      amenities: [
+        "Bed and Breakfast",
+        "Non-Refundable",
+        "Spa",
+        "Swimming Pool"
+      ],
+      featured: true,
+      description: "Luxury Lodge along Banjaar River in 90-acre Sal Forest. Located on the banks of the Banjaar River, Banjaar Tola is a safari lodge with tented camps, massage decks and a pool, offering a premium wildlife experience in the heart of Kanha National Park.",
+      images: [
+        "https://example.com/banjaar-tola-main.jpg",
+        "https://example.com/banjaar-tola-room.jpg",
+        "https://example.com/banjaar-tola-dining.jpg",
+        "https://example.com/banjaar-tola-exterior.jpg",
+        "https://example.com/banjaar-tola-pool.jpg"
+      ],
+      bedrooms: 1,
+      beds: 1,
+      bathrooms: 1,
+      guests: 2,
+      features: [
+        {
+          title: "Luxury tented experience",
+          description: "Tented Suite King Bed with 850 sq.ft (79 sq.mt) of space and river views."
+        },
+        {
+          title: "Private outdoor space",
+          description: "Luxury tents with a private sit-out area overlooking the serene river."
+        },
+        {
+          title: "All-inclusive options",
+          description: "Choose between bed & breakfast or all-inclusive meal plans."
+        }
+      ],
+      fullAmenities: [
+        "River view",
+        "Wi-Fi",
+        "Mineral Water",
+        "Heater",
+        "Air Conditioning",
+        "24-hour In-room Dining",
+        "Daily Housekeeping",
+        "Spa",
+        "Swimming Pool",
+        "Restaurant",
+        "Bonfire",
+        "Jungle Safari",
+        "Butler Services",
+        "24-hour Room Service",
+        "Lounge",
+        "Bar"
+      ]
+    },
+    {
+      id: 8,
+      name: "The Riverwood Forest Retreat Kanha",
+      slug: "riverwood-forest-retreat-kanha",
+      rating: 4.4,
+      stars: 5,
+      reviews: 5,
+      location: "Baihar",
+      address: "23.4 km drive to Mukki gate, Kanha National Park",
+      price: "₹11,763",
+      image: "https://r1imghtlak.mmtcdn.com/4bbc9b36e98911edbad00a58a9feac02.jpg",
+      amenities: [
+        "Spa",
+        "Swimming Pool",
+        "Restaurant",
+        "Bar"
+      ],
+      featured: true,
+      description: "Situated in the heart of Kanha, a national park and tiger reserve in Madhya Pradesh, the Riverwood Forest Retreat is a modern and luxurious property offering premium wilderness cottages with garden views and excellent amenities.",
+      images: [
+        "https://r1imghtlak.mmtcdn.com/4bbc9b36e98911edbad00a58a9feac02.jpg",
+        "https://r1imghtlak.mmtcdn.com/781a7cd4e98911edb5070a58a9feac02.jpg",
+        "https://r1imghtlak.mmtcdn.com/25da9616e98911edab8b0a58a9feac02.jpg",
+        "https://r1imghtlak.mmtcdn.com/04e2d54ae98911edbafa0a58a9feac02.jpg",
+        "https://r1imghtlak.mmtcdn.com/258dd664e98911edb7d10a58a9feac02.jpg"
+      ],
+      bedrooms: 1,
+      beds: 2,
+      bathrooms: 1,
+      guests: 2,
+      features: [
+        {
+          title: "Premium wilderness experience",
+          description: "Enjoy 440 sq.ft (41 sq.mt) cottages with twin or double beds and garden views."
+        },
+        {
+          title: "Luxury amenities",
+          description: "Relax in the bathtub or jacuzzi after a day of safari adventures."
+        },
+        {
+          title: "Flexible booking options",
+          description: "Choose between room-only or breakfast-included packages."
+        }
+      ],
+      fullAmenities: [
+        "Garden view",
+        "Bathtub",
+        "Jacuzzi",
+        "Wifi",
+        "Free parking on premises",
+        "TV",
+        "Swimming Pool",
+        "Air conditioning",
+        "Restaurant",
+        "Room service",
+        "Bonfire",
+        "Jungle Safari",
+        "Kids Play Area",
+        "Lounge",
+        "Bar",
+        "Indoor Games",
+        "Spa"
+      ]
+      },
+      {
+        id: 9,
+        name: "Kanha Jungle Camp",
+        slug: "kanha-jungle-camp",
+        rating: 4.4,
+        stars: 5,
+        reviews: 74,
+        location: "Baihar",
+        address: "11.8 km drive to Mukki gate, Kanha National Park",
+        price: "₹9,884",
+        image: "https://r1imghtlak.mmtcdn.com/f07c87ba548811ea83c50242ac110002.jpg",
+        amenities: [
+          "Shared Swimming Pool",
+          "Caretaker",
+          "Housekeeping",
+          "Free Wi-Fi",
+        ],
+        featured: true,
+        description: "Pet-friendly stay offering a cook, lawn, library & fireplace. Unwind amidst nature at this property spread across 40 acres of reforested land, built using indigenous materials. The Ground Floor Luxury Cottage provides a perfect blend of comfort and wilderness experience.",
+        images: [
+          "https://r1imghtlak.mmtcdn.com/f07c87ba548811ea83c50242ac110002.jpg",
+          "https://r1imghtlak.mmtcdn.com/b29778ccb6d211ea861e0242ac11000d.jpg",
+          "https://r1imghtlak.mmtcdn.com/ab136174b6d211eab61f0242ac11001e.jpg",
+          "https://r1imghtlak.mmtcdn.com/f39ebae4b62511eb8a620242ac110005.jfif",
+          "https://r1imghtlak.mmtcdn.com/475cf98a548811ea9d1d0242ac110002.jpg"
+        ],
+        bedrooms: 1,
+        beds: 1,
+        bathrooms: 1,
+        guests: 2,
+        features: [
+          {
+            title: "Ground Floor Luxury Cottage",
+            description: "Spacious 594 sq.ft (55 sq.mt) cottage with forest view and king bed."
+          },
+          {
+            title: "Pet-friendly accommodation",
+            description: "One of the few properties in Kanha that welcomes your furry friends."
+          },
+          {
+            title: "Multiple dining options",
+            description: "Choose from breakfast-only or all-inclusive meal plans with lunch and dinner."
+          }
+        ],
+        fullAmenities: [
+          "Forest view",
+          "Balcony",
+          "Shared Swimming Pool",
+          "Caretaker",
+          "Housekeeping",
+          "Free Wi-Fi",
+          "Spa",
+          "Restaurant",
+          "Cafe",
+          "Bonfire",
+          "Barbeque",
+          "Shared Living Room",
+          "Pet-friendly",
+          "Library",
+          "Fireplace",
+          "Cook",
+          "Lawn"
+        ]
+      },
+      {
+        id: 10,
+        name: "Lemon Tree Wildlife Resort Kanha",
+        slug: "lemon-tree-wildlife-resort-kanha",
+        rating: 4.3,
+        stars: 3,
+        reviews: 7,
+        location: "Kareli",
+        address: "13.4 km drive to Mukki gate, Kanha National Park",
+        price: "₹12,915",
+        image: "https://r1imghtlak.mmtcdn.com/3a1c8f6c548811ea9d1d0242ac110002.jpg",
+        amenities: [
+          "Swimming Pool",
+          "Restaurant",
+          "Bonfire",
+          "Fireplace",
+        ],
+        featured: true,
+        description: "An idyllic escape for wildlife enthusiasts, the property features spacious, tasteful cottages and all-day dining. Enjoy a luxurious stay with complimentary breakfast and lunch or dinner included in your package.",
+        images: [
+          "https://r1imghtlak.mmtcdn.com/3a1c8f6c548811ea9d1d0242ac110002.jpg",
+          "https://r1imghtlak.mmtcdn.com/b29778ccb6d211ea861e0242ac11000d.jpg",
+          "https://r1imghtlak.mmtcdn.com/ab136174b6d211eab61f0242ac11001e.jpg",
+          "https://r1imghtlak.mmtcdn.com/f39ebae4b62511eb8a620242ac110005.jfif",
+          "https://r1imghtlak.mmtcdn.com/475cf98a548811ea9d1d0242ac110002.jpg"
+        ],
+        bedrooms: 1,
+        beds: 2,
+        bathrooms: 1,
+        guests: 2,
+        features: [
+          {
+            title: "Superior Twin Jungle Cottage",
+            description: "Comfortable 484 sq.ft (45 sq.mt) cottage with twin beds and modern amenities."
+          },
+          {
+            title: "Superior King Jungle Cottage",
+            description: "Spacious 484 sq.ft (45 sq.mt) cottage with king bed and premium furnishings."
+          },
+          {
+            title: "Deluxe King Pool Villa",
+            description: "Luxurious 947 sq.ft (88 sq.mt) villa with king bed and private swimming pool view."
+          }
+        ],
+        roomTypes: [
+          {
+            name: "Superior Twin Jungle Cottage",
+            size: "484 sq.ft (45 sq.mt)",
+            bedType: "Twin Bed",
+            price: "₹12,915",
+            amenities: [
+              "Mineral Water",
+              "Housekeeping",
+              "Wi-Fi",
+              "Air Conditioning",
+              "Iron/Ironing Board",
+              "Bathroom"
+            ]
+          },
+          {
+            name: "Superior King Jungle Cottage",
+            size: "484 sq.ft (45 sq.mt)",
+            bedType: "King Bed",
+            price: "₹12,915",
+            amenities: [
+              "Mineral Water",
+              "Iron/Ironing Board",
+              "Bathroom",
+              "Air Conditioning",
+              "Wi-Fi",
+              "Room Service"
+            ]
+          },
+          {
+            name: "Deluxe King Pool Villa",
+            size: "947 sq.ft (88 sq.mt)",
+            bedType: "King Bed",
+            price: "₹25,930",
+            amenities: [
+              "Swimming Pool View",
+              "Mineral Water",
+              "Housekeeping",
+              "Wi-Fi",
+              "Air Conditioning",
+              "Iron/Ironing Board",
+              "Bathroom"
+            ]
+          }
+        ],
+        fullAmenities: [
+          "Forest view",
+          "Swimming Pool",
+          "Restaurant",
+          "Bonfire",
+          "Fireplace",
+          "Jungle Safari",
+          "Lounge",
+          "Yoga",
+          "Mineral Water",
+          "Housekeeping",
+          "Wi-Fi",
+          "Air Conditioning",
+          "Iron/Ironing Board",
+          "Bathroom",
+          "Room Service",
+          "Early Check-In",
+          "Late Check-Out",
+          "Complimentary Hi-Tea",
+          "Trekking & Nature Walk"
+        ]
+      }
+    ];
