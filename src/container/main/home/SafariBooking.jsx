@@ -111,7 +111,7 @@ function App() {
                         </div>
 
                         {/* Back - Booking Form */}
-                        <div className="absolute inset-0 bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-3 md:p-6 m-1 backface-hidden rotate-y-180">
+                        <div className="absolute inset-0 bg-black/30 backdrop-blur-xl h-[calc(100%-120px)] border border-white/10 rounded-xl p-3 md:p-6 m-1 backface-hidden rotate-y-180">
                             <div className="flex justify-between items-center mb-6 px-6">
                                 <h2 className="text-2xl font-bold text-white">Booking Details</h2>
                                 <button
@@ -124,7 +124,7 @@ function App() {
 
                             <form
                                 onSubmit={handleSubmit}
-                                className="space-y-6 md:space-y-8 px-4 md:px-6 h-[calc(100%-80px)] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-green-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300"
+                                className="space-y-6 md:space-y-8 px-4 md:px-6 h-[calc(100%-50px)] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-green-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300"
                             >
                                 <div className="text-white">
                                     <label className="block text-lg font-medium mb-2">Selected Date</label>

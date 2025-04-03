@@ -505,7 +505,7 @@ const ServiceCard = ({ title, images, features, icon: Icon, service, videoSrc })
         </div>
 
         {/* Back of card (booking form) */}
-        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 overflow-y-auto"
+        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-green-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300"
              style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}>
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center">
