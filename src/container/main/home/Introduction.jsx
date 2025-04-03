@@ -4,6 +4,7 @@ import IntroductionCard from "../../../components/IntroductionCard";
 import HotelBooking from "../../../components/HotelBookingCard";
 import { SafariBookingCard } from "../../../components/SafariBookingCard";
 import { TourPackages } from "../../../components/TourPackagesCard";
+import ServicesSection from "../../../components/ServicesSection";
 
 function App() {
 
@@ -30,6 +31,9 @@ function App() {
 
                 {/* Safari Booking Card */}
                 <SafariBookingCard/>
+                
+                {/* Services Section */}
+                <ServicesSection/>
 
                 {/* Tour Packages Card */}
                 <TourPackages/>

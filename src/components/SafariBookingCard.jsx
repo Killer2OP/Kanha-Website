@@ -4,7 +4,7 @@ import { Camera} from "lucide-react";
 import SafariBooking from "../container/main/home/SafariBooking";
 export const SafariBookingCard = () => {
     return (
-        <div className="relative rounded-3xl overflow-hidden pt-4 p-4 sm:p-10 lg:p-12 backdrop-blur-xl bg-green-900/20 border border-white/10 shadow-xl">
+        <div className="relative rounded-3xl overflow-hidden h-185 pt-4 p-4 sm:p-10 lg:p-12 backdrop-blur-xl bg-green-900/20 border border-white/10 shadow-xl">
             <div className="flex items-center mb-6 justify-center">
                 <div className="bg-emerald-600 p-3 rounded-lg mr-4">
                     <Camera className="h-6 w-6 text-white" />
