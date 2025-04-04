@@ -384,11 +384,11 @@ export const allHotels = [
       featured: true,
       description: "Luxury Lodge along Banjaar River in 90-acre Sal Forest. Located on the banks of the Banjaar River, Banjaar Tola is a safari lodge with tented camps, massage decks and a pool, offering a premium wildlife experience in the heart of Kanha National Park.",
       images: [
-        "https://example.com/banjaar-tola-main.jpg",
-        "https://example.com/banjaar-tola-room.jpg",
-        "https://example.com/banjaar-tola-dining.jpg",
-        "https://example.com/banjaar-tola-exterior.jpg",
-        "https://example.com/banjaar-tola-pool.jpg"
+        "https://cdn.sanity.io/images/ocl5w36p/prod3/37dfe6f8c7e666443899cad3641147b1b898eed2-7650x5121.jpg?w=768&auto=format&dpr=2",
+        "https://cdn.sanity.io/images/ocl5w36p/prod3/7869529a875d98ebf8647b282cc1bc27d5cf075c-4288x2848.jpg?w=768&auto=format&dpr=2",
+        "https://cdn.sanity.io/images/ocl5w36p/prod3/ae573cf9c34f225939f72f397ff178198fcd53a1-4288x2848.jpg?w=768&auto=format&dpr=2",
+        "https://cdn.sanity.io/images/ocl5w36p/prod3/83c0492b206f9f5bcdedce98bf2807345f84a2c9-5191x3070.jpg?w=768&auto=format&dpr=2",
+        "https://cdn.sanity.io/images/ocl5w36p/prod3/de2924c4ca5cfe329d93e646bc5bd65b91bc602a-6144x4081.jpg?w=768&auto=format&dpr=2"
       ],
       bedrooms: 1,
       beds: 1,
