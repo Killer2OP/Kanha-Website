@@ -4,17 +4,17 @@ import { Camera} from "lucide-react";
 import SafariBooking from "../container/main/home/SafariBooking";
 export const SafariBookingCard = () => {
     return (
-        <div className="relative rounded-3xl overflow-hidden h-185 pt-4 p-4 sm:p-10 lg:p-12 backdrop-blur-xl bg-green-900/20 border border-white/10 shadow-xl">
-            <div className="flex items-center mb-6 justify-center">
-                <div className="bg-emerald-600 p-3 rounded-lg mr-4">
-                    <Camera className="h-6 w-6 text-white" />
+        <div className="relative rounded-3xl overflow-hidden h-auto pt-3 p-3 sm:p-6 md:p-8 lg:p-12 backdrop-blur-xl bg-green-900/20 border border-white/10 shadow-xl">
+            <div className="flex flex-col sm:flex-row items-center mb-4 sm:mb-6 justify-center text-center sm:text-left">
+                <div className="bg-emerald-600 p-2 sm:p-3 rounded-lg mb-2 sm:mb-0 sm:mr-4">
+                    <Camera className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                 </div>
-                <h4 className="text-3xl sm:text-4xl font-semibold text-white drop-shadow-md">
+                <h4 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white drop-shadow-md">
                     Safari Booking
                 </h4>
             </div>
 
-            <p className="text-gray-200 text-lg leading-relaxed font-medium mb-8">
+            <p className="text-gray-200 text-base sm:text-lg leading-relaxed font-medium mb-4 sm:mb-8 text-center max-w-5xl mx-auto">
                 Embark on an exhilarating jeep safari across Kanha, Bandhavgarh, and Pench National Parks. 
                 Each park offers unique wildlife experiences with expert naturalists as your guides. 
                 Morning safaris provide prime wildlife sightings. Book online easily, with 
@@ -25,6 +25,5 @@ export const SafariBookingCard = () => {
             {/* Safari Booking Calendar */}
             <SafariBooking />
         </div>
-
     )
 }
