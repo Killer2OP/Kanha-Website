@@ -41,6 +41,7 @@ export const hotels = [
         description:
             "Premium comfort with pools and gourmet dining. Experience the wild in style with spacious rooms and modern amenities.",
         price: "From ₹12,000 per night",
+        park: "Kanha National Park",
         images: [
             "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
             "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
@@ -61,6 +62,7 @@ export const hotels = [
         description:
             "Sustainable stays blending with nature. Environmentally friendly accommodations with authentic local experiences.",
         price: "From ₹8,000 per night",
+        park: "Bandhavgarh National Park",
         images: [
             "https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
             "https://images.unsplash.com/photo-1587061949409-02df41d5e562?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
@@ -81,6 +83,7 @@ export const hotels = [
         description:
             "Authentic, close-to-nature experience. Historic accommodations within the forest for the true wilderness experience.",
         price: "From ₹5,000 per night",
+        park: "Pench National Park",
         images: [
             "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
             "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
@@ -104,6 +107,7 @@ export const fourStarHotels = [
         description:
             "Comfortable rooms with jungle views, guided nature walks, and authentic regional cuisine.",
         price: "From ₹7,500 per night",
+        park: "Kanha National Park",
         images: [
             "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
             "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
@@ -122,6 +126,7 @@ export const fourStarHotels = [
         description:
             "Spacious cottages with private balconies, swimming pool, and evening cultural programs.",
         price: "From ₹6,800 per night",
+        park: "Bandhavgarh National Park",
         images: [
             "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
             "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
@@ -140,6 +145,7 @@ export const fourStarHotels = [
         description:
             "Riverside location with scenic views, comfortable rooms, and outdoor dining experiences.",
         price: "From ₹6,500 per night",
+        park: "Pench National Park",
         images: [
             "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
             "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
@@ -161,6 +167,7 @@ export const threeStarHotels = [
         description:
             "Simple, clean accommodations with basic amenities and helpful staff for safari arrangements.",
         price: "From ₹3,500 per night",
+        park: "Kanha National Park",
         images: [
             "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
             "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
@@ -179,6 +186,7 @@ export const threeStarHotels = [
         description:
             "Budget-friendly option with comfortable beds, clean rooms, and safari booking assistance.",
         price: "From ₹2,800 per night",
+        park: "Bandhavgarh National Park",
         images: [
             "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
             "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
@@ -197,6 +205,7 @@ export const threeStarHotels = [
         description:
             "No-frills accommodation with essential amenities and friendly service at an affordable price.",
         price: "From ₹2,000 per night",
+        park: "Pench National Park",
         images: [
             "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
             "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",

@@ -15,10 +15,10 @@ export const SafariBookingCard = () => {
             </div>
 
             <p className="text-gray-200 text-lg leading-relaxed font-medium mb-8">
-                Embark on an exhilarating jeep safari across Kanha's zones—Kanha,
-                Kisli, Mukki, and Sarhi. Morning safaris offer prime wildlife
-                sightings, guided by expert naturalists. Book online easily, with
-                Indian nationals advised to reserve 30 days ahead and foreign
+                Embark on an exhilarating jeep safari across Kanha, Bandhavgarh, and Pench National Parks. 
+                Each park offers unique wildlife experiences with expert naturalists as your guides. 
+                Morning safaris provide prime wildlife sightings. Book online easily, with 
+                Indian nationals advised to reserve 30 days ahead and foreign 
                 nationals 90 days in advance.
             </p>
 
