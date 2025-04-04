@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { TreePine, Compass, TentTree, Sun, Moon, ChevronRight, X } from "lucide-react";
+import {
+  TreePine,
+  Compass,
+  TentTree,
+  Sun,
+  Moon,
+  ChevronRight,
+  X,
+} from "lucide-react";
 
 const ServiceBookingForm = ({ service, onClose }) => {
   const [formData, setFormData] = useState({
@@ -13,7 +21,7 @@ const ServiceBookingForm = ({ service, onClose }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
@@ -31,9 +39,11 @@ const ServiceBookingForm = ({ service, onClose }) => {
         return (
           <>
             <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Safari Time</label>
-              <select 
-                name="safariTime" 
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Safari Time
+              </label>
+              <select
+                name="safariTime"
                 className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500"
                 onChange={handleChange}
                 required
@@ -44,9 +54,11 @@ const ServiceBookingForm = ({ service, onClose }) => {
               </select>
             </div>
             <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Vehicle Preference</label>
-              <select 
-                name="vehicle" 
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Vehicle Preference
+              </label>
+              <select
+                name="vehicle"
                 className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500"
                 onChange={handleChange}
               >
@@ -56,47 +68,62 @@ const ServiceBookingForm = ({ service, onClose }) => {
             </div>
           </>
         );
-      
+
       case "Nature Trails":
         return (
           <>
             <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Trail Difficulty</label>
-              <select 
-                name="difficulty" 
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Trail Difficulty
+              </label>
+              <select
+                name="difficulty"
                 className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500"
                 onChange={handleChange}
               >
                 <option value="easy">Easy (Beginner Friendly)</option>
                 <option value="moderate">Moderate (Some Experience)</option>
-                <option value="challenging">Challenging (Experienced Hikers)</option>
+                <option value="challenging">
+                  Challenging (Experienced Hikers)
+                </option>
               </select>
             </div>
             <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Equipment Rental</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Equipment Rental
+              </label>
               <div className="flex items-center">
-                <input 
-                  type="checkbox" 
-                  id="equipmentRental" 
-                  name="equipmentRental" 
+                <input
+                  type="checkbox"
+                  id="equipmentRental"
+                  name="equipmentRental"
                   className="mr-2"
-                  onChange={(e) => handleChange({
-                    target: { name: "equipmentRental", value: e.target.checked }
-                  })}
+                  onChange={(e) =>
+                    handleChange({
+                      target: {
+                        name: "equipmentRental",
+                        value: e.target.checked,
+                      },
+                    })
+                  }
                 />
-                <label htmlFor="equipmentRental">I need binoculars and field guides</label>
+                <label htmlFor="equipmentRental">
+                  I need binoculars and field guides
+                </label>
               </div>
             </div>
           </>
         );
-      
+
       case "Full Day Safari":
         return (
           <>
             <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Meal Preferences</label>
-              <select 
-                name="mealPreference" 
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Meal Preferences
+              </label>
+              <select
+                name="mealPreference"
                 className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500"
                 onChange={handleChange}
               >
@@ -107,42 +134,54 @@ const ServiceBookingForm = ({ service, onClose }) => {
               </select>
             </div>
             <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Photography Equipment</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Photography Equipment
+              </label>
               <div className="flex items-center">
-                <input 
-                  type="checkbox" 
-                  id="photography" 
-                  name="photography" 
+                <input
+                  type="checkbox"
+                  id="photography"
+                  name="photography"
                   className="mr-2"
-                  onChange={(e) => handleChange({
-                    target: { name: "photography", value: e.target.checked }
-                  })}
+                  onChange={(e) =>
+                    handleChange({
+                      target: { name: "photography", value: e.target.checked },
+                    })
+                  }
                 />
-                <label htmlFor="photography">I'm bringing professional camera equipment</label>
+                <label htmlFor="photography">
+                  I'm bringing professional camera equipment
+                </label>
               </div>
             </div>
           </>
         );
-      
+
       case "Night Safari":
         return (
           <>
             <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Experience Level</label>
-              <select 
-                name="experienceLevel" 
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Experience Level
+              </label>
+              <select
+                name="experienceLevel"
                 className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500"
                 onChange={handleChange}
               >
                 <option value="beginner">Beginner (First Night Safari)</option>
-                <option value="intermediate">Intermediate (Some Experience)</option>
+                <option value="intermediate">
+                  Intermediate (Some Experience)
+                </option>
                 <option value="advanced">Advanced (Experienced)</option>
               </select>
             </div>
             <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Special Interest</label>
-              <select 
-                name="specialInterest" 
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Special Interest
+              </label>
+              <select
+                name="specialInterest"
                 className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500"
                 onChange={handleChange}
               >
@@ -154,7 +193,7 @@ const ServiceBookingForm = ({ service, onClose }) => {
             </div>
           </>
         );
-      
+
       default:
         return null;
     }
@@ -168,96 +207,112 @@ const ServiceBookingForm = ({ service, onClose }) => {
             <div className="bg-emerald-600 p-2 rounded-lg mr-3">
               <service.icon className="text-white" size={18} />
             </div>
-            <h3 className="text-xl font-bold text-gray-800">Book {service.title}</h3>
+            <h3 className="text-xl font-bold text-gray-800">
+              Book {service.title}
+            </h3>
           </div>
-          <button 
+          <button
             onClick={onClose}
             className="text-gray-500 hover:text-gray-700"
           >
             <X size={20} />
           </button>
         </div>
-        
+
         <form onSubmit={handleSubmit} className="p-4">
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-            <input 
-              type="text" 
-              name="name" 
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Name
+            </label>
+            <input
+              type="text"
+              name="name"
               value={formData.name}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500"
               required
             />
           </div>
-          
+
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-            <input 
-              type="email" 
-              name="email" 
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Email
+            </label>
+            <input
+              type="email"
+              name="email"
               value={formData.email}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500"
               required
             />
           </div>
-          
+
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
-            <input 
-              type="tel" 
-              name="phone" 
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Phone
+            </label>
+            <input
+              type="tel"
+              name="phone"
               value={formData.phone}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500"
               required
             />
           </div>
-          
+
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-1">Preferred Date</label>
-            <input 
-              type="date" 
-              name="date" 
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Preferred Date
+            </label>
+            <input
+              type="date"
+              name="date"
               value={formData.date}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500"
               required
             />
           </div>
-          
+
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-1">Number of People</label>
-            <select 
-              name="people" 
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Number of People
+            </label>
+            <select
+              name="people"
               value={formData.people}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500"
               required
             >
               {[...Array(10)].map((_, i) => (
-                <option key={i} value={i + 1}>{i + 1}</option>
+                <option key={i} value={i + 1}>
+                  {i + 1}
+                </option>
               ))}
               <option value="10+">10+</option>
             </select>
           </div>
-          
+
           {/* Service-specific fields */}
           {renderServiceSpecificFields()}
-          
+
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-1">Special Requests</label>
-            <textarea 
-              name="specialRequests" 
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Special Requests
+            </label>
+            <textarea
+              name="specialRequests"
               value={formData.specialRequests}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 h-24"
               placeholder="Any special requirements or questions?"
             ></textarea>
           </div>
-          
-          <button 
+
+          <button
             type="submit"
             className="w-full py-2 px-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors duration-300"
           >
@@ -269,7 +324,14 @@ const ServiceBookingForm = ({ service, onClose }) => {
   );
 };
 
-const ServiceCard = ({ title, images, features, icon: Icon, service, videoSrc }) => {
+const ServiceCard = ({
+  title,
+  images,
+  features,
+  icon: Icon,
+  service,
+  videoSrc,
+}) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [formData, setFormData] = useState({
@@ -283,7 +345,8 @@ const ServiceCard = ({ title, images, features, icon: Icon, service, videoSrc })
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!isFlipped && !videoSrc) { // Only run slideshow if not a video card and not flipped
+      if (!isFlipped && !videoSrc) {
+        // Only run slideshow if not a video card and not flipped
         setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
       }
     }, 3000);
@@ -292,7 +355,7 @@ const ServiceCard = ({ title, images, features, icon: Icon, service, videoSrc })
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
@@ -310,9 +373,11 @@ const ServiceCard = ({ title, images, features, icon: Icon, service, videoSrc })
         return (
           <>
             <div className="mb-3">
-              <label className="block text-sm font-medium text-gray-200 mb-1">Safari Time</label>
-              <select 
-                name="safariTime" 
+              <label className="block text-sm font-medium text-gray-200 mb-1">
+                Safari Time
+              </label>
+              <select
+                name="safariTime"
                 className="w-full p-2 bg-white/10 border border-white/20 rounded-md focus:ring-2 focus:ring-emerald-500 text-white"
                 onChange={handleChange}
                 required
@@ -323,9 +388,11 @@ const ServiceCard = ({ title, images, features, icon: Icon, service, videoSrc })
               </select>
             </div>
             <div className="mb-3">
-              <label className="block text-sm font-medium text-gray-200 mb-1">Vehicle Preference</label>
-              <select 
-                name="vehicle" 
+              <label className="block text-sm font-medium text-gray-200 mb-1">
+                Vehicle Preference
+              </label>
+              <select
+                name="vehicle"
                 className="w-full p-2 bg-white/10 border border-white/20 rounded-md focus:ring-2 focus:ring-emerald-500 text-white"
                 onChange={handleChange}
               >
@@ -335,47 +402,62 @@ const ServiceCard = ({ title, images, features, icon: Icon, service, videoSrc })
             </div>
           </>
         );
-      
+
       case "Nature Trails":
         return (
           <>
             <div className="mb-3">
-              <label className="block text-sm font-medium text-gray-200 mb-1">Trail Difficulty</label>
-              <select 
-                name="difficulty" 
+              <label className="block text-sm font-medium text-gray-200 mb-1">
+                Trail Difficulty
+              </label>
+              <select
+                name="difficulty"
                 className="w-full p-2 bg-white/10 border border-white/20 rounded-md focus:ring-2 focus:ring-emerald-500 text-white"
                 onChange={handleChange}
               >
                 <option value="easy">Easy (Beginner Friendly)</option>
                 <option value="moderate">Moderate (Some Experience)</option>
-                <option value="challenging">Challenging (Experienced Hikers)</option>
+                <option value="challenging">
+                  Challenging (Experienced Hikers)
+                </option>
               </select>
             </div>
             <div className="mb-3">
-              <label className="block text-sm font-medium text-gray-200 mb-1">Equipment Rental</label>
+              <label className="block text-sm font-medium text-gray-200 mb-1">
+                Equipment Rental
+              </label>
               <div className="flex items-center">
-                <input 
-                  type="checkbox" 
-                  id="equipmentRental" 
-                  name="equipmentRental" 
+                <input
+                  type="checkbox"
+                  id="equipmentRental"
+                  name="equipmentRental"
                   className="mr-2"
-                  onChange={(e) => handleChange({
-                    target: { name: "equipmentRental", value: e.target.checked }
-                  })}
+                  onChange={(e) =>
+                    handleChange({
+                      target: {
+                        name: "equipmentRental",
+                        value: e.target.checked,
+                      },
+                    })
+                  }
                 />
-                <label htmlFor="equipmentRental" className="text-gray-200">I need binoculars and field guides</label>
+                <label htmlFor="equipmentRental" className="text-gray-200">
+                  I need binoculars and field guides
+                </label>
               </div>
             </div>
           </>
         );
-      
+
       case "Full Day Safari":
         return (
           <>
             <div className="mb-3">
-              <label className="block text-sm font-medium text-gray-200 mb-1">Meal Preferences</label>
-              <select 
-                name="mealPreference" 
+              <label className="block text-sm font-medium text-gray-200 mb-1">
+                Meal Preferences
+              </label>
+              <select
+                name="mealPreference"
                 className="w-full p-2 bg-white/10 border border-white/20 rounded-md focus:ring-2 focus:ring-emerald-500 text-white"
                 onChange={handleChange}
               >
@@ -386,42 +468,54 @@ const ServiceCard = ({ title, images, features, icon: Icon, service, videoSrc })
               </select>
             </div>
             <div className="mb-3">
-              <label className="block text-sm font-medium text-gray-200 mb-1">Photography Equipment</label>
+              <label className="block text-sm font-medium text-gray-200 mb-1">
+                Photography Equipment
+              </label>
               <div className="flex items-center">
-                <input 
-                  type="checkbox" 
-                  id="photography" 
-                  name="photography" 
+                <input
+                  type="checkbox"
+                  id="photography"
+                  name="photography"
                   className="mr-2"
-                  onChange={(e) => handleChange({
-                    target: { name: "photography", value: e.target.checked }
-                  })}
+                  onChange={(e) =>
+                    handleChange({
+                      target: { name: "photography", value: e.target.checked },
+                    })
+                  }
                 />
-                <label htmlFor="photography" className="text-gray-200">I'm bringing professional camera equipment</label>
+                <label htmlFor="photography" className="text-gray-200">
+                  I'm bringing professional camera equipment
+                </label>
               </div>
             </div>
           </>
         );
-      
+
       case "Night Safari":
         return (
           <>
             <div className="mb-3">
-              <label className="block text-sm font-medium text-gray-200 mb-1">Experience Level</label>
-              <select 
-                name="experienceLevel" 
+              <label className="block text-sm font-medium text-gray-200 mb-1">
+                Experience Level
+              </label>
+              <select
+                name="experienceLevel"
                 className="w-full p-2 bg-white/10 border border-white/20 rounded-md focus:ring-2 focus:ring-emerald-500 text-white"
                 onChange={handleChange}
               >
                 <option value="beginner">Beginner (First Night Safari)</option>
-                <option value="intermediate">Intermediate (Some Experience)</option>
+                <option value="intermediate">
+                  Intermediate (Some Experience)
+                </option>
                 <option value="advanced">Advanced (Experienced)</option>
               </select>
             </div>
             <div className="mb-3">
-              <label className="block text-sm font-medium text-gray-200 mb-1">Special Interest</label>
-              <select 
-                name="specialInterest" 
+              <label className="block text-sm font-medium text-gray-200 mb-1">
+                Special Interest
+              </label>
+              <select
+                name="specialInterest"
                 className="w-full p-2 bg-white/10 border border-white/20 rounded-md focus:ring-2 focus:ring-emerald-500 text-white"
                 onChange={handleChange}
               >
@@ -433,7 +527,7 @@ const ServiceCard = ({ title, images, features, icon: Icon, service, videoSrc })
             </div>
           </>
         );
-      
+
       default:
         return null;
     }
@@ -441,22 +535,24 @@ const ServiceCard = ({ title, images, features, icon: Icon, service, videoSrc })
 
   return (
     <div className="h-[500px] sm:h-[550px] md:h-[600px] perspective-1000">
-      <div 
+      <div
         className={`relative h-full w-full transition-transform duration-700 transform-style preserve-3d ${
           isFlipped ? "rotate-y-180" : ""
         }`}
         style={{ transformStyle: "preserve-3d" }}
       >
         {/* Front of card */}
-        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-3 sm:p-6 hover:bg-white/10 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-900/30 group"
-             style={{ backfaceVisibility: "hidden" }}>
+        <div
+          className="absolute inset-0 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-3 sm:p-6 hover:bg-white/10 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-900/30 group"
+          style={{ backfaceVisibility: "hidden" }}
+        >
           {/* Video or Image Slideshow */}
           <div className="relative h-48 sm:h-56 md:h-64 lg:h-72 overflow-hidden rounded-lg mb-3 sm:mb-4">
             {videoSrc ? (
-              <video 
-                className="w-full h-full object-cover" 
-                autoPlay 
-                muted 
+              <video
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
                 loop
                 playsInline
               >
@@ -476,28 +572,35 @@ const ServiceCard = ({ title, images, features, icon: Icon, service, videoSrc })
               ))
             )}
           </div>
-          
+
           {/* Content */}
-          <div className="p-1 sm:p-2">
-            <div className="flex items-center mb-2 sm:mb-4">
-              <div className="bg-emerald-600 p-2 sm:p-3 rounded-lg mr-2 sm:mr-3">
-                <Icon className="text-white" size={16} />
+          <div className="p-1 sm:p-2 flex flex-col h-[250px]">
+            <div>
+              <div className="flex items-center mb-2 sm:mb-4">
+                <div className="bg-emerald-600 p-2 sm:p-3 rounded-lg mr-2 sm:mr-3">
+                  <Icon className="text-white" size={16} />
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-white">
+                  {title}
+                </h3>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white">{title}</h3>
+
+              <ul className="space-y-1 sm:space-y-2 mb-3 sm:mb-4">
+                {features.map((feature, index) => (
+                  <li
+                    key={index}
+                    className="flex items-center text-gray-300 text-sm sm:text-base"
+                  >
+                    <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 text-emerald-400 mr-1 sm:mr-2 flex-shrink-0" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            
-            <ul className="space-y-1 sm:space-y-2 mb-3 sm:mb-4">
-              {features.map((feature, index) => (
-                <li key={index} className="flex items-center text-gray-300 text-sm sm:text-base">
-                  <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 text-emerald-400 mr-1 sm:mr-2 flex-shrink-0" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-            
+
             <button
               onClick={() => setIsFlipped(true)}
-              className="w-full py-1.5 sm:py-2 px-3 sm:px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 group-hover:bg-emerald-500 text-sm sm:text-base"
+              className="mt-auto w-full py-3.5 sm:py-2 px-3 sm:px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 group-hover:bg-emerald-500 text-sm sm:text-base"
             >
               Book Now
             </button>
@@ -505,55 +608,63 @@ const ServiceCard = ({ title, images, features, icon: Icon, service, videoSrc })
         </div>
 
         {/* Back of card (booking form) */}
-        <div className="absolute inset-0 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-3 sm:p-6 overflow-y-auto [&::-webkit-scrollbar]:w-1 sm:[&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-green-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300"
-             style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}>
+        <div
+          className="absolute inset-0 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-3 sm:p-6 overflow-y-auto [&::-webkit-scrollbar]:w-1 sm:[&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-green-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300"
+          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+        >
           <div className="flex items-center justify-between mb-3 sm:mb-4">
             <div className="flex items-center">
               <div className="bg-emerald-600 p-1.5 sm:p-2 rounded-lg mr-2 sm:mr-3">
                 <Icon className="text-white" size={16} />
               </div>
-              <h3 className="text-base sm:text-xl font-bold text-white">Book {title}</h3>
+              <h3 className="text-base sm:text-xl font-bold text-white">
+                Book {title}
+              </h3>
             </div>
-            <button 
+            <button
               onClick={() => setIsFlipped(false)}
               className="text-white hover:text-emerald-300"
             >
               <X size={18} />
             </button>
           </div>
-          
+
           <form onSubmit={handleSubmit} className="space-y-2 sm:space-y-3">
             {/* Form fields with responsive adjustments */}
             <div>
-              <label className="block text-xs sm:text-sm font-medium text-gray-200 mb-1">Name</label>
-              <input 
-                type="text" 
-                name="name" 
+              <label className="block text-xs sm:text-sm font-medium text-gray-200 mb-1">
+                Name
+              </label>
+              <input
+                type="text"
+                name="name"
                 value={formData.name}
                 onChange={handleChange}
                 className="w-full p-1.5 sm:p-2 bg-white/10 border border-white/20 rounded-md focus:ring-2 focus:ring-emerald-500 text-white text-sm"
                 required
               />
             </div>
-            
+
             {/* Other form fields with similar responsive adjustments */}
             {/* ... */}
-            
+
             {/* Service-specific fields */}
             {renderServiceSpecificFields()}
-            
+
             <div>
-              <label className="block text-xs sm:text-sm font-medium text-gray-200 mb-1">Special Requests</label>
-              <textarea 
-                name="specialRequests" 
+              <label className="block text-xs sm:text-sm font-medium text-gray-200 mb-1">
+                Special Requests
+              </label>
+              <textarea
+                name="specialRequests"
                 value={formData.specialRequests}
                 onChange={handleChange}
                 className="w-full p-1.5 sm:p-2 bg-white/10 border border-white/20 rounded-md focus:ring-2 focus:ring-emerald-500 text-white h-12 sm:h-16 text-sm"
                 placeholder="Any special requirements or questions?"
               ></textarea>
             </div>
-            
-            <button 
+
+            <button
               type="submit"
               className="w-full py-1.5 sm:py-2 px-3 sm:px-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors duration-300 text-sm sm:text-base"
             >
@@ -566,15 +677,14 @@ const ServiceCard = ({ title, images, features, icon: Icon, service, videoSrc })
   );
 };
 
-
 const ServicesSection = () => {
   const services = [
     {
       title: "Jungle Safari",
       icon: TreePine,
-      images: [
-      ],
-      videoSrc: "https://videos.pexels.com/video-files/30214834/12953736_640_360_60fps.mp4",
+      images: [],
+      videoSrc:
+        "https://videos.pexels.com/video-files/30214834/12953736_640_360_60fps.mp4",
       features: [
         "Guided tours with experienced naturalists",
         "Opportunity to spot tigers and other wildlife",
@@ -586,7 +696,8 @@ const ServicesSection = () => {
       title: "Nature Trails",
       icon: Compass,
       images: [], // Empty array since we're using video
-      videoSrc: "https://videos.pexels.com/video-files/7624759/7624759-sd_640_360_30fps.mp4",
+      videoSrc:
+        "https://videos.pexels.com/video-files/7624759/7624759-sd_640_360_30fps.mp4",
       features: [
         "Explore the buffer zone on foot",
         "Bird watching opportunities",
@@ -597,9 +708,9 @@ const ServicesSection = () => {
     {
       title: "Full Day Safari",
       icon: Sun,
-      images: [
-      ],
-      videoSrc: "https://videos.pexels.com/video-files/11236995/11236995-sd_640_360_30fps.mp4",
+      images: [],
+      videoSrc:
+        "https://videos.pexels.com/video-files/11236995/11236995-sd_640_360_30fps.mp4",
       features: [
         "Spend the entire day inside the core zone",
         "Packed meals and refreshments included",
@@ -610,9 +721,9 @@ const ServicesSection = () => {
     {
       title: "Night Safari",
       icon: Moon,
-      images: [
-      ],
-      videoSrc: "https://videos.pexels.com/video-files/13085360/13085360-sd_640_360_25fps.mp4",
+      images: [],
+      videoSrc:
+        "https://videos.pexels.com/video-files/13085360/13085360-sd_640_360_25fps.mp4",
       features: [
         "Experience the jungle after dark",
         "Spot nocturnal animals in their natural habitat",
@@ -634,17 +745,14 @@ const ServicesSection = () => {
       </div>
 
       <p className="text-gray-200 text-base sm:text-lg leading-relaxed font-medium mb-4 sm:mb-8 text-center max-w-3xl mx-auto">
-        Explore Kanha National Park through our range of specialized safari experiences. 
-        Each service is designed to showcase the unique aspects of the park's ecosystem and wildlife.
+        Explore Kanha National Park through our range of specialized safari
+        experiences. Each service is designed to showcase the unique aspects of
+        the park's ecosystem and wildlife.
       </p>
-      
+
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-4">
         {services.map((service, index) => (
-          <ServiceCard 
-            key={index} 
-            {...service} 
-            service={service}
-          />
+          <ServiceCard key={index} {...service} service={service} />
         ))}
       </div>
     </div>
