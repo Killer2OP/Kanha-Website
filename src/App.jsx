@@ -131,7 +131,7 @@ function App() {
                     <Route path="/contact-us" element={<Contact />} />
 
                     {/* Admin Routes */}
-                    <Route path="/admin/login" element={<AdminLogin />} />
+                    <Route path="/admin" element={<AdminLogin />} />
                     <Route
                         path="/admin/dashboard"
                         element={

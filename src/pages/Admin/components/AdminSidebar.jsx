@@ -14,7 +14,7 @@ function AdminSidebar({ activeTab, setActiveTab }) {
 
   const handleLogout = () => {
     localStorage.removeItem("adminAuth");
-    navigate("/admin/login");
+    navigate("/admin");
   };
 
   const menuItems = [

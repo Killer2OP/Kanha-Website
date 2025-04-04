@@ -15,7 +15,7 @@ function AdminDashboard() {
     // Check if admin is authenticated
     const isAuthenticated = localStorage.getItem("adminAuth") === "true";
     if (!isAuthenticated) {
-      navigate("/admin/login");
+      navigate("/admin");
     }
   }, [navigate]);
 

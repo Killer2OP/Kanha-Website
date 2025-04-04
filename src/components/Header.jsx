@@ -43,17 +43,12 @@ function Header() {
   return (
     <>
       <nav className="relative z-10 flex items-center justify-between px-6 py-4">
-        <div className="flex items-center">
+        <div className="flex items-center max-h-16">
           <Link to="/">
             <img
-              src="https://www.kanhanationalparkonline.in/uploads/0000/1/2022/03/29/kanha-new-logo.png"
+              src="/assets/logo.jpg"
               alt="Kanha Logo"
-              className={`
-        ${isMobile ? "h-7" : ""}
-        ${isTablet ? "h-10" : ""}
-        ${isLaptop ? "h-11" : ""}
-        w-auto cursor-pointer
-      `}
+              className={" h-16 xl:h-14 w-auto cursor-pointer object-cover"}
             />
           </Link>
         </div>

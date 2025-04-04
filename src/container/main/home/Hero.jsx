@@ -50,13 +50,13 @@ function App() {
 
       <main className="relative z-10 flex flex-col items-center justify-center w-full h-full text-center px-4 sm:px-8 md:px-12">
         <img
-          src="https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/Kanha.png"
+          src="https://see.fontimg.com/api/rf5/ymAm/ZDM1NzhkMjg5YjZjNDY5YWE3YzlmMjA2Zjc3NjNhODgub3Rm/SnVuZ2xlICBTYWZhcmk/urbanjungledemo.png?r=fs&h=95&w=1250&fg=F9F2F2&bg=FFFFFF&tb=1&s=76"
           width="400px" // Replace with actual width
           height="auto" // Replace with actual height
-          className="w-48 sm:w-64 md:w-80 lg:w-96 xl:w-[500px] mx-auto object-contain"
+          className="w-48 sm:w-64 md:w-80 lg:w-96 xl:w-[650px] mx-auto object-contain"
         />
         <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-jungle text-white tracking-widest">
-          NATIONAL PARK
+          ROAR & EXPLORE!
         </h2>
       </main>
 
