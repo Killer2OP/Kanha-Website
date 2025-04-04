@@ -1,0 +1,171 @@
+/* Safari Calendar Custom Styling */
+.safari-calendar-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+.safari-calendar {
+  width: 100% !important;
+  max-width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  font-family: inherit !important;
+  line-height: 1.5 !important;
+}
+
+/* Fix for broken layout */
+.safari-calendar .react-calendar__viewContainer {
+  width: 100% !important;
+}
+
+.safari-calendar .react-calendar__month-view {
+  width: 100% !important;
+}
+
+/* Make navigation buttons larger */
+.safari-calendar .react-calendar__navigation {
+  height: 45px !important;
+  margin-bottom: 12px !important;
+  display: flex !important;
+  width: 100% !important;
+}
+
+.safari-calendar .react-calendar__navigation button {
+  min-width: 36px !important;
+  /* background: rgba(255, 255, 255, 0.1) !important; */
+  color: white !important;
+  font-size: 1rem !important;
+  border-radius: 6px !important;
+  margin: 0 2px !important;
+  flex: 1 !important;
+}
+
+.safari-calendar .react-calendar__navigation button:hover,
+.safari-calendar .react-calendar__navigation button:focus {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Make weekday headers larger and styled */
+.safari-calendar .react-calendar__month-view__weekdays {
+  font-size: 0.9rem !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  color: #10b981 !important; /* emerald-500 */
+  margin-bottom: 4px !important;
+  display: flex !important;
+  width: 100% !important;
+}
+
+.safari-calendar .react-calendar__month-view__weekdays__weekday {
+  padding: 6px 0 !important;
+  flex: 1 !important;
+  text-align: center !important;
+}
+
+.safari-calendar .react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none !important;
+}
+
+/* Make day tiles larger */
+.safari-calendar .react-calendar__month-view__days {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  width: 100% !important;
+  gap: 2px !important;
+}
+
+.safari-calendar .react-calendar__month-view__days__day {
+  font-size: 0.95rem !important;
+  color: white !important;
+}
+
+.safari-calendar .react-calendar__tile {
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 6px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  padding: 8px 0 !important;
+  margin: 0 !important;
+  aspect-ratio: 1/1 !important;
+}
+
+.safari-calendar .react-calendar__tile:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.safari-calendar .react-calendar__tile--active {
+  background: #10b981 !important; /* emerald-500 */
+  color: white !important;
+}
+
+.safari-calendar .react-calendar__tile--now {
+  background: rgba(16, 185, 129, 0.3) !important; /* emerald-500 with opacity */
+}
+
+.safari-calendar .react-calendar__tile:disabled {
+  background: rgba(255, 255, 255, 0.02) !important;
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Fix for neighbor month days */
+.safari-calendar .react-calendar__month-view__days__day--neighboringMonth {
+  opacity: 0.5 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .safari-calendar .react-calendar__navigation {
+    height: 40px !important;
+  }
+  
+  .safari-calendar .react-calendar__month-view__days__day {
+    font-size: 0.85rem !important;
+  }
+  
+  .safari-calendar .react-calendar__tile {
+    padding: 6px 0 !important;
+  }
+  
+  .safari-calendar .react-calendar__month-view__days {
+    gap: 1px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .safari-calendar .react-calendar__navigation {
+    height: 50px !important;
+  }
+  
+  .safari-calendar .react-calendar__month-view__days__day {
+    font-size: 1rem !important;
+  }
+  
+  .safari-calendar .react-calendar__tile {
+    padding: 10px 0 !important;
+  }
+  
+  .safari-calendar .react-calendar__month-view__days {
+    gap: 3px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .safari-calendar .react-calendar__navigation {
+    height: 55px !important;
+  }
+  
+  .safari-calendar .react-calendar__month-view__days__day {
+    font-size: 1.1rem !important;
+  }
+  
+  .safari-calendar .react-calendar__tile {
+    padding: 12px 0 !important;
+  }
+  
+  .safari-calendar .react-calendar__month-view__days {
+    gap: 4px !important;
+  }
+}

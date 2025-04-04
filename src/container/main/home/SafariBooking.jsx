@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import {Clock, ChevronDown } from 'lucide-react';
 import 'react-calendar/dist/Calendar.css';
 import { tariffDetails, tariffData, safariTypes } from './SafariBookingData';
+import './SafariCalendar.css'; // Add this import for custom calendar styling
 
 function App() {
     
@@ -95,7 +96,7 @@ function App() {
 
     return (
         <div className="flex flex-col lg:flex-row gap-4">
-            {/* Tariff Details Section */}
+            {/* Tariff Details Section - unchanged */}
             <div className="flex-[1.5] min-h-[480px] max-h-[450px] md:max-h-[350px] lg:max-h-[450px]  
                 bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-4 text-white 
                 overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-green-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-emerald-300">
@@ -171,22 +172,24 @@ function App() {
                 </div>
             </div>
 
-            {/* Calendar and Booking Form Section */}
+            {/* Calendar and Booking Form Section - Updated for larger calendar */}
             <div className="flex-[1.5] min-h-[480px] md:max-w-2xl lg:max-w-none mx-auto w-full">
-                <div className="relative min-h-[600px] md:min-h-[600px] perspective-1000">
+                <div className="relative min-h-[650px] md:min-h-[700px] perspective-1000">
                     <div className={`absolute inset-0 duration-700 preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
-                        {/* Front - Calendar */}
+                        {/* Front - Calendar - Increased size */}
                         <div className="absolute inset-0 max-h-4/5 mx-auto bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-3 md:p-6 backface-hidden">
-                            <h2 className="text-2xl font-bold text-white mb-6">Select Your Safari Date</h2>
-                            <Calendar
-                                onChange={handleDateChange}
-                                value={date}
-                                className="w-full border-none safari-calendar md:text-lg"
-                                minDate={new Date()}
-                            />
+                            <h2 className="text-2xl font-bold text-white mb-4 text-center">Select Your Safari Date</h2>
+                            <div className="safari-calendar-container">
+                                <Calendar
+                                    onChange={handleDateChange}
+                                    value={date}
+                                    className="w-full border-none safari-calendar text-lg"
+                                    minDate={new Date()}
+                                />
+                            </div>
                         </div>
 
-                        {/* Back - Booking Form */}
+                        {/* Back - Booking Form - unchanged */}
                         <div className="absolute inset-0 bg-black/30 backdrop-blur-xl h-[calc(100%-120px)] border border-white/10 rounded-xl p-3 md:p-6 m-1 backface-hidden rotate-y-180">
                             <div className="flex justify-between items-center mb-6 px-6">
                                 <h2 className="text-2xl font-bold text-white">Booking Details</h2>
