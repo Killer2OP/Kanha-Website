@@ -7,6 +7,7 @@ import {
   FileText,
   Mail,
   LogOut,
+  Car
 } from "lucide-react";
 
 function AdminSidebar({ activeTab, setActiveTab }) {
@@ -27,6 +28,11 @@ function AdminSidebar({ activeTab, setActiveTab }) {
       id: "bookings",
       label: "Bookings",
       icon: <Calendar className="h-5 w-5" />,
+    },
+    {
+      id: "safariBookings",
+      label: "Safari Bookings",
+      icon: <Car className="h-5 w-5" />,
     },
     {
       id: "enquiries",

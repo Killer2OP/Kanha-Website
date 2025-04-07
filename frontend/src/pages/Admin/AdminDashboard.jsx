@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import AdminHeader from "./components/AdminHeader";
 import AdminSidebar from "./components/AdminSidebar";
 import BookingManagement from "./components/BookingManagement";
 import EnquiryManagement from "./components/EnquiryManagement";
 import PDFGenerator from "./components/PDFGenerator";
 import EmailIntegration from "./components/EmailIntegration";
-import AdminHeader from "./components/AdminHeader";
+import SafariBookingManagement from "./components/SafariBookingManagement";
 
 function AdminDashboard() {
   const [activeTab, setActiveTab] = useState("dashboard");
@@ -160,6 +161,7 @@ function AdminDashboard() {
           )}
           
           {activeTab === "bookings" && <BookingManagement />}
+          {activeTab === "safariBookings" && <SafariBookingManagement />}
           {activeTab === "enquiries" && <EnquiryManagement />}
           {activeTab === "pdf" && <PDFGenerator />}
           {activeTab === "email" && <EmailIntegration />}
