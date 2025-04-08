@@ -90,6 +90,11 @@ function BookingManagement() {
     setShowModal(false);
   };
 
+  const handleViewBooking = (booking) => {
+    setSelectedBooking(booking);
+    setShowModal(true);
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -106,15 +111,6 @@ function BookingManagement() {
             />
           </div>
           <div className="flex gap-2">
-            <select
-              value={filterProperty}
-              onChange={(e) => setFilterProperty(e.target.value)}
-              className="px-4 py-2 bg-emerald-800/30 border border-emerald-500/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
-            >
-              <option value="All">All Properties</option>
-              <option value="Kanha Jungle Lodge">Kanha Jungle Lodge</option>
-              <option value="Kanha Earth Lodge">Kanha Earth Lodge</option>
-            </select>
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
@@ -168,7 +164,7 @@ function BookingManagement() {
                 <th className="px-6 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
                   Status
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
+                <th className="px-3 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
                   Actions
                 </th>
               </tr>
