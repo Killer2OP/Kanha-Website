@@ -183,25 +183,43 @@ function HotelDetail() {
   // Add this new function after handleReserve
   const handleSubmitBooking = async () => {
     try {
-      setIsBookingConfirmed(true);
-      
+      // Validate required fields
+      if (!userInfo.name || !userInfo.email || !userInfo.phone) {
+        alert('Please fill in all required fields');
+        return;
+      }
+
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(userInfo.email)) {
+        alert('Please enter a valid email address');
+        return;
+      }
+
+      // Validate phone number (basic validation for Indian numbers)
+      const phoneRegex = /^[0-9]{10}$/;
+      const cleanPhone = userInfo.phone.replace(/[^0-9]/g, '');
+      if (!phoneRegex.test(cleanPhone)) {
+        alert('Please enter a valid 10-digit phone number');
+        return;
+      }
+
       const bookingData = {
         id: `BK-${Math.floor(Math.random() * 9000) + 1000}`,
-        name: userInfo.name,
-        email: userInfo.email,
-        phone: userInfo.phone,
+        name: userInfo.name.trim(),
+        email: userInfo.email.trim(),
+        phone: cleanPhone,
         property: hotel.name,
         roomType: roomTypes[selectedRoomType].name,
         checkIn: checkInDate,
         checkOut: checkOutDate,
         guests: guests,
-        amount: `₹${totalBeforeTaxes.toLocaleString()}`,
+        amount: totalBeforeTaxes,
         status: "Pending",
         paymentStatus: "Pending",
         createdAt: new Date().toISOString()
       };
-  
-      // Updated endpoint to match the backend route
+
       const response = await fetch('http://localhost:5000/api/hotel-bookings', {
         method: 'POST',
         headers: {
@@ -209,18 +227,20 @@ function HotelDetail() {
         },
         body: JSON.stringify(bookingData)
       });
-  
+
       if (!response.ok) {
-        throw new Error('Failed to create booking');
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to create booking');
       }
-  
-      // Show success message
-      alert(`Booking confirmed!`);
-      
+
+      const responseData = await response.json();
+      setIsBookingConfirmed(true);
+      alert('Booking confirmed successfully!');
       navigate('/hotel-in-kanha');
+
     } catch (error) {
       console.error('Error creating booking:', error);
-      alert('Failed to create booking. Please try again.');
+      alert(`Booking failed: ${error.message}`);
       setIsBookingConfirmed(false);
     }
   };

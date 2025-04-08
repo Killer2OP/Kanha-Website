@@ -84,10 +84,29 @@ function BookingManagement() {
     alert("Hotel bookings CSV export functionality would be implemented here");
   };
 
-  const handleSendTicket = (booking) => {
-    // In a real app, this would send the ticket via WhatsApp
-    alert(`Hotel booking confirmation would be sent to ${booking.phone} via WhatsApp`);
-    setShowModal(false);
+  const handleSendTicket = async (booking) => {
+    try {
+      const response = await fetch('http://localhost:5000/api/send-whatsapp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          phone: booking.phone,
+          message: `Dear ${booking.name},\n\nYour hotel booking at ${booking.property} has been ${booking.status.toLowerCase()}.\n\nBooking Details:\nCheck-in: ${booking.checkIn}\nCheck-out: ${booking.checkOut}\nRoom Type: ${booking.roomType}\nGuests: ${booking.guests}\nAmount: ${booking.amount}\n\nThank you for choosing us!\n\nBest regards,\nKanha Hotels`
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send WhatsApp notification');
+      }
+
+      alert('Booking confirmation sent successfully!');
+      setShowModal(false);
+    } catch (error) {
+      console.error('Error sending WhatsApp notification:', error);
+      alert('Failed to send booking confirmation. Please try again.');
+    }
   };
 
   const handleViewBooking = (booking) => {

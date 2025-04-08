@@ -6,16 +6,22 @@ const dotenv = require('dotenv');
 // Load environment variables
 dotenv.config();
 
-// Import routes
-const safariBookingRoutes = require('./routes/safariBookings');
-const hotelBookingRoutes = require('./routes/hotelBookings');
-
 // Initialize express app
 const app = express();
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Import routes
+const safariBookingRoutes = require('./routes/safariBookings');
+const hotelBookingRoutes = require('./routes/hotelBookings');
+const whatsappRoutes = require('./routes/whatsapp');
+
+// Routes
+app.use('/api/safari-bookings', safariBookingRoutes);
+app.use('/api/hotel-bookings', hotelBookingRoutes);
+app.use('/api', whatsappRoutes);  // Moved here after app initialization
 
 // Connect to MongoDB with improved error handling and options
 mongoose.connect(process.env.MONGODB_URI, {
