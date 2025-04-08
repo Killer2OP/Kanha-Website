@@ -1,94 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Search, Download, Eye, Check, X, MessageSquare } from "lucide-react";
 
 function BookingManagement() {
-  // Mock data for hotel bookings only
-  const [bookings, setBookings] = useState([
-    {
-      id: "BK-1001",
-      name: "Rahul Sharma",
-      email: "rahul@example.com",
-      phone: "+91 9876543210",
-      property: "Kanha Jungle Lodge",
-      roomType: "Deluxe",
-      checkIn: "2023-11-15",
-      checkOut: "2023-11-17",
-      guests: 2,
-      amount: "₹12,500",
-      status: "Confirmed",
-      paymentStatus: "Paid",
-    },
-    {
-      id: "BK-1004",
-      name: "Sneha Gupta",
-      email: "sneha@example.com",
-      phone: "+91 9876543213",
-      property: "Kanha Earth Lodge",
-      roomType: "Premium",
-      checkIn: "2023-11-18",
-      checkOut: "2023-11-20",
-      guests: 2,
-      amount: "₹15,000",
-      status: "Confirmed",
-      paymentStatus: "Paid",
-    },
-    {
-      id: "BK-1006",
-      name: "Aditya Verma",
-      email: "aditya@example.com",
-      phone: "+91 9876543215",
-      property: "Kanha Jungle Lodge",
-      roomType: "Standard",
-      checkIn: "2023-11-22",
-      checkOut: "2023-11-24",
-      guests: 3,
-      amount: "₹10,800",
-      status: "Pending",
-      paymentStatus: "Pending",
-    },
-    {
-      id: "BK-1008",
-      name: "Meera Kapoor",
-      email: "meera@example.com",
-      phone: "+91 9876543217",
-      property: "Kanha Earth Lodge",
-      roomType: "Suite",
-      checkIn: "2023-11-25",
-      checkOut: "2023-11-28",
-      guests: 2,
-      amount: "₹22,500",
-      status: "Confirmed",
-      paymentStatus: "Paid",
-    },
-    {
-      id: "BK-1010",
-      name: "Rajesh Kumar",
-      email: "rajesh@example.com",
-      phone: "+91 9876543219",
-      property: "Kanha Jungle Lodge",
-      roomType: "Deluxe",
-      checkIn: "2023-12-01",
-      checkOut: "2023-12-03",
-      guests: 4,
-      amount: "₹14,200",
-      status: "Pending",
-      paymentStatus: "Pending",
-    },
-  ]);
-
+  const [bookings, setBookings] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterProperty, setFilterProperty] = useState("All");
   const [filterStatus, setFilterStatus] = useState("All");
   const [selectedBooking, setSelectedBooking] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Fetch bookings from API
+  useEffect(() => {
+    fetchBookings();
+  }, []);
+
+  const fetchBookings = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch('http://localhost:5000/api/hotel-bookings');
+      if (!response.ok) {
+        throw new Error('Failed to fetch bookings');
+      }
+      const data = await response.json();
+      setBookings(data);
+      setError(null);
+    } catch (err) {
+      setError('Failed to load bookings');
+      console.error('Error fetching bookings:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   // Filter bookings based on search term and filters
   const filteredBookings = bookings.filter((booking) => {
     const matchesSearch =
-      booking.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      booking.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      booking.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      booking.phone.includes(searchTerm);
+      booking.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      booking.id?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      booking.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      booking.phone?.includes(searchTerm);
 
     const matchesProperty =
       filterProperty === "All" || booking.property === filterProperty;
@@ -99,18 +51,32 @@ function BookingManagement() {
     return matchesSearch && matchesProperty && matchesStatus;
   });
 
-  const handleViewBooking = (booking) => {
-    setSelectedBooking(booking);
-    setShowModal(true);
-  };
-
-  const handleStatusChange = (id, newStatus) => {
-    setBookings(
-      bookings.map((booking) =>
-        booking.id === id ? { ...booking, status: newStatus } : booking
-      )
-    );
-    setShowModal(false);
+  const handleStatusChange = async (id, newStatus) => {
+    try {
+      // Updated endpoint to match the backend route
+      const response = await fetch(`http://localhost:5000/api/hotel-bookings/${id}/status`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ status: newStatus })
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to update booking status');
+      }
+  
+      // Update local state
+      setBookings(
+        bookings.map((booking) =>
+          booking.id === id ? { ...booking, status: newStatus } : booking
+        )
+      );
+      setShowModal(false);
+    } catch (error) {
+      console.error('Error updating booking status:', error);
+      alert('Failed to update booking status. Please try again.');
+    }
   };
 
   const handleExportCSV = () => {

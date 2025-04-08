@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Star, MapPin, Check, Share, Calendar, Users } from "lucide-react";
+import { Star, MapPin, Check, Share, Calendar, Users, X } from "lucide-react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -167,13 +167,62 @@ function HotelDetail() {
     setShowRoomTypeDropdown(false);
   };
   
-  const handleReserve = () => {
-    setIsBookingConfirmed(true);
-    // In a real app, this would proceed to payment
-    setTimeout(() => {
-      alert(`Booking confirmed for ${hotel.name}!\nRoom Type: ${roomTypes[selectedRoomType].name}\nCheck-in: ${checkInDate}\nCheck-out: ${checkOutDate}\nGuests: ${guests}`);
-      navigate('hotel-in-kanha');
-    }, 1000);
+  // Add this state near your other state declarations
+  const [showUserForm, setShowUserForm] = useState(false);
+  const [userInfo, setUserInfo] = useState({
+    name: '',
+    email: '',
+    phone: ''
+  });
+  
+  // Modify the handleReserve function
+  const handleReserve = async () => {
+    setShowUserForm(true);
+  };
+  
+  // Add this new function after handleReserve
+  const handleSubmitBooking = async () => {
+    try {
+      setIsBookingConfirmed(true);
+      
+      const bookingData = {
+        id: `BK-${Math.floor(Math.random() * 9000) + 1000}`,
+        name: userInfo.name,
+        email: userInfo.email,
+        phone: userInfo.phone,
+        property: hotel.name,
+        roomType: roomTypes[selectedRoomType].name,
+        checkIn: checkInDate,
+        checkOut: checkOutDate,
+        guests: guests,
+        amount: `₹${totalBeforeTaxes.toLocaleString()}`,
+        status: "Pending",
+        paymentStatus: "Pending",
+        createdAt: new Date().toISOString()
+      };
+  
+      // Updated endpoint to match the backend route
+      const response = await fetch('http://localhost:5000/api/hotel-bookings', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(bookingData)
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to create booking');
+      }
+  
+      // Show success message
+      alert(`Booking confirmed!`);
+      
+      navigate('/hotel-in-kanha');
+    } catch (error) {
+      console.error('Error creating booking:', error);
+      alert('Failed to create booking. Please try again.');
+      setIsBookingConfirmed(false);
+    }
   };
   
   return (
@@ -182,6 +231,71 @@ function HotelDetail() {
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <Header />
       </div>
+      
+      {/* Add the user form modal here */}
+      {showUserForm && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-xl shadow-xl p-6 max-w-md w-full mx-4">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="font-bold text-xl text-gray-900">Enter Your Details</h3>
+              <button 
+                onClick={() => setShowUserForm(false)}
+                className="text-gray-500 hover:text-gray-700 rounded-full p-1 hover:bg-gray-100"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                <input
+                  type="text"
+                  value={userInfo.name}
+                  onChange={(e) => setUserInfo({...userInfo, name: e.target.value})}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-gray-900"
+                  required
+                  placeholder="Enter your name"
+                  style={{ color: '#1f2937' }}
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input
+                  type="email"
+                  value={userInfo.email}
+                  onChange={(e) => setUserInfo({...userInfo, email: e.target.value})}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-gray-900"
+                  required
+                  placeholder="Enter your email"
+                  style={{ color: '#1f2937' }}
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                <input
+                  type="tel"
+                  value={userInfo.phone}
+                  onChange={(e) => setUserInfo({...userInfo, phone: e.target.value})}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-gray-900"
+                  required
+                  placeholder="Enter your phone number"
+                  style={{ color: '#1f2937' }}
+                />
+              </div>
+            </div>
+            
+            <button 
+              onClick={handleSubmitBooking}
+              className="mt-6 w-full bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors"
+            >
+              Confirm Booking
+            </button>
+          </div>
+        </div>
+      )}
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
         {/* Hotel Name and Share/Save Buttons */}
@@ -200,7 +314,7 @@ function HotelDetail() {
               className="flex items-center gap-2 text-gray-700 hover:text-gray-900"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
               </svg>
               <span>Save</span>
             </button>

@@ -184,1099 +184,32 @@ export const allHotels = [
       "Security cameras on property"
     ]
   },
-    {
-      id: 4,
-      name: "Infinity Resorts Mukki",
-      slug: "infinity-resorts-mukki",
-      rating: 4.2,
-      stars: 4,
-      reviews: 165,
-      location: "Near to Mukki Gate",
-      address: "Village Baherakhar, Near Baihar, P.O. Nikkum, Dist. Balaghat Kanha National Park, Madhya Pradesh 481111",
-      price: "₹7,800",
-      image: "https://www.kanhanationalparkonline.in/uploads/whatsapp-image-2024-09-05-at-45523-pm.jpeg",
-      amenities: [
-        "Cancellation Policy",
-        "Breakfast Included",
-        "Swimming Pool",
-        "Restaurant"
-      ],
-      featured: true,
-      description: "Experience luxury and comfort at Infinity Resorts Mukki, located near the Mukki Gate of Kanha National Park. Enjoy well-appointed rooms, a beautiful swimming pool, and excellent service in a serene natural setting.",
-      images: [
-        "https://www.kanhanationalparkonline.in/uploads/whatsapp-image-2024-09-05-at-45523-pm.jpeg",
-        "https://www.kanhanationalparkonline.in/uploads/infinity1.jpg",
-        "https://www.kanhanationalparkonline.in/uploads/infinity3.jpg",
-        "https://www.kanhanationalparkonline.in/uploads/whatsapp-image-2024-09-05-at-45525-pm.jpeg",
-        "https://www.kanhanationalparkonline.in/uploads/infinity2.jpg",
-        "https://www.kanhanationalparkonline.in/uploads/infinity-exterior.jpg"
-      ],
-      bedrooms: 1,
-      beds: 2,
-      bathrooms: 1,
-      guests: 4,
-      features: [
-        {
-          title: "Prime location",
-          description: "Located near Mukki Gate for easy access to safari tours."
-        },
-        {
-          title: "Outdoor entertainment",
-          description: "Beautiful swimming pool and outdoor seating areas perfect for relaxation."
-        },
-        {
-          title: "Free cancellation",
-          description: "Flexible cancellation policy for peace of mind."
-        }
-      ],
-      fullAmenities: [
-        "Mountain view",
-        "Garden view",
-        "Wifi",
-        "Free parking on premises",
-        "TV",
-        "Outdoor swimming pool",
-        "Air conditioning",
-        "Restaurant",
-        "Room service",
-        "Hot water",
-        "Laundry service",
-        "Security cameras on property"
-      ]
-    },
-    {
-      id: 5,
-      name: "Kusum Resort",
-      slug: "kusum-resort",
-      rating: 4.5,
-      stars: 3,
-      reviews: 170,
-      location: "Mandla , Khatia Gate",
-      address: "NATIONAL PARK, Kusum Resort-village-MOCHA, Chhapri Road, Chiraidongri - Kanha Rd, Mocha, Madhya Pradesh 481768",
-      price: "₹5,000",
-      image: "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort.jpeg",
-      amenities: [
-        "Cancellation Policy",
-        "Breakfast Included",
-        "Free Wifi",
-        "Outdoor Activities"
-      ],
-      featured: false,
-      description: "Kusum Resort offers a comfortable stay close to nature at an affordable price. Located near Khatia Gate, the resort provides easy access to Kanha National Park while offering all essential amenities for a pleasant stay.",
-      images: [
-        "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort.jpeg",
-        "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort5.jpeg",
-        "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort4.jpeg",
-        "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort2.jpeg",
-        "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort3.jpeg",
-        "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort1.jpeg"
-      ],
-      bedrooms: 1,
-      beds: 2,
-      bathrooms: 1,
-      guests: 3,
-      features: [
-        {
-          title: "Value for money",
-          description: "Excellent amenities at an affordable price point."
-        },
-        {
-          title: "Nature experience",
-          description: "Surrounded by natural beauty with opportunities for outdoor activities."
-        },
-        {
-          title: "Free cancellation",
-          description: "Flexible booking with cancellation options available."
-        }
-      ],
-      fullAmenities: [
-        "Forest view",
-        "Garden view",
-        "Wifi",
-        "Free parking on premises",
-        "TV",
-        "Swimming pool",
-        "Air conditioning",
-        "Restaurant",
-        "Room service",
-        "Hot water",
-        "Laundry service",
-        "Tour desk"
-      ]
-    },
-    {
-      id: 6,
-      name: "Soulacia Hotel and Resort",
-      slug: "soulacia-hotel-and-resort",
-      rating: 4.5,
-      stars: 4,
-      reviews: 300,
-      location: "Mocha Khatia Gate",
-      address: "Village Khatia, Post Kanha Kisli, District Mandla, Khatia, Madhya Pradesh 481768",
-      price: "₹8,000",
-      image: "https://www.kanhanationalparkonline.in/uploads/soul-1.jpg",
-      amenities: [
-        "Cancellation Policy",
-        "Breakfast Included",
-        "Swimming Pool",
-        "Spa"
-      ],
-      featured: true,
-      description: "Soulacia Hotel and Resort offers a premium experience with excellent amenities and comfortable accommodations. Located near Khatia Gate, it's the perfect base for exploring Kanha National Park while enjoying luxury and comfort.",
-      images: [
-        "https://www.kanhanationalparkonline.in/uploads/soul-1.jpg",
-        "https://www.kanhanationalparkonline.in/uploads/soulacia5.jpg",
-        "https://www.kanhanationalparkonline.in/uploads/soulacia.jpg",
-        "https://www.kanhanationalparkonline.in/uploads/soulacia4.jpg",
-        "https://r1imghtlak.mmtcdn.com/309667d437f911edb8440a58a9feac02.jpg"
-      ],
-      bedrooms: 1,
-      beds: 2,
-      bathrooms: 1,
-      guests: 4,
-      features: [
-        {
-          title: "Luxury experience",
-          description: "Premium accommodations with high-quality furnishings and amenities."
-        },
-        {
-          title: "Relaxation options",
-          description: "Beautiful swimming pool and spa facilities for unwinding after safari tours."
-        },
-        {
-          title: "Free cancellation",
-          description: "Flexible booking with cancellation options for peace of mind."
-        }
-      ],
-      fullAmenities: [
-        "Mountain view",
-        "Pool view",
-        "Wifi",
-        "Free parking on premises",
-        "TV",
-        "Swimming pool",
-        "Air conditioning",
-        "Restaurant",
-        "Room service",
-        "Spa services",
-        "Hot water",
-        "Laundry service",
-        "Security cameras on property"
-      ]
-    },
-    {
-      id: 7,
-      name: "Banjaar Tola, A Taj Safari",
-      slug: "banjaar-tola-taj-safari",
-      rating: 4.5,
-      stars: 5,
-      reviews: 44,
-      location: "Manjitola",
-      address: "2.6 km drive to Mukki gate, Kanha National Park",
-      price: "₹35,000",
-      image: "https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/bgdefault_bg.jpg",
-      amenities: [
-        "Bed and Breakfast",
-        "Non-Refundable",
-        "Spa",
-        "Swimming Pool"
-      ],
-      featured: true,
-      description: "Luxury Lodge along Banjaar River in 90-acre Sal Forest. Located on the banks of the Banjaar River, Banjaar Tola is a safari lodge with tented camps, massage decks and a pool, offering a premium wildlife experience in the heart of Kanha National Park.",
-      images: [
-        "https://cdn.sanity.io/images/ocl5w36p/prod3/37dfe6f8c7e666443899cad3641147b1b898eed2-7650x5121.jpg?w=768&auto=format&dpr=2",
-        "https://cdn.sanity.io/images/ocl5w36p/prod3/7869529a875d98ebf8647b282cc1bc27d5cf075c-4288x2848.jpg?w=768&auto=format&dpr=2",
-        "https://cdn.sanity.io/images/ocl5w36p/prod3/ae573cf9c34f225939f72f397ff178198fcd53a1-4288x2848.jpg?w=768&auto=format&dpr=2",
-        "https://cdn.sanity.io/images/ocl5w36p/prod3/83c0492b206f9f5bcdedce98bf2807345f84a2c9-5191x3070.jpg?w=768&auto=format&dpr=2",
-        "https://cdn.sanity.io/images/ocl5w36p/prod3/de2924c4ca5cfe329d93e646bc5bd65b91bc602a-6144x4081.jpg?w=768&auto=format&dpr=2"
-      ],
-      bedrooms: 1,
-      beds: 1,
-      bathrooms: 1,
-      guests: 2,
-      features: [
-        {
-          title: "Luxury tented experience",
-          description: "Tented Suite King Bed with 850 sq.ft (79 sq.mt) of space and river views."
-        },
-        {
-          title: "Private outdoor space",
-          description: "Luxury tents with a private sit-out area overlooking the serene river."
-        },
-        {
-          title: "All-inclusive options",
-          description: "Choose between bed & breakfast or all-inclusive meal plans."
-        }
-      ],
-      fullAmenities: [
-        "River view",
-        "Wi-Fi",
-        "Mineral Water",
-        "Heater",
-        "Air Conditioning",
-        "24-hour In-room Dining",
-        "Daily Housekeeping",
-        "Spa",
-        "Swimming Pool",
-        "Restaurant",
-        "Bonfire",
-        "Jungle Safari",
-        "Butler Services",
-        "24-hour Room Service",
-        "Lounge",
-        "Bar"
-      ]
-    },
-    {
-      id: 8,
-      name: "The Riverwood Forest Retreat Kanha",
-      slug: "riverwood-forest-retreat-kanha",
-      rating: 4.4,
-      stars: 5,
-      reviews: 5,
-      location: "Baihar",
-      address: "23.4 km drive to Mukki gate, Kanha National Park",
-      price: "₹11,763",
-      image: "https://r1imghtlak.mmtcdn.com/4bbc9b36e98911edbad00a58a9feac02.jpg",
-      amenities: [
-        "Spa",
-        "Swimming Pool",
-        "Restaurant",
-        "Bar"
-      ],
-      featured: true,
-      description: "Situated in the heart of Kanha, a national park and tiger reserve in Madhya Pradesh, the Riverwood Forest Retreat is a modern and luxurious property offering premium wilderness cottages with garden views and excellent amenities.",
-      images: [
-        "https://r1imghtlak.mmtcdn.com/4bbc9b36e98911edbad00a58a9feac02.jpg",
-        "https://r1imghtlak.mmtcdn.com/781a7cd4e98911edb5070a58a9feac02.jpg",
-        "https://r1imghtlak.mmtcdn.com/25da9616e98911edab8b0a58a9feac02.jpg",
-        "https://r1imghtlak.mmtcdn.com/04e2d54ae98911edbafa0a58a9feac02.jpg",
-        "https://r1imghtlak.mmtcdn.com/258dd664e98911edb7d10a58a9feac02.jpg"
-      ],
-      bedrooms: 1,
-      beds: 2,
-      bathrooms: 1,
-      guests: 2,
-      features: [
-        {
-          title: "Premium wilderness experience",
-          description: "Enjoy 440 sq.ft (41 sq.mt) cottages with twin or double beds and garden views."
-        },
-        {
-          title: "Luxury amenities",
-          description: "Relax in the bathtub or jacuzzi after a day of safari adventures."
-        },
-        {
-          title: "Flexible booking options",
-          description: "Choose between room-only or breakfast-included packages."
-        }
-      ],
-      fullAmenities: [
-        "Garden view",
-        "Bathtub",
-        "Jacuzzi",
-        "Wifi",
-        "Free parking on premises",
-        "TV",
-        "Swimming Pool",
-        "Air conditioning",
-        "Restaurant",
-        "Room service",
-        "Bonfire",
-        "Jungle Safari",
-        "Kids Play Area",
-        "Lounge",
-        "Bar",
-        "Indoor Games",
-        "Spa"
-      ]
-      },
-      {
-        id: 9,
-        name: "Kanha Jungle Camp",
-        slug: "kanha-jungle-camp",
-        rating: 4.4,
-        stars: 5,
-        reviews: 74,
-        location: "Baihar",
-        address: "11.8 km drive to Mukki gate, Kanha National Park",
-        price: "₹9,884",
-        image: "https://r1imghtlak.mmtcdn.com/f07c87ba548811ea83c50242ac110002.jpg",
-        amenities: [
-          "Shared Swimming Pool",
-          "Caretaker",
-          "Housekeeping",
-          "Free Wi-Fi",
-        ],
-        featured: true,
-        description: "Pet-friendly stay offering a cook, lawn, library & fireplace. Unwind amidst nature at this property spread across 40 acres of reforested land, built using indigenous materials. The Ground Floor Luxury Cottage provides a perfect blend of comfort and wilderness experience.",
-        images: [
-          "https://r1imghtlak.mmtcdn.com/f07c87ba548811ea83c50242ac110002.jpg",
-          "https://r1imghtlak.mmtcdn.com/b29778ccb6d211ea861e0242ac11000d.jpg",
-          "https://r1imghtlak.mmtcdn.com/ab136174b6d211eab61f0242ac11001e.jpg",
-          "https://r1imghtlak.mmtcdn.com/f39ebae4b62511eb8a620242ac110005.jfif",
-          "https://r1imghtlak.mmtcdn.com/475cf98a548811ea9d1d0242ac110002.jpg"
-        ],
-        bedrooms: 1,
-        beds: 1,
-        bathrooms: 1,
-        guests: 2,
-        features: [
-          {
-            title: "Ground Floor Luxury Cottage",
-            description: "Spacious 594 sq.ft (55 sq.mt) cottage with forest view and king bed."
-          },
-          {
-            title: "Pet-friendly accommodation",
-            description: "One of the few properties in Kanha that welcomes your furry friends."
-          },
-          {
-            title: "Multiple dining options",
-            description: "Choose from breakfast-only or all-inclusive meal plans with lunch and dinner."
-          }
-        ],
-        fullAmenities: [
-          "Forest view",
-          "Balcony",
-          "Shared Swimming Pool",
-          "Caretaker",
-          "Housekeeping",
-          "Free Wi-Fi",
-          "Spa",
-          "Restaurant",
-          "Cafe",
-          "Bonfire",
-          "Barbeque",
-          "Shared Living Room",
-          "Pet-friendly",
-          "Library",
-          "Fireplace",
-          "Cook",
-          "Lawn"
-        ]
-      },
-      {
-        id: 10,
-        name: "Lemon Tree Wildlife Resort Kanha",
-        slug: "lemon-tree-wildlife-resort-kanha",
-        rating: 4.3,
-        stars: 3,
-        reviews: 7,
-        location: "Kareli",
-        address: "13.4 km drive to Mukki gate, Kanha National Park",
-        price: "₹12,915",
-        image: "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202402131141503685-f2e81a5a-d4fb-4a4a-b109-2adc42eda770.jpg",
-        amenities: [
-          "Swimming Pool",
-          "Restaurant",
-          "Bonfire",
-          "Fireplace",
-        ],
-        featured: true,
-        description: "An idyllic escape for wildlife enthusiasts, the property features spacious, tasteful cottages and all-day dining. Enjoy a luxurious stay with complimentary breakfast and lunch or dinner included in your package.",
-        images: [
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202402131141503685-f2e81a5a-d4fb-4a4a-b109-2adc42eda770.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202402131141503685-8f66cd5f-efe4-4cdb-bbb0-3fb410bfabe0.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202402131141503685-2ba5fb50-f8aa-4969-898b-a221f50aa8e3.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202402131141503685-d270bea1-43cd-4578-98bc-381bb946cd3e.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202402131141503685-f9690aec-cb7c-4f5d-b247-0072fc7a2be0.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202402131141503685-ecde8dac-c90a-4ea2-90cd-b1622e78176d.jpg"
-        ],
-        bedrooms: 1,
-        beds: 2,
-        bathrooms: 1,
-        guests: 2,
-        features: [
-          {
-            title: "Superior Twin Jungle Cottage",
-            description: "Comfortable 484 sq.ft (45 sq.mt) cottage with twin beds and modern amenities."
-          },
-          {
-            title: "Superior King Jungle Cottage",
-            description: "Spacious 484 sq.ft (45 sq.mt) cottage with king bed and premium furnishings."
-          },
-          {
-            title: "Deluxe King Pool Villa",
-            description: "Luxurious 947 sq.ft (88 sq.mt) villa with king bed and private swimming pool view."
-          }
-        ],
-        roomTypes: [
-          {
-            name: "Superior Twin Jungle Cottage",
-            size: "484 sq.ft (45 sq.mt)",
-            bedType: "Twin Bed",
-            price: "₹12,915",
-            amenities: [
-              "Mineral Water",
-              "Housekeeping",
-              "Wi-Fi",
-              "Air Conditioning",
-              "Iron/Ironing Board",
-              "Bathroom"
-            ]
-          },
-          {
-            name: "Superior King Jungle Cottage",
-            size: "484 sq.ft (45 sq.mt)",
-            bedType: "King Bed",
-            price: "₹12,915",
-            amenities: [
-              "Mineral Water",
-              "Iron/Ironing Board",
-              "Bathroom",
-              "Air Conditioning",
-              "Wi-Fi",
-              "Room Service"
-            ]
-          },
-          {
-            name: "Deluxe King Pool Villa",
-            size: "947 sq.ft (88 sq.mt)",
-            bedType: "King Bed",
-            price: "₹25,930",
-            amenities: [
-              "Swimming Pool View",
-              "Mineral Water",
-              "Housekeeping",
-              "Wi-Fi",
-              "Air Conditioning",
-              "Iron/Ironing Board",
-              "Bathroom"
-            ]
-          }
-        ],
-        fullAmenities: [
-          "Forest view",
-          "Swimming Pool",
-          "Restaurant",
-          "Bonfire",
-          "Fireplace",
-          "Jungle Safari",
-          "Lounge",
-          "Yoga",
-          "Mineral Water",
-          "Housekeeping",
-          "Wi-Fi",
-          "Air Conditioning",
-          "Iron/Ironing Board",
-          "Bathroom",
-          "Room Service",
-          "Early Check-In",
-          "Late Check-Out",
-          "Complimentary Hi-Tea",
-          "Trekking & Nature Walk"
-        ]
-      },
-      {
-        id: 11,
-        name: "Tathastu Kanha",
-        slug: "tathastu-kanha",
-        rating: 4.3,
-        stars: 4,
-        reviews: 42,
-        location: "Gudma",
-        address: "9.3 km drive to Mukki gate, Kanha National Park",
-        price: "₹11,985",
-        image: "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201805301341003881-d06433a497a311e8a02302f436bd30f4.jpg",
-        amenities: [
-          "Spa",
-          "Swimming Pool",
-          "Restaurant",
-          "Bonfire",
-        ],
-        featured: true,
-        description: "Unwind among the tranquil serenity of the sal and bamboo forests in all their glory at Tathastu Kanha, close to the Kanha National Park - the renowned tiger reserve. Enjoy luxury cottages with garden views and excellent dining options.",
-        images: [
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201805301341003881-d06433a497a311e8a02302f436bd30f4.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/201805301341003881-28-14259630fad911ed8e110a58a9feac02.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201805301341003881-33fdce90fada11edb6b40a58a9feac02.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201805301341003881-789dcf2efad911ed944c0a58a9feac02.jpg",
-          "https://r1imghtlak.mmtcdn.com/931d55f4522611eabce30242ac110004.jpg"
-        ],
-        bedrooms: 1,
-        beds: 2,
-        bathrooms: 1,
-        guests: 2,
-        features: [
-          {
-            title: "Luxury Cottages",
-            description: "Comfortable 400 sq.ft (37 sq.mt) cottages with garden views and double beds."
-          },
-          {
-            title: "Yurts",
-            description: "Unique 225 sq.ft (21 sq.mt) accommodations with jungle views and king beds."
-          },
-          {
-            title: "Luxury Family Room",
-            description: "Spacious 510 sq.ft (47 sq.mt) rooms with garden views, double beds and bathtub."
-          }
-        ],
-        roomTypes: [
-          {
-            name: "Luxury Cottages",
-            size: "400 sq.ft (37 sq.mt)",
-            bedType: "Double Bed",
-            price: "₹11,985",
-            amenities: [
-              "Garden View",
-              "Wi-Fi",
-              "Air Conditioning",
-              "Daily Housekeeping",
-              "Room Service",
-              "Mineral Water",
-              "Laundry Service"
-            ]
-          },
-          {
-            name: "Yurts",
-            size: "225 sq.ft (21 sq.mt)",
-            bedType: "King Bed",
-            price: "₹12,914",
-            amenities: [
-              "Jungle View",
-              "Study Room",
-              "Wi-Fi",
-              "Mineral Water",
-              "Air Conditioning",
-              "Room Service",
-              "Daily Housekeeping"
-            ]
-          },
-          {
-            name: "Luxury Family Room",
-            size: "510 sq.ft (47 sq.mt)",
-            bedType: "Double Bed",
-            price: "₹18,630",
-            amenities: [
-              "Garden View",
-              "Bathtub",
-              "Wi-Fi",
-              "Air Conditioning",
-              "Daily Housekeeping",
-              "Room Service",
-              "Mineral Water",
-              "Laundry Service"
-            ]
-          }
-        ],
-        fullAmenities: [
-          "Garden view",
-          "Jungle view",
-          "Bathtub",
-          "Wi-Fi",
-          "Free parking on premises",
-          "TV",
-          "Swimming Pool",
-          "Air conditioning",
-          "Restaurant",
-          "Room service",
-          "Spa",
-          "Bonfire",
-          "Fireplace",
-          "Indoor Games",
-          "Daily Housekeeping",
-          "Mineral Water",
-          "Laundry Service",
-          "Study Room",
-          "Food and Dining",
-          "10% off on Food & Beverage services",
-          "15% Discount On Meal Upgrade",
-          "Free Breakfast",
-          "Free Lunch Or Dinner",
-          "Free Trekking & Nature Walk",
-          "Complimentary Welcome Drink on arrival",
-          "Complimentary Hi-Tea"
-        ]
-      },
-      {
-        id: 12,
-        name: "The Celebration Van Villas",
-        slug: "celebration-van-villas",
-        rating: 3.8,
-        stars: 4,
-        reviews: 28,
-        location: "Mocha",
-        address: "4.8 km drive to Khatia gate, Kanha National Park",
-        price: "₹9,660",
-        image: "https://r1imghtlak.mmtcdn.com/850390866ed111e78bf60a4cef95d023.jpg",
-        amenities: [
-          "Swimming Pool",
-          "Restaurant",
-          "Bonfire",
-          "Lounge"
-        ],
-        featured: false,
-        description: "Set amongst nature, the resort allows you to experience flora and fauna at their best. While the team greets you with the best hospitality, this wildlife resort makes your trip the memorable one indeed.",
-        images: [
-          "https://r1imghtlak.mmtcdn.com/850390866ed111e78bf60a4cef95d023.jpg",
-          "https://r1imghtlak.mmtcdn.com/faf996e8260411ec8bc10a58a9feac02.jpeg",
-          "https://r1imghtlak.mmtcdn.com/4a4ba602480b11e5aef65ee5da2daa2a.jfif",
-          "https://r1imghtlak.mmtcdn.com/6f0b0b8c6ed211e78f69025f77df004f.jpg",
-          "https://r1imghtlak.mmtcdn.com/6451ac18260311ec85c20a58a9feac02.jpeg"
-        ],
-        bedrooms: 1,
-        beds: 1,
-        bathrooms: 1,
-        guests: 2,
-        features: [
-          {
-            title: "Deluxe Room",
-            description: "Cozy 220 sq.ft (20 sq.mt) room with king bed and modern amenities."
-          },
-          {
-            title: "Suite Room",
-            description: "Spacious 330 sq.ft (31 sq.mt) suite with jungle view and king bed."
-          },
-          {
-            title: "All-inclusive meals",
-            description: "Enjoy complimentary breakfast, lunch, and dinner during your stay."
-          }
-        ],
-        roomTypes: [
-          {
-            name: "Deluxe Room",
-            size: "220 sq.ft (20 sq.mt)",
-            bedType: "King Bed",
-            price: "₹9,660",
-            amenities: [
-              "Heater",
-              "Air Conditioning",
-              "Iron/Ironing Board",
-              "Smoking Room",
-              "Daily Housekeeping",
-              "Bathroom"
-            ]
-          },
-          {
-            name: "Suite Room",
-            size: "330 sq.ft (31 sq.mt)",
-            bedType: "King Bed",
-            price: "₹11,054",
-            amenities: [
-              "Jungle View",
-              "Heater",
-              "Mineral Water - additional charge",
-              "Iron/Ironing Board",
-              "Daily Housekeeping",
-              "Bathroom",
-              "In-room Dining"
-            ]
-          }
-        ],
-        fullAmenities: [
-          "Jungle view",
-          "Heater",
-          "Air Conditioning",
-          "Iron/Ironing Board",
-          "Smoking Room",
-          "Daily Housekeeping",
-          "Bathroom",
-          "In-room Dining",
-          "Swimming Pool",
-          "Restaurant",
-          "Indoor Games",
-          "Bonfire",
-          "Fireplace",
-          "Kids Play Area",
-          "Lounge",
-          "Complimentary Breakfast",
-          "Complimentary Lunch",
-          "Complimentary Dinner",
-          "Non-Refundable",
-          "Location & Surroundings",
-          "Property Highlights"
-        ]
-      },
-      {
-        id: 13,
-        name: "Sterling Kanha",
-        slug: "sterling-kanha",
-        rating: 4.0,
-        stars: 4,
-        reviews: 767,
-        location: "Mocha",
-        address: "5.7 km drive to Khatia gate, Kanha National Park",
-        price: "₹6,460",
-        image: "https://r1imghtlak.mmtcdn.com/f27ff7a0f5e811e785a20224510f5e5b.jpg",
-        amenities: [
-          "Swimming Pool",
-          "Restaurant",
-          "Jungle Safari",
-          "Fireplace"
-        ],
-        featured: true,
-        description: "Embrace nature in this 8.5-acre retreat, boasting a natural pool, encircled by majestic Sal trees for an unforgettable holiday. Enjoy special last minute deals and a variety of room options with all-inclusive meal packages.",
-        images: [
-          "https://r1imghtlak.mmtcdn.com/f27ff7a0f5e811e785a20224510f5e5b.jpg",
-          "https://r1imghtlak.mmtcdn.com/435a5360f5e811e7b99802155a238f12.jpg",
-          "https://r1imghtlak.mmtcdn.com/8f5c2f18f5e811e7ba030a209fbd0127.jpg",
-          "https://r1imghtlak.mmtcdn.com/de66dcf2f5e811e7b5640a604e3b7738.jpg",
-          "https://r1imghtlak.mmtcdn.com/516ac822f5e811e79dcd0a9df65c8753.jpg"
-        ],
-        bedrooms: 1,
-        beds: 1,
-        bathrooms: 1,
-        guests: 2,
-        features: [
-          {
-            title: "Natural setting",
-            description: "Set in an 8.5-acre retreat surrounded by majestic Sal trees and natural beauty."
-          },
-          {
-            title: "Last minute deals",
-            description: "Special discounts available for last-minute bookings, subject to availability."
-          },
-          {
-            title: "All-inclusive options",
-            description: "Choose from various meal packages including breakfast, lunch, and dinner."
-          }
-        ],
-        roomTypes: [
-          {
-            name: "Classic tent with sitout",
-            size: "300 sq.ft (28 sq.mt)",
-            bedType: "King Bed",
-            price: "₹6,460",
-            amenities: [
-              "Mineral Water",
-              "Air Conditioning",
-              "Room Service",
-              "Bathroom",
-              "Daily Housekeeping",
-              "Laundry Service"
-            ]
-          },
-          {
-            name: "Premier Room",
-            size: "450 sq.ft (42 sq.mt)",
-            bedType: "1 King bed or 2 Twin Bed(s)",
-            price: "₹6,935",
-            amenities: [
-              "Wi-Fi",
-              "Room Service",
-              "Daily Housekeeping",
-              "Laundry Service",
-              "Bathroom",
-              "Air Conditioning"
-            ]
-          },
-          {
-            name: "Privilege Suite",
-            size: "615 sq.ft (57 sq.mt)",
-            bedType: "King Bed",
-            price: "₹7,410",
-            amenities: [
-              "Forest View",
-              "Wi-Fi",
-              "Air Conditioning",
-              "Room Service",
-              "Housekeeping",
-              "Mineral Water",
-              "Bathroom"
-            ]
-          }
-        ],
-        fullAmenities: [
-          "Forest view",
-          "Wi-Fi",
-          "Air Conditioning",
-          "Room Service",
-          "Bathroom",
-          "Daily Housekeeping",
-          "Laundry Service",
-          "Mineral Water",
-          "Swimming Pool",
-          "Restaurant",
-          "Indoor Games",
-          "Jungle Safari",
-          "Fireplace",
-          "Breakfast included",
-          "Lunch Or Dinner included",
-          "Non-Refundable",
-          "Food and Dining",
-          "Location & Surroundings",
-          "Complimentary Hi-Tea",
-          "Complimentary INR 500 Hotel Voucher redeemable on Food & Beverages",
-          "Signature Activities & Experiences",
-          "Free Breakfast",
-          "Free Lunch Or Dinner",
-          "Free Trekking & Nature Walk",
-          "Last Minute Deal"
-        ]
-      },
-      {
-        id: 14,
-        name: "Surwahi Social Ecoestate Kanha Homestay",
-        slug: "surwahi-social-ecoestate-kanha-homestay",
-        rating: 4.8,
-        stars: 4,
-        reviews: 11,
-        location: "Baihar",
-        address: "29.4 km drive to Mukki gate, Kanha National Park",
-        price: "₹4,713",
-        image: "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202101051735207916-c76e759d-7736-4c54-898f-4458541d8f65.jpg",
-        amenities: [
-          "Shared Swimming Pool",
-          "Shared Kitchen",
-          "Barbeque",
-          "Bonfire"
-        ],
-        featured: false,
-        description: "Rooms in a homestay offering a kitchen, jungle safaris, Wi-Fi & parking. Private access to a Bedroom & Bathroom, shared access to Living room, Kitchen & other common spaces with fellow guests.",
-        images: [
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202101051735207916-c76e759d-7736-4c54-898f-4458541d8f65.jpg",
-          "https://r1imghtlak.mmtcdn.com/49e2fca6-9083-43ba-9ba9-969be9cb9816.jpeg",
-          "https://r1imghtlak.mmtcdn.com/8f5c2f18f5e811e7ba030a209fbd0127.jpg",
-          "https://r1imghtlak.mmtcdn.com/a5fee6a5-1a38-4427-a48a-735646ba5b73.JPG",
-          "https://r1imghtlak.mmtcdn.com/1279e153-7c77-44ca-9042-b7b79fc46796.jpg"
-        ],
-        bedrooms: 1,
-        beds: 1,
-        bathrooms: 1,
-        guests: 2,
-        features: [
-          {
-            title: "Homestay experience",
-            description: "Enjoy a more authentic stay with private bedroom and bathroom but shared common areas."
-          },
-          {
-            title: "Family Suite with Air Cooler",
-            description: "Spacious 600 sq.ft (56 sq.mt) room with garden view and king bed."
-          },
-          {
-            title: "Flexible meal options",
-            description: "Choose from breakfast-only or all-inclusive packages with lunch and dinner."
-          }
-        ],
-        roomTypes: [
-          {
-            name: "Family Suite with Air Cooler",
-            size: "600 sq.ft (56 sq.mt)",
-            bedType: "King Bed",
-            price: "₹4,713",
-            amenities: [
-              "Garden View",
-              "Heater",
-              "Daily Housekeeping",
-              "Iron/Ironing Board",
-              "Laundry Service",
-              "Wi-Fi",
-              "Bathroom"
-            ]
-          }
-        ],
-        fullAmenities: [
-          "Garden view",
-          "Heater",
-          "Daily Housekeeping",
-          "Iron/Ironing Board",
-          "Laundry Service",
-          "Wi-Fi",
-          "Bathroom",
-          "Shared Swimming Pool",
-          "Shared Kitchen",
-          "Shared Living Room",
-          "Pool/Beach towels",
-          "Barbeque",
-          "Bonfire",
-          "Caretaker",
-          "Indoor Games",
-          "Fireplace",
-          "Shared Parking",
-          "Free Breakfast",
-          "Free Lunch Or Dinner",
-          "Non-Refundable",
-          "Can accommodate 3 more guests at extra cost"
-        ]
-      },
-      {
-        id: 15,
-        name: "MPT Jungle Resort Sarhi, Kanha",
-        slug: "mpt-jungle-resort-sarhi-kanha",
-        rating: 4.5,
-        stars: 3,
-        reviews: 300,
-        location: "Bichhiya",
-        address: "About a minute walk to Sarhi Gate, Kanha National Park",
-        price: "₹3,870",
-        image: "https://r1imghtlak.mmtcdn.com/6bb56f280e8a11e989940242ac110002.jpg",
-        amenities: [
-          "Swimming Pool",
-          "Gym",
-          "Restaurant",
-          "Lounge",
-        ],
-        featured: true,
-        description: "Nestled in the lap of green highlands, a mystic mountain view resort, luxuriously designed rooms, a jungle safari, and a host of other amenities.",
-        images: [
-          "https://r1imghtlak.mmtcdn.com/6bb56f280e8a11e989940242ac110002.jpg",
-          "https://r1imghtlak.mmtcdn.com/d0cb863c0e8911e9868a0242ac110002.jpg",
-          "https://r1imghtlak.mmtcdn.com/06f2971af23c11e8b4a60242ac110002.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201811271754095462-83119d4420db11eba9280242ac110002.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201811271754095462-24588df201a511ecab6e0a58a9feac02.jpg"
-        ],
-        bedrooms: 1,
-        beds: 1,
-        bathrooms: 1,
-        guests: 2,
-        features: [
-          {
-            title: "Mountain view setting",
-            description: "Enjoy the beautiful views of green highlands and mystic mountains from your room."
-          },
-          {
-            title: "All-inclusive meals",
-            description: "Free breakfast, lunch, and dinner included with your stay."
-          },
-          {
-            title: "Excellent location",
-            description: "Just a minute's walk to Sarhi Gate entrance of Kanha National Park."
-          }
-        ],
-        roomTypes: [
-          {
-            name: "AC Dlx",
-            size: "1938 sq.ft (180 sq.mt)",
-            bedType: "Double Bed",
-            price: "₹3,870",
-            amenities: [
-              "Valley View",
-              "Air Conditioning",
-              "Housekeeping",
-              "Bathroom",
-              "Room Service",
-              "Air Purifier",
-              "Mineral Water - additional charge"
-            ]
-          },
-          {
-            name: "Super Deluxe Room",
-            size: "2150 sq.ft (200 sq.mt)",
-            bedType: "Double Bed",
-            price: "₹4,174",
-            amenities: [
-              "Jungle View",
-              "Mineral Water",
-              "Bathroom",
-              "Air Conditioning",
-              "Housekeeping",
-              "Room Service",
-              "Iron/Ironing Board"
-            ]
-          }
-        ],
-        fullAmenities: [
-          "Valley view",
-          "Jungle view",
-          "Air Conditioning",
-          "Housekeeping",
-          "Bathroom",
-          "Room Service",
-          "Air Purifier",
-          "Mineral Water",
-          "Iron/Ironing Board",
-          "Swimming Pool",
-          "Gym",
-          "Restaurant",
-          "Indoor Games",
-          "Lounge",
-          "Yoga",
-          "Free Breakfast",
-          "Free Lunch",
-          "Free Dinner",
-          "Non-Refundable",
-          "Bank of Baroda Credit Card NoCost EMI Paymode Offer",
-          "Property Highlights",
-          "Location & Surroundings"
-        ]
-      },
-        // Bandhavgarh National Park Hotels
   {
-    id: 16,
-    name: "Treehouse Hideaway",
-    slug: "treehouse-hideaway-bandhavgarh",
-    rating: 4.7,
-    stars: 5,
-    reviews: 210,
-    location: "Bandhavgarh National Park, Tala Gate",
-    address: "Village Ketkiya, Bandhavgarh National Park, Madhya Pradesh 484661",
-    price: "₹18,500",
-    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5a/d6/e2/tree-house-hideaway.jpg?w=700&h=-1&s=1",
+    id: 5,
+    name: "Kusum Resort",
+    slug: "kusum-resort",
+    rating: 4.5,
+    stars: 3,
+    reviews: 170,
+    location: "Mandla , Khatia Gate",
+    address: "NATIONAL PARK, Kusum Resort-village-MOCHA, Chhapri Road, Chiraidongri - Kanha Rd, Mocha, Madhya Pradesh 481768",
+    price: "₹5,000",
+    image: "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort.jpeg",
     amenities: [
-      "Luxury Treehouses",
-      "All Meals Included",
-      "Safari Booking",
-      "Nature Walks"
+      "Cancellation Policy",
+      "Breakfast Included",
+      "Free Wifi",
+      "Outdoor Activities"
     ],
-    featured: true,
-    description: "Experience the magic of living in a treehouse in the wilderness. Our five exclusive treehouses are built on trees with minimal impact on nature, offering a unique blend of luxury and adventure in Bandhavgarh National Park.",
+    featured: false,
+    description: "Kusum Resort offers a comfortable stay close to nature at an affordable price. Located near Khatia Gate, the resort provides easy access to Kanha National Park while offering all essential amenities for a pleasant stay.",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5a/d6/e2/tree-house-hideaway.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5a/d7/1c/tree-house-hideaway.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5a/d7/0a/tree-house-hideaway.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5a/d6/f9/tree-house-hideaway.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5a/d6/f0/tree-house-hideaway.jpg?w=700&h=-1&s=1"
-    ],
-    bedrooms: 1,
-    beds: 1,
-    bathrooms: 1,
-    guests: 2,
-    features: [
-      {
-        title: "Unique treehouse living",
-        description: "Experience staying in a luxury treehouse built on mature trees."
-      },
-      {
-        title: "Wildlife from your balcony",
-        description: "Spot wildlife right from your private balcony overlooking the forest."
-      },
-      {
-        title: "Gourmet dining",
-        description: "Enjoy delicious meals prepared with locally sourced ingredients."
-      }
-    ],
-    fullAmenities: [
-      "Forest view",
-      "Private balcony",
-      "Air conditioning",
-      "Hot water",
-      "Wifi in common areas",
-      "All meals included",
-      "Safari arrangements",
-      "Nature walks",
-      "Bird watching",
-      "Outdoor dining",
-      "Room service",
-      "Laundry service",
-      "24-hour electricity",
-      "Security"
-    ]
-  },
-  {
-    id: 17,
-    name: "Kings Lodge Bandhavgarh",
-    slug: "kings-lodge-bandhavgarh",
-    rating: 4.6,
-    stars: 4,
-    reviews: 185,
-    location: "Bandhavgarh National Park, Tala Gate",
-    address: "Village Rancha, Bandhavgarh National Park, Madhya Pradesh 484661",
-    price: "₹14,200",
-    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/e0/91/a2/kings-lodge.jpg?w=700&h=-1&s=1",
-    amenities: [
-      "Swimming Pool",
-      "Restaurant",
-      "Safari Booking",
-      "Spa Services"
-    ],
-    featured: true,
-    description: "Set in 10 acres of natural forest, Kings Lodge offers 18 cottage-style rooms with modern amenities while maintaining an eco-friendly approach. Located in one of India's most renowned tiger reserves, it's perfect for wildlife enthusiasts.",
-    images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/e0/91/a2/kings-lodge.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/e0/91/a3/kings-lodge.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/e0/91/a4/kings-lodge.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/e0/91/a5/kings-lodge.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/e0/91/a6/kings-lodge.jpg?w=700&h=-1&s=1"
+      "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort.jpeg",
+      "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort5.jpeg",
+      "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort4.jpeg",
+      "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort2.jpeg",
+      "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort3.jpeg",
+      "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort1.jpeg"
     ],
     bedrooms: 1,
     beds: 2,
@@ -1284,60 +217,119 @@ export const allHotels = [
     guests: 3,
     features: [
       {
-        title: "Eco-friendly luxury",
-        description: "Sustainable practices with solar power and water conservation."
+        title: "Value for money",
+        description: "Excellent amenities at an affordable price point."
       },
       {
-        title: "Wildlife experiences",
-        description: "Expert naturalists lead safaris and nature walks in the park."
+        title: "Nature experience",
+        description: "Surrounded by natural beauty with opportunities for outdoor activities."
       },
       {
-        title: "Local cultural immersion",
-        description: "Visits to nearby villages and cultural performances."
+        title: "Free cancellation",
+        description: "Flexible booking with cancellation options available."
       }
     ],
     fullAmenities: [
+      "Forest view",
+      "Garden view",
+      "Wifi",
+      "Free parking on premises",
+      "TV",
       "Swimming pool",
-      "Restaurant",
-      "Bar",
-      "Spa services",
-      "Safari booking",
-      "Nature walks",
-      "Bird watching",
-      "Library",
-      "Wifi in common areas",
       "Air conditioning",
-      "Hot water",
+      "Restaurant",
       "Room service",
+      "Hot water",
       "Laundry service",
-      "24-hour electricity"
+      "Tour desk"
     ]
   },
   {
-    id: 18,
-    name: "Samode Safari Lodge",
-    slug: "samode-safari-lodge-bandhavgarh",
-    rating: 4.8,
-    stars: 5,
-    reviews: 156,
-    location: "Bandhavgarh National Park, Tala Gate",
-    address: "Village Mardari, Bandhavgarh National Park, Madhya Pradesh 484661",
-    price: "₹28,000",
-    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/1c/a2/c5/samode-safari-lodge.jpg?w=700&h=-1&s=1",
+    id: 6,
+    name: "Celebration Van Vilas Kanha",
+    slug: "celebration-van-vilas-kanha",
+    rating: 4.2,
+    stars: 4,
+    reviews: 150,
+    location: "Mocha, Khatia Gate",
+    address: "Village Mocha, Kanha National Park, Madhya Pradesh 481768",
+    price: "₹8,500",
+    image: "https://r1imghtlak.mmtcdn.com/850390866ed111e78bf60a4cef95d023.jpg",
     amenities: [
-      "Private Plunge Pools",
-      "Gourmet Dining",
-      "Spa",
-      "Safari Booking"
+      "Swimming Pool",
+      "Restaurant",
+      "Safari Booking",
+      "Free Wifi"
     ],
     featured: true,
-    description: "Samode Safari Lodge offers 12 luxurious villas with private courtyards and plunge pools. The architecture is inspired by local villages but with modern luxury amenities. Experience unparalleled wildlife experiences with expert naturalists.",
+    description: "Celebration Van Vilas offers a perfect blend of luxury and wilderness experience. Located near Khatia Gate, the resort provides comfortable accommodations, excellent dining options, and easy access to Kanha National Park.",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/1c/a2/c5/samode-safari-lodge.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/1c/a2/c6/samode-safari-lodge.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/1c/a2/c7/samode-safari-lodge.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/1c/a2/c8/samode-safari-lodge.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/1c/a2/c9/samode-safari-lodge.jpg?w=700&h=-1&s=1"
+      "https://r1imghtlak.mmtcdn.com/850390866ed111e78bf60a4cef95d023.jpg",
+      "https://r1imghtlak.mmtcdn.com/faf996e8260411ec8bc10a58a9feac02.jpeg",
+      "https://r1imghtlak.mmtcdn.com/4a4ba602480b11e5aef65ee5da2daa2a.jfif",
+      "https://r1imghtlak.mmtcdn.com/6f0b0b8c6ed211e78f69025f77df004f.jpg",
+      "https://r1imghtlak.mmtcdn.com/6451ac18260311ec85c20a58a9feac02.jpeg"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 4,
+    features: [
+      {
+        title: "Jungle experience",
+        description: "Immerse yourself in the natural beauty of Kanha National Park."
+      },
+      {
+        title: "Comfortable accommodations",
+        description: "Well-appointed rooms with modern amenities for a pleasant stay."
+      },
+      {
+        title: "Wildlife adventures",
+        description: "Easy access to safari tours and wildlife experiences."
+      }
+    ],
+    fullAmenities: [
+      "Forest view",
+      "Garden view",
+      "Wifi",
+      "Free parking on premises",
+      "TV",
+      "Swimming pool",
+      "Air conditioning",
+      "Restaurant",
+      "Room service",
+      "Hot water",
+      "Laundry service",
+      "Safari booking",
+      "Nature walks",
+      "Bird watching"
+    ]
+  },
+  {
+    id: 7,
+    name: "Sterling Kanha",
+    slug: "sterling-kanha",
+    rating: 4.0,
+    stars: 4,
+    reviews: 767,
+    location: "Mocha",
+    address: "5.7 km drive to Khatia gate, Kanha National Park",
+    price: "₹6,460",
+    image: "https://r1imghtlak.mmtcdn.com/f27ff7a0f5e811e785a20224510f5e5b.jpg",
+    amenities: [
+      "Swimming Pool",
+      "Restaurant",
+      "Jungle Safari",
+      "Fireplace"
+    ],
+    featured: true,
+    description: "Embrace nature in this 8.5-acre retreat, boasting a natural pool, encircled by majestic Sal trees for an unforgettable holiday. Enjoy special last minute deals and a variety of room options with all-inclusive meal packages.",
+    images: [
+      "https://r1imghtlak.mmtcdn.com/f27ff7a0f5e811e785a20224510f5e5b.jpg",
+      "https://r1imghtlak.mmtcdn.com/435a5360f5e811e7b99802155a238f12.jpg",
+      "https://r1imghtlak.mmtcdn.com/8f5c2f18f5e811e7ba030a209fbd0127.jpg",
+      "https://r1imghtlak.mmtcdn.com/de66dcf2f5e811e7b5640a604e3b7738.jpg",
+      "https://r1imghtlak.mmtcdn.com/516ac822f5e811e79dcd0a9df65c8753.jpg"
     ],
     bedrooms: 1,
     beds: 1,
@@ -1345,61 +337,433 @@ export const allHotels = [
     guests: 2,
     features: [
       {
-        title: "Private luxury villas",
-        description: "Spacious villas with private courtyards and plunge pools."
+        title: "Natural setting",
+        description: "Set in an 8.5-acre retreat surrounded by majestic Sal trees and natural beauty."
       },
       {
-        title: "Gourmet dining",
-        description: "Farm-to-table cuisine with organic ingredients and local flavors."
+        title: "Last minute deals",
+        description: "Special discounts available for last-minute bookings, subject to availability."
       },
       {
-        title: "Wellness experiences",
-        description: "Spa treatments, yoga sessions, and meditation in nature."
+        title: "All-inclusive options",
+        description: "Choose from various meal packages including breakfast, lunch, and dinner."
       }
     ],
     fullAmenities: [
-      "Private plunge pool",
-      "Private courtyard",
-      "Air conditioning",
-      "Luxury bathroom",
-      "Indoor and outdoor shower",
-      "Gourmet dining",
-      "Bar",
-      "Spa",
-      "Safari booking",
-      "Nature walks",
-      "Bird watching",
-      "Library",
-      "Wifi",
-      "Room service",
-      "Laundry service"
+      "Forest view",
+      "Wi-Fi",
+      "Air Conditioning",
+      "Room Service",
+      "Bathroom",
+      "Daily Housekeeping",
+      "Laundry Service",
+      "Mineral Water",
+      "Swimming Pool",
+      "Restaurant",
+      "Indoor Games",
+      "Jungle Safari",
+      "Fireplace",
+      "Breakfast included",
+      "Lunch Or Dinner included"
     ]
   },
   {
-    id: 19,
-    name: "Bandhav Vilas",
-    slug: "bandhav-vilas-bandhavgarh",
+    id: 8,
+    name: "MPT Jungle Resort Kanha",
+    slug: "mpt-jungle-resort-kanha",
     rating: 4.5,
+    stars: 3,
+    reviews: 300,
+    location: "Khatia Gate",
+    address: "Near Khatia Gate, Kanha National Park, Madhya Pradesh 481768",
+    price: "₹3,870",
+    image: "https://r1imghtlak.mmtcdn.com/6bb56f280e8a11e989940242ac110002.jpg",
+    amenities: [
+      "Swimming Pool",
+      "Restaurant",
+      "Safari Booking",
+      "Free Wifi"
+    ],
+    featured: true,
+    description: "MPT Jungle Resort offers comfortable accommodations at affordable prices. Located near Khatia Gate, the resort provides easy access to Kanha National Park while offering essential amenities for a pleasant stay.",
+    images: [
+      "https://r1imghtlak.mmtcdn.com/6bb56f280e8a11e989940242ac110002.jpg",
+      "https://r1imghtlak.mmtcdn.com/d0cb863c0e8911e9868a0242ac110002.jpg",
+      "https://r1imghtlak.mmtcdn.com/06f2971af23c11e8b4a60242ac110002.jpg",
+      "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201811271754095462-83119d4420db11eba9280242ac110002.jpg",
+      "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201811271754095462-24588df201a511ecab6e0a58a9feac02.jpg"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 3,
+    features: [
+      {
+        title: "Value for money",
+        description: "Excellent amenities at an affordable price point."
+      },
+      {
+        title: "Convenient location",
+        description: "Located near Khatia Gate for easy access to safari tours."
+      },
+      {
+        title: "Government operated",
+        description: "Managed by Madhya Pradesh Tourism for reliable service."
+      }
+    ],
+    fullAmenities: [
+      "Forest view",
+      "Garden view",
+      "Wifi",
+      "Free parking on premises",
+      "TV",
+      "Swimming pool",
+      "Air conditioning",
+      "Restaurant",
+      "Room service",
+      "Hot water",
+      "Laundry service",
+      "Safari booking",
+      "Nature walks"
+    ]
+  },
+  {
+    id: 9,
+    name: "Mogli Resort Kanha",
+    slug: "mogli-resort-kanha",
+    rating: 4.3,
     stars: 4,
-    reviews: 132,
-    location: "Bandhavgarh National Park, Tala Gate",
-    address: "Village Kuchwahi, Bandhavgarh National Park, Madhya Pradesh 484661",
-    price: "₹12,800",
-    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/5a/1c/e9/bandhav-vilas.jpg?w=700&h=-1&s=1",
+    reviews: 220,
+    location: "Khatia Gate",
+    address: "Near Khatia Gate, Kanha National Park, Madhya Pradesh 481768",
+    price: "₹7,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c5/mogli-resort.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Swimming Pool",
+      "Restaurant",
+      "Safari Booking",
+      "Free Wifi"
+    ],
+    featured: true,
+    description: "Mogli Resort offers a comfortable stay in the heart of Kanha National Park. With well-appointed rooms, excellent dining options, and easy access to safari tours, it's the perfect base for wildlife enthusiasts.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c5/mogli-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c6/mogli-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c7/mogli-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c8/mogli-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c9/mogli-resort.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 4,
+    features: [
+      {
+        title: "Jungle experience",
+        description: "Immerse yourself in the natural beauty of Kanha National Park."
+      },
+      {
+        title: "Comfortable accommodations",
+        description: "Well-appointed rooms with modern amenities for a pleasant stay."
+      },
+      {
+        title: "Wildlife adventures",
+        description: "Easy access to safari tours and wildlife experiences."
+      }
+    ],
+    fullAmenities: [
+      "Forest view",
+      "Garden view",
+      "Wifi",
+      "Free parking on premises",
+      "TV",
+      "Swimming pool",
+      "Air conditioning",
+      "Restaurant",
+      "Room service",
+      "Hot water",
+      "Laundry service",
+      "Safari booking",
+      "Nature walks",
+      "Bird watching"
+    ]
+  },
+  {
+    id: 10,
+    name: "Motel Chandan Kanha",
+    slug: "motel-chandan-kanha",
+    rating: 4.0,
+    stars: 3,
+    reviews: 180,
+    location: "Khatia Gate",
+    address: "Near Khatia Gate, Kanha National Park, Madhya Pradesh 481768",
+    price: "₹4,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e5/motel-chandan.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Restaurant",
+      "Safari Booking",
+      "Free Wifi",
+      "Parking"
+    ],
+    featured: false,
+    description: "Motel Chandan offers affordable accommodations near Kanha National Park. With clean rooms, a restaurant serving delicious meals, and helpful staff, it's a great choice for budget-conscious travelers.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e5/motel-chandan.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e6/motel-chandan.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e7/motel-chandan.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e8/motel-chandan.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e9/motel-chandan.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 3,
+    features: [
+      {
+        title: "Budget-friendly",
+        description: "Affordable accommodations without compromising on comfort."
+      },
+      {
+        title: "Convenient location",
+        description: "Located near Khatia Gate for easy access to safari tours."
+      },
+      {
+        title: "Helpful staff",
+        description: "Friendly staff ready to assist with safari bookings and local information."
+      }
+    ],
+    fullAmenities: [
+      "Garden view",
+      "Wifi",
+      "Free parking on premises",
+      "TV",
+      "Air conditioning",
+      "Restaurant",
+      "Room service",
+      "Hot water",
+      "Laundry service",
+      "Safari booking",
+      "Travel assistance"
+    ]
+  },
+  {
+    id: 11,
+    name: "Sereia Resort Kanha",
+    slug: "sereia-resort-kanha",
+    rating: 4.4,
+    stars: 4,
+    reviews: 190,
+    location: "Mukki Gate",
+    address: "Near Mukki Gate, Kanha National Park, Madhya Pradesh 481768",
+    price: "₹8,200",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/sereia-resort.jpg?w=700&h=-1&s=1",
     amenities: [
       "Swimming Pool",
       "Restaurant",
       "Safari Booking",
       "Spa"
     ],
-    featured: false,
-    description: "Bandhav Vilas offers 20 luxury villas with modern amenities in a serene natural setting. The resort features a swimming pool, multi-cuisine restaurant, and spa facilities. Perfect for wildlife enthusiasts seeking comfort after safari adventures.",
+    featured: true,
+    description: "Sereia Resort offers a luxurious stay near Mukki Gate of Kanha National Park. With spacious rooms, excellent dining options, and a range of recreational facilities, it's perfect for those seeking comfort and convenience.",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/5a/1c/e9/bandhav-vilas.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/5a/1c/ea/bandhav-vilas.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/5a/1c/eb/bandhav-vilas.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/5a/1c/ec/bandhav-vilas.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/5a/1c/ed/bandhav-vilas.jpg?w=700&h=-1&s=1"
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/sereia-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9f/sereia-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a0/sereia-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a1/sereia-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a2/sereia-resort.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 4,
+    features: [
+      {
+        title: "Luxury accommodations",
+        description: "Spacious rooms with modern amenities and elegant decor."
+      },
+      {
+        title: "Recreational facilities",
+        description: "Swimming pool, spa, and other amenities for relaxation."
+      },
+      {
+        title: "Wildlife experiences",
+        description: "Easy access to safari tours and wildlife experiences."
+      }
+    ],
+    fullAmenities: [
+      "Forest view",
+      "Garden view",
+      "Wifi",
+      "Free parking on premises",
+      "TV",
+      "Swimming pool",
+      "Air conditioning",
+      "Restaurant",
+      "Room service",
+      "Spa",
+      "Hot water",
+      "Laundry service",
+      "Safari booking",
+      "Nature walks",
+      "Bird watching"
+    ]
+  },
+{
+    id: 12,
+    name: "Kingfisher Resort Kanha",
+    slug: "kingfisher-resort-kanha", 
+    rating: 4.3,
+    stars: 4,
+    reviews: 210,
+    location: "Khatia Gate",
+    address: "Near Khatia Gate, Kanha National Park, Madhya Pradesh 481768",
+    price: "₹7,800",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a5/kingfisher-resort.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Swimming Pool",
+      "Restaurant", 
+      "Safari Booking",
+      "Free Wifi",
+      "Spa",
+      "Bar",
+      "Room Service",
+      "Laundry"
+    ],
+    featured: true,
+    description: "Kingfisher Resort offers a comfortable stay near Kanha National Park. With well-appointed rooms, excellent dining options, and a range of recreational facilities, it's perfect for wildlife enthusiasts and nature lovers. The resort features a swimming pool, spa, restaurant and bar along with modern amenities for a luxurious jungle stay.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a5/kingfisher-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a6/kingfisher-resort.jpg?w=700&h=-1&s=1", 
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a7/kingfisher-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a8/kingfisher-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a9/kingfisher-resort.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 4,
+    features: [
+      {
+        title: "Luxury accommodations",
+        description: "Well-appointed rooms with modern amenities and elegant furnishings for a comfortable stay."
+      },
+      {
+        title: "Wellness facilities", 
+        description: "Swimming pool, spa and fitness center for relaxation and rejuvenation."
+      },
+      {
+        title: "Wildlife experiences",
+        description: "Expert naturalists, safari tours and nature walks for wildlife enthusiasts."
+      }
+    ],
+    fullAmenities: [
+      "Forest view",
+      "Garden view", 
+      "Wifi",
+      "Free parking on premises",
+      "TV",
+      "Swimming pool",
+      "Air conditioning",
+      "Restaurant",
+      "Room service",
+      "Spa",
+      "Bar",
+      "Fitness center",
+      "Laundry service",
+      "Safari booking",
+      "Nature walks",
+      "Bird watching",
+      "24-hour front desk",
+      "Doctor on call"
+    ]
+},
+ // Add new Bandhavgarh hotels
+  {
+    id: 26,
+    name: "Mogli Bandhavgarh",
+    slug: "mogli-bandhavgarh",
+    rating: 4.4,
+    stars: 4,
+    reviews: 165,
+    location: "Bandhavgarh National Park, Tala Gate",
+    address: "Village Tala, Bandhavgarh National Park, Madhya Pradesh 484661",
+    price: "₹8,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c5/mogli-resort-bandhavgarh.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Swimming Pool",
+      "Restaurant",
+      "Safari Booking",
+      "Free Wifi"
+    ],
+    featured: true,
+    description: "Mogli Bandhavgarh offers a comfortable stay in the heart of tiger territory. With well-appointed rooms, excellent dining options, and easy access to safari tours, it's the perfect base for wildlife enthusiasts.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c5/mogli-resort-bandhavgarh.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c6/mogli-resort-bandhavgarh.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c7/mogli-resort-bandhavgarh.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c8/mogli-resort-bandhavgarh.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c9/mogli-resort-bandhavgarh.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 4,
+    features: [
+      {
+        title: "Jungle experience",
+        description: "Immerse yourself in the natural beauty of Bandhavgarh National Park."
+      },
+      {
+        title: "Comfortable accommodations",
+        description: "Well-appointed rooms with modern amenities for a pleasant stay."
+      },
+      {
+        title: "Wildlife adventures",
+        description: "Easy access to safari tours and wildlife experiences."
+      }
+    ],
+    fullAmenities: [
+      "Forest view",
+      "Garden view",
+      "Wifi",
+      "Free parking on premises",
+      "TV",
+      "Swimming pool",
+      "Air conditioning",
+      "Restaurant",
+      "Room service",
+      "Hot water",
+      "Laundry service",
+      "Safari booking",
+      "Nature walks",
+      "Bird watching"
+    ]
+  },
+  {
+    id: 27,
+    name: "White Tiger - MPT Bandhavgarh",
+    slug: "white-tiger-mpt-bandhavgarh",
+    rating: 4.2,
+    stars: 3,
+    reviews: 190,
+    location: "Bandhavgarh National Park, Tala Gate",
+    address: "Near Tala Gate, Bandhavgarh National Park, Madhya Pradesh 484661",
+    price: "₹4,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e5/white-tiger-mpt.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Restaurant",
+      "Safari Booking",
+      "Free Wifi",
+      "Parking"
+    ],
+    featured: false,
+    description: "White Tiger MPT offers affordable accommodations near Bandhavgarh National Park. With clean rooms, a restaurant serving delicious meals, and helpful staff, it's a great choice for budget-conscious travelers.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e5/white-tiger-mpt.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e6/white-tiger-mpt.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e7/white-tiger-mpt.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e8/white-tiger-mpt.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e9/white-tiger-mpt.jpg?w=700&h=-1&s=1"
     ],
     bedrooms: 1,
     beds: 2,
@@ -1407,46 +771,43 @@ export const allHotels = [
     guests: 3,
     features: [
       {
-        title: "Luxury villas",
-        description: "Spacious villas with modern amenities and traditional decor."
+        title: "Government operated",
+        description: "Managed by Madhya Pradesh Tourism for reliable service."
       },
       {
-        title: "Wellness center",
-        description: "Rejuvenate with spa treatments and wellness therapies."
+        title: "Budget-friendly",
+        description: "Affordable accommodations without compromising on comfort."
       },
       {
-        title: "Culinary delights",
-        description: "Multi-cuisine restaurant serving Indian and international dishes."
+        title: "Convenient location",
+        description: "Located near Tala Gate for easy access to safari tours."
       }
     ],
     fullAmenities: [
-      "Swimming pool",
-      "Restaurant",
-      "Bar",
-      "Spa",
-      "Safari booking",
-      "Nature walks",
-      "Bird watching",
-      "Air conditioning",
-      "Hot water",
-      "Room service",
-      "Laundry service",
+      "Garden view",
       "Wifi",
-      "24-hour electricity",
-      "Doctor on call"
+      "Free parking on premises",
+      "TV",
+      "Air conditioning",
+      "Restaurant",
+      "Room service",
+      "Hot water",
+      "Laundry service",
+      "Safari booking",
+      "Travel assistance"
     ]
   },
   {
-    id: 20,
-    name: "Tiger's Den Resort",
-    slug: "tigers-den-resort-bandhavgarh",
-    rating: 4.2,
+    id: 28,
+    name: "Sun Resort Bandhavgarh",
+    slug: "sun-resort-bandhavgarh",
+    rating: 4.0,
     stars: 3,
-    reviews: 178,
+    reviews: 150,
     location: "Bandhavgarh National Park, Tala Gate",
     address: "Village Tala, Bandhavgarh National Park, Madhya Pradesh 484661",
-    price: "₹7,500",
-    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c5/tiger-s-den-resort.jpg?w=700&h=-1&s=1",
+    price: "₹3,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c5/sun-resort.jpg?w=700&h=-1&s=1",
     amenities: [
       "Restaurant",
       "Safari Booking",
@@ -1454,185 +815,118 @@ export const allHotels = [
       "Free Wifi"
     ],
     featured: false,
-    description: "Tiger's Den Resort offers comfortable accommodations close to Bandhavgarh National Park. With 22 rooms and cottages, a restaurant serving delicious meals, and experienced naturalists, it's an ideal base for tiger safaris and wildlife exploration.",
+    description: "Sun Resort offers budget-friendly accommodations close to Bandhavgarh National Park. With clean rooms, a restaurant serving delicious meals, and helpful staff, it's an ideal base for tiger safaris and wildlife exploration.",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c5/tiger-s-den-resort.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c6/tiger-s-den-resort.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c7/tiger-s-den-resort.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c8/tiger-s-den-resort.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c9/tiger-s-den-resort.jpg?w=700&h=-1&s=1"
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c5/sun-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c6/sun-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c7/sun-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c8/sun-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c9/sun-resort.jpg?w=700&h=-1&s=1"
     ],
     bedrooms: 1,
     beds: 2,
     bathrooms: 1,
     guests: 3,
     features: [
+      {
+        title: "Budget option",
+        description: "Affordable accommodations for budget-conscious travelers."
+      },
       {
         title: "Proximity to park",
         description: "Located just minutes from the Tala gate of Bandhavgarh."
       },
       {
-        title: "Expert naturalists",
-        description: "Experienced guides for wildlife safaris and nature walks."
-      },
-      {
-        title: "Value for money",
-        description: "Comfortable accommodations at affordable prices."
+        title: "Helpful staff",
+        description: "Friendly staff ready to assist with safari bookings and local information."
       }
     ],
     fullAmenities: [
-      "Restaurant",
-      "Garden",
-      "Free Wifi",
-      "Safari booking",
-      "Nature walks",
-      "Bird watching",
+      "Garden view",
+      "Wifi",
+      "Free parking on premises",
+      "TV",
       "Air conditioning",
-      "Hot water",
+      "Restaurant",
       "Room service",
+      "Hot water",
       "Laundry service",
-      "24-hour electricity",
-      "Doctor on call",
-      "Parking",
+      "Safari booking",
       "Travel assistance"
     ]
   },
-  
-  // Pench National Park Hotels
   {
-    id: 21,
-    name: "Baghvan, A Taj Safari",
-    slug: "baghvan-taj-safari-pench",
-    rating: 4.9,
-    stars: 5,
-    reviews: 145,
-    location: "Pench National Park, Turia Gate",
-    address: "Village Awargani, Pench National Park, Madhya Pradesh 480881",
-    price: "₹32,000",
-    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/d9/f5/a3/baghvan-a-taj-safari.jpg?w=700&h=-1&s=1",
-    amenities: [
-      "Luxury Bungalows",
-      "All Meals",
-      "Safari Booking",
-      "Swimming Pool"
-    ],
-    featured: true,
-    description: "Baghvan offers 12 standalone bungalows with contemporary design and luxury amenities. Each bungalow features a private rooftop machan (platform) for sleeping under the stars. Experience unparalleled wildlife safaris with Taj's expert naturalists.",
-    images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/d9/f5/a3/baghvan-a-taj-safari.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/d9/f5/a4/baghvan-a-taj-safari.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/d9/f5/a5/baghvan-a-taj-safari.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/d9/f5/a6/baghvan-a-taj-safari.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/d9/f5/a7/baghvan-a-taj-safari.jpg?w=700&h=-1&s=1"
-    ],
-    bedrooms: 1,
-    beds: 1,
-    bathrooms: 1,
-    guests: 2,
-    features: [
-      {
-        title: "Luxury bungalows",
-        description: "Standalone bungalows with private courtyards and rooftop machans."
-      },
-      {
-        title: "Gourmet dining",
-        description: "Exquisite meals prepared by expert chefs using local ingredients."
-      },
-      {
-        title: "Expert-led safaris",
-        description: "Wildlife experiences with Taj's trained naturalists."
-      }
-    ],
-    fullAmenities: [
-      "Private courtyard",
-      "Rooftop machan",
-      "Air conditioning",
-      "Luxury bathroom",
-      "Indoor and outdoor shower",
-      "Swimming pool",
-      "Restaurant",
-      "Bar",
-      "Safari booking",
-      "Nature walks",
-      "Bird watching",
-      "Library",
-      "Wifi",
-      "Room service",
-      "Laundry service"
-    ]
-  },
-  {
-    id: 22,
-    name: "Pench Jungle Camp",
-    slug: "pench-jungle-camp",
-    rating: 4.3,
+    id: 29,
+    name: "Celebration Van Vilas Bandhavgarh",
+    slug: "celebration-van-vilas-bandhavgarh",
+    rating: 4.2,
     stars: 4,
-    reviews: 167,
-    location: "Pench National Park, Turia Gate",
-    address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
-    price: "₹9,800",
-    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e5/pench-jungle-camp.jpg?w=700&h=-1&s=1",
+    reviews: 160,
+    location: "Bandhavgarh National Park, Tala Gate",
+    address: "Village Tala, Bandhavgarh National Park, Madhya Pradesh 484661",
+    price: "₹8,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a5/celebration-van-vilas.jpg?w=700&h=-1&s=1",
     amenities: [
       "Swimming Pool",
       "Restaurant",
       "Safari Booking",
-      "Spa"
+      "Free Wifi"
     ],
     featured: true,
-    description: "Pench Jungle Camp offers comfortable tents and cottages in a natural setting. The camp features a swimming pool, multi-cuisine restaurant, and spa facilities. Located close to the Turia gate, it's an ideal base for exploring Pench National Park.",
+    description: "Celebration Van Vilas offers a perfect blend of luxury and wilderness experience. Located near Tala Gate, the resort provides comfortable accommodations, excellent dining options, and easy access to Bandhavgarh National Park.",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e5/pench-jungle-camp.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e6/pench-jungle-camp.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e7/pench-jungle-camp.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e8/pench-jungle-camp.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e9/pench-jungle-camp.jpg?w=700&h=-1&s=1"
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a5/celebration-van-vilas.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a6/celebration-van-vilas.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a7/celebration-van-vilas.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a8/celebration-van-vilas.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a9/celebration-van-vilas.jpg?w=700&h=-1&s=1"
     ],
     bedrooms: 1,
     beds: 2,
     bathrooms: 1,
-    guests: 3,
+    guests: 4,
     features: [
       {
-        title: "Variety of accommodations",
-        description: "Choose from luxury tents, cottages, or rooms based on your preference."
+        title: "Jungle experience",
+        description: "Immerse yourself in the natural beauty of Bandhavgarh National Park."
       },
       {
-        title: "Recreational facilities",
-        description: "Swimming pool, indoor games, and outdoor activities."
+        title: "Comfortable accommodations",
+        description: "Well-appointed rooms with modern amenities for a pleasant stay."
       },
       {
-        title: "Wildlife experiences",
-        description: "Safari bookings, nature walks, and bird watching with experienced guides."
+        title: "Wildlife adventures",
+        description: "Easy access to safari tours and wildlife experiences."
       }
     ],
     fullAmenities: [
+      "Forest view",
+      "Garden view",
+      "Wifi",
+      "Free parking on premises",
+      "TV",
       "Swimming pool",
+      "Air conditioning",
       "Restaurant",
-      "Bar",
-      "Spa",
+      "Room service",
+      "Hot water",
+      "Laundry service",
       "Safari booking",
       "Nature walks",
-      "Bird watching",
-      "Indoor games",
-      "Air conditioning",
-      "Hot water",
-      "Room service",
-      "Laundry service",
-      "Wifi",
-      "24-hour electricity"
+      "Bird watching"
     ]
   },
   {
-    id: 23,
-    name: "Mahua Vann Resort",
-    slug: "mahua-vann-resort-pench",
+    id: 30,
+    name: "Monsoon Forest Bandhavgarh",
+    slug: "monsoon-forest-bandhavgarh",
     rating: 4.5,
     stars: 4,
-    reviews: 128,
-    location: "Pench National Park, Jamtara Gate",
-    address: "Village Jamtara, Pench National Park, Madhya Pradesh 480881",
-    price: "₹11,500",
-    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/mahua-vann-resort.jpg?w=700&h=-1&s=1",
+    reviews: 140,
+    location: "Bandhavgarh National Park, Tala Gate",
+    address: "Village Tala, Bandhavgarh National Park, Madhya Pradesh 484661",
+    price: "₹9,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/monsoon-forest.jpg?w=700&h=-1&s=1",
     amenities: [
       "Swimming Pool",
       "Restaurant",
@@ -1640,13 +934,13 @@ export const allHotels = [
       "Spa"
     ],
     featured: true,
-    description: "Mahua Vann Resort offers luxury cottages and tents in a beautiful natural setting. The resort features a swimming pool, restaurant serving delicious meals, and spa facilities. Perfect for wildlife enthusiasts seeking comfort and luxury.",
+    description: "Monsoon Forest offers luxury accommodations in a beautiful natural setting. The resort features a swimming pool, restaurant serving delicious meals, and spa facilities. Perfect for wildlife enthusiasts seeking comfort and luxury.",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/mahua-vann-resort.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9f/mahua-vann-resort.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a0/mahua-vann-resort.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a1/mahua-vann-resort.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a2/mahua-vann-resort.jpg?w=700&h=-1&s=1"
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/monsoon-forest.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9f/monsoon-forest.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a0/monsoon-forest.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a1/monsoon-forest.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a2/monsoon-forest.jpg?w=700&h=-1&s=1"
     ],
     bedrooms: 1,
     beds: 2,
@@ -1684,91 +978,30 @@ export const allHotels = [
     ]
   },
   {
-    id: 24,
-    name: "Tuli Tiger Corridor",
-    slug: "tuli-tiger-corridor-pench",
-    rating: 4.4,
-    stars: 4,
-    reviews: 156,
-    location: "Pench National Park, Turia Gate",
-    address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
-    price: "₹12,500",
-    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a5/tuli-tiger-corridor.jpg?w=700&h=-1&s=1",
-    amenities: [
-      "Swimming Pool",
-      "Restaurant",
-      "Safari Booking",
-      "Spa"
-    ],
-    featured: false,
-    description: "Tuli Tiger Corridor offers luxury accommodations in a beautiful natural setting. The resort features a swimming pool, multi-cuisine restaurant, and spa facilities. Located close to the Turia gate, it's an ideal base for exploring Pench National Park.",
-    images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a5/tuli-tiger-corridor.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a6/tuli-tiger-corridor.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a7/tuli-tiger-corridor.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a8/tuli-tiger-corridor.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a9/tuli-tiger-corridor.jpg?w=700&h=-1&s=1"
-    ],
-    bedrooms: 1,
-    beds: 2,
-    bathrooms: 1,
-    guests: 3,
-    features: [
-      {
-        title: "Luxury accommodations",
-        description: "Spacious rooms and cottages with modern amenities and elegant decor."
-      },
-      {
-        title: "Recreational facilities",
-        description: "Swimming pool, indoor games, and outdoor activities."
-      },
-      {
-        title: "Wildlife experiences",
-        description: "Safari bookings, nature walks, and bird watching with experienced guides."
-      }
-    ],
-    fullAmenities: [
-      "Swimming pool",
-      "Restaurant",
-      "Bar",
-      "Spa",
-      "Safari booking",
-      "Nature walks",
-      "Bird watching",
-      "Indoor games",
-      "Air conditioning",
-      "Hot water",
-      "Room service",
-      "Laundry service",
-      "Wifi",
-      "24-hour electricity"
-    ]
-  },
-  {
-    id: 25,
-    name: "Tathastu Resorts Pench",
-    slug: "tathastu-resorts-pench",
+    id: 31,
+    name: "Infinite Resort Bandhavgarh",
+    slug: "infinite-resort-bandhavgarh",
     rating: 4.3,
-    stars: 3,
-    reviews: 142,
-    location: "Pench National Park, Turia Gate",
-    address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
-    price: "₹8,500",
-    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e3/tathastu-resorts.jpg?w=700&h=-1&s=1",
+    stars: 4,
+    reviews: 130,
+    location: "Bandhavgarh National Park, Tala Gate",
+    address: "Village Tala, Bandhavgarh National Park, Madhya Pradesh 484661",
+    price: "₹8,800",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a5/infinite-resort.jpg?w=700&h=-1&s=1",
     amenities: [
       "Swimming Pool",
       "Restaurant",
       "Safari Booking",
-      "Garden"
+      "Free Wifi"
     ],
     featured: false,
-    description: "Tathastu Resorts offers comfortable accommodations in a serene natural setting. The resort features a swimming pool, restaurant serving delicious meals, and beautiful gardens. Perfect for wildlife enthusiasts seeking a peaceful retreat.",
+    description: "Infinite Resort offers comfortable accommodations in a serene natural setting. The resort features a swimming pool, restaurant serving delicious meals, and beautiful gardens. Perfect for wildlife enthusiasts seeking a peaceful retreat.",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e3/tathastu-resorts.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e4/tathastu-resorts.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e5/tathastu-resorts.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e6/tathastu-resorts.jpg?w=700&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e7/tathastu-resorts.jpg?w=700&h=-1&s=1"
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a5/infinite-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a6/infinite-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a7/infinite-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a8/infinite-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a9/infinite-resort.jpg?w=700&h=-1&s=1"
     ],
     bedrooms: 1,
     beds: 2,
@@ -1804,29 +1037,968 @@ export const allHotels = [
       "Parking",
       "Travel assistance"
     ]
+  },
+  {
+    id: 32,
+    name: "Ananyek Bandhavgarh",
+    slug: "ananyek-bandhavgarh",
+    rating: 4.4,
+    stars: 4,
+    reviews: 125,
+    location: "Bandhavgarh National Park, Tala Gate",
+    address: "Village Tala, Bandhavgarh National Park, Madhya Pradesh 484661",
+    price: "₹9,200",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c5/ananyek-resort.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Swimming Pool",
+      "Restaurant",
+      "Safari Booking",
+      "Free Wifi"
+    ],
+    featured: false,
+    description: "Ananyek offers a comfortable stay in the heart of tiger territory. With well-appointed rooms, excellent dining options, and easy access to safari tours, it's the perfect base for wildlife enthusiasts.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c5/ananyek-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c6/ananyek-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c7/ananyek-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c8/ananyek-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c9/ananyek-resort.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 4,
+    features: [
+      {
+        title: "Jungle experience",
+        description: "Immerse yourself in the natural beauty of Bandhavgarh National Park."
+      },
+      {
+        title: "Comfortable accommodations",
+        description: "Well-appointed rooms with modern amenities for a pleasant stay."
+      },
+      {
+        title: "Wildlife adventures",
+        description: "Easy access to safari tours and wildlife experiences."
+      }
+    ],
+    fullAmenities: [
+      "Forest view",
+      "Garden view",
+      "Wifi",
+      "Free parking on premises",
+      "TV",
+      "Swimming pool",
+      "Air conditioning",
+      "Restaurant",
+      "Room service",
+      "Hot water",
+      "Laundry service",
+      "Safari booking",
+      "Nature walks",
+      "Bird watching"
+    ]
+  },
+  {
+    id: 33,
+    name: "Nature Heritage Bandhavgarh",
+    slug: "nature-heritage-bandhavgarh",
+    rating: 4.3,
+    stars: 4,
+    reviews: 135,
+    location: "Bandhavgarh National Park, Tala Gate",
+    address: "Village Tala, Bandhavgarh National Park, Madhya Pradesh 484661",
+    price: "₹8,900",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a5/nature-heritage.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Swimming Pool",
+      "Restaurant",
+      "Safari Booking",
+      "Free Wifi"
+    ],
+    featured: false,
+    description: "Nature Heritage offers comfortable accommodations in a serene natural setting. The resort features a swimming pool, restaurant serving delicious meals, and beautiful gardens. Perfect for wildlife enthusiasts seeking a peaceful retreat.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a5/nature-heritage.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a6/nature-heritage.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a7/nature-heritage.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a8/nature-heritage.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a9/nature-heritage.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 3,
+    features: [
+      {
+        title: "Comfortable accommodations",
+        description: "Well-appointed rooms with all essential amenities for a pleasant stay."
+      },
+      {
+        title: "Beautiful gardens",
+        description: "Lush green gardens perfect for relaxation and unwinding."
+      },
+      {
+        title: "Wildlife experiences",
+        description: "Safari bookings, nature walks, and bird watching with experienced guides."
+      }
+    ],
+    fullAmenities: [
+      "Swimming pool",
+      "Restaurant",
+      "Garden",
+      "Safari booking",
+      "Nature walks",
+      "Bird watching",
+      "Air conditioning",
+      "Hot water",
+      "Room service",
+      "Laundry service",
+      "Wifi",
+      "24-hour electricity",
+      "Parking",
+      "Travel assistance"
+    ]
+  },
+  {
+    id: 34,
+    name: "Mahi Jungle Lodge Bandhavgarh",
+    slug: "mahi-jungle-lodge-bandhavgarh",
+    rating: 4.4,
+    stars: 4,
+    reviews: 145,
+    location: "Bandhavgarh National Park, Tala Gate",
+    address: "Village Tala, Bandhavgarh National Park, Madhya Pradesh 484661",
+    price: "₹9,800",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/mahi-jungle-lodge.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Swimming Pool",
+      "Restaurant",
+      "Safari Booking",
+      "Spa"
+    ],
+    featured: false,
+    description: "Mahi Jungle Lodge offers luxury accommodations in a beautiful natural setting. The resort features a swimming pool, restaurant serving delicious meals, and spa facilities. Perfect for wildlife enthusiasts seeking comfort and luxury.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/mahi-jungle-lodge.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9f/mahi-jungle-lodge.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a0/mahi-jungle-lodge.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a1/mahi-jungle-lodge.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a2/mahi-jungle-lodge.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 3,
+    features: [
+      {
+        title: "Luxury cottages",
+        description: "Spacious cottages with modern amenities and traditional decor."
+      },
+      {
+        title: "Wellness center",
+        description: "Rejuvenate with spa treatments and wellness therapies."
+      },
+      {
+        title: "Culinary delights",
+        description: "Restaurant serving delicious Indian and international cuisine."
+      }
+    ],
+    fullAmenities: [
+      "Swimming pool",
+      "Restaurant",
+      "Bar",
+      "Spa",
+      "Safari booking",
+      "Nature walks",
+      "Bird watching",
+      "Air conditioning",
+      "Hot water",
+      "Room service",
+      "Laundry service",
+      "Wifi",
+      "24-hour electricity",
+      "Doctor on call"
+    ]
+  },
+  {
+    id: 35,
+    name: "Tathastu Bandhavgarh",
+    slug: "tathastu-bandhavgarh",
+    rating: 4.3,
+    stars: 3,
+    reviews: 140,
+    location: "Bandhavgarh National Park, Tala Gate",
+    address: "Village Tala, Bandhavgarh National Park, Madhya Pradesh 484661",
+    price: "₹8,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e3/tathastu-resorts-bandhavgarh.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Swimming Pool",
+      "Restaurant",
+      "Safari Booking",
+      "Garden"
+    ],
+    featured: false,
+    description: "Tathastu Bandhavgarh offers comfortable accommodations in a serene natural setting. The resort features a swimming pool, restaurant serving delicious meals, and beautiful gardens. Perfect for wildlife enthusiasts seeking a peaceful retreat.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e3/tathastu-resorts-bandhavgarh.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e4/tathastu-resorts-bandhavgarh.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e5/tathastu-resorts-bandhavgarh.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e6/tathastu-resorts-bandhavgarh.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e7/tathastu-resorts-bandhavgarh.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 3,
+    features: [
+      {
+        title: "Comfortable accommodations",
+        description: "Well-appointed rooms with all essential amenities for a pleasant stay."
+      },
+      {
+        title: "Beautiful gardens",
+        description: "Lush green gardens perfect for relaxation and unwinding."
+      },
+      {
+        title: "Wildlife experiences",
+        description: "Safari bookings, nature walks, and bird watching with experienced guides."
+      }
+    ],
+    fullAmenities: [
+      "Swimming pool",
+      "Restaurant",
+      "Garden",
+      "Safari booking",
+      "Nature walks",
+      "Bird watching",
+      "Air conditioning",
+      "Hot water",
+      "Room service",
+      "Laundry service",
+      "Wifi",
+      "24-hour electricity",
+      "Parking",
+      "Travel assistance"
+    ]
+  },
+  // Add more Pench National Park Hotels
+{
+    id: 46,
+    name: "Mahua One",
+    slug: "mahua-one-pench",
+    rating: 4.7,
+    stars: 5,
+    reviews: 145,
+    location: "Pench National Park, Turia Gate",
+    address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
+    price: "₹18,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/mahua-one.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Luxury Cottages",
+      "Swimming Pool",
+      "Restaurant",
+      "Safari Booking",
+      "Spa"
+    ],
+    featured: true,
+    description: "Experience luxury in the wilderness at Mahua One. Our premium cottages blend modern comfort with natural surroundings, offering an unforgettable stay in Pench National Park.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/mahua-one.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9f/mahua-one.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a0/mahua-one.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a1/mahua-one.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a2/mahua-one.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 2,
+    features: [
+      {
+        title: "Luxury Experience",
+        description: "Premium cottages with modern amenities and elegant furnishings."
+      },
+      {
+        title: "Wellness Center",
+        description: "Rejuvenate with spa treatments and wellness activities."
+      },
+      {
+        title: "Gourmet Dining",
+        description: "Fine dining restaurant serving local and international cuisine."
+      }
+    ],
+    fullAmenities: [
+      "Forest view",
+      "Private deck",
+      "Air conditioning",
+      "Hot water",
+      "Wifi",
+      "All meals included",
+      "Safari arrangements",
+      "Spa services",
+      "Swimming pool",
+      "Nature walks",
+      "Bird watching",
+      "Room service",
+      "Laundry service",
+      "24-hour electricity"
+    ]
+  },
+  {
+    id: 47,
+    name: "Olive Resort",
+    slug: "olive-resort-pench",
+    rating: 4.5,
+    stars: 4,
+    reviews: 130,
+    location: "Pench National Park, Turia Gate",
+    address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
+    price: "₹12,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/e0/91/a2/olive-resort.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Swimming Pool",
+      "Restaurant",
+      "Safari Booking",
+      "Garden"
+    ],
+    featured: true,
+    description: "Olive Resort offers comfortable accommodations with modern amenities. Surrounded by nature, the resort provides a perfect base for exploring Pench National Park.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/e0/91/a2/olive-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/e0/91/a3/olive-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/e0/91/a4/olive-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/e0/91/a5/olive-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/e0/91/a6/olive-resort.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 3,
+    features: [
+      {
+        title: "Comfortable Stay",
+        description: "Well-appointed rooms with modern amenities."
+      },
+      {
+        title: "Outdoor Activities",
+        description: "Swimming pool and garden area for relaxation."
+      },
+      {
+        title: "Wildlife Experience",
+        description: "Easy access to safari tours and nature walks."
+      }
+    ],
+    fullAmenities: [
+      "Garden view",
+      "Swimming pool",
+      "Restaurant",
+      "Air conditioning",
+      "Hot water",
+      "Wifi",
+      "Safari booking",
+      "Room service",
+      "Laundry service",
+      "Parking",
+      "24-hour electricity",
+      "Travel desk"
+    ]
+  },
+  {
+    id: 48,
+    name: "Sterling Ruddan",
+    slug: "sterling-ruddan-pench",
+    rating: 4.3,
+    stars: 4,
+    reviews: 155,
+    location: "Pench National Park, Turia Gate",
+    address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
+    price: "₹8,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c5/sterling-ruddan.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Swimming Pool",
+      "Restaurant",
+      "Safari Booking",
+      "Spa"
+    ],
+    featured: false,
+    description: "Sterling Ruddan offers a perfect blend of comfort and nature. With well-appointed rooms and excellent amenities, it's an ideal choice for wildlife enthusiasts.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c5/sterling-ruddan.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c6/sterling-ruddan.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c7/sterling-ruddan.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c8/sterling-ruddan.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c9/sterling-ruddan.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 3,
+    features: [
+      {
+        title: "Modern Comfort",
+        description: "Contemporary rooms with all essential amenities."
+      },
+      {
+        title: "Wellness Center",
+        description: "Spa facilities for relaxation and rejuvenation."
+      },
+      {
+        title: "Nature Experience",
+        description: "Close proximity to Pench National Park."
+      }
+    ],
+    fullAmenities: [
+      "Swimming pool",
+      "Spa",
+      "Restaurant",
+      "Safari booking",
+      "Air conditioning",
+      "Hot water",
+      "Wifi",
+      "Room service",
+      "Laundry service",
+      "Parking",
+      "24-hour electricity",
+      "Travel assistance"
+    ]
+  },
+  {
+    id: 49,
+    name: "Pench Wilderness Camp",
+    slug: "pench-wilderness-camp",
+    rating: 4.4,
+    stars: 4,
+    reviews: 140,
+    location: "Pench National Park, Turia Gate",
+    address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
+    price: "₹9,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e5/pench-wilderness-camp.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Luxury Tents",
+      "Restaurant",
+      "Safari Booking",
+      "Nature Walks"
+    ],
+    featured: true,
+    description: "Experience the wilderness in comfort at Pench Wilderness Camp. Our luxury tents offer a unique blend of adventure and comfort in the heart of nature.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e5/pench-wilderness-camp.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e6/pench-wilderness-camp.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e7/pench-wilderness-camp.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e8/pench-wilderness-camp.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e9/pench-wilderness-camp.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 2,
+    features: [
+      {
+        title: "Luxury Camping",
+        description: "Comfortable tents with modern amenities."
+      },
+      {
+        title: "Nature Experience",
+        description: "Guided nature walks and wildlife activities."
+      },
+      {
+        title: "Authentic Cuisine",
+        description: "Traditional meals prepared with local ingredients."
+      }
+    ],
+    fullAmenities: [
+      "Luxury tents",
+      "Private deck",
+      "Air conditioning",
+      "Hot water",
+      "Restaurant",
+      "Safari booking",
+      "Nature walks",
+      "Bird watching",
+      "Room service",
+      "Laundry service",
+      "24-hour electricity",
+      "Travel desk"
+    ]
+  },
+  {
+    id: 50,
+    name: "Tigers & Woods",
+    slug: "tigers-and-woods-pench",
+    rating: 4.2,
+    stars: 3,
+    reviews: 125,
+    location: "Pench National Park, Turia Gate",
+    address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
+    price: "₹6,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/tigers-and-woods.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Restaurant",
+      "Safari Booking",
+      "Garden",
+      "Parking"
+    ],
+    featured: false,
+    description: "Tigers & Woods offers comfortable accommodations at affordable prices. Perfect for budget-conscious travelers who want to explore Pench National Park.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/tigers-and-woods.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9f/tigers-and-woods.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a0/tigers-and-woods.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a1/tigers-and-woods.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a2/tigers-and-woods.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 3,
+    features: [
+      {
+        title: "Value for Money",
+        description: "Comfortable stay at affordable prices."
+      },
+      {
+        title: "Convenient Location",
+        description: "Easy access to Pench National Park."
+      },
+      {
+        title: "Helpful Staff",
+        description: "Friendly staff to assist with safari bookings."
+      }
+    ],
+    fullAmenities: [
+      "Garden view",
+      "Restaurant",
+      "Air conditioning",
+      "Hot water",
+      "Wifi",
+      "Safari booking",
+      "Room service",
+      "Laundry service",
+      "Parking",
+      "24-hour electricity",
+      "Travel assistance"
+    ]
+  },
+  {
+    id: 51,
+    name: "Tathastu Pench",
+    slug: "tathastu-pench",
+    rating: 4.2,
+    stars: 3,
+    reviews: 120,
+    location: "Pench National Park, Turia Gate",
+    address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
+    price: "₹7,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e3/tathastu-resorts-pench.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Swimming Pool",
+      "Restaurant",
+      "Safari Booking",
+      "Garden"
+    ],
+    featured: false,
+    description: "Tathastu Pench offers a comfortable stay with modern amenities in the heart of nature. Perfect for wildlife enthusiasts looking for a peaceful retreat near Pench National Park.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e3/tathastu-resorts-pench.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e4/tathastu-resorts-pench.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e5/tathastu-resorts-pench.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e6/tathastu-resorts-pench.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 3,
+    features: [
+      {
+        title: "Nature Retreat",
+        description: "Peaceful location surrounded by natural beauty."
+      },
+      {
+        title: "Comfortable Stay",
+        description: "Well-appointed rooms with modern amenities."
+      },
+      {
+        title: "Wildlife Experience",
+        description: "Easy access to safari tours and nature activities."
+      }
+    ],
+    fullAmenities: [
+      "Swimming pool",
+      "Restaurant",
+      "Garden",
+      "Safari booking",
+      "Air conditioning",
+      "Hot water",
+      "Wifi",
+      "Room service",
+      "Laundry service",
+      "Parking",
+      "24-hour electricity"
+    ]
+  },
+  {
+    id: 52,
+    name: "Welcome Heritage Jungle Home",
+    slug: "welcome-heritage-jungle-home-pench",
+    rating: 4.6,
+    stars: 4,
+    reviews: 180,
+    location: "Pench National Park, Turia Gate",
+    address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
+    price: "₹12,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/welcome-heritage.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Luxury Cottages",
+      "Swimming Pool",
+      "Restaurant",
+      "Spa",
+      "Safari Booking"
+    ],
+    featured: true,
+    description: "Welcome Heritage Jungle Home offers a luxurious stay in traditional heritage-style cottages. Experience the perfect blend of comfort and wilderness with world-class amenities.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/welcome-heritage.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9f/welcome-heritage.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a0/welcome-heritage.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a1/welcome-heritage.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 2,
+    features: [
+      {
+        title: "Heritage Experience",
+        description: "Traditional architecture with modern luxuries."
+      },
+      {
+        title: "Wellness Center",
+        description: "Spa and wellness facilities for complete relaxation."
+      },
+      {
+        title: "Gourmet Dining",
+        description: "Fine dining restaurant with local and international cuisine."
+      }
+    ],
+    fullAmenities: [
+      "Heritage cottages",
+      "Swimming pool",
+      "Spa center",
+      "Restaurant",
+      "Bar",
+      "Safari booking",
+      "Air conditioning",
+      "Hot water",
+      "Wifi",
+      "Room service",
+      "Laundry service",
+      "24-hour electricity"
+    ]
+  },
+  {
+    id: 53,
+    name: "Kipling Court - MPT",
+    slug: "kipling-court-mpt-pench",
+    rating: 4.0,
+    stars: 3,
+    reviews: 150,
+    location: "Pench National Park, Turia Gate",
+    address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
+    price: "₹4,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e5/kipling-court.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Restaurant",
+      "Safari Booking",
+      "Parking",
+      "Garden"
+    ],
+    featured: false,
+    description: "Kipling Court - MPT offers comfortable accommodations at affordable prices. Run by Madhya Pradesh Tourism, it provides essential amenities and easy access to Pench National Park.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e5/kipling-court.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e6/kipling-court.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e7/kipling-court.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e8/kipling-court.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 3,
+    features: [
+      {
+        title: "Value for Money",
+        description: "Affordable accommodations with essential amenities."
+      },
+      {
+        title: "Government Operated",
+        description: "Reliable service by Madhya Pradesh Tourism."
+      },
+      {
+        title: "Convenient Location",
+        description: "Easy access to Pench National Park."
+      }
+    ],
+    fullAmenities: [
+      "Restaurant",
+      "Garden",
+      "Safari booking",
+      "Air conditioning",
+      "Hot water",
+      "Wifi",
+      "Room service",
+      "Parking",
+      "24-hour electricity",
+      "Travel desk"
+    ]
+  },
+  {
+    id: 54,
+    name: "Mayur - The Kipling",
+    slug: "mayur-the-kipling-pench",
+    rating: 4.3,
+    stars: 4,
+    reviews: 165,
+    location: "Pench National Park, Turia Gate",
+    address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
+    price: "₹8,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/mayur-kipling.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Swimming Pool",
+      "Restaurant",
+      "Safari Booking",
+      "Spa"
+    ],
+    featured: true,
+    description: "Mayur - The Kipling offers a luxurious stay inspired by Rudyard Kipling's works. Experience comfort and elegance while exploring the wilderness of Pench.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/mayur-kipling.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9f/mayur-kipling.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a0/mayur-kipling.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a1/mayur-kipling.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 3,
+    features: [
+      {
+        title: "Literary Inspired",
+        description: "Decor and ambiance inspired by Jungle Book."
+      },
+      {
+        title: "Luxury Amenities",
+        description: "Modern comforts with elegant furnishings."
+      },
+      {
+        title: "Wildlife Experience",
+        description: "Expert naturalists and safari arrangements."
+      }
+    ],
+    fullAmenities: [
+      "Swimming pool",
+      "Spa",
+      "Restaurant",
+      "Bar",
+      "Safari booking",
+      "Air conditioning",
+      "Hot water",
+      "Wifi",
+      "Room service",
+      "Laundry service",
+      "24-hour electricity"
+    ]
+  },
+  {
+    id: 55,
+    name: "Golf Resort Pench",
+    slug: "golf-resort-pench",
+    rating: 4.4,
+    stars: 4,
+    reviews: 170,
+    location: "Pench National Park, Turia Gate",
+    address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
+    price: "₹9,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/golf-resort.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Golf Course",
+      "Swimming Pool",
+      "Restaurant",
+      "Safari Booking"
+    ],
+    featured: true,
+    description: "Golf Resort Pench combines the thrill of wildlife with the pleasure of golf. Enjoy a unique stay with world-class amenities and sporting facilities.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/golf-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9f/golf-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a0/golf-resort.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a1/golf-resort.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 2,
+    features: [
+      {
+        title: "Golf Facilities",
+        description: "Professional golf course and training."
+      },
+      {
+        title: "Luxury Stay",
+        description: "Premium accommodations with modern amenities."
+      },
+      {
+        title: "Wildlife Experience",
+        description: "Safari tours and nature activities."
+      }
+    ],
+    fullAmenities: [
+      "Golf course",
+      "Swimming pool",
+      "Restaurant",
+      "Bar",
+      "Safari booking",
+      "Air conditioning",
+      "Hot water",
+      "Wifi",
+      "Room service",
+      "Laundry service",
+      "24-hour electricity",
+      "Pro shop"
+    ]
+  },
+  {
+    id: 56,
+    name: "Revanwood Pench",
+    slug: "revanwood-pench",
+    rating: 4.1,
+    stars: 3,
+    reviews: 140,
+    location: "Pench National Park, Turia Gate",
+    address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
+    price: "₹6,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/revanwood.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Restaurant",
+      "Safari Booking",
+      "Garden",
+      "Parking"
+    ],
+    featured: false,
+    description: "Revanwood Pench offers a comfortable stay in natural surroundings. Perfect for nature lovers seeking a peaceful retreat with essential amenities.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/revanwood.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9f/revanwood.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a0/revanwood.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a1/revanwood.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 3,
+    features: [
+      {
+        title: "Natural Setting",
+        description: "Peaceful location amidst nature."
+      },
+      {
+        title: "Comfortable Stay",
+        description: "Well-maintained rooms with essential amenities."
+      },
+      {
+        title: "Wildlife Access",
+        description: "Easy access to safari and nature activities."
+      }
+    ],
+    fullAmenities: [
+      "Restaurant",
+      "Garden",
+      "Safari booking",
+      "Air conditioning",
+      "Hot water",
+      "Wifi",
+      "Room service",
+      "Parking",
+      "24-hour electricity",
+      "Travel desk"
+    ]
+  },
+  {
+    id: 57,
+    name: "Village Machaan Pench",
+    slug: "village-machaan-pench",
+    rating: 4.2,
+    stars: 3,
+    reviews: 135,
+    location: "Pench National Park, Turia Gate",
+    address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
+    price: "₹5,500",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/village-machaan.jpg?w=700&h=-1&s=1",
+    amenities: [
+      "Traditional Machaan Stay",
+      "Restaurant",
+      "Safari Booking",
+      "Village Experience"
+    ],
+    featured: false,
+    description: "Village Machaan offers a unique stay in traditional tree houses. Experience rural life while enjoying modern comforts and easy access to wildlife.",
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/village-machaan.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9f/village-machaan.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a0/village-machaan.jpg?w=700&h=-1&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/a1/village-machaan.jpg?w=700&h=-1&s=1"
+    ],
+    bedrooms: 1,
+    beds: 2,
+    bathrooms: 1,
+    guests: 2,
+    features: [
+      {
+        title: "Unique Experience",
+        description: "Stay in traditional tree houses with modern comforts."
+      },
+      {
+        title: "Cultural Connect",
+        description: "Experience local village life and culture."
+      },
+      {
+        title: "Nature Activities",
+        description: "Safari tours and village walks available."
+      }
+    ],
+    fullAmenities: [
+      "Tree house accommodation",
+      "Restaurant",
+      "Safari booking",
+      "Village tours",
+      "Air conditioning",
+      "Hot water",
+      "Wifi",
+      "Room service",
+      "Parking",
+      "24-hour electricity",
+      "Travel assistance"
+    ]
   }
-];
 
+];
 export const getHotelBySlug = (slug) => {
   return allHotels.find((hotel) => hotel.slug === slug);
 };
-
 export const getFeaturedHotels = () => {
   return allHotels.filter((hotel) => hotel.featured);
 };
-
 export const getHotelsByLocation = (location) => {
   if (location === "all") return allHotels;
   return allHotels.filter((hotel) => hotel.location.toLowerCase().includes(location.toLowerCase()));
 };
-
 export const getHotelsByPark = (park) => {
   if (park === "all") return allHotels;
   
   // Map park names to search terms
   const parkSearchTerms = {
     "kanha": "kanha",
-    "bandhavgarh": "bandhavgarh",
+    "bandhavgarh": "bandhavgarh", 
     "pench": "pench"
   };
   
@@ -1834,6 +2006,49 @@ export const getHotelsByPark = (park) => {
   return allHotels.filter((hotel) => 
     hotel.location.toLowerCase().includes(searchTerm) || 
     hotel.address.toLowerCase().includes(searchTerm) ||
-    hotel.description.toLowerCase().includes(searchTerm)
+    hotel.description.toLowerCase().includes(searchTerm) ||
+    hotel.name.toLowerCase().includes(searchTerm)
   );
+};
+export const getHotelsByPriceRange = (minPrice, maxPrice) => {
+  return allHotels.filter((hotel) => {
+    const priceValue = parseInt(hotel.price.replace(/[₹,]/g, ''));
+    return priceValue >= minPrice && priceValue <= maxPrice;
+  });
+};
+
+// Get hotels by rating
+export const getHotelsByRating = (minRating) => {
+  return allHotels.filter((hotel) => hotel.rating >= minRating);
+};
+
+// Get hotels by amenities
+export const getHotelsByAmenities = (amenities) => {
+  if (!amenities || amenities.length === 0) return allHotels;
+  
+  return allHotels.filter((hotel) => {
+    return amenities.every(amenity => 
+      hotel.amenities.some(hotelAmenity => 
+        hotelAmenity.toLowerCase().includes(amenity.toLowerCase())
+      )
+    );
+  });
+};
+
+// Get total number of hotels
+export const getTotalHotels = () => {
+  return allHotels.length;
+};
+
+// Get hotels with pagination
+export const getHotelsWithPagination = (page = 1, limit = 10) => {
+  const startIndex = (page - 1) * limit;
+  const endIndex = page * limit;
+  
+  return {
+    hotels: allHotels.slice(startIndex, endIndex),
+    totalPages: Math.ceil(allHotels.length / limit),
+    currentPage: page,
+    totalHotels: allHotels.length
+  };
 };

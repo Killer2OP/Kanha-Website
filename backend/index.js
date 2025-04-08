@@ -8,6 +8,7 @@ dotenv.config();
 
 // Import routes
 const safariBookingRoutes = require('./routes/safariBookings');
+const hotelBookingRoutes = require('./routes/hotelBookings');
 
 // Initialize express app
 const app = express();
@@ -33,10 +34,11 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 // Routes
 app.use('/api/safari-bookings', safariBookingRoutes);
+app.use('/api/hotel-bookings', hotelBookingRoutes);
 
 // Basic route
 app.get('/', (req, res) => {
-  res.send('Safari Booking API is running');
+  res.send('Safari and Hotel Booking API is running');
 });
 
 // Start server
