@@ -5,7 +5,7 @@ import {
   Calendar,
   MessageSquare,
   FileText,
-  Mail,
+  Hotel,
   LogOut,
   Car
 } from "lucide-react";
@@ -26,8 +26,8 @@ function AdminSidebar({ activeTab, setActiveTab }) {
     },
     {
       id: "bookings",
-      label: "Bookings",
-      icon: <Calendar className="h-5 w-5" />,
+      label: "Hotel Bookings",
+      icon: <Hotel className="h-5 w-5" />,
     },
     {
       id: "safariBookings",
@@ -44,11 +44,11 @@ function AdminSidebar({ activeTab, setActiveTab }) {
       label: "PDF Generator",
       icon: <FileText className="h-5 w-5" />,
     },
-    {
-      id: "email",
-      label: "Email",
-      icon: <Mail className="h-5 w-5" />,
-    },
+    // {
+    //   id: "email",
+    //   label: "Email",
+    //   icon: <Mail className="h-5 w-5" />,
+    // },
   ];
 
   return (

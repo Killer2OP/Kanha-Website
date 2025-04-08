@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Search, Filter, Download, Eye, Check, X, Send } from "lucide-react";
 import axios from "axios";
 
+// Configure axios with the backend URL
+axios.defaults.baseURL = 'http://localhost:5000';
+
 function SafariBookingManagement() {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -76,9 +79,38 @@ function SafariBookingManagement() {
         )
       );
       
+      // If status is being changed to confirmed, send the ticket email
+      if (newStatus === "confirmed") {
+        const booking = bookings.find(b => b._id === id);
+        if (booking) {
+          try {
+            // Fixed endpoint URL to match backend route
+            const emailResponse = await axios.post(`/api/safari-bookings/${booking._id}/send-ticket`, {
+              bookingId: booking._id,
+              name: booking.name,
+              email: booking.email,
+              phone: booking.phone,
+              parkName: booking.parkName,
+              safariTypeName: booking.safariTypeName,
+              date: booking.formattedDate,
+              time: booking.time,
+              guests: booking.guests,
+              totalAmount: booking.totalAmount,
+              nationality: booking.nationality
+            });
+            
+            console.log("Email response:", emailResponse.data);
+            alert(`Booking confirmed and ticket has been sent to ${booking.email}`);
+          } catch (emailErr) {
+            console.error("Detailed email error:", emailErr.response?.data || emailErr.message);
+            alert(`Booking confirmed but failed to send ticket email. Please try sending it manually.`);
+          }
+        }
+      }
+      
       setShowModal(false);
     } catch (err) {
-      console.error("Error updating booking status:", err);
+      console.error("Error updating booking status:", err.response?.data || err.message);
       alert("Failed to update booking status");
     }
   };
@@ -88,10 +120,34 @@ function SafariBookingManagement() {
     alert("CSV export functionality would be implemented here");
   };
 
-  const handleSendTicket = (booking) => {
-    // In a real app, this would send the ticket via Email or WhatsApp
-    alert(`Ticket would be sent to ${booking.email} via Email`);
-    setShowModal(false);
+  const handleSendTicket = async (booking) => {
+    try {
+      console.log('Sending ticket for booking:', booking._id);
+      const response = await axios.post(`/api/safari-bookings/${booking._id}/send-ticket`, {
+        bookingId: booking._id,
+        name: booking.name,
+        email: booking.email,
+        phone: booking.phone,
+        parkName: booking.parkName,
+        safariTypeName: booking.safariTypeName,
+        date: booking.formattedDate,
+        time: booking.time,
+        guests: booking.guests,
+        totalAmount: booking.totalAmount,
+        nationality: booking.nationality
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      console.log('Server response:', response.data);
+      alert(`Ticket has been sent to ${booking.email}`);
+      setShowModal(false);
+    } catch (err) {
+      console.error("Detailed error:", err.response || err);
+      alert(`Failed to send ticket: ${err.message}`);
+    }
   };
 
   if (loading) return <div className="text-white text-center py-10">Loading safari bookings...</div>;

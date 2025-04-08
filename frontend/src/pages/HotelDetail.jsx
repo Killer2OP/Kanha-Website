@@ -19,12 +19,37 @@ function HotelDetail() {
   const [showGuestDropdown, setShowGuestDropdown] = useState(false);
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [isBookingConfirmed, setIsBookingConfirmed] = useState(false);
+  const [selectedRoomType, setSelectedRoomType] = useState("standard");
+  const [showRoomTypeDropdown, setShowRoomTypeDropdown] = useState(false);
   
   // Add refs to handle outside clicks
   const guestDropdownRef = useRef(null);
   const datePickerRef = useRef(null);
+  const roomTypeDropdownRef = useRef(null);
   
   const hotel = allHotels.find((h) => h.slug === slug);
+  
+  // Room types with their details
+  const roomTypes = {
+    standard: {
+      name: "Standard Room",
+      description: "Comfortable room with all basic amenities",
+      priceMultiplier: 1.0,
+      image: hotel?.images?.[1] || "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800"
+    },
+    deluxe: {
+      name: "Deluxe Room",
+      description: "Spacious room with premium furnishings and forest view",
+      priceMultiplier: 1.3,
+      image: hotel?.images?.[2] || "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80&w=800"
+    },
+    suite: {
+      name: "Luxury Suite",
+      description: "Luxurious suite with separate living area and panoramic views",
+      priceMultiplier: 1.8,
+      image: hotel?.images?.[3] || "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800"
+    }
+  };
   
   // Handle clicks outside the dropdowns
   useEffect(() => {
@@ -34,6 +59,9 @@ function HotelDetail() {
       }
       if (datePickerRef.current && !datePickerRef.current.contains(event.target)) {
         setShowDatePicker(false);
+      }
+      if (roomTypeDropdownRef.current && !roomTypeDropdownRef.current.contains(event.target)) {
+        setShowRoomTypeDropdown(false);
       }
     }
     
@@ -83,9 +111,10 @@ function HotelDetail() {
   
   const nights = calculateNights();
   const pricePerNight = parseInt(hotel.price.replace(/[^0-9]/g, ""));
-  // Add 10% to base price for each guest after the first one
+  // Apply room type multiplier and guest multiplier
+  const roomPriceMultiplier = roomTypes[selectedRoomType].priceMultiplier;
   const guestPriceMultiplier = 1 + ((guests - 1) * 0.1);
-  const adjustedPricePerNight = Math.round(pricePerNight * guestPriceMultiplier);
+  const adjustedPricePerNight = Math.round(pricePerNight * roomPriceMultiplier * guestPriceMultiplier);
   const totalPrice = adjustedPricePerNight * nights;
   const serviceFee = Math.round(totalPrice * 0.15); // 15% service fee
   const totalBeforeTaxes = totalPrice + serviceFee;
@@ -133,11 +162,16 @@ function HotelDetail() {
     }
   };
   
+  const handleRoomTypeSelect = (roomType) => {
+    setSelectedRoomType(roomType);
+    setShowRoomTypeDropdown(false);
+  };
+  
   const handleReserve = () => {
     setIsBookingConfirmed(true);
     // In a real app, this would proceed to payment
     setTimeout(() => {
-      alert(`Booking confirmed for ${hotel.name}!\nCheck-in: ${checkInDate}\nCheck-out: ${checkOutDate}\nGuests: ${guests}`);
+      alert(`Booking confirmed for ${hotel.name}!\nRoom Type: ${roomTypes[selectedRoomType].name}\nCheck-in: ${checkInDate}\nCheck-out: ${checkOutDate}\nGuests: ${guests}`);
       navigate('hotel-in-kanha');
     }, 1000);
   };
@@ -242,6 +276,71 @@ function HotelDetail() {
               </div>
             </div>
             
+            {/* Room Types Section - Add this new section */}
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Available Room Types</h3>
+              <div className="grid grid-cols-1 gap-4">
+                {Object.entries(roomTypes).map(([key, room]) => (
+                  <div 
+                    key={key} 
+                    className={`border rounded-xl p-4 transition-all cursor-pointer ${
+                      selectedRoomType === key 
+                        ? "border-emerald-500 bg-emerald-50" 
+                        : "border-gray-200 hover:border-emerald-300"
+                    }`}
+                    onClick={() => handleRoomTypeSelect(key)}
+                  >
+                    <div className="flex flex-col md:flex-row gap-4">
+                      <div className="md:w-1/3">
+                        <img 
+                          src={room.image} 
+                          alt={room.name} 
+                          className="w-full h-40 object-cover rounded-lg"
+                        />
+                      </div>
+                      <div className="md:w-2/3 flex flex-col justify-between">
+                        <div>
+                          <h4 className="text-lg font-medium text-gray-900">{room.name}</h4>
+                          <p className="text-gray-600 mt-1">{room.description}</p>
+                          <ul className="mt-2 space-y-1">
+                            <li className="flex items-center text-sm text-gray-600">
+                              <Check className="h-4 w-4 text-emerald-500 mr-2" />
+                              {key === "standard" ? "Basic amenities" : key === "deluxe" ? "Premium amenities" : "Luxury amenities"}
+                            </li>
+                            <li className="flex items-center text-sm text-gray-600">
+                              <Check className="h-4 w-4 text-emerald-500 mr-2" />
+                              {key === "standard" ? "Garden view" : key === "deluxe" ? "Forest view" : "Panoramic view"}
+                            </li>
+                            <li className="flex items-center text-sm text-gray-600">
+                              <Check className="h-4 w-4 text-emerald-500 mr-2" />
+                              {key === "standard" ? "Queen bed" : key === "deluxe" ? "King bed" : "King bed + sofa bed"}
+                            </li>
+                          </ul>
+                        </div>
+                        <div className="mt-4 flex justify-between items-center">
+                          <div className="text-lg font-semibold text-gray-900">
+                            ₹{Math.round(pricePerNight * room.priceMultiplier).toLocaleString()}<span className="text-sm font-normal text-gray-600"> / night</span>
+                          </div>
+                          <div>
+                            <button 
+                              className={`px-4 py-2 rounded-lg ${
+                                selectedRoomType === key 
+                                  ? "bg-emerald-600 text-white" 
+                                  : "bg-white border border-emerald-600 text-emerald-600"
+                              }`}
+                              onClick={() => handleRoomTypeSelect(key)}
+                            >
+                              {selectedRoomType === key ? "Selected" : "Select"}
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
             {/* Features */}
             <div className="space-y-6 mb-8">
               {hotel.features && hotel.features.map((feature, index) => (
@@ -279,31 +378,6 @@ function HotelDetail() {
               >
                 Show more
               </button>
-            </div>
-            
-            {/* Where you'll sleep */}
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Where you'll sleep</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="border border-gray-200 rounded-xl p-6">
-                  <h4 className="text-lg font-medium text-gray-900 mb-2">Bedroom</h4>
-                  <p className="text-gray-600 mb-4">1 double bed</p>
-                  <img 
-                    src={hotel.images ? hotel.images[1] : "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800"} 
-                    alt="Bedroom" 
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
-                </div>
-                <div className="border border-gray-200 rounded-xl p-6">
-                  <h4 className="text-lg font-medium text-gray-900 mb-2">Living room</h4>
-                  <p className="text-gray-600 mb-4">1 sofa</p>
-                  <img 
-                    src={hotel.images ? hotel.images[2] : "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80&w=800"} 
-                    alt="Living room" 
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
-                </div>
-              </div>
             </div>
             
             {/* What this place offers */}
@@ -557,6 +631,11 @@ function HotelDetail() {
                   <div className="underline">₹{adjustedPricePerNight.toLocaleString()} x {nights} night{nights !== 1 ? 's' : ''}</div>
                   <div>₹{totalPrice.toLocaleString()}</div>
                 </div>
+                {selectedRoomType !== "standard" && (
+                  <div className="flex justify-between text-sm text-gray-600">
+                    <div>Includes premium for {roomTypes[selectedRoomType].name}</div>
+                  </div>
+                )}
                 {guests > 1 && (
                   <div className="flex justify-between text-sm text-gray-600">
                     <div>Includes guest fee for {guests - 1} additional guest{guests > 2 ? 's' : ''}</div>

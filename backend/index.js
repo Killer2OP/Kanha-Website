@@ -7,7 +7,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 // Import routes
-const safariBookingRoutes = require('./routes/safariBookingRoutes');
+const safariBookingRoutes = require('./routes/safariBookings');
 
 // Initialize express app
 const app = express();
