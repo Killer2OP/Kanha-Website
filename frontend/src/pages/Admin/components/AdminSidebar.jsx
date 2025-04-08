@@ -5,17 +5,22 @@ import {
   Calendar,
   MessageSquare,
   FileText,
-  Hotel,
+  Mail,
   LogOut,
-  Car
+  X,
 } from "lucide-react";
 
-function AdminSidebar({ activeTab, setActiveTab }) {
+function AdminSidebar({ activeTab, setActiveTab, closeSidebar }) {
   const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("adminAuth");
     navigate("/admin");
+  };
+
+  const handleTabChange = (tabId) => {
+    setActiveTab(tabId);
+    closeSidebar(); // Close sidebar on mobile when tab changes
   };
 
   const menuItems = [
@@ -26,13 +31,8 @@ function AdminSidebar({ activeTab, setActiveTab }) {
     },
     {
       id: "bookings",
-      label: "Hotel Bookings",
-      icon: <Hotel className="h-5 w-5" />,
-    },
-    {
-      id: "safariBookings",
-      label: "Safari Bookings",
-      icon: <Car className="h-5 w-5" />,
+      label: "Bookings",
+      icon: <Calendar className="h-5 w-5" />,
     },
     {
       id: "enquiries",
@@ -44,24 +44,32 @@ function AdminSidebar({ activeTab, setActiveTab }) {
       label: "PDF Generator",
       icon: <FileText className="h-5 w-5" />,
     },
-    // {
-    //   id: "email",
-    //   label: "Email",
-    //   icon: <Mail className="h-5 w-5" />,
-    // },
+    {
+      id: "email",
+      label: "Email",
+      icon: <Mail className="h-5 w-5" />,
+    },
   ];
 
   return (
     <div className="w-64 bg-emerald-800/30 backdrop-blur-lg border-r border-emerald-500/20 h-full overflow-y-auto">
       <div className="p-6">
-        <div className="flex items-center justify-center mb-8">
+        {/* Close button for mobile */}
+        <div className="flex items-center justify-between mb-8 lg:justify-center">
           <h1 className="text-xl font-bold text-white">Kanha Admin</h1>
+          <button
+            onClick={closeSidebar}
+            className="lg:hidden text-white hover:text-emerald-300"
+          >
+            <X className="h-6 w-6" />
+          </button>
         </div>
+        
         <nav className="space-y-1">
           {menuItems.map((item) => (
             <button
               key={item.id}
-              onClick={() => setActiveTab(item.id)}
+              onClick={() => handleTabChange(item.id)}
               className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
                 activeTab === item.id
                   ? "bg-emerald-600 text-white"

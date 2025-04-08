@@ -136,9 +136,9 @@ function EnquiryManagement() {
             </select>
             <button
               onClick={handleExportCSV}
-              className="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors"
+              className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors text-sm sm:text-base"
             >
-              <Download className="h-5 w-5" />
+              <Download className="h-4 w-4 sm:h-5 sm:w-5" />
               <span>Export</span>
             </button>
           </div>
@@ -203,7 +203,7 @@ function EnquiryManagement() {
                       onClick={() => handleViewEnquiry(enquiry)}
                       className="text-emerald-300 hover:text-emerald-100 transition-colors"
                     >
-                      <Eye className="h-5 w-5" />
+                      <Eye className="h-4 w-4 sm:h-5 sm:w-5" />
                     </button>
                   </td>
                 </tr>
@@ -224,9 +224,9 @@ function EnquiryManagement() {
                 </h3>
                 <button
                   onClick={() => setShowModal(false)}
-                  className="text-emerald-300 hover:text-white transition-colors"
+                  className="text-emerald-300 hover:text-white transition-colors transform scale-80 sm:scale-100"
                 >
-                  <X className="h-6 w-6" />
+                  <X className="h-4 w-4 sm:h-6 sm:w-6" />
                 </button>
               </div>
 
@@ -303,30 +303,26 @@ function EnquiryManagement() {
                   ></textarea>
                 </div>
 
-                <div className="flex justify-between">
-                  <div className="space-x-2">
-                    <button
-                      onClick={() => handleStatusChange(selectedEnquiry.id, "Closed")}
-                      className="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors"
-                    >
-                      Mark as Closed
-                    </button>
-                  </div>
-                  <div className="space-x-2">
-                    <button
-                      onClick={() => setShowModal(false)}
-                      className="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors"
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      onClick={handleSendReply}
-                      className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors flex items-center gap-2"
-                    >
-                      <MessageSquare className="h-4 w-4" />
-                      Send Reply via WhatsApp
-                    </button>
-                  </div>
+                <div className="flex flex-col sm:flex-row justify-end items-center gap-3 mt-6">
+                  <button
+                    onClick={() => setShowModal(false)}
+                    className="w-full sm:w-auto px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors text-sm sm:text-base transform scale-80 sm:scale-100 order-3 sm:order-1"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={() => handleStatusChange(selectedEnquiry.id, "Closed")}
+                    className="w-full sm:w-auto px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors text-sm sm:text-base transform scale-80 sm:scale-100 order-2"
+                  >
+                    Mark as Closed
+                  </button>
+                  <button
+                    onClick={handleSendReply}
+                    className="w-full sm:w-auto px-3 sm:px-4 py-1.5 sm:py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors flex items-center justify-center gap-1 sm:gap-2 text-sm sm:text-base transform scale-80 sm:scale-100 order-1 sm:order-3"
+                  >
+                    <MessageSquare className="h-3 w-3 sm:h-4 sm:w-4" />
+                    Send Reply via WhatsApp
+                  </button>
                 </div>
               </div>
             </div>

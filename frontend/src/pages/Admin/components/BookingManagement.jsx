@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Search, Download, Eye, Check, X, MessageSquare } from "lucide-react";
+import { Search, Download, Eye, Check, X, MessageSquare, FileText } from "lucide-react";
 
 function BookingManagement() {
   const [bookings, setBookings] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterProperty, setFilterProperty] = useState("All");
+  const [filterType, setFilterType] = useState("All");
   const [filterStatus, setFilterStatus] = useState("All");
   const [selectedBooking, setSelectedBooking] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -42,13 +42,13 @@ function BookingManagement() {
       booking.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       booking.phone?.includes(searchTerm);
 
-    const matchesProperty =
-      filterProperty === "All" || booking.property === filterProperty;
+    const matchesType =
+      filterType === "All" || booking.type === filterType;
 
     const matchesStatus =
       filterStatus === "All" || booking.status === filterStatus;
 
-    return matchesSearch && matchesProperty && matchesStatus;
+    return matchesSearch && matchesType && matchesStatus;
   });
 
   const handleStatusChange = async (id, newStatus) => {
@@ -98,149 +98,131 @@ function BookingManagement() {
   return (
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <h2 className="text-2xl font-semibold text-white">Hotel Booking Management</h2>
+        <h2 className="text-2xl font-semibold text-white">Booking Management</h2>
         <div className="flex flex-col sm:flex-row gap-4">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-emerald-300 h-5 w-5" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-emerald-300 h-4 w-4 sm:h-5 sm:w-5" />
             <input
               type="text"
-              placeholder="Search hotel bookings..."
+              placeholder="Search bookings..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 pr-4 py-2 bg-emerald-800/30 border border-emerald-500/20 rounded-lg text-white placeholder-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-full"
+              className="pl-10 pr-4 py-2 bg-emerald-800/30 border border-emerald-500/20 rounded-lg text-white placeholder-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-full transform scale-90 sm:scale-100"
             />
           </div>
           <div className="flex gap-2">
             <select
+              value={filterType}
+              onChange={(e) => setFilterType(e.target.value)}
+              className="px-4 py-2 bg-emerald-800/30 border border-emerald-500/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 transform scale-90 sm:scale-100"
+            >
+              <option value="All">All Types</option>
+              <option value="Hotel">Hotel</option>
+              <option value="Tour">Tour</option>
+              <option value="Safari">Safari</option>
+            </select>
+            <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="px-4 py-2 bg-emerald-800/30 border border-emerald-500/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="px-4 py-2 bg-emerald-800/30 border border-emerald-500/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 transform scale-90 sm:scale-100"
             >
               <option value="All">All Status</option>
               <option value="Confirmed">Confirmed</option>
               <option value="Pending">Pending</option>
-              <option value="Cancelled">Cancelled</option>
             </select>
             <button
               onClick={handleExportCSV}
-              className="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors"
+              className="px-4 py-2 bg-emerald-800/30 border border-emerald-500/20 rounded-lg text-white hover:bg-emerald-700/50 focus:outline-none focus:ring-2 focus:ring-emerald-500 flex items-center gap-2 transform scale-90 sm:scale-100"
             >
-              <Download className="h-5 w-5" />
-              <span>Export</span>
+              <Download className="h-4 w-4 sm:h-5 sm:w-5" />
+              <span className="hidden sm:inline">Export</span>
             </button>
           </div>
         </div>
       </div>
 
-      <div className="bg-emerald-800/30 backdrop-blur-sm border border-emerald-500/20 rounded-xl overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-emerald-500/20">
-            <thead>
-              <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
-                  ID
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
-                  Name
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
-                  Property
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
-                  Room Type
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
-                  Check In
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
-                  Check Out
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
-                  Guests
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
-                  Amount
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
-                  Status
-                </th>
-                <th className="px-3 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
-                  Actions
-                </th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-emerald-500/20">
-              {filteredBookings.map((booking) => (
-                <tr key={booking.id}>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {booking.id}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {booking.name}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {booking.property}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {booking.roomType}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {booking.checkIn}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {booking.checkOut}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {booking.guests}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {booking.amount}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm">
-                    <span
-                      className={`px-2 py-1 rounded-full text-xs font-medium ${
-                        booking.status === "Confirmed"
-                          ? "bg-green-500/20 text-green-400"
-                          : booking.status === "Pending"
-                          ? "bg-yellow-500/20 text-yellow-400"
-                          : "bg-red-500/20 text-red-400"
-                      }`}
-                    >
-                      {booking.status}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
+      {/* Table */}
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse">
+          <thead>
+            <tr className="border-b border-emerald-500/20">
+              <th className="text-left p-3 text-emerald-300 font-medium text-sm">ID</th>
+              <th className="text-left p-3 text-emerald-300 font-medium text-sm">Guest</th>
+              <th className="text-left p-3 text-emerald-300 font-medium text-sm">Type</th>
+              <th className="text-left p-3 text-emerald-300 font-medium text-sm">Property</th>
+              <th className="text-left p-3 text-emerald-300 font-medium text-sm">Check In</th>
+              <th className="text-left p-3 text-emerald-300 font-medium text-sm">Amount</th>
+              <th className="text-left p-3 text-emerald-300 font-medium text-sm">Status</th>
+              <th className="text-left p-3 text-emerald-300 font-medium text-sm">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredBookings.map((booking) => (
+              <tr key={booking.id} className="border-b border-emerald-500/20">
+                <td className="p-3 text-white">{booking.id}</td>
+                <td className="p-3">
+                  <div>
+                    <p className="text-white">{booking.name}</p>
+                    <p className="text-emerald-300 text-sm">{booking.email}</p>
+                  </div>
+                </td>
+                <td className="p-3 text-white">{booking.type}</td>
+                <td className="p-3 text-white">{booking.property}</td>
+                <td className="p-3 text-white">{booking.checkIn}</td>
+                <td className="p-3 text-white">{booking.amount}</td>
+                <td className="p-3">
+                  <span
+                    className={`px-2 py-1 rounded-full text-xs font-medium ${
+                      booking.status === "Confirmed"
+                        ? "bg-green-500/20 text-green-400"
+                        : "bg-yellow-500/20 text-yellow-400"
+                    }`}
+                  >
+                    {booking.status}
+                  </span>
+                </td>
+                <td className="p-3">
+                  <div className="flex gap-2">
                     <button
                       onClick={() => handleViewBooking(booking)}
-                      className="text-emerald-300 hover:text-emerald-100 transition-colors"
+                      className="p-1.5 text-emerald-300 hover:bg-emerald-800/50 rounded-lg transform scale-90 sm:scale-100"
                     >
-                      <Eye className="h-5 w-5" />
+                      <Eye className="h-4 w-4 sm:h-5 sm:w-5" />
                     </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+                    <button
+                      onClick={() => handleSendTicket(booking)}
+                      className="p-1.5 text-emerald-300 hover:bg-emerald-800/50 rounded-lg transform scale-90 sm:scale-100"
+                    >
+                      <MessageSquare className="h-4 w-4 sm:h-5 sm:w-5" />
+                    </button>
+                    <button
+                      className="p-1.5 text-emerald-300 hover:bg-emerald-800/50 rounded-lg transform scale-90 sm:scale-100"
+                    >
+                      <FileText className="h-4 w-4 sm:h-5 sm:w-5" />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
-      {/* Booking Details Modal */}
+      {/* Modal */}
       {showModal && selectedBooking && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-emerald-800/90 border border-emerald-500/20 rounded-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
-            <div className="p-6">
-              <div className="flex justify-between items-center mb-6">
-                <h3 className="text-xl font-semibold text-white">
-                  Hotel Booking Details
-                </h3>
-                <button
-                  onClick={() => setShowModal(false)}
-                  className="text-emerald-300 hover:text-white transition-colors"
-                >
-                  <X className="h-6 w-6" />
-                </button>
-              </div>
-
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-emerald-900 rounded-xl p-6 max-w-lg w-full">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-xl font-semibold text-white">Booking Details</h3>
+              <button
+                onClick={() => setShowModal(false)}
+                className="text-emerald-300 hover:text-white transform scale-90 sm:scale-100"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            {/* Modal content */}
+            <div className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
                   <h4 className="text-emerald-300 text-sm font-medium mb-2">
@@ -325,42 +307,21 @@ function BookingManagement() {
                 </div>
               </div>
 
-              <div className="flex justify-between">
-                <div className="space-x-2">
-                  {selectedBooking.status === "Pending" && (
-                    <button
-                      onClick={() => handleStatusChange(selectedBooking.id, "Confirmed")}
-                      className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors flex items-center gap-2"
-                    >
-                      <Check className="h-4 w-4" />
-                      Confirm Booking
-                    </button>
-                  )}
-                  {selectedBooking.status !== "Cancelled" && (
-                    <button
-                      onClick={() => handleStatusChange(selectedBooking.id, "Cancelled")}
-                      className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors flex items-center gap-2"
-                    >
-                      <X className="h-4 w-4" />
-                      Cancel Booking
-                    </button>
-                  )}
-                </div>
-                <div className="space-x-2">
-                  <button
-                    onClick={() => handleSendTicket(selectedBooking)}
-                    className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors flex items-center gap-2"
-                  >
-                    <MessageSquare className="h-4 w-4" />
-                    Send Confirmation
-                  </button>
-                  <button
-                    onClick={() => setShowModal(false)}
-                    className="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors"
-                  >
-                    Close
-                  </button>
-                </div>
+              <div className="flex gap-2 mt-6">
+                <button
+                  onClick={() => handleStatusChange(selectedBooking.id, "Confirmed")}
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transform scale-90 sm:scale-100"
+                >
+                  <Check className="h-4 w-4 sm:h-5 sm:w-5" />
+                  Confirm
+                </button>
+                <button
+                  onClick={() => setShowModal(false)}
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transform scale-90 sm:scale-100"
+                >
+                  <X className="h-4 w-4 sm:h-5 sm:w-5" />
+                  Cancel
+                </button>
               </div>
             </div>
           </div>
