@@ -86,25 +86,42 @@ function BookingManagement() {
 
   const handleSendTicket = async (booking) => {
     try {
-      const response = await fetch('http://localhost:5000/api/send-whatsapp', {
+      const response = await fetch('http://localhost:5000/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          phone: booking.phone,
-          message: `Dear ${booking.name},\n\nYour hotel booking at ${booking.property} has been ${booking.status.toLowerCase()}.\n\nBooking Details:\nCheck-in: ${booking.checkIn}\nCheck-out: ${booking.checkOut}\nRoom Type: ${booking.roomType}\nGuests: ${booking.guests}\nAmount: ${booking.amount}\n\nThank you for choosing us!\n\nBest regards,\nKanha Hotels`
+          email: booking.email,
+          subject: 'Hotel Booking Confirmation',
+          html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+              <h2 style="color: #2e7d32;">Hotel Booking Confirmation</h2>
+              <p>Dear ${booking.name},</p>
+              <p>Your hotel booking has been ${booking.status.toLowerCase()}.</p>
+              <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                <p><strong>Booking Details:</strong></p>
+                <p>Check-in: ${booking.checkIn}</p>
+                <p>Check-out: ${booking.checkOut}</p>
+                <p>Room Type: ${booking.roomType}</p>
+                <p>Guests: ${booking.guests}</p>
+                <p>Amount: ${booking.amount}</p>
+              </div>
+              <p>Thank you for choosing us!</p>
+              <p>Best regards,<br>Kanha Hotels</p>
+            </div>
+          `
         })
       });
-
+  
       if (!response.ok) {
-        throw new Error('Failed to send WhatsApp notification');
+        throw new Error('Failed to send email notification');
       }
-
+  
       alert('Booking confirmation sent successfully!');
       setShowModal(false);
     } catch (error) {
-      console.error('Error sending WhatsApp notification:', error);
+      console.error('Error sending email notification:', error);
       alert('Failed to send booking confirmation. Please try again.');
     }
   };

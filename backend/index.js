@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const emailRoutes = require('./routes/emailRoutes');
 
 // Load environment variables
 dotenv.config();
@@ -19,6 +20,7 @@ const hotelBookingRoutes = require('./routes/hotelBookings');
 const whatsappRoutes = require('./routes/whatsapp');
 
 // Routes
+app.use('/api', emailRoutes);  // Add this line
 app.use('/api/safari-bookings', safariBookingRoutes);
 app.use('/api/hotel-bookings', hotelBookingRoutes);
 app.use('/api', whatsappRoutes);  // Moved here after app initialization
