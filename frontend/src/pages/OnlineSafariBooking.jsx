@@ -40,9 +40,9 @@ const OnlineSafariBooking = () => {
             <Calendar className="h-6 w-6 text-emerald-400 mr-3" />
             <h2 className="text-2xl font-semibold text-white">Book Your Safari</h2>
           </div>
-          
+          <SafariBooking />
           {/* Safari Images Gallery */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          <div className="grid grid-cols-1 py-8 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
               <img 
                 src="https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&q=80&w=800" 
@@ -65,9 +65,7 @@ const OnlineSafariBooking = () => {
               />
             </div>
           </div>
-
-          <SafariBooking />
-        </div>
+           </div>
 
         {/* Important Information Section */}
         <div className="bg-emerald-900/10 backdrop-blur-lg rounded-3xl p-6 border border-emerald-500/20">

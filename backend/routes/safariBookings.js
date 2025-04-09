@@ -119,4 +119,16 @@ router.post('/:id/send-ticket', async (req, res) => {
   }
 });
 
+// Create new safari booking
+router.post('/', async (req, res) => {
+  try {
+    const booking = new SafariBooking(req.body);
+    const savedBooking = await booking.save();
+    res.status(201).json(savedBooking);
+  } catch (error) {
+    console.error('Error creating booking:', error);
+    res.status(500).json({ error: 'Failed to create booking', details: error.message });
+  }
+});
+
 module.exports = router;

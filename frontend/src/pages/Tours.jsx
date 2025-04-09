@@ -8,6 +8,8 @@ import tourPackages from "../data/tourPackages";
 function Tours() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState("Kanha"); // Add this line
+  const [filteredPackages, setFilteredPackages] = useState([]); // Add this line
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,7 +19,7 @@ function Tours() {
     // Filter packages based on active tab
     const filtered = tourPackages.filter(pkg => pkg.park === activeTab);
     setFilteredPackages(filtered);
-    }, [activeTab]);
+  }, [activeTab]);
 
   const handleBookTour = (tourId) => {
     navigate(`/tour/${tourId}`);
@@ -51,6 +53,23 @@ function Tours() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-16">
+        {/* Add Tab Navigation */}
+        <div className="flex justify-center space-x-4 mb-8">
+          {["Kanha", "Bandhavgarh", "Pench"].map((park) => (
+            <button
+              key={park}
+              onClick={() => setActiveTab(park)}
+              className={`px-6 py-2 rounded-lg font-semibold transition-colors duration-300 ${
+                activeTab === park
+                  ? "bg-emerald-500 text-white"
+                  : "bg-emerald-800/30 text-emerald-100 hover:bg-emerald-700/40"
+              }`}
+            >
+              {park}
+            </button>
+          ))}
+        </div>
+
         {/* Tour Packages Section */}
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-b bg-green-900/20 backdrop-blur-lg rounded-3xl"></div>
@@ -73,7 +92,7 @@ function Tours() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 p-4 md:p-6">
-            {tourPackages.map((pkg, index) => (
+            {filteredPackages.map((pkg, index) => (
               <div
                 key={index}
                 className="group relative overflow-hidden rounded-xl bg-emerald-800/30 border border-emerald-500/20 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20"

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Search, Filter, Download, Eye, Check, X, Send } from "lucide-react";
 import axios from "axios";
+import { exportToCSV } from '../../../utils/exportToCSV';
 
 // Configure axios with the backend URL
 axios.defaults.baseURL = 'http://localhost:5000';
@@ -116,8 +117,23 @@ function SafariBookingManagement() {
   };
 
   const handleExportCSV = () => {
-    // In a real app, this would generate and download a CSV file
-    alert("CSV export functionality would be implemented here");
+    const exportData = filteredBookings.map(booking => ({
+      ID: booking._id,
+      Name: booking.name,
+      Email: booking.email,
+      Phone: booking.phone,
+      Nationality: booking.nationality,
+      Park: booking.parkName,
+      SafariType: booking.safariTypeName,
+      Date: booking.formattedDate,
+      Time: booking.time,
+      Guests: booking.guests,
+      Amount: booking.totalAmount,
+      Status: booking.status,
+      BookingDate: new Date(booking.createdAt).toLocaleString()
+    }));
+    
+    exportToCSV(exportData, 'safari-bookings.csv');
   };
 
   const handleSendTicket = async (booking) => {
@@ -174,10 +190,10 @@ function SafariBookingManagement() {
               onChange={(e) => setFilterStatus(e.target.value)}
               className="px-4 py-2 bg-emerald-800/30 border border-emerald-500/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
             >
-              <option value="All">All Status</option>
-              <option value="pending">Pending</option>
-              <option value="confirmed">Confirmed</option>
-              <option value="cancelled">Cancelled</option>
+              <option value="All" className="bg-emerald-800">All Status</option>
+              <option value="Confirmed" className="bg-emerald-800">Confirmed</option>
+              <option value="Pending" className="bg-emerald-800">Pending</option>
+              <option value="Cancelled" className="bg-emerald-800">Cancelled</option>
             </select>
             <button
               onClick={handleExportCSV}

@@ -1,7 +1,66 @@
 import React from "react";
 import Header from "../../../components/Header";
+import { useState } from "react";
 
 const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+    subject: "General Enquiry", // Add this field
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+        const response = await fetch('http://localhost:5000/api/enquiries', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: formData.name,
+                email: formData.email,
+                subject: formData.subject,
+                message: formData.message
+            }),
+        });
+
+        if (response.ok) {
+            setSubmitStatus('success');
+            setFormData({
+                name: '',
+                email: '',
+                message: '',
+                subject: 'General Enquiry'
+            });
+            setTimeout(() => {
+                setSubmitStatus(null);
+            }, 3000);
+        } else {
+            const errorData = await response.json();
+            console.error('Submission error:', errorData);
+            setSubmitStatus('error');
+        }
+    } catch (error) {
+        console.error('Submission error:', error);
+        setSubmitStatus('error');
+    } finally {
+        setIsSubmitting(false);
+    }
+};
+
   return (
     <>
       {/* Fixed Header with Background */}
@@ -27,31 +86,65 @@ const ContactForm = () => {
           <p className="text-white mt-2 text-sm md:text-base">
             Send us a message and we'll respond as soon as possible.
           </p>
-          <form className="mt-6 space-y-4">
+          <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
             <input
               type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
               placeholder="Name"
+              required
               className="w-full p-3 border border-white/30 bg-transparent text-white rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 placeholder-gray-400"
             />
             <input
               type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="Email"
+              required
               className="w-full p-3 border border-white/30 bg-transparent text-white rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 placeholder-gray-400"
             />
+             <select
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+              className="w-full p-3 border border-white/30 bg-transparent text-white rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 appearance-none cursor-pointer"
+              style={{ WebkitAppearance: 'none', MozAppearance: 'none' }}
+            >
+              <option value="General Enquiry" className="bg-green-900">General Enquiry</option>
+              <option value="Safari Booking" className="bg-green-900">Safari Booking</option>
+              <option value="Hotel Booking" className="bg-green-900">Hotel Booking</option>
+              <option value="Package Information" className="bg-green-900">Package Information</option>
+              <option value="Feedback" className="bg-green-900">Feedback</option>
+              <option value="Other" className="bg-green-900">Other</option>
+            </select>
+
             <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               placeholder="Message"
+              required
               className="w-full p-3 border border-white/30 bg-transparent text-white rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 placeholder-gray-400"
               rows="4"
             ></textarea>
-            <div className="flex items-center gap-2">
-              <input type="checkbox" className="w-5 h-5 text-green-600" />
-              <span className="text-white text-sm md:text-base">
-                I'm not a robot
-              </span>
-            </div>
-            <button className="bg-green-600 text-white py-3 px-6 rounded-md w-full text-lg font-semibold shadow-md hover:bg-green-700 transition duration-300">
-              SEND MESSAGE
+            
+            <button 
+              type="submit"
+              disabled={isSubmitting}
+              className="bg-green-600 text-white py-3 px-6 rounded-md w-full text-lg font-semibold shadow-md hover:bg-green-700 transition duration-300 disabled:opacity-50"
+            >
+              {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
             </button>
+
+            {submitStatus === 'success' && (
+              <p className="text-green-400 text-center">Message sent successfully!</p>
+            )}
+            {submitStatus === 'error' && (
+              <p className="text-red-400 text-center">Failed to send message. Please try again.</p>
+            )}
           </form>
         </div>
 

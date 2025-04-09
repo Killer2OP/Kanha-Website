@@ -8,6 +8,7 @@ import {
   ChevronRight,
   X,
 } from "lucide-react";
+import axios from "axios"; // Add axios import for API calls
 
 const ServiceBookingForm = ({ service, onClose }) => {
   const [formData, setFormData] = useState({
@@ -17,19 +18,47 @@ const ServiceBookingForm = ({ service, onClose }) => {
     date: "",
     people: "1",
     specialRequests: "",
+    safariTime: "",
+    vehicle: "jeep",
+    difficulty: "easy",
+    equipmentRental: false,
+    mealPreference: "standard",
+    photography: false,
+    experienceLevel: "beginner",
+    specialInterest: "general",
+    park: "kanha" // Added park selection with default value
   });
+  // Add these missing state variables
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  // Rename to handleSubmit to match the form onSubmit handler
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would handle the form submission, e.g., send to backend
-    console.log("Form submitted for", service.title, formData);
-    alert(`Booking request for ${service.title} submitted successfully!`);
-    onClose();
+    setIsSubmitting(true);
+    setError(null);
+    
+    try {
+      // Send the data to your backend API
+      const response = await axios.post('/api/bookings', {
+        serviceType: service.title,
+        ...formData
+      });
+      
+      console.log("Booking submitted successfully:", response.data);
+      alert(`Booking request for ${service.title} submitted successfully!`);
+      onClose();
+    } catch (err) {
+      console.error("Error submitting booking:", err);
+      setError("Failed to submit booking. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Service-specific form fields
@@ -40,10 +69,11 @@ const ServiceBookingForm = ({ service, onClose }) => {
           <>
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Safari Time
+                Safari Time*
               </label>
               <select
                 name="safariTime"
+                value={formData.safariTime}
                 className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500"
                 onChange={handleChange}
                 required
@@ -55,12 +85,14 @@ const ServiceBookingForm = ({ service, onClose }) => {
             </div>
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Vehicle Preference
+                Vehicle Preference*
               </label>
               <select
                 name="vehicle"
+                value={formData.vehicle}
                 className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500"
                 onChange={handleChange}
+                required
               >
                 <option value="jeep">Jeep (6 Seater)</option>
                 <option value="canter">Canter (20 Seater)</option>
@@ -74,18 +106,18 @@ const ServiceBookingForm = ({ service, onClose }) => {
           <>
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Trail Difficulty
+                Trail Difficulty*
               </label>
               <select
                 name="difficulty"
+                value={formData.difficulty}
                 className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500"
                 onChange={handleChange}
+                required
               >
                 <option value="easy">Easy (Beginner Friendly)</option>
                 <option value="moderate">Moderate (Some Experience)</option>
-                <option value="challenging">
-                  Challenging (Experienced Hikers)
-                </option>
+                <option value="challenging">Challenging (Experienced Hikers)</option>
               </select>
             </div>
             <div className="mb-4">
@@ -120,12 +152,14 @@ const ServiceBookingForm = ({ service, onClose }) => {
           <>
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Meal Preferences
+                Meal Preferences*
               </label>
               <select
                 name="mealPreference"
+                value={formData.mealPreference}
                 className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500"
                 onChange={handleChange}
+                required
               >
                 <option value="standard">Standard Meal</option>
                 <option value="vegetarian">Vegetarian</option>
@@ -162,28 +196,30 @@ const ServiceBookingForm = ({ service, onClose }) => {
           <>
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Experience Level
+                Experience Level*
               </label>
               <select
                 name="experienceLevel"
+                value={formData.experienceLevel}
                 className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500"
                 onChange={handleChange}
+                required
               >
                 <option value="beginner">Beginner (First Night Safari)</option>
-                <option value="intermediate">
-                  Intermediate (Some Experience)
-                </option>
+                <option value="intermediate">Intermediate (Some Experience)</option>
                 <option value="advanced">Advanced (Experienced)</option>
               </select>
             </div>
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Special Interest
+                Special Interest*
               </label>
               <select
                 name="specialInterest"
+                value={formData.specialInterest}
                 className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500"
                 onChange={handleChange}
+                required
               >
                 <option value="general">General Wildlife</option>
                 <option value="nocturnal">Nocturnal Predators</option>
@@ -220,6 +256,23 @@ const ServiceBookingForm = ({ service, onClose }) => {
         </div>
 
         <form onSubmit={handleSubmit} className="p-4">
+          <div className="mb-4">
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              National Park*
+            </label>
+            <select
+              name="park"
+              value={formData.park}
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500"
+              required
+            >
+              <option value="kanha">Kanha National Park</option>
+              <option value="bandhavgarh">Bandhavgarh National Park</option>
+              <option value="pench">Pench National Park</option>
+            </select>
+          </div>
+
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Name
@@ -324,6 +377,7 @@ const ServiceBookingForm = ({ service, onClose }) => {
   );
 };
 
+// In the ServiceCard component, add park to the initial formData state
 const ServiceCard = ({
   title,
   images,
@@ -341,7 +395,20 @@ const ServiceCard = ({
     date: "",
     people: "1",
     specialRequests: "",
+    // Add default values for service-specific fields
+    safariTime: "",
+    vehicle: "jeep",
+    difficulty: "easy",
+    equipmentRental: false,
+    mealPreference: "standard",
+    photography: false,
+    experienceLevel: "beginner",
+    specialInterest: "general",
+    park: "kanha" // Add default park selection
   });
+  // Add these missing state variables
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -358,12 +425,41 @@ const ServiceCard = ({
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would handle the form submission, e.g., send to backend
-    console.log("Form submitted for", title, formData);
-    alert(`Booking request for ${title} submitted successfully!`);
-    setIsFlipped(false);
+    setIsSubmitting(true);
+    setError(null);
+    
+    // Validate required fields for specific service types
+    if (title === "Jungle Safari" && !formData.safariTime) {
+      setError("Please select a safari time");
+      setIsSubmitting(false);
+      return;
+    }
+    
+    try {
+      console.log("Submitting form data:", {
+        serviceType: title,
+        ...formData
+      });
+      
+      // Send the data to your backend API
+      const response = await axios.post('/api/bookings', {
+        serviceType: title,
+        ...formData
+      });
+      
+      console.log("Booking submitted successfully:", response.data);
+      alert(`Booking request for ${title} submitted successfully!`);
+      setIsFlipped(false);
+    } catch (err) {
+      console.error("Error submitting booking:", err);
+      // More detailed error message
+      const errorMessage = err.response?.data?.error || err.message || "Failed to submit booking. Please try again later.";
+      setError(errorMessage);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Service-specific form fields
@@ -374,30 +470,35 @@ const ServiceCard = ({
           <>
             <div className="mb-3">
               <label className="block text-sm font-medium text-gray-200 mb-1">
-                Safari Time
+                Safari Time*
               </label>
               <select
                 name="safariTime"
-                className="w-full p-2 bg-white/10 border border-white/20 rounded-md focus:ring-2 focus:ring-emerald-500 text-white"
+                value={formData.safariTime}
+                className="w-full p-2 bg-white/30 border border-white/30 rounded-md focus:ring-2 focus:ring-emerald-500 text-white"
                 onChange={handleChange}
                 required
+                style={{ color: "white", backgroundColor: "rgba(0, 0, 0, 0.5)" }}
               >
-                <option value="">Select Time</option>
-                <option value="morning">Morning (6:00 AM - 10:00 AM)</option>
-                <option value="evening">Evening (3:00 PM - 6:30 PM)</option>
+                <option value="" style={{ backgroundColor: "#1f2937", color: "white" }}>Select Time</option>
+                <option value="morning" style={{ backgroundColor: "#1f2937", color: "white" }}>Morning (6:00 AM - 10:00 AM)</option>
+                <option value="evening" style={{ backgroundColor: "#1f2937", color: "white" }}>Evening (3:00 PM - 6:30 PM)</option>
               </select>
             </div>
             <div className="mb-3">
               <label className="block text-sm font-medium text-gray-200 mb-1">
-                Vehicle Preference
+                Vehicle Preference*
               </label>
               <select
                 name="vehicle"
-                className="w-full p-2 bg-white/10 border border-white/20 rounded-md focus:ring-2 focus:ring-emerald-500 text-white"
+                value={formData.vehicle}
+                className="w-full p-2 bg-white/30 border border-white/30 rounded-md focus:ring-2 focus:ring-emerald-500 text-white"
                 onChange={handleChange}
+                required
+                style={{ color: "white", backgroundColor: "rgba(0, 0, 0, 0.5)" }}
               >
-                <option value="jeep">Jeep (6 Seater)</option>
-                <option value="canter">Canter (20 Seater)</option>
+                <option value="jeep" style={{ backgroundColor: "#1f2937", color: "white" }}>Jeep (6 Seater)</option>
+                <option value="canter" style={{ backgroundColor: "#1f2937", color: "white" }}>Canter (20 Seater)</option>
               </select>
             </div>
           </>
@@ -408,18 +509,19 @@ const ServiceCard = ({
           <>
             <div className="mb-3">
               <label className="block text-sm font-medium text-gray-200 mb-1">
-                Trail Difficulty
+                Trail Difficulty*
               </label>
               <select
                 name="difficulty"
-                className="w-full p-2 bg-white/10 border border-white/20 rounded-md focus:ring-2 focus:ring-emerald-500 text-white"
+                value={formData.difficulty}
+                className="w-full p-2 bg-white/30 border border-white/30 rounded-md focus:ring-2 focus:ring-emerald-500 text-white"
                 onChange={handleChange}
+                required
+                style={{ color: "white", backgroundColor: "rgba(0, 0, 0, 0.5)" }}
               >
-                <option value="easy">Easy (Beginner Friendly)</option>
-                <option value="moderate">Moderate (Some Experience)</option>
-                <option value="challenging">
-                  Challenging (Experienced Hikers)
-                </option>
+                <option value="easy" style={{ backgroundColor: "#1f2937", color: "white" }}>Easy (Beginner Friendly)</option>
+                <option value="moderate" style={{ backgroundColor: "#1f2937", color: "white" }}>Moderate (Some Experience)</option>
+                <option value="challenging" style={{ backgroundColor: "#1f2937", color: "white" }}>Challenging (Experienced Hikers)</option>
               </select>
             </div>
             <div className="mb-3">
@@ -454,17 +556,20 @@ const ServiceCard = ({
           <>
             <div className="mb-3">
               <label className="block text-sm font-medium text-gray-200 mb-1">
-                Meal Preferences
+                Meal Preferences*
               </label>
               <select
                 name="mealPreference"
-                className="w-full p-2 bg-white/10 border border-white/20 rounded-md focus:ring-2 focus:ring-emerald-500 text-white"
+                value={formData.mealPreference}
+                className="w-full p-2 bg-white/30 border border-white/30 rounded-md focus:ring-2 focus:ring-emerald-500 text-white"
                 onChange={handleChange}
+                required
+                style={{ color: "white", backgroundColor: "rgba(0, 0, 0, 0.5)" }}
               >
-                <option value="standard">Standard Meal</option>
-                <option value="vegetarian">Vegetarian</option>
-                <option value="vegan">Vegan</option>
-                <option value="glutenFree">Gluten Free</option>
+                <option value="standard" style={{ backgroundColor: "#1f2937", color: "white" }}>Standard Meal</option>
+                <option value="vegetarian" style={{ backgroundColor: "#1f2937", color: "white" }}>Vegetarian</option>
+                <option value="vegan" style={{ backgroundColor: "#1f2937", color: "white" }}>Vegan</option>
+                <option value="glutenFree" style={{ backgroundColor: "#1f2937", color: "white" }}>Gluten Free</option>
               </select>
             </div>
             <div className="mb-3">
@@ -496,33 +601,37 @@ const ServiceCard = ({
           <>
             <div className="mb-3">
               <label className="block text-sm font-medium text-gray-200 mb-1">
-                Experience Level
+                Experience Level*
               </label>
               <select
                 name="experienceLevel"
-                className="w-full p-2 bg-white/10 border border-white/20 rounded-md focus:ring-2 focus:ring-emerald-500 text-white"
+                value={formData.experienceLevel}
+                className="w-full p-2 bg-white/30 border border-white/30 rounded-md focus:ring-2 focus:ring-emerald-500 text-white"
                 onChange={handleChange}
+                required
+                style={{ color: "white", backgroundColor: "rgba(0, 0, 0, 0.5)" }}
               >
-                <option value="beginner">Beginner (First Night Safari)</option>
-                <option value="intermediate">
-                  Intermediate (Some Experience)
-                </option>
-                <option value="advanced">Advanced (Experienced)</option>
+                <option value="beginner" style={{ backgroundColor: "#1f2937", color: "white" }}>Beginner (First Night Safari)</option>
+                <option value="intermediate" style={{ backgroundColor: "#1f2937", color: "white" }}>Intermediate (Some Experience)</option>
+                <option value="advanced" style={{ backgroundColor: "#1f2937", color: "white" }}>Advanced (Experienced)</option>
               </select>
             </div>
             <div className="mb-3">
               <label className="block text-sm font-medium text-gray-200 mb-1">
-                Special Interest
+                Special Interest*
               </label>
               <select
                 name="specialInterest"
-                className="w-full p-2 bg-white/10 border border-white/20 rounded-md focus:ring-2 focus:ring-emerald-500 text-white"
+                value={formData.specialInterest}
+                className="w-full p-2 bg-white/30 border border-white/30 rounded-md focus:ring-2 focus:ring-emerald-500 text-white"
                 onChange={handleChange}
+                required
+                style={{ color: "white", backgroundColor: "rgba(0, 0, 0, 0.5)" }}
               >
-                <option value="general">General Wildlife</option>
-                <option value="nocturnal">Nocturnal Predators</option>
-                <option value="astronomy">Stars & Astronomy</option>
-                <option value="photography">Night Photography</option>
+                <option value="general" style={{ backgroundColor: "#1f2937", color: "white" }}>General Wildlife</option>
+                <option value="nocturnal" style={{ backgroundColor: "#1f2937", color: "white" }}>Nocturnal Predators</option>
+                <option value="astronomy" style={{ backgroundColor: "#1f2937", color: "white" }}>Stars & Astronomy</option>
+                <option value="photography" style={{ backgroundColor: "#1f2937", color: "white" }}>Night Photography</option>
               </select>
             </div>
           </>
@@ -629,11 +738,29 @@ const ServiceCard = ({
             </button>
           </div>
 
+        
           <form onSubmit={handleSubmit} className="space-y-2 sm:space-y-3">
-            {/* Form fields with responsive adjustments */}
             <div>
               <label className="block text-xs sm:text-sm font-medium text-gray-200 mb-1">
-                Name
+                National Park*
+              </label>
+              <select
+                name="park"
+                value={formData.park}
+                className="w-full p-1.5 sm:p-2 bg-white/30 border border-white/30 rounded-md focus:ring-2 focus:ring-emerald-500 text-white text-sm"
+                onChange={handleChange}
+                required
+                style={{ color: "white", backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+              >
+                <option value="kanha" style={{ backgroundColor: "#1f2937", color: "white" }}>Kanha National Park</option>
+                <option value="bandhavgarh" style={{ backgroundColor: "#1f2937", color: "white" }}>Bandhavgarh National Park</option>
+                <option value="pench" style={{ backgroundColor: "#1f2937", color: "white" }}>Pench National Park</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-xs sm:text-sm font-medium text-gray-200 mb-1">
+                Name*
               </label>
               <input
                 type="text"
@@ -645,8 +772,68 @@ const ServiceCard = ({
               />
             </div>
 
-            {/* Other form fields with similar responsive adjustments */}
-            {/* ... */}
+            <div>
+              <label className="block text-xs sm:text-sm font-medium text-gray-200 mb-1">
+                Email*
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full p-1.5 sm:p-2 bg-white/10 border border-white/20 rounded-md focus:ring-2 focus:ring-emerald-500 text-white text-sm"
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs sm:text-sm font-medium text-gray-200 mb-1">
+                Phone*
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full p-1.5 sm:p-2 bg-white/10 border border-white/20 rounded-md focus:ring-2 focus:ring-emerald-500 text-white text-sm"
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs sm:text-sm font-medium text-gray-200 mb-1">
+                Preferred Date*
+              </label>
+              <input
+                type="date"
+                name="date"
+                value={formData.date}
+                onChange={handleChange}
+                className="w-full p-1.5 sm:p-2 bg-white/10 border border-white/20 rounded-md focus:ring-2 focus:ring-emerald-500 text-white text-sm"
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs sm:text-sm font-medium text-gray-200 mb-1">
+                Number of People*
+              </label>
+              <select
+                name="people"
+                value={formData.people}
+                onChange={handleChange}
+                className="w-full p-1.5 sm:p-2 bg-white/30 border border-white/30 rounded-md focus:ring-2 focus:ring-emerald-500 text-white text-sm"
+                required
+                style={{ color: "white", backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+              >
+                {[...Array(10)].map((_, i) => (
+                  <option key={i} value={i + 1} style={{ backgroundColor: "#1f2937", color: "white" }}>
+                    {i + 1}
+                  </option>
+                ))}
+                <option value="10+" style={{ backgroundColor: "#1f2937", color: "white" }}>10+</option>
+              </select>
+            </div>
 
             {/* Service-specific fields */}
             {renderServiceSpecificFields()}
@@ -664,11 +851,19 @@ const ServiceCard = ({
               ></textarea>
             </div>
 
+            {/* Add error message display */}
+            {error && (
+              <div className="p-2 bg-red-500/30 text-white text-sm rounded-md">
+                {error}
+              </div>
+            )}
+
             <button
               type="submit"
-              className="w-full py-1.5 sm:py-2 px-3 sm:px-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors duration-300 text-sm sm:text-base"
+              className="w-full py-1.5 sm:py-2 px-3 sm:px-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors duration-300 text-sm sm:text-base disabled:bg-gray-600/50"
+              disabled={isSubmitting}
             >
-              Submit Booking Request
+              {isSubmitting ? "Submitting..." : "Submit Booking Request"}
             </button>
           </form>
         </div>

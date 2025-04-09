@@ -12,7 +12,7 @@ const TopThings = () => {
 
     const activities = [
         {
-            name: "Jungle Safari in Kanha",
+            name: "Jungle Safari",
             description:
                 "Exploring the interiors of a dense wild forest always fascinates wildlife lovers and they visit such forest where they can explore.",
             image: "https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/Tiger.jpg",
@@ -20,7 +20,7 @@ const TopThings = () => {
             icon: TreePalm,
         },
         {
-            name: "Jeep Safari Inside Kanha",
+            name: "Jeep Safari Inside the Forest",
             description:
                 "Exploring the interiors of a dense wild forest always fascinates wildlife lovers and they visit such forest where they can explore.",
             image: "https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/Jeep.jpg",
@@ -55,7 +55,7 @@ const TopThings = () => {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5 }}
                 >
-                    Top Things to do in Kanha
+                    Into the Wild: Must-Do Activities
                 </motion.h1>
             </div>
 

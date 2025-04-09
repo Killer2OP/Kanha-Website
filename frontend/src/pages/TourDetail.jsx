@@ -39,11 +39,11 @@ function App() {
 
 
             {/* Hero Section */}
-            <div className="relative md:h-[100vh] lg:h-[80vh] p-5" >
+            <div className="relative md:h-[100vh] lg:h-[65vh] p-5" >
 
                 <Header />
 
-                <SearchBar />
+                {/* <SearchBar /> */}
 
                 <div className="h-ful md:pt-[410px] lg:pt-[350px] p-4 absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                     <div className="text-center text-white">
@@ -113,10 +113,10 @@ function App() {
                         </div>
 
                         {/* Need Help? */}
-                        <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-2">
-                            <h3 className="text-lg font-bold mb-2 text-blue-800">Need Help?</h3>
-                            <p className="text-blue-700 mb-4">Our travel experts are available 24/7 to assist you.</p>
-                            <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg w-full transition shadow-sm">
+                        <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-100 mb-2">
+                            <h3 className="text-lg font-bold mb-2 text-emerald-800">Need Help?</h3>
+                            <p className="text-emerald-700 mb-4">Our travel experts are available 24/7 to assist you.</p>
+                            <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg w-full transition shadow-sm">
                                 Contact Support
                             </button>
                         </div>

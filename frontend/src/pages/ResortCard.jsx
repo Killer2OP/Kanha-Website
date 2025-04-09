@@ -81,14 +81,14 @@ const ResortCard = ({ resort }) => {
                     <div className="w-full md:w-1/3 mb-2 md:mb-0">
                         <p className="text-gray-600 text-xs md:text-sm">{resort.finalReview}</p>
                         <div className="flex items-center justify-center md:justify-start gap-2">
-                            <div className="bg-blue-600 text-white px-2 py-1 rounded text-xs md:text-sm font-medium">
+                            <div className="bg-emerald-600 text-white px-2 py-1 rounded text-xs md:text-sm font-medium">
                                 {resort.rating}
                             </div>
                             <span className="text-xs text-gray-600">({resort.reviews} reviews)</span>
                         </div>
                     </div>
                     <div className="w-full md:w-1/3 mb-2 md:mb-0">
-                        <p className="text-lg md:text-2xl font-bold text-blue-700">₹{resort.price}</p>
+                        <p className="text-lg md:text-2xl font-bold text-emerald-700">₹{resort.price}</p>
                         <p className="text-xs text-gray-600">+ ₹0 taxes & fees</p>
                     </div>
                     <button className="w-full md:w-auto bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 rounded-lg text-xs md:text-sm font-medium shadow-sm">

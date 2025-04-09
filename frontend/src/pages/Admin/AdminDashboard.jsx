@@ -7,9 +7,19 @@ import EnquiryManagement from "./components/EnquiryManagement";
 import PDFGenerator from "./components/PDFGenerator";
 import EmailIntegration from "./components/EmailIntegration";
 import SafariBookingManagement from "./components/SafariBookingManagement";
+import ServiceBookingManagement from "./components/ServiceBookingManagement"; // Import the new component
 
 function AdminDashboard() {
   const [activeTab, setActiveTab] = useState("dashboard");
+  const [dashboardStats, setDashboardStats] = useState({
+    totalBookings: 0,
+    pendingBookings: 0,
+    totalEnquiries: 0,
+    pendingEnquiries: 0,
+    recentBookings: [],
+    recentEnquiries: []
+  });
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,62 +30,37 @@ function AdminDashboard() {
     }
   }, [navigate]);
 
-  // Mock data for dashboard stats
-  const dashboardStats = {
-    totalBookings: 156,
-    pendingBookings: 23,
-    totalEnquiries: 78,
-    pendingEnquiries: 12,
-    recentBookings: [
-      {
-        id: "BK-1001",
-        name: "Rahul Sharma",
-        type: "Hotel",
-        date: "2023-11-15",
-        amount: "₹12,500",
-        status: "Confirmed",
-      },
-      {
-        id: "BK-1002",
-        name: "Priya Patel",
-        type: "Tour",
-        date: "2023-11-14",
-        amount: "₹19,999",
-        status: "Pending",
-      },
-      {
-        id: "BK-1003",
-        name: "Amit Singh",
-        type: "Safari",
-        date: "2023-11-13",
-        amount: "₹7,900",
-        status: "Confirmed",
-      },
-    ],
-    recentEnquiries: [
-      {
-        id: "ENQ-1001",
-        name: "Rahul Sharma",
-        subject: "Tour Package Enquiry",
-        date: "2023-11-15",
-        status: "New",
-      },
-      {
-        id: "ENQ-1002",
-        name: "Priya Patel",
-        subject: "Safari Booking Question",
-        date: "2023-11-14",
-        status: "Responded",
-      },
-      {
-        id: "ENQ-1003",
-        name: "Amit Singh",
-        subject: "Hotel Availability",
-        date: "2023-11-13",
-        status: "New",
-      },
-    ],
-  };
+  useEffect(() => {
+    const fetchDashboardStats = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/admin/dashboard-stats');
+        if (!response.ok) {
+          throw new Error('Failed to fetch dashboard stats');
+        }
+        const data = await response.json();
+        setDashboardStats(data);
+      } catch (error) {
+        console.error('Error fetching dashboard stats:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (activeTab === 'dashboard') {
+      fetchDashboardStats();
+      // Refresh data every 30 seconds
+      const interval = setInterval(fetchDashboardStats, 30000);
+      return () => clearInterval(interval);
+    }
+  }, [activeTab]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-emerald-900 flex items-center justify-center">
+        <div className="text-white">Loading dashboard data...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-emerald-900 flex flex-col">
@@ -119,11 +104,12 @@ function AdminDashboard() {
                           <p className="text-emerald-300 text-sm">{booking.type} - {booking.date}</p>
                         </div>
                         <div className="flex items-center gap-4">
-                          <p className="text-white font-medium">{booking.amount}</p>
                           <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                             booking.status === "Confirmed" 
-                              ? "bg-green-500/20 text-green-400" 
-                              : "bg-yellow-500/20 text-yellow-400"
+                              ? "bg-green-500/20 text-green-400"
+                              : booking.status === "Pending"
+                              ? "bg-yellow-500/20 text-yellow-400"
+                              : "bg-red-500/20 text-red-400"
                           }`}>
                             {booking.status}
                           </span>
@@ -145,9 +131,13 @@ function AdminDashboard() {
                         <div className="flex items-center gap-4">
                           <p className="text-emerald-300 text-sm">{enquiry.date}</p>
                           <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                            enquiry.status === "New" 
-                              ? "bg-blue-500/20 text-blue-400" 
-                              : "bg-green-500/20 text-green-400"
+                            enquiry.status === "New"
+                              ? "bg-blue-500/20 text-blue-400"
+                              : enquiry.status === "Responded"
+                              ? "bg-green-500/20 text-green-400"
+                              : enquiry.status === "Closed"
+                              ? "bg-gray-500/20 text-gray-400"
+                              : "bg-red-500/20 text-red-400"
                           }`}>
                             {enquiry.status}
                           </span>
@@ -162,6 +152,7 @@ function AdminDashboard() {
           
           {activeTab === "bookings" && <BookingManagement />}
           {activeTab === "safariBookings" && <SafariBookingManagement />}
+          {activeTab === "serviceBookings" && <ServiceBookingManagement />} {/* Add this line */}
           {activeTab === "enquiries" && <EnquiryManagement />}
           {activeTab === "pdf" && <PDFGenerator />}
           {activeTab === "email" && <EmailIntegration />}

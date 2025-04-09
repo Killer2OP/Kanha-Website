@@ -11,19 +11,34 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+// Update CORS configuration
+app.use(cors({
+  origin: ['http://localhost:5173', 'http://localhost:3000'], // Include all possible frontend URLs
+  methods: ['GET', 'POST', 'PATCH', 'DELETE', 'PUT', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
 app.use(express.json());
 
 // Import routes
 const safariBookingRoutes = require('./routes/safariBookings');
 const hotelBookingRoutes = require('./routes/hotelBookings');
+const serviceBookingRoutes = require('./routes/serviceBookings'); // Add this line
 const whatsappRoutes = require('./routes/whatsapp');
+const enquiryRoutes = require('./routes/enquiryRoutes');
+const ticketRoutes = require('./routes/ticketRoutes');
+const adminDashboardRoutes = require('./routes/adminDashboard');
 
 // Routes
-app.use('/api', emailRoutes);  // Add this line
+app.use('/api', emailRoutes);  
 app.use('/api/safari-bookings', safariBookingRoutes);
 app.use('/api/hotel-bookings', hotelBookingRoutes);
-app.use('/api', whatsappRoutes);  // Moved here after app initialization
+app.use('/api/bookings', serviceBookingRoutes); // Add this line
+app.use('/api', whatsappRoutes);
+app.use('/api/enquiries', enquiryRoutes);
+app.use('/api/send-ticket', ticketRoutes);
+app.use('/api/admin', adminDashboardRoutes);
+
 
 // Connect to MongoDB with improved error handling and options
 mongoose.connect(process.env.MONGODB_URI, {
@@ -39,10 +54,6 @@ mongoose.connect(process.env.MONGODB_URI, {
       console.log('Authentication failed. Please check your username and password in the connection string.');
     }
   });
-
-// Routes
-app.use('/api/safari-bookings', safariBookingRoutes);
-app.use('/api/hotel-bookings', hotelBookingRoutes);
 
 // Basic route
 app.get('/', (req, res) => {

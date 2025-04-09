@@ -1,61 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Search, Filter, Download, Eye, MessageSquare, X } from "lucide-react";
+import { exportToCSV } from '../../../utils/exportToCSV';
 
 function EnquiryManagement() {
-  // Mock data for enquiries
-  const [enquiries, setEnquiries] = useState([
-    {
-      id: "ENQ-1001",
-      name: "Rahul Sharma",
-      email: "rahul@example.com",
-      phone: "+91 9876543210",
-      subject: "Tour Package Enquiry",
-      message: "I'm interested in the Kanha Fun Tour package for a family of 4. Can you provide more details about the accommodation and activities?",
-      date: "2023-11-15",
-      status: "New",
-    },
-    {
-      id: "ENQ-1002",
-      name: "Priya Patel",
-      email: "priya@example.com",
-      phone: "+91 9876543211",
-      subject: "Safari Booking Question",
-      message: "What is the best time to visit Kanha for tiger sightings? Also, do you offer any special photography safaris?",
-      date: "2023-11-14",
-      status: "Responded",
-    },
-    {
-      id: "ENQ-1003",
-      name: "Amit Singh",
-      email: "amit@example.com",
-      phone: "+91 9876543212",
-      subject: "Hotel Availability",
-      message: "I'm looking for a luxury stay near Kanha National Park for the upcoming weekend. Do you have any availability at Kanha Earth Lodge?",
-      date: "2023-11-13",
-      status: "New",
-    },
-    {
-      id: "ENQ-1004",
-      name: "Sneha Gupta",
-      email: "sneha@example.com",
-      phone: "+91 9876543213",
-      subject: "Group Tour Discount",
-      message: "We are a group of 10 people planning to visit Kanha in December. Do you offer any group discounts on your tour packages?",
-      date: "2023-11-12",
-      status: "Responded",
-    },
-    {
-      id: "ENQ-1005",
-      name: "Vikram Malhotra",
-      email: "vikram@example.com",
-      phone: "+91 9876543214",
-      subject: "Transportation Query",
-      message: "How can I reach Kanha National Park from Jabalpur airport? Do you provide any pickup services?",
-      date: "2023-11-11",
-      status: "Closed",
-    },
-  ]);
-
+  const [enquiries, setEnquiries] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterStatus, setFilterStatus] = useState("All");
   const [selectedEnquiry, setSelectedEnquiry] = useState(null);
@@ -83,29 +32,100 @@ function EnquiryManagement() {
     setReplyMessage("");
   };
 
-  const handleStatusChange = (id, newStatus) => {
-    setEnquiries(
-      enquiries.map((enquiry) =>
-        enquiry.id === id ? { ...enquiry, status: newStatus } : enquiry
-      )
-    );
+  const handleStatusChange = async (id, newStatus) => {
+    try {
+      const response = await fetch(`http://localhost:5000/api/enquiries/${id}/status`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ status: newStatus }),
+      });
+
+      if (response.ok) {
+        setEnquiries(
+          enquiries.map((enquiry) =>
+            enquiry.id === id ? { ...enquiry, status: newStatus } : enquiry
+          )
+        );
+        if (newStatus === 'Closed') {
+          alert('Enquiry has been marked as closed');
+          setShowModal(false);
+        }
+        fetchEnquiries(); // Refresh the list
+      }
+    } catch (error) {
+      console.error('Failed to update status:', error);
+      alert('Failed to update status. Please try again.');
+    }
   };
 
-  const handleSendReply = () => {
-    if (replyMessage.trim() === "") return;
+  const handleSendReply = async () => {
+    if (replyMessage.trim() === "") {
+      alert('Please enter a reply message');
+      return;
+    }
 
-    // In a real app, this would send the reply to the customer
-    // For now, just update the status to "Responded"
-    handleStatusChange(selectedEnquiry.id, "Responded");
-    setShowModal(false);
+    try {
+      const response = await fetch(`http://localhost:5000/api/enquiries/${selectedEnquiry.enquiryId}/reply`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: replyMessage,
+          email: selectedEnquiry.email,
+          name: selectedEnquiry.name,
+          subject: selectedEnquiry.subject
+        }),
+      });
 
-    // Here you would integrate with WhatsApp API to send the message
-    alert(`Reply would be sent to ${selectedEnquiry.phone} via WhatsApp`);
+      if (response.ok) {
+        alert('Reply sent successfully!');
+        setShowModal(false);
+        setReplyMessage('');
+        fetchEnquiries(); // Refresh the list
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to send reply');
+      }
+    } catch (error) {
+      console.error('Failed to send reply:', error);
+      alert('Failed to send reply. Please try again.');
+    }
+  };
+
+  useEffect(() => {
+    fetchEnquiries();
+  }, []);
+
+  const fetchEnquiries = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/api/enquiries');
+      if (response.ok) {
+        const data = await response.json();
+        setEnquiries(data);
+      }
+    } catch (error) {
+      console.error('Failed to fetch enquiries:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleExportCSV = () => {
-    // In a real app, this would generate and download a CSV file
-    alert("CSV export functionality would be implemented here");
+    const exportData = filteredEnquiries.map(enquiry => ({
+      ID: enquiry.id,
+      Name: enquiry.name,
+      Email: enquiry.email,
+      Phone: enquiry.phone,
+      Subject: enquiry.subject,
+      Message: enquiry.message,
+      Date: enquiry.date,
+      Status: enquiry.status
+    }));
+    
+    exportToCSV(exportData, 'enquiries.csv');
   };
 
   return (
@@ -312,7 +332,7 @@ function EnquiryManagement() {
                       Mark as Closed
                     </button>
                   </div>
-                  <div className="space-x-2">
+                  <div className="space-x-2 space-y-2">
                     <button
                       onClick={() => setShowModal(false)}
                       className="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors"
@@ -324,7 +344,7 @@ function EnquiryManagement() {
                       className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors flex items-center gap-2"
                     >
                       <MessageSquare className="h-4 w-4" />
-                      Send Reply via WhatsApp
+                      Send Reply via Email
                     </button>
                   </div>
                 </div>

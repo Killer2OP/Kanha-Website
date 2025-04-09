@@ -7,7 +7,8 @@ import {
   FileText,
   Hotel,
   LogOut,
-  Car
+  Car,
+  Compass // Add Compass icon for service bookings
 } from "lucide-react";
 
 function AdminSidebar({ activeTab, setActiveTab }) {
@@ -33,6 +34,11 @@ function AdminSidebar({ activeTab, setActiveTab }) {
       id: "safariBookings",
       label: "Safari Bookings",
       icon: <Car className="h-5 w-5" />,
+    },
+    {
+      id: "serviceBookings", // Add new menu item for service bookings
+      label: "Service Bookings",
+      icon: <Compass className="h-5 w-5" />,
     },
     {
       id: "enquiries",

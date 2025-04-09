@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Search, Download, Eye, Check, X, MessageSquare } from "lucide-react";
+import { exportToCSV } from '../../../utils/exportToCSV';
 
 function BookingManagement() {
   const [bookings, setBookings] = useState([]);
@@ -80,8 +81,22 @@ function BookingManagement() {
   };
 
   const handleExportCSV = () => {
-    // In a real app, this would generate and download a CSV file
-    alert("Hotel bookings CSV export functionality would be implemented here");
+    const exportData = filteredBookings.map(booking => ({
+      ID: booking.id,
+      Name: booking.name,
+      Email: booking.email,
+      Phone: booking.phone,
+      Property: booking.property,
+      RoomType: booking.roomType,
+      CheckIn: booking.checkIn,
+      CheckOut: booking.checkOut,
+      Guests: booking.guests,
+      Amount: booking.amount,
+      Status: booking.status,
+      PaymentStatus: booking.paymentStatus
+    }));
+    
+    exportToCSV(exportData, 'hotel-bookings.csv');
   };
 
   const handleSendTicket = async (booking) => {
@@ -151,11 +166,11 @@ function BookingManagement() {
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
               className="px-4 py-2 bg-emerald-800/30 border border-emerald-500/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
-            >
-              <option value="All">All Status</option>
-              <option value="Confirmed">Confirmed</option>
-              <option value="Pending">Pending</option>
-              <option value="Cancelled">Cancelled</option>
+               >
+              <option value="All" className="bg-emerald-800">All Status</option>
+              <option value="Confirmed" className="bg-emerald-800">Confirmed</option>
+              <option value="Pending" className="bg-emerald-800">Pending</option>
+              <option value="Cancelled" className="bg-emerald-800">Cancelled</option>
             </select>
             <button
               onClick={handleExportCSV}
@@ -169,7 +184,7 @@ function BookingManagement() {
       </div>
 
       <div className="bg-emerald-800/30 backdrop-blur-sm border border-emerald-500/20 rounded-xl overflow-hidden">
-        <div className="overflow-x-auto">
+        <div className="overflow-hidden">
           <table className="min-w-full divide-y divide-emerald-500/20">
             <thead>
               <tr>
@@ -200,8 +215,8 @@ function BookingManagement() {
                 <th className="px-6 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
                   Status
                 </th>
-                <th className="px-3 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
-                  Actions
+                <th className="py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
+                  Action
                 </th>
               </tr>
             </thead>
@@ -362,7 +377,7 @@ function BookingManagement() {
               </div>
 
               <div className="flex justify-between">
-                <div className="space-x-2">
+                <div className="space-x-2 space-y-2">
                   {selectedBooking.status === "Pending" && (
                     <button
                       onClick={() => handleStatusChange(selectedBooking.id, "Confirmed")}
@@ -382,7 +397,7 @@ function BookingManagement() {
                     </button>
                   )}
                 </div>
-                <div className="space-x-2">
+                <div className="space-x-2 space-y-2">
                   <button
                     onClick={() => handleSendTicket(selectedBooking)}
                     className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors flex items-center gap-2"

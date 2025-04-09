@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { FileText, Download, Check, X, Mail } from "lucide-react";
+import { FileText, Download, Check, Mail } from "lucide-react";
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 function PDFGenerator() {
   const [selectedTemplate, setSelectedTemplate] = useState("tourTicket");
@@ -25,38 +27,149 @@ function PDFGenerator() {
     });
   };
 
+  const generateTicketHTML = () => {
+    return `
+      <div id="ticket" style="font-family: Arial, sans-serif; padding: 40px; max-width: 800px;">
+        <h1 style="color: #047857; text-align: center; margin-bottom: 30px;">
+          ${selectedTemplate === "tourTicket" ? "Tour Ticket" : "Hotel Booking"} - Kanha National Park
+        </h1>
+        
+        <div style="border: 2px solid #047857; padding: 20px; border-radius: 10px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+            <div>
+              <h2 style="color: #047857;">Booking ID: ${bookingDetails.bookingId}</h2>
+              <p>Booking Date: ${new Date(bookingDetails.bookingDate).toLocaleDateString()}</p>
+            </div>
+            <div style="text-align: right;">
+              <p>Check In: ${new Date(bookingDetails.checkIn).toLocaleDateString()}</p>
+              <p>Check Out: ${new Date(bookingDetails.checkOut).toLocaleDateString()}</p>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <h3 style="color: #047857;">Customer Details</h3>
+            <p>Name: ${bookingDetails.customerName}</p>
+            <p>Email: ${bookingDetails.email}</p>
+            <p>Phone: ${bookingDetails.phone}</p>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <h3 style="color: #047857;">Booking Details</h3>
+            <p>${selectedTemplate === "tourTicket" ? "Tour" : "Hotel"}: 
+              ${selectedTemplate === "tourTicket" ? bookingDetails.tourName : bookingDetails.hotelName}</p>
+            <p>Number of Guests: ${bookingDetails.guests}</p>
+            <p>Amount: ${bookingDetails.amount}</p>
+          </div>
+
+          <div style="text-align: center; margin-top: 30px;">
+            <p style="color: #047857;">Thank you for choosing Kanha National Park!</p>
+          </div>
+        </div>
+      </div>
+    `;
+  };
+
   const handleGeneratePDF = () => {
-    // In a real app, this would generate a PDF using a library like jsPDF or react-pdf
-    // For demo purposes, we'll just simulate a generated PDF
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    
+    // Set font styles
+    pdf.setFont('helvetica');
+    pdf.setFontSize(20);
+    
+    // Add header
+    pdf.setTextColor(4, 120, 87); // emerald-600 color
+    pdf.text(`${selectedTemplate === "tourTicket" ? "Tour Ticket" : "Hotel Booking"}`, 105, 20, { align: 'center' });
+    pdf.text("Kanha National Park", 105, 30, { align: 'center' });
+    
+    // Reset font for content
+    pdf.setFontSize(12);
+    pdf.setTextColor(0, 0, 0);
+    
+    // Add booking details
+    pdf.text(`Booking ID: ${bookingDetails.bookingId}`, 20, 50);
+    pdf.text(`Booking Date: ${new Date(bookingDetails.bookingDate).toLocaleDateString()}`, 20, 60);
+    
+    // Customer details
+    pdf.setFontSize(14);
+    pdf.text("Customer Details", 20, 80);
+    pdf.setFontSize(12);
+    pdf.text(`Name: ${bookingDetails.customerName}`, 20, 90);
+    pdf.text(`Email: ${bookingDetails.email}`, 20, 100);
+    pdf.text(`Phone: ${bookingDetails.phone}`, 20, 110);
+    
+    // Booking details
+    pdf.setFontSize(14);
+    pdf.text("Booking Details", 20, 130);
+    pdf.setFontSize(12);
+    pdf.text(`${selectedTemplate === "tourTicket" ? "Tour" : "Hotel"}: ${
+      selectedTemplate === "tourTicket" ? bookingDetails.tourName : bookingDetails.hotelName
+    }`, 20, 140);
+    pdf.text(`Check In: ${new Date(bookingDetails.checkIn).toLocaleDateString()}`, 20, 150);
+    pdf.text(`Check Out: ${new Date(bookingDetails.checkOut).toLocaleDateString()}`, 20, 160);
+    pdf.text(`Number of Guests: ${bookingDetails.guests}`, 20, 170);
+    pdf.text(`Amount: ${bookingDetails.amount}`, 20, 180);
+    
+    // Footer
+    pdf.setFontSize(10);
+    pdf.text("Thank you for choosing Kanha National Park!", 105, 250, { align: 'center' });
+    
+    // Generate PDF
+    const pdfBlob = pdf.output('blob');
+    const pdfUrl = URL.createObjectURL(pdfBlob);
+    
     setGeneratedPDF({
       name: `${selectedTemplate === "tourTicket" ? "Tour" : "Hotel"}_Ticket_${bookingDetails.bookingId}.pdf`,
-      url: "#", // In a real app, this would be a blob URL or a download link
-      size: "245 KB",
+      url: pdfUrl,
+      blob: pdfBlob,
+      size: `${Math.round(pdfBlob.size / 1024)} KB`,
     });
   };
 
   const handleDownloadPDF = () => {
-    // In a real app, this would trigger the download of the generated PDF
-    alert(`PDF would be downloaded: ${generatedPDF.name}`);
+    if (generatedPDF) {
+      const link = document.createElement('a');
+      link.href = generatedPDF.url;
+      link.download = generatedPDF.name;
+      link.click();
+    }
   };
 
-  const handleSendPDF = () => {
-    // In a real app, this would send the PDF via Email
-    alert(`PDF would be sent to ${bookingDetails.email} via Email`);
-    setGeneratedPDF(null);
-    setBookingDetails({
-      bookingId: "",
-      customerName: "",
-      email: "",
-      phone: "",
-      bookingDate: "",
-      tourName: "",
-      hotelName: "",
-      checkIn: "",
-      checkOut: "",
-      guests: "",
-      amount: "",
-    });
+  const handleSendPDF = async () => {
+    try {
+      const formData = new FormData();
+      formData.append('pdf', generatedPDF.blob, generatedPDF.name);
+      formData.append('email', bookingDetails.email);
+      formData.append('customerName', bookingDetails.customerName);
+      formData.append('bookingType', selectedTemplate);
+  
+      const response = await fetch('http://localhost:5000/api/send-ticket', {
+        method: 'POST',
+        body: formData,
+      });
+  
+      if (response.ok) {
+        alert('Ticket has been sent successfully!');
+        setGeneratedPDF(null);
+        setBookingDetails({
+          bookingId: "",
+          customerName: "",
+          email: "",
+          phone: "",
+          bookingDate: "",
+          tourName: "",
+          hotelName: "",
+          checkIn: "",
+          checkOut: "",
+          guests: "",
+          amount: "",
+        });
+      } else {
+        throw new Error('Failed to send email');
+      }
+    } catch (error) {
+      alert('Failed to send the ticket. Please try again.');
+      console.error('Error sending ticket:', error);
+    }
   };
 
   return (

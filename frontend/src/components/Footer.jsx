@@ -15,7 +15,7 @@ const Footer = () => {
     const information = [
         { name: "Privacy Policy", link: "/privacy-policy" },
         { name: "FAQ'S", link: "/faqs" },
-        { name: "News", link: "/news" },
+        // { name: "News", link: "/news" },
         { name: "Contact Us", link: "/contact-us"},
         { name: "Site Map", link: "/sitemap" },
     ]
@@ -28,9 +28,9 @@ const Footer = () => {
     ]
 
     const tours = [
-        "Online Safari Bookingi",
+        "Online Safari Booking",
         "Tour Packages",
-        "Hotels in Kanha",
+        "Hotels & Resorts",
         "Pay Now",
     ]
 
@@ -135,8 +135,7 @@ const Footer = () => {
 
                     {/* Copyright */}
                     <p className="text-gray-500 text-sm">
-                        Copyright © 2024-25 by Kanha National Park (GTI Travels Private
-                        Limited)
+                        Copyright © 2024-25 by mpjunglesafari.com
                     </p>
                 </div>
             </div>
