@@ -95,7 +95,7 @@ export default function SearchBar() {
     ];
 
     return (
-        <div className="backdrop-blur-md bg-green-900/20 sticky top-1 z-10 rounded-2xl p-4 md:p-6 mx-auto max-w-6xl border border-white/20 mt-1 mb-1">
+        <div className="backdrop-blur-md bg-green-900/20 absolute top-24 left-[12%] z-10 rounded-2xl p-4 md:p-6 mx-auto max-w-6xl border border-white/20 mt-1 mb-1">
             <form onSubmit={handleSubmit} className="space-y-6 md:space-y-0">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                     {

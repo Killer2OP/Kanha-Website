@@ -36,7 +36,7 @@ function PayNow() {
   >
     <Header />
       <div className="container mx-auto py-12 px-4">
-        <h1 className="text-3xl font-bold text-white text-center mb-8">PAYMENT</h1>
+        <h1 className="text-5xl font-bold text-white text-center py-6">PAYMENT</h1>
         
         <div className="max-w-3xl mx-auto bg-white/20 backdrop-blur-md rounded-lg shadow-lg p-6 md:p-8 border border-white/30">
           <div className="mb-6">

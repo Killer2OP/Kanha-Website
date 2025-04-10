@@ -892,7 +892,7 @@ const ServicesSection = () => {
       icon: Compass,
       images: [], // Empty array since we're using video
       videoSrc:
-        "https://videos.pexels.com/video-files/7624759/7624759-sd_640_360_30fps.mp4",
+        "https://cdn.pixabay.com/video/2021/09/04/87531-602317601_large.mp4",
       features: [
         "Explore the buffer zone on foot",
         "Bird watching opportunities",
@@ -905,7 +905,7 @@ const ServicesSection = () => {
       icon: Sun,
       images: [],
       videoSrc:
-        "https://videos.pexels.com/video-files/11236995/11236995-sd_640_360_30fps.mp4",
+        "https://videos.pexels.com/video-files/30716785/13141582_640_360_30fps.mp4",
       features: [
         "Spend the entire day inside the core zone",
         "Packed meals and refreshments included",

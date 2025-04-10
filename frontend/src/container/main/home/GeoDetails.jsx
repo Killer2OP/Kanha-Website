@@ -10,10 +10,9 @@ function App() {
           <div className="relative">
             <img 
               src="https://african-safari.sites.motocms.com/res/62625786d6eae90022049e05/6274f806015ea20022fe5da7_optimized_1104.webp" 
-              alt="African Safari"
+              alt="Kanha Tiger Reserve"
               className=" w-full h-auto object-cover shadow-green-900/30"
             />
-
           </div>
 
           {/* Right side - Content */}
@@ -25,37 +24,37 @@ function App() {
             <div className="space-y-6 text-lg">
               <div className="flex items-center gap-4 hover:bg-green-900/30 p-2 rounded-lg transition-colors">
                 <Trees className="w-6 h-6 text-green-400" />
-                <p>Total Forest Area – 940 Square Kilometres</p>
+                <p>Total Tiger Reserve Area – 2074.31 Square Kilometres</p>
               </div>
               
               <div className="flex items-center gap-4 hover:bg-green-900/30 p-2 rounded-lg transition-colors">
                 <Target className="w-6 h-6 text-green-400" />
-                <p>Core Area – 940 square kilometres</p>
+                <p>Core/Critical Tiger Habitat – 917.43 Square Kilometres</p>
               </div>
               
               <div className="flex items-center gap-4 hover:bg-green-900/30 p-2 rounded-lg transition-colors">
                 <Shield className="w-6 h-6 text-green-400" />
-                <p>Buffer area – 1067 Square kilometres</p>
+                <p>Buffer Zone – 1134.31 Square Kilometres</p>
+              </div>
+              
+              <div className="flex items-center gap-4 hover:bg-green-900/30 p-2 rounded-lg transition-colors">
+                <Map className="w-6 h-6 text-green-400" />
+                <p>National Park Area – 940 Square Kilometres (including 917.43 sq. km. of critical tiger habitat)</p>
               </div>
               
               <div className="flex items-center gap-4 hover:bg-green-900/30 p-2 rounded-lg transition-colors">
                 <TreePine className="w-6 h-6 text-green-400" />
-                <p>Type of forest - Moist Deciduous Forest, Dry Deciduous Forest</p>
-              </div>
-              
-              <div className="flex items-center gap-4 hover:bg-green-900/30 p-2 rounded-lg transition-colors">
-                <Waves className="w-6 h-6 text-green-400" />
-                <p>Rivers - Banjar River</p>
+                <p>Location - Maikal ranges of the Satpuras, Mandla and Balaghat districts of Madhya Pradesh</p>
               </div>
               
               <div className="flex items-center gap-4 hover:bg-green-900/30 p-2 rounded-lg transition-colors">
                 <Mountain className="w-6 h-6 text-green-400" />
-                <p>Hills - valley meadow and plateau meadow</p>
+                <p>Includes Phen Wildlife Sanctuary (110 sq. km.) - a Satellitic Micro Core</p>
               </div>
               
               <div className="flex items-center gap-4 hover:bg-green-900/30 p-2 rounded-lg transition-colors">
                 <Thermometer className="w-6 h-6 text-green-400" />
-                <p>Temperature - extreme- hot and dry (April-June) – max temperature- 43° C</p>
+                <p>Known for saving the endangered hard ground barasingha (Cervus duvauceli branderi) from extinction</p>
               </div>
             </div>
           </div>

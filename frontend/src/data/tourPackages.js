@@ -7,7 +7,7 @@ const tourPackages = [
     subtitle: "with 1 Jeep Safari",
     duration: "1 Night/2 Days",
     safaris: "1 Jeep Safari",
-    price: "₹12,999",
+    price: "₹11,999",
     image:
       "https://images.unsplash.com/photo-1544979590-37e9b47eb705?auto=format&fit=crop&q=80&w=800",
     description:
@@ -51,9 +51,9 @@ const tourPackages = [
     subtitle: "with 1 Jeep Safari",
     duration: "2 Nights/3 Days",
     safaris: "1 Jeep Safari",
-    price: "₹19,999",
+    price: "₹18,999",
     image:
-      "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&q=80&w=800",
+      "https://www.kanhanationalparkonline.in/uploads/0000/25/2021/11/20/tigers-in-pench-04.jpg",
     description:
       "Located in the Mandla and Balaghat district of Madhya Pradesh, the adventurous Kanha kisli National Park is a National Park as well as a Tiger Reserve divided into two sanctuaries, namely Hallon and Banjar.",
     features: [
@@ -104,7 +104,7 @@ const tourPackages = [
     subtitle: "with 2 Jeep Safaris",
     duration: "4 Nights/5 Days",
     safaris: "2 Jeep Safaris",
-    price: "₹34,999",
+    price: "₹33,999",
     image:
       "https://images.unsplash.com/photo-1585970480901-90d6bb2a48b5?auto=format&fit=crop&q=80&w=800",
     description:
@@ -245,8 +245,8 @@ const tourPackages = [
     subtitle: "with 3 Jeep Safaris",
     duration: "3 Nights/4 Days",
     safaris: "3 Jeep Safaris",
-    price: "₹29,999",
-    image: "https://images.unsplash.com/photo-1590634561459-a43c83a39486",
+    price: "₹28,999",
+    image: "https://www.kanhanationalparkonline.in/uploads/0000/25/2021/11/20/pench-jungle-safari-01.jpg",
     description: "Experience luxury wildlife watching at Kanha with our premium package featuring multiple safaris and exclusive amenities.",
     features: [
       "3 Nights Luxury Accommodation",
@@ -288,7 +288,7 @@ const tourPackages = [
     subtitle: "with 4 Jeep Safaris",
     duration: "3 Nights/4 Days",
     safaris: "4 Jeep Safaris",
-    price: "₹34,999",
+    price: "₹33,999",
     image: "https://images.unsplash.com/photo-1575550959106-5a7defe28b56",
     description: "Specially designed for wildlife photographers with strategic timing and positioning for the best shots.",
     features: [
@@ -331,7 +331,7 @@ const tourPackages = [
     subtitle: "with 3 Jeep Safaris",
     duration: "2 Nights/3 Days",
     safaris: "3 Jeep Safaris",
-    price: "₹25,999",
+    price: "₹24,999",
     image: "https://images.unsplash.com/photo-1549366021-9f761d450615",
     description: "Follow the trails of Bengal tigers in India's tiger capital with highest density of royal bengal tigers.",
     features: [
@@ -384,7 +384,7 @@ const tourPackages = [
     subtitle: "with 4 Jeep Safaris",
     duration: "3 Nights/4 Days",
     safaris: "4 Jeep Safaris",
-    price: "₹39,999",
+    price: "₹38,999",
     image: "https://images.unsplash.com/photo-1578326457399-3b34dbbf23b8",
     description: "Luxury wildlife experience with premium accommodations and exclusive safari access.",
     features: [
@@ -447,8 +447,8 @@ const tourPackages = [
     subtitle: "with 2 Jeep Safaris",
     duration: "2 Nights/3 Days",
     safaris: "2 Jeep Safaris",
-    price: "₹27,999",
-    image: "https://images.unsplash.com/photo-1576633587382-13ddf37b1fc1",
+    price: "₹26,999",
+    image: "https://www.kanhanationalparkonline.in/uploads/kanhasafari.jpg",
     description: "Combine wildlife with ancient heritage, including visits to historic fort and caves.",
     features: [
       "2 Nights Accommodation",
@@ -503,7 +503,7 @@ const tourPackages = [
     duration: "2 Nights/3 Days",
     safaris: "3 Jeep Safaris",
     price: "₹24,999",
-    image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716",
+    image: "https://www.penchnationalpark.com/blog/wp-content/uploads/2024/07/Pench-Tiger-Reserve-Maharashtra-Monsoon-Safari.jpg",
     description: "Experience Kipling's Jungle Book come alive in its original setting.",
     features: [
       "2 Nights Themed Accommodation",
@@ -556,7 +556,7 @@ const tourPackages = [
     duration: "3 Nights/4 Days",
     safaris: "4 Jeep Safaris",
     price: "₹32,999",
-    image: "https://images.unsplash.com/photo-1577089907583-2098c74e8097",
+    image: "https://www.penchnationalpark.com/wp-content/uploads/2018/10/kanha-national-park1-377x282.jpg",
     description: "Capture the diverse wildlife of Pench with expert photography guidance.",
     features: [
       "3 Nights Accommodation",
@@ -618,7 +618,7 @@ const tourPackages = [
     duration: "1 Night/2 Days",
     safaris: "2 Jeep Safaris",
     price: "₹18,999",
-    image: "https://images.unsplash.com/photo-1581889470536-467bdbe30cd0",
+    image: "https://www.bandhavgarh-national-park.com/images/bandhavgarh_photography_pack.png",
     description: "Perfect weekend getaway with essential wildlife experience.",
     features: [
       "1 Night Accommodation",

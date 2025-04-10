@@ -43,7 +43,7 @@ function App() {
 
                 <Header />
 
-                {/* <SearchBar /> */}
+                <SearchBar />
 
                 <div className="h-ful md:pt-[410px] lg:pt-[350px] p-4 absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                     <div className="text-center text-white">

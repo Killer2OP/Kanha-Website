@@ -402,7 +402,7 @@ function HotelDetail() {
             <div className="flex justify-between items-start border-b border-gray-200 pb-6 mb-6">
               <div>
                 <h2 className="text-2xl font-semibold text-gray-900 mb-1">
-                  Entire rental unit in {hotel.location}
+                  Stay in {hotel.location}
                 </h2>
                 <p className="text-gray-600">
                   {hotel.guests} guests · {hotel.bedrooms} bedroom · {hotel.beds} bed · {hotel.bathrooms} bathrooms

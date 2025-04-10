@@ -8,7 +8,7 @@ export const allHotels = [
     reviews: 180,
     location: "Mandla , Khatia Gate",
     address: "Chawdiganj - Kanha Rd, Mandla, Madhya Pradesh 481758",
-    price: "₹5,500",
+    price: "₹5,000",
     image:
       "https://www.kanhanationalparkonline.in/uploads/whatsapp-image-2024-09-05-at-123744-pm.jpeg",
     amenities: [
@@ -70,7 +70,7 @@ export const allHotels = [
     reviews: 400,
     location: "Mocha , Khatia Gate",
     address: "Kanha National Park, Village: Mocha, Madhya Pradesh 481111",
-    price: "₹12,500",
+    price: "₹12,000",
     image:
       "https://www.kanhanationalparkonline.in/uploads/tuli4.jpg",
     amenities: [
@@ -132,7 +132,7 @@ export const allHotels = [
     reviews: 320,
     location: "Near Mukki Gate",
     address: "Village Kuchwahi, Near Mukki Gate, Madhya Pradesh 481768",
-    price: "₹15,500",
+    price: "₹15,000",
     image:
       "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201201131102236695-7af1589b-dd8c-46f9-a9c5-e500ba1e0bd9.jpg",
     amenities: ["Luxury Rooms", "All Meals", "Safari Booking", "Pool"],
@@ -253,7 +253,7 @@ export const allHotels = [
     reviews: 150,
     location: "Mocha, Khatia Gate",
     address: "Village Mocha, Kanha National Park, Madhya Pradesh 481768",
-    price: "₹8,500",
+    price: "₹8,000",
     image: "https://r1imghtlak.mmtcdn.com/850390866ed111e78bf60a4cef95d023.jpg",
     amenities: [
       "Swimming Pool",
@@ -436,7 +436,7 @@ export const allHotels = [
     reviews: 220,
     location: "Khatia Gate",
     address: "Near Khatia Gate, Kanha National Park, Madhya Pradesh 481768",
-    price: "₹7,500",
+    price: "₹7,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c5/mogli-resort.jpg?w=700&h=-1&s=1",
     amenities: [
       "Swimming Pool",
@@ -497,7 +497,7 @@ export const allHotels = [
     reviews: 180,
     location: "Khatia Gate",
     address: "Near Khatia Gate, Kanha National Park, Madhya Pradesh 481768",
-    price: "₹4,500",
+    price: "₹4,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e5/motel-chandan.jpg?w=700&h=-1&s=1",
     amenities: [
       "Restaurant",
@@ -687,7 +687,7 @@ export const allHotels = [
     reviews: 165,
     location: "Bandhavgarh National Park, Tala Gate",
     address: "Village Tala, Bandhavgarh National Park, Madhya Pradesh 484661",
-    price: "₹8,500",
+    price: "₹8,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/dd/a4/c5/mogli-resort-bandhavgarh.jpg?w=700&h=-1&s=1",
     amenities: [
       "Swimming Pool",
@@ -748,7 +748,7 @@ export const allHotels = [
     reviews: 190,
     location: "Bandhavgarh National Park, Tala Gate",
     address: "Near Tala Gate, Bandhavgarh National Park, Madhya Pradesh 484661",
-    price: "₹4,500",
+    price: "₹4,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e5/white-tiger-mpt.jpg?w=700&h=-1&s=1",
     amenities: [
       "Restaurant",
@@ -806,7 +806,7 @@ export const allHotels = [
     reviews: 150,
     location: "Bandhavgarh National Park, Tala Gate",
     address: "Village Tala, Bandhavgarh National Park, Madhya Pradesh 484661",
-    price: "₹3,500",
+    price: "₹3,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c5/sun-resort.jpg?w=700&h=-1&s=1",
     amenities: [
       "Restaurant",
@@ -864,7 +864,7 @@ export const allHotels = [
     reviews: 160,
     location: "Bandhavgarh National Park, Tala Gate",
     address: "Village Tala, Bandhavgarh National Park, Madhya Pradesh 484661",
-    price: "₹8,500",
+    price: "₹8,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/58/da/a5/celebration-van-vilas.jpg?w=700&h=-1&s=1",
     amenities: [
       "Swimming Pool",
@@ -925,7 +925,7 @@ export const allHotels = [
     reviews: 140,
     location: "Bandhavgarh National Park, Tala Gate",
     address: "Village Tala, Bandhavgarh National Park, Madhya Pradesh 484661",
-    price: "₹9,500",
+    price: "₹9,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/monsoon-forest.jpg?w=700&h=-1&s=1",
     amenities: [
       "Swimming Pool",
@@ -1230,7 +1230,7 @@ export const allHotels = [
     reviews: 140,
     location: "Bandhavgarh National Park, Tala Gate",
     address: "Village Tala, Bandhavgarh National Park, Madhya Pradesh 484661",
-    price: "₹8,500",
+    price: "₹8,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e3/tathastu-resorts-bandhavgarh.jpg?w=700&h=-1&s=1",
     amenities: [
       "Swimming Pool",
@@ -1292,7 +1292,7 @@ export const allHotels = [
     reviews: 145,
     location: "Pench National Park, Turia Gate",
     address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
-    price: "₹18,500",
+    price: "₹18,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/mahua-one.jpg?w=700&h=-1&s=1",
     amenities: [
       "Luxury Cottages",
@@ -1354,7 +1354,7 @@ export const allHotels = [
     reviews: 130,
     location: "Pench National Park, Turia Gate",
     address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
-    price: "₹12,500",
+    price: "₹12,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/e0/91/a2/olive-resort.jpg?w=700&h=-1&s=1",
     amenities: [
       "Swimming Pool",
@@ -1413,7 +1413,7 @@ export const allHotels = [
     reviews: 155,
     location: "Pench National Park, Turia Gate",
     address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
-    price: "₹8,500",
+    price: "₹8,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/bb/a3/c5/sterling-ruddan.jpg?w=700&h=-1&s=1",
     amenities: [
       "Swimming Pool",
@@ -1472,7 +1472,7 @@ export const allHotels = [
     reviews: 140,
     location: "Pench National Park, Turia Gate",
     address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
-    price: "₹9,500",
+    price: "₹9,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e5/pench-wilderness-camp.jpg?w=700&h=-1&s=1",
     amenities: [
       "Luxury Tents",
@@ -1531,7 +1531,7 @@ export const allHotels = [
     reviews: 125,
     location: "Pench National Park, Turia Gate",
     address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
-    price: "₹6,500",
+    price: "₹6,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/tigers-and-woods.jpg?w=700&h=-1&s=1",
     amenities: [
       "Restaurant",
@@ -1589,7 +1589,7 @@ export const allHotels = [
     reviews: 120,
     location: "Pench National Park, Turia Gate",
     address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
-    price: "₹7,500",
+    price: "₹7,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/f8/a2/e3/tathastu-resorts-pench.jpg?w=700&h=-1&s=1",
     amenities: [
       "Swimming Pool",
@@ -1646,7 +1646,7 @@ export const allHotels = [
     reviews: 180,
     location: "Pench National Park, Turia Gate",
     address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
-    price: "₹12,500",
+    price: "₹12,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/welcome-heritage.jpg?w=700&h=-1&s=1",
     amenities: [
       "Luxury Cottages",
@@ -1705,7 +1705,7 @@ export const allHotels = [
     reviews: 150,
     location: "Pench National Park, Turia Gate",
     address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
-    price: "₹4,500",
+    price: "₹4,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3c/4c/e5/kipling-court.jpg?w=700&h=-1&s=1",
     amenities: [
       "Restaurant",
@@ -1761,7 +1761,7 @@ export const allHotels = [
     reviews: 165,
     location: "Pench National Park, Turia Gate",
     address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
-    price: "₹8,500",
+    price: "₹8,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/mayur-kipling.jpg?w=700&h=-1&s=1",
     amenities: [
       "Swimming Pool",
@@ -1818,7 +1818,7 @@ export const allHotels = [
     reviews: 170,
     location: "Pench National Park, Turia Gate",
     address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
-    price: "₹9,500",
+    price: "₹9,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/golf-resort.jpg?w=700&h=-1&s=1",
     amenities: [
       "Golf Course",
@@ -1876,7 +1876,7 @@ export const allHotels = [
     reviews: 140,
     location: "Pench National Park, Turia Gate",
     address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
-    price: "₹6,500",
+    price: "₹6,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/revanwood.jpg?w=700&h=-1&s=1",
     amenities: [
       "Restaurant",
@@ -1932,7 +1932,7 @@ export const allHotels = [
     reviews: 135,
     location: "Pench National Park, Turia Gate",
     address: "Village Turia, Pench National Park, Madhya Pradesh 480881",
-    price: "₹5,500",
+    price: "₹5,000",
     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/e5/9e/village-machaan.jpg?w=700&h=-1&s=1",
     amenities: [
       "Traditional Machaan Stay",
