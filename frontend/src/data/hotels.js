@@ -17,6 +17,38 @@ export const allHotels = [
       "Free Wifi",
       "Swimming Pool",
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        images: [
+          "https://www.kanhanationalparkonline.in/uploads/krishnajungle-standard1.jpg",
+          "https://www.kanhanationalparkonline.in/uploads/krishnajungle-standard2.jpg",
+          "https://www.kanhanationalparkonline.in/uploads/krishnajungle-standard3.jpg"
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        images: [
+          "https://www.kanhanationalparkonline.in/uploads/krishnajungle-deluxe1.jpg",
+          "https://www.kanhanationalparkonline.in/uploads/krishnajungle-deluxe2.jpg",
+          "https://www.kanhanationalparkonline.in/uploads/krishnajungle-deluxe3.jpg"
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        images: [
+          "https://www.kanhanationalparkonline.in/uploads/krishnajungle-suite1.jpg",
+          "https://www.kanhanationalparkonline.in/uploads/krishnajungle-suite2.jpg",
+          "https://www.kanhanationalparkonline.in/uploads/krishnajungle-suite3.jpg"
+        ]
+      }
+    },
     featured: true,
     description: "Wake up to mountain sunrises, unwind in cozy bedrooms, and embrace nature's serenity on the balcony. Your tranquil escape begins here. Located near Khatia Gate, this resort offers comfortable accommodations with modern amenities while being close to nature.",
     images: [

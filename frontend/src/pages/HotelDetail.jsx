@@ -30,24 +30,25 @@ function HotelDetail() {
   const hotel = allHotels.find((h) => h.slug === slug);
   
   // Room types with their details
-  const roomTypes = {
+  // Remove the static roomTypes object and use hotel.rooms instead
+  const roomTypes = hotel?.rooms || {
     standard: {
       name: "Standard Room",
       description: "Comfortable room with all basic amenities",
       priceMultiplier: 1.0,
-      image: hotel?.images?.[1] || "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800"
+      images: [hotel?.images?.[1]] // Fallback to hotel images if rooms not defined
     },
     deluxe: {
       name: "Deluxe Room",
       description: "Spacious room with premium furnishings and forest view",
       priceMultiplier: 1.3,
-      image: hotel?.images?.[2] || "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80&w=800"
+      images: [hotel?.images?.[2]]
     },
     suite: {
       name: "Luxury Suite",
       description: "Luxurious suite with separate living area and panoramic views",
       priceMultiplier: 1.8,
-      image: hotel?.images?.[3] || "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800"
+      images: [hotel?.images?.[3]]
     }
   };
   
@@ -244,6 +245,7 @@ function HotelDetail() {
       setIsBookingConfirmed(false);
     }
   };
+  
   
   return (
     <div className="min-h-screen bg-white">
