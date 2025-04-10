@@ -22,17 +22,15 @@ export const allHotels = [
         name: "Standard Room",
         description: "Comfortable room with all basic amenities",
         priceMultiplier: 1.0,
-        images: [
-          "https://www.kanhanationalparkonline.in/uploads/krishnajungle-standard1.jpg",
-          "https://www.kanhanationalparkonline.in/uploads/krishnajungle-standard2.jpg",
-          "https://www.kanhanationalparkonline.in/uploads/krishnajungle-standard3.jpg"
+        img: [
+          "https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/bgdefault_bg.jpg"
         ]
       },
       deluxe: {
         name: "Deluxe Room",
         description: "Spacious room with premium furnishings and forest view",
         priceMultiplier: 1.3,
-        images: [
+        img: [
           "https://www.kanhanationalparkonline.in/uploads/krishnajungle-deluxe1.jpg",
           "https://www.kanhanationalparkonline.in/uploads/krishnajungle-deluxe2.jpg",
           "https://www.kanhanationalparkonline.in/uploads/krishnajungle-deluxe3.jpg"
@@ -42,7 +40,7 @@ export const allHotels = [
         name: "Luxury Suite",
         description: "Luxurious suite with separate living area and panoramic views",
         priceMultiplier: 1.8,
-        images: [
+        img: [
           "https://www.kanhanationalparkonline.in/uploads/krishnajungle-suite1.jpg",
           "https://www.kanhanationalparkonline.in/uploads/krishnajungle-suite2.jpg",
           "https://www.kanhanationalparkonline.in/uploads/krishnajungle-suite3.jpg"
@@ -111,6 +109,38 @@ export const allHotels = [
       "Spa",
       "Restaurant",
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://www.kanhanationalparkonline.in/uploads/tuli4.jpg",
+          "https://www.kanhanationalparkonline.in/uploads/tulibed.jpg",
+          "https://www.kanhanationalparkonline.in/uploads/tuli5.jpg"
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://www.kanhanationalparkonline.in/uploads/tulibed.jpg",
+          "https://www.kanhanationalparkonline.in/uploads/tuli5.jpg",
+          "https://www.kanhanationalparkonline.in/uploads/tulitiger.jpg"
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://www.kanhanationalparkonline.in/uploads/tulitiger.jpg",
+          "https://www.kanhanationalparkonline.in/uploads/tuli3.jpg",
+          "https://www.kanhanationalparkonline.in/uploads/tuli4.jpg"
+        ]
+      }
+    },
     featured: true,
     description: "Experience luxury in the wilderness at Tuli Tiger Resort. Our spacious rooms and world-class amenities ensure a comfortable stay while you explore the beauty of Kanha National Park. Perfect for wildlife enthusiasts and luxury travelers alike.",
     images: [
@@ -168,6 +198,38 @@ export const allHotels = [
     image:
       "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201201131102236695-7af1589b-dd8c-46f9-a9c5-e500ba1e0bd9.jpg",
     amenities: ["Luxury Rooms", "All Meals", "Safari Booking", "Pool"],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/fd47999880e111e889570a664b86a0a6.jpg",
+          "https://r1imghtlak.mmtcdn.com/fcfeb7fa80e111e8ba080ad03efb9e28.jpg",
+          "https://r1imghtlak.mmtcdn.com/1000cb58926211e4b5ab32e76f7e45c9.jfif"
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/a0bb14f878be11ea84a40242ac110003.jpg",
+          "https://r1imghtlak.mmtcdn.com/ee88199c78be11eaaebe0242ac110003.jpg",
+          "https://r1imghtlak.mmtcdn.com/97647152-a409-40d7-81d5-dff5ac16bf28.jpg"
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/038314b880e211e89beb0ad03efb9e28.jpg",
+          "https://r1imghtlak.mmtcdn.com/cccbbebc78be11eaa0200242ac110002.jpg",
+          "https://r1imghtlak.mmtcdn.com/9f0bdbd2926011e4aff2daf4768ad8d9.jfif"
+        ]
+      }
+    },
     featured: true,
     description: "Immerse yourself in the natural beauty of Kanha at our Earth Lodge. Our eco-friendly accommodations blend seamlessly with the surroundings while providing all modern comforts. Perfect for those seeking a sustainable luxury experience.",
     images: [
@@ -233,6 +295,38 @@ export const allHotels = [
       "Free Wifi",
       "Outdoor Activities"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort.jpeg",
+          "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort5.jpeg",
+          "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort4.jpeg"
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort2.jpeg",
+          "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort3.jpeg",
+          "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort1.jpeg"
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort1.jpeg",
+          "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort2.jpeg",
+          "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort3.jpeg"
+        ]
+      }
+    },
     featured: false,
     description: "Kusum Resort offers a comfortable stay close to nature at an affordable price. Located near Khatia Gate, the resort provides easy access to Kanha National Park while offering all essential amenities for a pleasant stay.",
     images: [
@@ -293,6 +387,38 @@ export const allHotels = [
       "Safari Booking",
       "Free Wifi"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/850390866ed111e78bf60a4cef95d023.jpg",
+          "https://r1imghtlak.mmtcdn.com/faf996e8260411ec8bc10a58a9feac02.jpeg",
+          "https://r1imghtlak.mmtcdn.com/4a4ba602480b11e5aef65ee5da2daa2a.jfif"
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/6f0b0b8c6ed211e78f69025f77df004f.jpg",
+          "https://r1imghtlak.mmtcdn.com/6451ac18260311ec85c20a58a9feac02.jpeg",
+          "https://r1imghtlak.mmtcdn.com/850390866ed111e78bf60a4cef95d023.jpg"
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/6451ac18260311ec85c20a58a9feac02.jpeg",
+          "https://r1imghtlak.mmtcdn.com/4a4ba602480b11e5aef65ee5da2daa2a.jfif",
+          "https://r1imghtlak.mmtcdn.com/6f0b0b8c6ed211e78f69025f77df004f.jpg"
+        ]
+      }
+    },
     featured: true,
     description: "Celebration Van Vilas offers a perfect blend of luxury and wilderness experience. Located near Khatia Gate, the resort provides comfortable accommodations, excellent dining options, and easy access to Kanha National Park.",
     images: [
@@ -354,6 +480,38 @@ export const allHotels = [
       "Jungle Safari",
       "Fireplace"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        images: [
+          "https://r1imghtlak.mmtcdn.com/f27ff7a0f5e811e785a20224510f5e5b.jpg",
+          "https://r1imghtlak.mmtcdn.com/435a5360f5e811e7b99802155a238f12.jpg",
+          "https://r1imghtlak.mmtcdn.com/8f5c2f18f5e811e7ba030a209fbd0127.jpg"
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        images: [
+          "https://r1imghtlak.mmtcdn.com/de66dcf2f5e811e7b5640a604e3b7738.jpg",
+          "https://r1imghtlak.mmtcdn.com/516ac822f5e811e79dcd0a9df65c8753.jpg",
+          "https://r1imghtlak.mmtcdn.com/f27ff7a0f5e811e785a20224510f5e5b.jpg"
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        images: [
+          "https://r1imghtlak.mmtcdn.com/516ac822f5e811e79dcd0a9df65c8753.jpg",
+          "https://r1imghtlak.mmtcdn.com/8f5c2f18f5e811e7ba030a209fbd0127.jpg",
+          "https://r1imghtlak.mmtcdn.com/de66dcf2f5e811e7b5640a604e3b7738.jpg"
+        ]
+      }
+    },
     featured: true,
     description: "Embrace nature in this 8.5-acre retreat, boasting a natural pool, encircled by majestic Sal trees for an unforgettable holiday. Enjoy special last minute deals and a variety of room options with all-inclusive meal packages.",
     images: [
@@ -416,6 +574,38 @@ export const allHotels = [
       "Safari Booking",
       "Free Wifi"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        images: [
+          "https://r1imghtlak.mmtcdn.com/6bb56f280e8a11e989940242ac110002.jpg",
+          "https://r1imghtlak.mmtcdn.com/d0cb863c0e8911e9868a0242ac110002.jpg",
+          "https://r1imghtlak.mmtcdn.com/06f2971af23c11e8b4a60242ac110002.jpg"
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        images: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201811271754095462-83119d4420db11eba9280242ac110002.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201811271754095462-24588df201a511ecab6e0a58a9feac02.jpg",
+          "https://r1imghtlak.mmtcdn.com/6bb56f280e8a11e989940242ac110002.jpg"
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        images: [
+          "https://r1imghtlak.mmtcdn.com/d0cb863c0e8911e9868a0242ac110002.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201811271754095462-83119d4420db11eba9280242ac110002.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201811271754095462-24588df201a511ecab6e0a58a9feac02.jpg"
+        ]
+      }
+    },
     featured: true,
     description: "MPT Jungle Resort offers comfortable accommodations at affordable prices. Located near Khatia Gate, the resort provides easy access to Kanha National Park while offering essential amenities for a pleasant stay.",
     images: [
@@ -476,6 +666,38 @@ export const allHotels = [
       "Safari Booking",
       "Free Wifi"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        images: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/200803261313231998-43c572fe49b811eb87b40242ac110003.jpg",
+          "https://r1imghtlak.mmtcdn.com/1dd4d0bee18111e7892a0a209fbd0127.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/200803261313231998-fe41a3a6e6d711e7a04a02755708f0b3.jpg"
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        images: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/200803261313231998-f414bf5ae6da11e7a04a02755708f0b3.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/200803261313231998-1026744-b367015a515c11ee99f30a58a9feac02.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/200803261313231998-93d59a2a4a7211ebbd180242ac110003.jpg"
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        images: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/200803261313231998-d648883648fb11eb8c300242ac110005.jpg",
+          "https://r1imghtlak.mmtcdn.com/69febaa0e1a811e78f6a02755708f0b3.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/200803261313231998-93d59a2a4a7211ebbd180242ac110003.jpg"
+        ]
+      }
+    },
     featured: true,
     description: "Mogli Resort offers a comfortable stay in the heart of Kanha National Park. With well-appointed rooms, excellent dining options, and easy access to safari tours, it's the perfect base for wildlife enthusiasts.",
     images: [
@@ -540,6 +762,38 @@ export const allHotels = [
       "Free Wifi",
       "Parking"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        images: [
+          "https://r1imghtlak.mmtcdn.com/ffc82374245f11ed8df80a58a9feac02.jpeg",
+          "https://r1imghtlak.mmtcdn.com/b6160d1073aa11e7b6bb025f77df004f.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201410271733034416-5acf0448222811edb8da0a58a9feac02.jpg"
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        images: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201410271733034416-627ccb6c222811edacda0a58a9feac02.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201410271733034416-c19c9c76222811edb9810a58a9feac02.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201410271733034416-c1df3bda222811edacda0a58a9feac02.jpg"
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        images: [
+          "https://r1imghtlak.mmtcdn.com/5be237a9-7844-409a-989c-b232b2a4605a.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201410271733034416-c19c9c76222811edb9810a58a9feac02.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201410271733034416-627ccb6c222811edacda0a58a9feac02.jpg"
+        ]
+      }
+    },
     featured: false,
     description: "Motel Chandan offers affordable accommodations near Kanha National Park. With clean rooms, a restaurant serving delicious meals, and helpful staff, it's a great choice for budget-conscious travelers.",
     images: [
@@ -600,6 +854,38 @@ export const allHotels = [
       "Safari Booking",
       "Spa"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        images: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201511231234339773-5f6e305087da11eea1dc0a58a9feac02.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201511231234339773-9ce87e5487da11ee96890a58a9feac02.jpg",
+          "https://r1imghtlak.mmtcdn.com/309667d437f911edb8440a58a9feac02.jpg"
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        images: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/201511231234339773-1093-9caa422287b411ee91db0a58a9feac02.jpg",
+          "https://r1imghtlak.mmtcdn.com/713721da87b611ee99260a58a9feac02.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201511231234339773-8c032a9487da11ee9b360a58a9feac02.jpg"
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        images: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201511231234339773-09db1e8087dc11ee969d0a58a9feac02.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201511231234339773-fe8cbed687da11ee93c60a58a9feac02.jpg",
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201511231234339773-318f884f-5b3b-48a1-a2b5-c5618e35d0d3.jpg"
+        ]
+      }
+    },
     featured: true,
     description: "Sereia Resort offers a luxurious stay near Mukki Gate of Kanha National Park. With spacious rooms, excellent dining options, and a range of recreational facilities, it's perfect for those seeking comfort and convenience.",
     images: [
@@ -652,7 +938,7 @@ export const allHotels = [
 {
     id: 12,
     name: "Kingfisher Resort Kanha",
-    slug: "kingfisher-resort-kanha", 
+    slug: "kingfisher-resort-kanha",
     rating: 4.3,
     stars: 4,
     reviews: 210,
@@ -662,7 +948,7 @@ export const allHotels = [
     image: "https://r1imghtlak.mmtcdn.com/bcc20df4-4908-4a87-bc90-202900dc0abd.jpeg",
     amenities: [
       "Swimming Pool",
-      "Restaurant", 
+      "Restaurant",
       "Safari Booking",
       "Free Wifi",
       "Spa",
@@ -670,14 +956,46 @@ export const allHotels = [
       "Room Service",
       "Laundry"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        images: [
+          "https://r1imghtlak.mmtcdn.com/9324f158543411eca0680a58a9feac02.jpeg",
+          "https://r1imghtlak.mmtcdn.com/489f6595-b830-408d-a80a-63614b6e2f13.jpeg",
+          "https://r1imghtlak.mmtcdn.com/7528289e-bea7-48fd-a9b0-70eaa453bcce.jpeg"
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        images: [
+          "https://r1imghtlak.mmtcdn.com/62c24923-1468-42e8-980b-999bb3636f91.jpeg",
+          "https://r1imghtlak.mmtcdn.com/89551bdc408c11ecb95e0a58a9feac02.jfif",
+          "https://r1imghtlak.mmtcdn.com/7095c7b5-cace-481c-93f5-71e8c224a98f.jpeg"
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        images: [
+          "https://r1imghtlak.mmtcdn.com/4a8191d8408c11ec9d540a58a9feac02.jfif",
+          "https://r1imghtlak.mmtcdn.com/fd757dd2-d130-419b-9632-53c007c363d7.jpeg",
+          "https://r1imghtlak.mmtcdn.com/bcc20df4-4908-4a87-bc90-202900dc0abd.jpeg"
+        ]
+      }
+    },
     featured: true,
     description: "Kingfisher Resort offers a comfortable stay near Kanha National Park. With well-appointed rooms, excellent dining options, and a range of recreational facilities, it's perfect for wildlife enthusiasts and nature lovers. The resort features a swimming pool, spa, restaurant and bar along with modern amenities for a luxurious jungle stay.",
     images: [
       "https://r1imghtlak.mmtcdn.com/9324f158543411eca0680a58a9feac02.jpeg",
-      "https://r1imghtlak.mmtcdn.com/489f6595-b830-408d-a80a-63614b6e2f13.jpeg", 
-      "https://r1imghtlak.mmtcdn.com/7528289e-bea7-48fd-a9b0-70eaa453bcce.jpeg", 
-      "https://r1imghtlak.mmtcdn.com/62c24923-1468-42e8-980b-999bb3636f91.jpeg", 
-      "https://r1imghtlak.mmtcdn.com/89551bdc408c11ecb95e0a58a9feac02.jfif", 
+      "https://r1imghtlak.mmtcdn.com/489f6595-b830-408d-a80a-63614b6e2f13.jpeg",
+      "https://r1imghtlak.mmtcdn.com/7528289e-bea7-48fd-a9b0-70eaa453bcce.jpeg",
+      "https://r1imghtlak.mmtcdn.com/62c24923-1468-42e8-980b-999bb3636f91.jpeg",
+      "https://r1imghtlak.mmtcdn.com/89551bdc408c11ecb95e0a58a9feac02.jfif",
       "https://r1imghtlak.mmtcdn.com/7095c7b5-cace-481c-93f5-71e8c224a98f.jpeg",
       "https://r1imghtlak.mmtcdn.com/4a8191d8408c11ec9d540a58a9feac02.jfif",
       "https://r1imghtlak.mmtcdn.com/fd757dd2-d130-419b-9632-53c007c363d7.jpeg"
@@ -692,7 +1010,7 @@ export const allHotels = [
         description: "Well-appointed rooms with modern amenities and elegant furnishings for a comfortable stay."
       },
       {
-        title: "Wellness facilities", 
+        title: "Wellness facilities",
         description: "Swimming pool, spa and fitness center for relaxation and rejuvenation."
       },
       {
@@ -702,7 +1020,7 @@ export const allHotels = [
     ],
     fullAmenities: [
       "Forest view",
-      "Garden view", 
+      "Garden view",
       "Wifi",
       "Free parking on premises",
       "TV",
@@ -1211,7 +1529,7 @@ export const allHotels = [
     name: "Maati Jungle Lodge Bandhavgarh",
     slug: "maati-jungle-lodge-bandhavgarh",
     rating: 4.4,
-    stars: 4,
+    stars: 5,
     reviews: 145,
     location: "Bandhavgarh National Park, Tala Gate",
     address: "Village Tala, Bandhavgarh National Park, Madhya Pradesh 484661",
@@ -1614,7 +1932,6 @@ export const allHotels = [
     description: "Tigers & Woods offers comfortable accommodations at affordable prices. Perfect for budget-conscious travelers who want to explore Pench National Park.",
     images: [
       "https://r1imghtlak.mmtcdn.com/1524dd65-8765-470e-94c2-d322db7c0248.jpg",
-      "",
       "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/201102051442039885-169917-da212bccee6e11e9949b0242ac110005.jpg",
       "https://r1imghtlak.mmtcdn.com/20012280-fa40-4380-a852-f2c725dce9fa.jpg",
       "https://r1imghtlak.mmtcdn.com/d4ce7350c00211edb58d0a58a9feac02.jpg",
@@ -1674,7 +1991,6 @@ export const allHotels = [
     featured: false,
     description: "Tathastu Pench offers a comfortable stay with modern amenities in the heart of nature. Perfect for wildlife enthusiasts looking for a peaceful retreat near Pench National Park.",
     images: [
-      "",
       "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201804161155104300-f76cab149b3f11e6b8e30a209fbd0127.jpg",
       "https://r1imghtlak.mmtcdn.com/e3ae4fe6898c11e8a0840224510f5e5b.jpg",
       "https://r1imghtlak.mmtcdn.com/b5f2f932699611edbb2b0a58a9feac02.jpg",
@@ -2102,17 +2418,17 @@ export const getHotelsByLocation = (location) => {
 };
 export const getHotelsByPark = (park) => {
   if (park === "all") return allHotels;
-  
+
   // Map park names to search terms
   const parkSearchTerms = {
     "kanha": "kanha",
-    "bandhavgarh": "bandhavgarh", 
+    "bandhavgarh": "bandhavgarh",
     "pench": "pench"
   };
-  
+
   const searchTerm = parkSearchTerms[park.toLowerCase()] || park.toLowerCase();
-  return allHotels.filter((hotel) => 
-    hotel.location.toLowerCase().includes(searchTerm) || 
+  return allHotels.filter((hotel) =>
+    hotel.location.toLowerCase().includes(searchTerm) ||
     hotel.address.toLowerCase().includes(searchTerm) ||
     hotel.description.toLowerCase().includes(searchTerm) ||
     hotel.name.toLowerCase().includes(searchTerm)
@@ -2133,10 +2449,10 @@ export const getHotelsByRating = (minRating) => {
 // Get hotels by amenities
 export const getHotelsByAmenities = (amenities) => {
   if (!amenities || amenities.length === 0) return allHotels;
-  
+
   return allHotels.filter((hotel) => {
-    return amenities.every(amenity => 
-      hotel.amenities.some(hotelAmenity => 
+    return amenities.every(amenity =>
+      hotel.amenities.some(hotelAmenity =>
         hotelAmenity.toLowerCase().includes(amenity.toLowerCase())
       )
     );
@@ -2152,7 +2468,7 @@ export const getTotalHotels = () => {
 export const getHotelsWithPagination = (page = 1, limit = 10) => {
   const startIndex = (page - 1) * limit;
   const endIndex = page * limit;
-  
+
   return {
     hotels: allHotels.slice(startIndex, endIndex),
     totalPages: Math.ceil(allHotels.length / limit),

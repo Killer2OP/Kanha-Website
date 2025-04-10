@@ -2,6 +2,7 @@ import React from "react";
 import SafariBooking from "../container/main/home/SafariBooking";
 import { Camera, Clock, AlertCircle, MapPin, Info, Calendar } from "lucide-react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const OnlineSafariBooking = () => {
   const zones = [
@@ -118,6 +119,7 @@ const OnlineSafariBooking = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

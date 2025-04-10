@@ -29,7 +29,7 @@ const MapFilters = ({ filters, onFilterChange, onSelectAll }) => {
   const categories = ['Discover', 'Plan'];
   
   return (
-    <div className="bg-white p-3 md:p-4 rounded-lg shadow-lg w-full md:w-64 max-h-[300px] md:max-h-[calc(100vh-120px)] overflow-y-auto">
+    <div className="bg-green-200 p-3 md:p-4 rounded-lg shadow-lg w-full md:w-68 max-h-[300px] md:max-h-[calc(100vh-120px)] overflow-y-auto">
       <div className="flex justify-between items-center mb-2 md:mb-4">
         <h1 className="text-lg md:text-xl font-bold">Explore Map</h1>
         <button className="text-sm md:text-base text-gray-600 hover:text-gray-800">Clear</button>
