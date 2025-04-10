@@ -13,6 +13,7 @@ import Contact from "./container/main/contact-us/Contact";
 import ProtectedRoute from "./pages/Admin/components/ProtectedRoute";
 import FAQs from "./pages/FAQs";
 import PrivacyPolicy from "./pages/Policy";
+
 // Admin Panel Routes
 import AdminLogin from "./pages/Admin/AdminLogin";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
@@ -132,7 +133,7 @@ function App() {
                     <Route path="/contact-us" element={<Contact />} />
                     <Route path="/faqs" element={<FAQs />} />
                     <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
-
+                    <Route path="/tour/:tourId" element={<TourDetail />} />
                     {/* Admin Routes */}
                     <Route path="/admin" element={<AdminLogin />} />
                     <Route

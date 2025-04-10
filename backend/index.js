@@ -28,6 +28,7 @@ const whatsappRoutes = require('./routes/whatsapp');
 const enquiryRoutes = require('./routes/enquiryRoutes');
 const ticketRoutes = require('./routes/ticketRoutes');
 const adminDashboardRoutes = require('./routes/adminDashboard');
+const tourBookingRoutes = require('./routes/tourBookings');
 
 // Routes
 app.use('/api', emailRoutes);  
@@ -38,6 +39,7 @@ app.use('/api', whatsappRoutes);
 app.use('/api/enquiries', enquiryRoutes);
 app.use('/api/send-ticket', ticketRoutes);
 app.use('/api/admin', adminDashboardRoutes);
+app.use('/api/tour-bookings', tourBookingRoutes);
 
 
 // Connect to MongoDB with improved error handling and options

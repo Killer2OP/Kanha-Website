@@ -36,10 +36,15 @@ function AdminSidebar({ activeTab, setActiveTab }) {
       icon: <Car className="h-5 w-5" />,
     },
     {
-      id: "serviceBookings", // Add new menu item for service bookings
+      id: "serviceBookings",
       label: "Service Bookings",
       icon: <Compass className="h-5 w-5" />,
     },
+    {
+      id: "tourBookings",
+      icon: <Compass className="h-5 w-5" />,
+      label: "Tour Bookings",
+  },
     {
       id: "enquiries",
       label: "Enquiries",

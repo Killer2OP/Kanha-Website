@@ -771,12 +771,12 @@ function HotelDetail() {
                   </span>
                 </div>
               </div>
-              <button
+              {/* <button
                 onClick={() => alert("All amenities would be shown here")}
                 className="mt-6 border border-gray-900 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
               >
                 Show all amenities
-              </button>
+              </button> */}
             </div>
           </div>
 

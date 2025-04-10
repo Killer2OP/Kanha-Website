@@ -8,6 +8,7 @@ import PDFGenerator from "./components/PDFGenerator";
 import EmailIntegration from "./components/EmailIntegration";
 import SafariBookingManagement from "./components/SafariBookingManagement";
 import ServiceBookingManagement from "./components/ServiceBookingManagement"; // Import the new component
+import TourBookingManagement from './components/TourBookingManagement';
 
 function AdminDashboard() {
   const [activeTab, setActiveTab] = useState("dashboard");
@@ -156,6 +157,7 @@ function AdminDashboard() {
           {activeTab === "enquiries" && <EnquiryManagement />}
           {activeTab === "pdf" && <PDFGenerator />}
           {activeTab === "email" && <EmailIntegration />}
+          {activeTab === "tourBookings" && <TourBookingManagement />}
         </main>
       </div>
     </div>
