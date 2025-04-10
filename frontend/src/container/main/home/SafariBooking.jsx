@@ -110,6 +110,9 @@ function App() {
         success: true, 
         message: "Your safari booking has been confirmed! Check your email for details." 
       });
+      alert(
+        "Booking confirmed! We will contact you soon for confirmation."
+      );
       
       // Reset form after successful submission
       setFormData({
@@ -590,9 +593,9 @@ function App() {
                       <Clock className="size-5 md:size-6" />
                       Confirm Booking
                     </>
-                  )}
+                  )} 
                 </button>
-              </form>
+                </form>
             </div>
           </div>
         </div>
