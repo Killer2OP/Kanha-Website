@@ -258,7 +258,7 @@ function HotelDetail() {
       const responseData = await response.json();
       setIsBookingConfirmed(true);
       alert("Booking confirmed successfully!");
-      navigate("/hotel-in-kanha");
+      navigate("/hotels-resorts");
     } catch (error) {
       console.error("Error creating booking:", error);
       alert(`Booking failed: ${error.message}`);

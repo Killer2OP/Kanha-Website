@@ -183,9 +183,9 @@ function BookingManagement() {
         </div>
       </div>
 
-      <div className="bg-emerald-800/30 backdrop-blur-sm border border-emerald-500/20 rounded-xl overflow-hidden">
+      <div className="bg-emerald-800/30 backdrop-blur-sm border border-emerald-500/20 rounded-xl pr-4 overflow-hidden">
         <div className="overflow-hidden">
-          <table className="min-w-full divide-y divide-emerald-500/20">
+          <table className="min-w-full divide-y divide-emerald-500/20 ">
             <thead>
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
@@ -226,7 +226,7 @@ function BookingManagement() {
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
                     {booking.id}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
+                  <td className="px-3 py-4 whitespace-nowrap text-sm text-white">
                     {booking.name}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
@@ -260,7 +260,7 @@ function BookingManagement() {
                       {booking.status}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
+                  <td className="px-3 py-4 whitespace-nowrap text-sm text-white">
                     <button
                       onClick={() => handleViewBooking(booking)}
                       className="text-emerald-300 hover:text-emerald-100 transition-colors"

@@ -114,7 +114,7 @@ function App() {
                         }
                     />
                     <Route
-                        path="/hotel-in-kanha/:slug"
+                        path="/hotels-resorts/:slug"
                         element={
                             <>
                                 <Helmet>

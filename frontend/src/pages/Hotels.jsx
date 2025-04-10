@@ -343,7 +343,7 @@ function Hotels() {
                 >
                   <div className="grid md:grid-cols-3 gap-6">
                     {/* Hotel Image */}
-                    <Link to={`/hotel/${hotel.id}`} className="relative h-72 md:h-full">
+                    <Link to={`/hotels-resorts/${hotel.slug}`} className="relative h-72 md:h-full">
                       <img
                         src={hotel.image}
                         alt={hotel.name}
@@ -365,7 +365,7 @@ function Hotels() {
                     <div className="p-6 md:col-span-2">
                       <div className="flex justify-between items-start mb-4">
                         <div>
-                          <Link to={`/hotel-in-kanha/${hotel.slug}`} className="hover:text-emerald-300 transition-colors">
+                          <Link to={`/hotels-resorts/${hotel.slug}`} className="hover:text-emerald-300 transition-colors">
                             <h3 className="text-2xl font-bold text-white mb-2">
                               {hotel.name}
                             </h3>
@@ -411,7 +411,7 @@ function Hotels() {
                         ))}
                       </div>
 
-                      <Link to={`/hotel-in-kanha/${hotel.slug}`} className="inline-block w-full md:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 font-semibold text-sm text-center">
+                      <Link to={`/hotels-resorts/${hotel.slug}`} className="inline-block w-full md:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 font-semibold text-sm text-center">
                         Book Now
                       </Link>
                     </div>
