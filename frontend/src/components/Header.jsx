@@ -18,7 +18,7 @@ function Header() {
     { name: "Home", icon: Home, path: "/" },
     { name: "Online Safari Booking", icon: PawPrint, path: "/safari-booking" },
     { name: "Tour Packages", icon: Compass, path: "/tour-packages" },
-    { name: "Hotel Booking", icon: Hotel, path: "/hotel-in-kanha" },
+    { name: "Hotel Booking", icon: Hotel, path: "/hotels-resorts" },
     { name: "Pay Now", icon: CreditCard, path: "/pay-now" },
     { name: "Contact Us", icon: CreditCard, path: "/contact-us" },
   ];

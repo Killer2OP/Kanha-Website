@@ -11,7 +11,8 @@ import HotelDetail from "./pages/HotelDetail";
 import PayNow from "./pages/PayNow";
 import Contact from "./container/main/contact-us/Contact";
 import ProtectedRoute from "./pages/Admin/components/ProtectedRoute";
-
+import FAQs from "./pages/FAQs";
+import PrivacyPolicy from "./pages/Policy";
 // Admin Panel Routes
 import AdminLogin from "./pages/Admin/AdminLogin";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
@@ -97,7 +98,7 @@ function App() {
                         }
                     />
                     <Route
-                        path="/hotel-in-kanha"
+                        path="/hotels-resorts"
                         element={
                             <>
                                 <Helmet>
@@ -129,6 +130,8 @@ function App() {
                     <Route path="/tour/:tourId" element={<TourDetail />} />
                     <Route path="/pay-now" element={<PayNow />} />
                     <Route path="/contact-us" element={<Contact />} />
+                    <Route path="/faqs" element={<FAQs />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
 
                     {/* Admin Routes */}
                     <Route path="/admin" element={<AdminLogin />} />

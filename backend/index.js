@@ -23,7 +23,7 @@ app.use(express.json());
 // Import routes
 const safariBookingRoutes = require('./routes/safariBookings');
 const hotelBookingRoutes = require('./routes/hotelBookings');
-const serviceBookingRoutes = require('./routes/serviceBookings'); // Add this line
+const serviceBookingRoutes = require('./routes/serviceBookings'); 
 const whatsappRoutes = require('./routes/whatsapp');
 const enquiryRoutes = require('./routes/enquiryRoutes');
 const ticketRoutes = require('./routes/ticketRoutes');
@@ -33,7 +33,7 @@ const adminDashboardRoutes = require('./routes/adminDashboard');
 app.use('/api', emailRoutes);  
 app.use('/api/safari-bookings', safariBookingRoutes);
 app.use('/api/hotel-bookings', hotelBookingRoutes);
-app.use('/api/bookings', serviceBookingRoutes); // Add this line
+app.use('/api/bookings', serviceBookingRoutes);
 app.use('/api', whatsappRoutes);
 app.use('/api/enquiries', enquiryRoutes);
 app.use('/api/send-ticket', ticketRoutes);

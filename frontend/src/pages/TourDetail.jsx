@@ -36,15 +36,10 @@ function App() {
 
     return (
         <div className="min-h-screen flex flex-col">
-
-
             {/* Hero Section */}
             <div className="relative md:h-[100vh] lg:h-[65vh] p-5" >
-
                 <Header />
-
                 <SearchBar />
-
                 <div className="h-ful md:pt-[410px] lg:pt-[350px] p-4 absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                     <div className="text-center text-white">
                         <h1 className="text-4xl md:text-5xl font-bold mb-4">Discover Kanha National Park</h1>

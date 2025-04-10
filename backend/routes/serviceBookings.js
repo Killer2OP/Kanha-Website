@@ -113,7 +113,8 @@ router.patch('/:id/status', async (req, res) => {
     const { id } = req.params;
     const { status } = req.body;
     
-    if (!['pending', 'confirmed', 'cancelled', 'completed'].includes(status)) {
+    // Update this line to accept both lowercase and uppercase status values
+    if (!['Pending', 'Confirmed', 'Cancelled', 'Completed', 'pending', 'confirmed', 'cancelled', 'completed'].includes(status)) {
       return res.status(400).json({ error: 'Invalid status value' });
     }
     
@@ -138,8 +139,11 @@ router.patch('/:id/status', async (req, res) => {
       });
       
       const statusMessages = {
+        Confirmed: 'has been confirmed',
         confirmed: 'has been confirmed',
+        Cancelled: 'has been cancelled',
         cancelled: 'has been cancelled',
+        Completed: 'has been marked as completed',
         completed: 'has been marked as completed'
       };
       

@@ -105,9 +105,9 @@ function AdminDashboard() {
                         </div>
                         <div className="flex items-center gap-4">
                           <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                            booking.status === "Confirmed" 
+                            booking.status.toLowerCase() === "confirmed" 
                               ? "bg-green-500/20 text-green-400"
-                              : booking.status === "Pending"
+                              : booking.status.toLowerCase() === "pending"
                               ? "bg-yellow-500/20 text-yellow-400"
                               : "bg-red-500/20 text-red-400"
                           }`}>

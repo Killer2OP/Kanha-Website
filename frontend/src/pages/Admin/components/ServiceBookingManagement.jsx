@@ -56,10 +56,19 @@ function ServiceBookingManagement() {
 
   const handleStatusChange = async (id, newStatus) => {
     try {
+      // Add this check to prevent undefined ID
+      if (!id) {
+        console.error('Booking ID is undefined', selectedBooking);
+        alert('Error: Booking ID is missing');
+        return;
+      }
+      
+      console.log(`Updating booking ${id} to status: ${newStatus}`);
+      
       const response = await axios.patch(`http://localhost:5000/api/bookings/${id}/status`, {
         status: newStatus
       });
-
+  
       if (response.status === 200) {
         // Update local state
         setBookings(
@@ -72,7 +81,7 @@ function ServiceBookingManagement() {
       }
     } catch (error) {
       console.error('Error updating booking status:', error);
-      alert('Failed to update booking status. Please try again.');
+      alert(`Failed to update booking status: ${error.response?.data?.error || error.message}`);
     }
   };
 
@@ -218,12 +227,12 @@ function ServiceBookingManagement() {
                       <span
                         className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                           booking.status === "confirmed"
-                            ? "bg-green-100 text-green-800"
+                            ? "bg-green-500/20 text-green-400"
                             : booking.status === "cancelled"
-                            ? "bg-red-100 text-red-800"
+                            ? "bg-red-500/20 text-red-400"
                             : booking.status === "completed"
-                            ? "bg-blue-100 text-blue-800"
-                            : "bg-yellow-100 text-yellow-800"
+                            ? "bg-blue-400 text-blue-800"
+                            : "bg-yellow-500/20 text-yellow-400"
                         }`}
                       >
                         {booking.status || "Pending"}
@@ -362,29 +371,36 @@ function ServiceBookingManagement() {
               )}
 
               <div className="flex space-x-3 pt-4 border-t border-emerald-500/30">
+                {selectedBooking.status !== "confirmed" && selectedBooking.status !== "Confirmed" && (
+                  <button
+                    onClick={() => {
+                      // Log the entire booking object to see its structure
+                      console.log("Selected booking object:", selectedBooking);
+                      
+                      // Try to use id or _id or bookingId, whichever is available
+                      const bookingId = selectedBooking.id || selectedBooking._id || selectedBooking.bookingId;
+                      console.log("Using booking ID:", bookingId);
+                      
+                      handleStatusChange(bookingId, "confirmed");
+                    }}
+                    className="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg flex items-center justify-center space-x-2"
+                  >
+                    <Check size={16} />
+                    <span>Confirm</span>
+                  </button>
+                )}
                 <button
-                  onClick={() => handleStatusChange(selectedBooking._id, "confirmed")}
-                  className="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg flex items-center justify-center space-x-2"
-                  disabled={selectedBooking.status === "confirmed"}
-                >
-                  <Check size={16} />
-                  <span>Confirm</span>
-                </button>
-                <button
-                  onClick={() => handleStatusChange(selectedBooking._id, "cancelled")}
-                  className="flex-1 bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg flex items-center justify-center space-x-2"
-                  disabled={selectedBooking.status === "cancelled"}
+                  onClick={() => {
+                    const bookingId = selectedBooking.id || selectedBooking._id || selectedBooking.bookingId;
+                    handleStatusChange(bookingId, "cancelled");
+                  }}
+                  className={`flex-1 bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg flex items-center justify-center space-x-2 ${
+                    selectedBooking.status === "confirmed" || selectedBooking.status === "Confirmed" ? "ml-0" : ""
+                  }`}
+                  disabled={selectedBooking.status === "cancelled" || selectedBooking.status === "Cancelled"}
                 >
                   <X size={16} />
                   <span>Cancel</span>
-                </button>
-                <button
-                  onClick={() => handleStatusChange(selectedBooking._id, "completed")}
-                  className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg flex items-center justify-center space-x-2"
-                  disabled={selectedBooking.status === "completed"}
-                >
-                  <Check size={16} />
-                  <span>Complete</span>
                 </button>
               </div>
             </div>

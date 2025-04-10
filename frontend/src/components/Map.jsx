@@ -1,5 +1,5 @@
-import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import React, { useEffect } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet';
 
@@ -36,6 +36,19 @@ const categoryIcons = {
   })
 };
 
+// Add this new component for handling location changes
+function ChangeView({ center, zoom }) {
+  const map = useMap();
+  
+  useEffect(() => {
+    map.flyTo(center, zoom, {
+      duration: 2 // Duration of animation in seconds
+    });
+  }, [center, zoom, map]);
+
+  return null;
+}
+
 const MapView = ({ locations = [], center = [22.2777, 80.6199], zoom = 12 }) => {
   return (
     <MapContainer
@@ -44,6 +57,7 @@ const MapView = ({ locations = [], center = [22.2777, 80.6199], zoom = 12 }) => 
       className="w-full h-full rounded-lg"
       style={{ height: '100%', minHeight: '400px' }}
     >
+      <ChangeView center={center} zoom={zoom} />
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

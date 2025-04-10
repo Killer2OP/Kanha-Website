@@ -1,6 +1,5 @@
 import React from "react";
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
-// import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
 
@@ -17,22 +16,34 @@ const Footer = () => {
         { name: "FAQ'S", link: "/faqs" },
         // { name: "News", link: "/news" },
         { name: "Contact Us", link: "/contact-us"},
-        { name: "Site Map", link: "/sitemap" },
     ]
 
     const thingsToDo = [
-        "Ultimate Safari",
-        "Classic Safari",
-        "Wildlife Safari",
-        "Luxury Safari",
+        { name: "Jungle Safari", link: "/services#jungle-safari" },
+        { name: "Nature Trails", link: "/services#nature-trails" },
+        { name: "Full Day Safari", link: "/services#full-day-safari" },
+        { name: "Night Safari", link: "/services#night-safari" },
     ]
 
     const tours = [
-        "Online Safari Booking",
-        "Tour Packages",
-        "Hotels & Resorts",
-        "Pay Now",
+        { name: "Online Safari Booking", link: "/safari-booking" },
+        { name: "Tour Packages", link: "/tour-packages" },
+        { name: "Hotels & Resorts", link: "/hotels-resorts" },
+        { name: "Pay Now", link: "/pay-now" },
     ]
+
+    const handleScrollToSection = (e, sectionId) => {
+        e.preventDefault();
+        if (location.pathname === '/') {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            // If not on home page, navigate to home page with hash
+            window.location.href = `/#${sectionId}`;
+        }
+    };
 
     return (
         <footer
@@ -65,12 +76,12 @@ const Footer = () => {
                             {
                                 information.map((item) => (
                                     <li key={item.name}>
-                                        <a
-                                            href={item.link}
+                                        <Link
+                                            to={item.link}
                                             className="text-gray-400 text-sm tracking-wide hover:text-green-500 transition-colors"
                                         >
                                             {item.name}
-                                        </a>
+                                        </Link>
                                     </li>
                                 ))
                             }
@@ -85,13 +96,14 @@ const Footer = () => {
                         <ul className="space-y-2">
                             {
                                 thingsToDo.map((item) => (
-                                    <li key={item}>
-                                        <a
-                                            href="#"
+                                    <li key={item.name}>
+                                        <Link
+                                            to={item.link}
                                             className="text-gray-400 text-sm tracking-wide hover:text-green-500 transition-colors"
+                                            onClick={(e) => handleScrollToSection(e, item.link.split('#')[1])}
                                         >
-                                            {item}
-                                        </a>
+                                            {item.name}
+                                        </Link>
                                     </li>
                                 ))
                             }
@@ -104,13 +116,13 @@ const Footer = () => {
                         <ul className="space-y-2">
                             {
                                 tours.map((tour) => (
-                                    <li key={tour}>
-                                        <a
-                                            href="#"
+                                    <li key={tour.name}>
+                                        <Link
+                                            to={tour.link}
                                             className="text-gray-400 text-sm tracking-wide hover:text-green-500 transition-colors"
                                         >
-                                            {tour}
-                                        </a>
+                                            {tour.name}
+                                        </Link>
                                     </li>
                                 ))
                             }
@@ -121,7 +133,7 @@ const Footer = () => {
                 {/* Bottom Section */}
                 <div className="py-6 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left">
                     {/* Social Icons */}
-                    <div className="flex gap-3 sm:gap-4 mb-4 sm:mb-0">
+                    {/* <div className="flex gap-3 sm:gap-4 mb-4 sm:mb-0">
                         {[Facebook, Instagram, Twitter, Youtube].map((Icon, index) => (
                             <a
                                 key={index}
@@ -131,7 +143,7 @@ const Footer = () => {
                                 <Icon className="w-5 h-5 text-black" />
                             </a>
                         ))}
-                    </div>
+                    </div> */}
 
                     {/* Copyright */}
                     <p className="text-gray-500 text-sm">

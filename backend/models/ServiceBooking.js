@@ -55,7 +55,7 @@ const serviceBookingSchema = new mongoose.Schema({
     specialInterest: String,
     status: {
         type: String,
-        enum: ['Pending', 'Confirmed', 'Cancelled'],
+        enum: ['Pending', 'Confirmed', 'Cancelled', 'Completed', 'pending', 'confirmed', 'cancelled', 'completed'],
         default: 'Pending'
     },
     createdAt: {

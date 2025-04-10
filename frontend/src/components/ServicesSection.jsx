@@ -947,7 +947,9 @@ const ServicesSection = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-4">
         {services.map((service, index) => (
-          <ServiceCard key={index} {...service} service={service} />
+          <div id={service.title.toLowerCase().replace(/\s+/g, '-')} key={index}>
+            <ServiceCard {...service} service={service} />
+          </div>
         ))}
       </div>
     </div>

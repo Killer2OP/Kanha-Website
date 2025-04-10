@@ -164,9 +164,106 @@ const sampleLocations = [
   }
 ];
 
+const parkData = {
+  kanha: {
+    name: 'Kanha National Park',
+    center: [22.2777, 80.6199],
+    zoom: 12
+  },
+  pench: {
+    name: 'Pench National Park',
+    center: [21.7519, 79.3177],
+    zoom: 12
+  },
+  bandhavgarh: {
+    name: 'Bandhavgarh National Park',
+    center: [23.7215, 81.0428],
+    zoom: 12
+  }
+};
+
+const allLocations = {
+  kanha: sampleLocations,
+  pench: [
+    {
+      id: 'p1',
+      name: 'Pench Tiger Reserve Core Zone',
+      type: 'forests',
+      coordinates: [21.7519, 79.3177],
+      description: 'Main area of Pench Tiger Reserve'
+    },
+    {
+      id: 'p2',
+      name: 'Turia Gate',
+      type: 'parking',
+      coordinates: [21.7892, 79.3365],
+      description: 'Main entrance to Pench National Park'
+    },
+    {
+      id: 'p3',
+      name: 'Pench Valley Resort',
+      type: 'hotels',
+      coordinates: [21.7923, 79.3401],
+      description: 'Luxury wildlife resort'
+    },
+    {
+      id: 'p4',
+      name: 'Wolf Sanctuary',
+      type: 'forests',
+      coordinates: [21.7654, 79.3298],
+      description: 'Protected area for Indian wolves'
+    },
+    {
+      id: 'p5',
+      name: 'Kohka Lake',
+      type: 'lakes',
+      coordinates: [21.7712, 79.3188],
+      description: 'Natural water body attracting various wildlife'
+    }
+  ],
+  bandhavgarh: [
+    {
+      id: 'b1',
+      name: 'Bandhavgarh Fort',
+      type: 'history',
+      coordinates: [23.7215, 81.0428],
+      description: 'Ancient fort with historical significance'
+    },
+    {
+      id: 'b2',
+      name: 'Tala Gate',
+      type: 'parking',
+      coordinates: [23.7081, 81.0289],
+      description: 'Main entrance to Bandhavgarh National Park'
+    },
+    {
+      id: 'b3',
+      name: 'Kings Lodge',
+      type: 'hotels',
+      coordinates: [23.7145, 81.0356],
+      description: 'Premium wildlife lodge'
+    },
+    {
+      id: 'b4',
+      name: 'Chakradhara Meadows',
+      type: 'forests',
+      coordinates: [23.7183, 81.0367],
+      description: 'Prime tiger spotting location'
+    },
+    {
+      id: 'b5',
+      name: 'Climbers Point',
+      type: 'mountains',
+      coordinates: [23.7234, 81.0445],
+      description: 'Elevated viewpoint for wildlife watching'
+    }
+  ]
+};
+
 function MapViewPage() {
   const [filters, setFilters] = useState(initialFilters);
-  const [locations] = useState(sampleLocations);
+  const [selectedPark, setSelectedPark] = useState('kanha');
+  const [locations] = useState(allLocations);
 
   const handleFilterChange = (filterId) => {
     setFilters(filters.map(filter => 
@@ -194,21 +291,31 @@ function MapViewPage() {
     }));
   };
 
-  const filteredLocations = locations.filter(location =>
+  const filteredLocations = locations[selectedPark].filter(location =>
     filters.find(filter => filter.id === location.type)?.selected
   );
 
   return (
     <div className="relative h-screen">
-      {/* Dark overlay for header visibility */}
-      <div className="absolute top-0 left-0 right-0 h-20 bg-black/50 z-10"></div>
-      
-      {/* Header */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-black/50"></div>
       <Header />
       
-      {/* Map content */}
-      <div className="absolute inset-0 flex flex-col md:flex-row translate-y-21"> 
+      <div className="absolute inset-0 flex flex-col md:flex-row translate-y-21">
         <div className="w-full md:w-auto p-2 md:p-4 z-10">
+          {/* Park Selector */}
+          <div className="bg-emerald-700/80 p-3 md:p-4 rounded-lg shadow-lg mb-4">
+            <h2 className="text-lg text-neutral-50 font-bold mb-2">Select National Park</h2>
+            <select 
+              value={selectedPark}
+              onChange={(e) => setSelectedPark(e.target.value)}
+              className="w-full p-2 border rounded-md bg-emerald-500/80"
+            >
+              <option value="kanha" className="bg-emerald-800" >Kanha National Park</option>
+              <option value="pench" className="bg-emerald-800">Pench National Park</option>
+              <option value="bandhavgarh" className="bg-emerald-800">Bandhavgarh National Park</option>
+            </select>
+          </div>
+          
           <MapFilters
             filters={filters}
             onFilterChange={handleFilterChange}
@@ -218,8 +325,8 @@ function MapViewPage() {
         <div className="flex-1 h-[calc(100vh-200px)] md:h-auto">
           <MapView
             locations={filteredLocations}
-            center={[22.2777, 80.6199]}
-            zoom={12}
+            center={parkData[selectedPark].center}
+            zoom={parkData[selectedPark].zoom}
           />
         </div>
       </div>
