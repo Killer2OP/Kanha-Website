@@ -8,10 +8,10 @@ import {
   Hotel,
   LogOut,
   Car,
-  Compass // Add Compass icon for service bookings
+  Compass, // Add Compass icon for service bookings
 } from "lucide-react";
 
-function AdminSidebar({ activeTab, setActiveTab }) {
+function AdminSidebar({ activeTab, setActiveTab, isSidebarOpen }) {
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -44,7 +44,7 @@ function AdminSidebar({ activeTab, setActiveTab }) {
       id: "tourBookings",
       icon: <Compass className="h-5 w-5" />,
       label: "Tour Bookings",
-  },
+    },
     {
       id: "enquiries",
       label: "Enquiries",
@@ -63,8 +63,12 @@ function AdminSidebar({ activeTab, setActiveTab }) {
   ];
 
   return (
-    <div className="w-60 bg-emerald-800/30 backdrop-blur-lg border-r border-emerald-500/20 h-full overflow-y-auto">
-      <div className="p-6">
+    <div
+      className={`${
+        isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+      } lg:translate-x-0 fixed lg:static top-0 left-0 z-40 w-64 bg-emerald-800/30 backdrop-blur-lg border-r border-emerald-500/20 h-full overflow-y-auto transition-transform duration-300 ease-in-out`}
+    >
+      <div className="p-4 lg:p-6">
         <div className="flex items-center justify-center mb-8">
           <h1 className="text-xl font-bold text-white">Kanha Admin</h1>
         </div>
@@ -73,7 +77,7 @@ function AdminSidebar({ activeTab, setActiveTab }) {
             <button
               key={item.id}
               onClick={() => setActiveTab(item.id)}
-              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
+              className={`w-full flex items-center space-x-3 px-3 py-2.5 md:px-4 md:py-3 rounded-lg transition-colors ${
                 activeTab === item.id
                   ? "bg-emerald-600 text-white"
                   : "text-emerald-100 hover:bg-emerald-700/50 hover:text-white"
@@ -85,10 +89,10 @@ function AdminSidebar({ activeTab, setActiveTab }) {
           ))}
         </nav>
       </div>
-      <div className="p-6 mt-auto border-t border-emerald-500/20">
+      <div className="p-4 lg:p-6 mt-auto border-t border-emerald-500/20">
         <button
           onClick={handleLogout}
-          className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-emerald-100 hover:bg-red-500/20 hover:text-white transition-colors"
+          className="w-full flex items-center space-x-3 px-3 py-2.5 md:px-4 md:py-3 rounded-lg text-emerald-100 hover:bg-red-500/20 hover:text-white transition-colors"
         >
           <LogOut className="h-5 w-5" />
           <span>Logout</span>
