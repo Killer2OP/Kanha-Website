@@ -104,7 +104,16 @@ function EnquiryManagement() {
       const response = await fetch('http://localhost:5000/api/enquiries');
       if (response.ok) {
         const data = await response.json();
-        setEnquiries(data);
+        // Format dates consistently
+        const formattedData = data.map(enquiry => ({
+          ...enquiry,
+          date: new Date(enquiry.date).toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+          })
+        }));
+        setEnquiries(formattedData);
       }
     } catch (error) {
       console.error('Failed to fetch enquiries:', error);

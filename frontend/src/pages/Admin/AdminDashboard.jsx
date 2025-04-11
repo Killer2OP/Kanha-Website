@@ -39,6 +39,19 @@ function AdminDashboard() {
           throw new Error('Failed to fetch dashboard stats');
         }
         const data = await response.json();
+        
+        // Format dates in the response data
+        if (data.recentBookings && Array.isArray(data.recentBookings)) {
+          data.recentBookings = data.recentBookings.map(booking => ({
+            ...booking,
+            date: new Date(booking.date).toLocaleDateString('en-GB', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric'
+            })
+          }));
+        }
+        
         setDashboardStats(data);
       } catch (error) {
         console.error('Error fetching dashboard stats:', error);
@@ -137,8 +150,8 @@ function AdminDashboard() {
                               : enquiry.status === "Responded"
                               ? "bg-green-500/20 text-green-400"
                               : enquiry.status === "Closed"
-                              ? "bg-gray-500/20 text-gray-400"
-                              : "bg-red-500/20 text-red-400"
+                              ? "bg-red-500/20 text-red-400"
+                              : "bg-gray-500/20 text-gray-400"
                           }`}>
                             {enquiry.status}
                           </span>

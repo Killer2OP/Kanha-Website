@@ -216,7 +216,11 @@ function ServiceBookingManagement() {
                       {booking.serviceType}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                      {new Date(booking.date).toLocaleDateString()}
+                      {new Date(booking.date).toLocaleDateString('en-GB', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric'
+                      })}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
                       {booking.park === 'kanha' ? 'Kanha' : 

@@ -63,7 +63,7 @@ function AdminSidebar({ activeTab, setActiveTab }) {
   ];
 
   return (
-    <div className="w-64 bg-emerald-800/30 backdrop-blur-lg border-r border-emerald-500/20 h-full overflow-y-auto">
+    <div className="w-60 bg-emerald-800/30 backdrop-blur-lg border-r border-emerald-500/20 h-full overflow-y-auto">
       <div className="p-6">
         <div className="flex items-center justify-center mb-8">
           <h1 className="text-xl font-bold text-white">Kanha Admin</h1>

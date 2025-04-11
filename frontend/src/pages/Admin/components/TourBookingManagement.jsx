@@ -194,8 +194,16 @@ function TourBookingManagement() {
                                         <div className="text-emerald-300">{booking.email}</div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                                        <div>{booking.checkIn}</div>
-                                        <div>{booking.checkOut}</div>
+                                        <div>{new Date(booking.checkIn).toLocaleDateString('en-GB', {
+                                            day: 'numeric',
+                                            month: 'long',
+                                            year: 'numeric'
+                                        })}</div>
+                                        <div>{new Date(booking.checkOut).toLocaleDateString('en-GB', {
+                                            day: 'numeric',
+                                            month: 'long',
+                                            year: 'numeric'
+                                        })}</div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-white">{booking.guests}</td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-white">{booking.amount}</td>

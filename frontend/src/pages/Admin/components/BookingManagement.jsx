@@ -101,6 +101,14 @@ function BookingManagement() {
 
   const handleSendTicket = async (booking) => {
     try {
+      // Format dates for email
+      const formattedCheckIn = new Date(booking.checkIn).toLocaleDateString('en-US', {
+        year: 'numeric', month: 'long', day: 'numeric'
+      });
+      const formattedCheckOut = new Date(booking.checkOut).toLocaleDateString('en-US', {
+        year: 'numeric', month: 'long', day: 'numeric'
+      });
+
       const response = await fetch('http://localhost:5000/api/send-email', {
         method: 'POST',
         headers: {
@@ -116,8 +124,8 @@ function BookingManagement() {
               <p>Your hotel booking has been ${booking.status.toLowerCase()}.</p>
               <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 15px 0;">
                 <p><strong>Booking Details:</strong></p>
-                <p>Check-in: ${booking.checkIn}</p>
-                <p>Check-out: ${booking.checkOut}</p>
+                <p>Check-in: ${formattedCheckIn}</p>
+                <p>Check-out: ${formattedCheckOut}</p>
                 <p>Room Type: ${booking.roomType}</p>
                 <p>Guests: ${booking.guests}</p>
                 <p>Amount: ${booking.amount}</p>
@@ -212,7 +220,7 @@ function BookingManagement() {
                 <th className="px-6 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
                   Amount
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
+                <th className="px-3 py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
                   Status
                 </th>
                 <th className="py-3 text-left text-xs font-medium text-emerald-300 uppercase tracking-wider">
@@ -236,10 +244,18 @@ function BookingManagement() {
                     {booking.roomType}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {booking.checkIn}
+                    {new Date(booking.checkIn).toLocaleDateString('en-GB', {
+                      day: 'numeric',
+                      month: 'long',
+                      year: 'numeric'
+                    })}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
-                    {booking.checkOut}
+                    {new Date(booking.checkOut).toLocaleDateString('en-GB', {
+                      day: 'numeric',
+                      month: 'long',
+                      year: 'numeric'
+                    })}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
                     {booking.guests}
@@ -247,7 +263,7 @@ function BookingManagement() {
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
                     {booking.amount}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm">
+                  <td className="px-3 py-4 whitespace-nowrap text-sm">
                     <span
                       className={`px-2 py-1 rounded-full text-xs font-medium ${
                         booking.status === "Confirmed"
@@ -312,11 +328,15 @@ function BookingManagement() {
                     </p>
                     <p className="text-white">
                       <span className="text-emerald-400">Check In:</span>{" "}
-                      {selectedBooking.checkIn}
+                      {new Date(selectedBooking.checkIn).toLocaleDateString('en-US', {
+                        year: 'numeric', month: 'long', day: 'numeric'
+                      })}
                     </p>
                     <p className="text-white">
                       <span className="text-emerald-400">Check Out:</span>{" "}
-                      {selectedBooking.checkOut}
+                      {new Date(selectedBooking.checkOut).toLocaleDateString('en-US', {
+                        year: 'numeric', month: 'long', day: 'numeric'
+                      })}
                     </p>
                     <p className="text-white">
                       <span className="text-emerald-400">Guests:</span>{" "}
