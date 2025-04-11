@@ -103,7 +103,7 @@ function HotelDetail() {
     const dates = [];
     const today = startFromDate || new Date();
     const endDate = new Date();
-    endDate.setMonth(today.getMonth() + 6); // 6 months from today or start date
+    endDate.setMonth(today.getMonth() + 6);
 
     const currentDate = new Date(today);
     while (currentDate <= endDate) {
