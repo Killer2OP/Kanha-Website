@@ -364,7 +364,7 @@ function HotelDetail() {
               <Share className="h-5 w-5" />
               <span>Share</span>
             </button>
-            <button
+            {/* <button
               onClick={handleSave}
               className="flex items-center gap-2 text-gray-700 hover:text-gray-900"
             >
@@ -383,7 +383,7 @@ function HotelDetail() {
                 />
               </svg>
               <span>Save</span>
-            </button>
+            </button> */}
           </div>
         </div>
 

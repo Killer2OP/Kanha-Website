@@ -105,7 +105,7 @@ const HotelCard = ({ hotel, defaultStars }) => {
                 
                 {/* View Options button */}
                 <Link
-                    to={`/hotel-in-kanha`}
+                    to={`/hotels-resorts`}
                     className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300"
                 >
                     View Options
