@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { CreditCard, Lock } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { CreditCard, Lock, X } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -12,6 +12,13 @@ function PayNow() {
     purpose: '',
     country: 'India'
   });
+  const [showQRPopup, setShowQRPopup] = useState(false);
+  const [qrCodeUrl, setQrCodeUrl] = useState('');
+
+  useEffect(() => {
+    // Update QR code URL whenever amount changes
+    setQrCodeUrl(`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=yourUPI@bank&pn=KanhaWildlife&am=${formData.amount}&cu=INR&tn=Payment`);
+  }, [formData.amount]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,9 +30,62 @@ function PayNow() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would integrate with a payment gateway
+    // Show QR code popup instead of redirecting
+    setShowQRPopup(true);
     console.log('Payment form submitted:', formData);
-    // Redirect to payment gateway or process payment
+  };
+
+  // QR Code Popup Component
+  const QRCodePopup = () => {
+    return (
+      <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+        <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6 relative">
+          <button 
+            onClick={() => setShowQRPopup(false)}
+            className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+          >
+            <X size={24} />
+          </button>
+          
+          <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Scan QR Code to Pay</h3>
+          <div className="h-1 w-20 bg-emerald-500 mx-auto mb-6"></div>
+          
+          <div className="flex flex-col items-center">
+            <div className="bg-white p-3 rounded-lg shadow-md mb-4">
+              <img 
+                src={qrCodeUrl}
+                alt="Payment QR Code" 
+                className="w-48 h-48 object-contain"
+              />
+            </div>
+            
+            <div className="text-center mb-4">
+              <p className="text-gray-700 font-medium">Amount: ₹{formData.amount}</p>
+              <p className="text-gray-600 text-sm mt-1">Scan with any UPI app to pay</p>
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-3 mb-4">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/1200px-UPI-Logo-vector.svg.png" alt="UPI" className="h-6 object-contain" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Paytm_Logo_%28standalone%29.svg/2560px-Paytm_Logo_%28standalone%29.svg.png" alt="Paytm" className="h-6 object-contain" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Pay_Logo.svg/512px-Google_Pay_Logo.svg.png" alt="Google Pay" className="h-6 object-contain" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/PhonePe_Logo.svg/1200px-PhonePe_Logo.svg.png" alt="PhonePe" className="h-6 object-contain" />
+            </div>
+            
+            <div className="flex items-center text-green-600 mb-4">
+              <Lock size={16} className="mr-2" />
+              <span className="text-sm">Secure Payment</span>
+            </div>
+            
+            <button
+              onClick={() => setShowQRPopup(false)}
+              className="px-6 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -256,6 +316,7 @@ function PayNow() {
           </form>
         </div>
       </div>
+      {showQRPopup && <QRCodePopup />}
       <Footer />
     </div>
   );
