@@ -106,11 +106,11 @@ function PayNow() {
                   className="w-48 h-48 object-contain"
                 />
               )}
-              {!isQrLoading && (
+              {/* {!isQrLoading && (
                 <div className="absolute top-2 right-2 bg-emerald-100 text-emerald-800 text-xs font-medium px-2 py-1 rounded-full">
                   Auto-amount
                 </div>
-              )}
+              )} */}
             </div>
 
             <div className="text-center mb-4">
