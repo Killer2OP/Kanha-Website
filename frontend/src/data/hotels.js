@@ -303,7 +303,7 @@ export const allHotels = [
         priceMultiplier: 1.8,
         img: [
           "https://r1imghtlak.mmtcdn.com/faf36cc8dc7c11ea81b20242ac110006.jpg"
-        
+
         ]
       }
     },
@@ -373,7 +373,7 @@ export const allHotels = [
         description: "Comfortable room with all basic amenities",
         priceMultiplier: 1.0,
         img: [
-          ""
+          "https://r1imghtlak.mmtcdn.com/850390866ed111e78bf60a4cef95d023.jpg"
         ]
       },
       deluxe: {
@@ -381,7 +381,7 @@ export const allHotels = [
         description: "Spacious room with premium furnishings and forest view",
         priceMultiplier: 1.3,
         img: [
-          ""
+          "https://r1imghtlak.mmtcdn.com/faf996e8260411ec8bc10a58a9feac02.jpeg"
         ]
       },
       suite: {
@@ -389,7 +389,7 @@ export const allHotels = [
         description: "Luxurious suite with separate living area and panoramic views",
         priceMultiplier: 1.8,
         img: [
-          ""
+          "https://r1imghtlak.mmtcdn.com/4a4ba602480b11e5aef65ee5da2daa2a.jfif"
         ]
       }
     },
@@ -459,30 +459,26 @@ export const allHotels = [
         name: "Standard Room",
         description: "Comfortable room with all basic amenities",
         priceMultiplier: 1.0,
-        images: [
-          "https://r1imghtlak.mmtcdn.com/f27ff7a0f5e811e785a20224510f5e5b.jpg",
-          "https://r1imghtlak.mmtcdn.com/435a5360f5e811e7b99802155a238f12.jpg",
-          "https://r1imghtlak.mmtcdn.com/8f5c2f18f5e811e7ba030a209fbd0127.jpg"
+        img: [
+          "https://r1imghtlak.mmtcdn.com/d2f411a0e70211e6bfdf0a9df65c8753.jpg"
         ]
       },
       deluxe: {
         name: "Deluxe Room",
         description: "Spacious room with premium furnishings and forest view",
         priceMultiplier: 1.3,
-        images: [
-          "https://r1imghtlak.mmtcdn.com/de66dcf2f5e811e7b5640a604e3b7738.jpg",
-          "https://r1imghtlak.mmtcdn.com/516ac822f5e811e79dcd0a9df65c8753.jpg",
-          "https://r1imghtlak.mmtcdn.com/f27ff7a0f5e811e785a20224510f5e5b.jpg"
+        img: [
+          "https://r1imghtlak.mmtcdn.com/9e93d5ce6ed111e7886e0a4cef95d023.jpg"
+
         ]
       },
       suite: {
         name: "Luxury Suite",
         description: "Luxurious suite with separate living area and panoramic views",
         priceMultiplier: 1.8,
-        images: [
-          "https://r1imghtlak.mmtcdn.com/516ac822f5e811e79dcd0a9df65c8753.jpg",
-          "https://r1imghtlak.mmtcdn.com/8f5c2f18f5e811e7ba030a209fbd0127.jpg",
-          "https://r1imghtlak.mmtcdn.com/de66dcf2f5e811e7b5640a604e3b7738.jpg"
+        img: [
+          "https://r1imghtlak.mmtcdn.com/4030177e-43fa-4112-8f9d-c4c78ea2939e.jpg"
+
         ]
       }
     },
@@ -553,30 +549,24 @@ export const allHotels = [
         name: "Standard Room",
         description: "Comfortable room with all basic amenities",
         priceMultiplier: 1.0,
-        images: [
-          "https://r1imghtlak.mmtcdn.com/6bb56f280e8a11e989940242ac110002.jpg",
-          "https://r1imghtlak.mmtcdn.com/d0cb863c0e8911e9868a0242ac110002.jpg",
-          "https://r1imghtlak.mmtcdn.com/06f2971af23c11e8b4a60242ac110002.jpg"
+        img: [
+          "https://r1imghtlak.mmtcdn.com/9cc8340ef23f11e891ae0242ac110002.jpg"
         ]
       },
       deluxe: {
         name: "Deluxe Room",
         description: "Spacious room with premium furnishings and forest view",
         priceMultiplier: 1.3,
-        images: [
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201811271754095462-83119d4420db11eba9280242ac110002.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201811271754095462-24588df201a511ecab6e0a58a9feac02.jpg",
-          "https://r1imghtlak.mmtcdn.com/6bb56f280e8a11e989940242ac110002.jpg"
+        img: [
+          "https://r1imghtlak.mmtcdn.com/90b1e3d6f23f11e8b0f60242ac110002.jpg"
         ]
       },
       suite: {
         name: "Luxury Suite",
         description: "Luxurious suite with separate living area and panoramic views",
         priceMultiplier: 1.8,
-        images: [
-          "https://r1imghtlak.mmtcdn.com/d0cb863c0e8911e9868a0242ac110002.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201811271754095462-83119d4420db11eba9280242ac110002.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201811271754095462-24588df201a511ecab6e0a58a9feac02.jpg"
+        img: [
+          "https://r1imghtlak.mmtcdn.com/e4f22ca60e8911e9b9060242ac110004.jpg"
         ]
       }
     },
@@ -645,30 +635,24 @@ export const allHotels = [
         name: "Standard Room",
         description: "Comfortable room with all basic amenities",
         priceMultiplier: 1.0,
-        images: [
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/200803261313231998-43c572fe49b811eb87b40242ac110003.jpg",
-          "https://r1imghtlak.mmtcdn.com/1dd4d0bee18111e7892a0a209fbd0127.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/200803261313231998-fe41a3a6e6d711e7a04a02755708f0b3.jpg"
+        img: [
+          "https://r1imghtlak.mmtcdn.com/53ecdb85-2bbc-4bb2-ba0c-9aed5877b8ee.jpg"
         ]
       },
       deluxe: {
         name: "Deluxe Room",
         description: "Spacious room with premium furnishings and forest view",
         priceMultiplier: 1.3,
-        images: [
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/200803261313231998-f414bf5ae6da11e7a04a02755708f0b3.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/200803261313231998-1026744-b367015a515c11ee99f30a58a9feac02.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/200803261313231998-93d59a2a4a7211ebbd180242ac110003.jpg"
+        img: [
+          "https://r1imghtlak.mmtcdn.com/814c4904-5408-4abe-92fe-9a1970626216.jpg"
         ]
       },
       suite: {
         name: "Luxury Suite",
         description: "Luxurious suite with separate living area and panoramic views",
         priceMultiplier: 1.8,
-        images: [
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/200803261313231998-d648883648fb11eb8c300242ac110005.jpg",
-          "https://r1imghtlak.mmtcdn.com/69febaa0e1a811e78f6a02755708f0b3.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/200803261313231998-93d59a2a4a7211ebbd180242ac110003.jpg"
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/200803261313231998-1026745-79d67260fec111eda4810a58a9feac02.jpg"
         ]
       }
     },
@@ -741,30 +725,25 @@ export const allHotels = [
         name: "Standard Room",
         description: "Comfortable room with all basic amenities",
         priceMultiplier: 1.0,
-        images: [
-          "https://r1imghtlak.mmtcdn.com/ffc82374245f11ed8df80a58a9feac02.jpeg",
-          "https://r1imghtlak.mmtcdn.com/b6160d1073aa11e7b6bb025f77df004f.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201410271733034416-5acf0448222811edb8da0a58a9feac02.jpg"
+        img: [
+          "https://r1imghtlak.mmtcdn.com/f1105e7e245e11ed8b190a58a9feac02.jpeg"
         ]
       },
       deluxe: {
         name: "Deluxe Room",
         description: "Spacious room with premium furnishings and forest view",
         priceMultiplier: 1.3,
-        images: [
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201410271733034416-627ccb6c222811edacda0a58a9feac02.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201410271733034416-c19c9c76222811edb9810a58a9feac02.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201410271733034416-c1df3bda222811edacda0a58a9feac02.jpg"
+        img: [
+          "https://r1imghtlak.mmtcdn.com/1c12e46a246011ed83170a58a9feac02.jpeg"
         ]
       },
       suite: {
         name: "Luxury Suite",
         description: "Luxurious suite with separate living area and panoramic views",
         priceMultiplier: 1.8,
-        images: [
-          "https://r1imghtlak.mmtcdn.com/5be237a9-7844-409a-989c-b232b2a4605a.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201410271733034416-c19c9c76222811edb9810a58a9feac02.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201410271733034416-627ccb6c222811edacda0a58a9feac02.jpg"
+        img: [
+     "https://r1imghtlak.mmtcdn.com/ffa7eadc245f11edb0cf0a58a9feac02.jpeg"
+
         ]
       }
     },
@@ -833,30 +812,24 @@ export const allHotels = [
         name: "Standard Room",
         description: "Comfortable room with all basic amenities",
         priceMultiplier: 1.0,
-        images: [
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201511231234339773-5f6e305087da11eea1dc0a58a9feac02.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201511231234339773-9ce87e5487da11ee96890a58a9feac02.jpg",
-          "https://r1imghtlak.mmtcdn.com/309667d437f911edb8440a58a9feac02.jpg"
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/201511231234339773-1093-9e74d87e87b411eea0e00a58a9feac02.jpg"
         ]
       },
       deluxe: {
         name: "Deluxe Room",
         description: "Spacious room with premium furnishings and forest view",
         priceMultiplier: 1.3,
-        images: [
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/201511231234339773-1093-9caa422287b411ee91db0a58a9feac02.jpg",
-          "https://r1imghtlak.mmtcdn.com/713721da87b611ee99260a58a9feac02.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201511231234339773-8c032a9487da11ee9b360a58a9feac02.jpg"
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201511231234339773-b666455b-b3f9-49e2-8fee-6ce615b51ea2.jpg"
         ]
       },
       suite: {
         name: "Luxury Suite",
         description: "Luxurious suite with separate living area and panoramic views",
         priceMultiplier: 1.8,
-        images: [
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201511231234339773-09db1e8087dc11ee969d0a58a9feac02.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201511231234339773-fe8cbed687da11ee93c60a58a9feac02.jpg",
-          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201511231234339773-318f884f-5b3b-48a1-a2b5-c5618e35d0d3.jpg"
+        img: [
+          "https://r1imghtlak.mmtcdn.com/ce893cfc87b511eeb2b60a58a9feac02.jpg"
         ]
       }
     },
@@ -935,30 +908,24 @@ export const allHotels = [
         name: "Standard Room",
         description: "Comfortable room with all basic amenities",
         priceMultiplier: 1.0,
-        images: [
-          "https://r1imghtlak.mmtcdn.com/9324f158543411eca0680a58a9feac02.jpeg",
-          "https://r1imghtlak.mmtcdn.com/489f6595-b830-408d-a80a-63614b6e2f13.jpeg",
-          "https://r1imghtlak.mmtcdn.com/7528289e-bea7-48fd-a9b0-70eaa453bcce.jpeg"
+        img: [
+          "https://r1imghtlak.mmtcdn.com/692db809-b918-4ffe-93f6-a6ed25c49b80.jpeg"
         ]
       },
       deluxe: {
         name: "Deluxe Room",
         description: "Spacious room with premium furnishings and forest view",
         priceMultiplier: 1.3,
-        images: [
-          "https://r1imghtlak.mmtcdn.com/62c24923-1468-42e8-980b-999bb3636f91.jpeg",
-          "https://r1imghtlak.mmtcdn.com/89551bdc408c11ecb95e0a58a9feac02.jfif",
-          "https://r1imghtlak.mmtcdn.com/7095c7b5-cace-481c-93f5-71e8c224a98f.jpeg"
+        img: [
+          "https://r1imghtlak.mmtcdn.com/d03f3112-38c1-4819-98fb-258a7a89bbfc.jpeg"
         ]
       },
       suite: {
         name: "Luxury Suite",
         description: "Luxurious suite with separate living area and panoramic views",
         priceMultiplier: 1.8,
-        images: [
-          "https://r1imghtlak.mmtcdn.com/4a8191d8408c11ec9d540a58a9feac02.jfif",
-          "https://r1imghtlak.mmtcdn.com/fd757dd2-d130-419b-9632-53c007c363d7.jpeg",
-          "https://r1imghtlak.mmtcdn.com/bcc20df4-4908-4a87-bc90-202900dc0abd.jpeg"
+        img: [
+          "https://r1imghtlak.mmtcdn.com/428d77e7-fdd5-46e4-9469-d961ca1adebf.jpeg"
         ]
       }
     },
