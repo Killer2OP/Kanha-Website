@@ -1,9 +1,25 @@
-import React from 'react'
-import {ChevronRight, Compass} from "lucide-react";
+import React from 'react';
+import { ChevronRight, Compass, Clock, MapPin, Camera } from "lucide-react";
 import { Link } from "react-router-dom";
-import {packages} from "../container/main/home/IntroductionData";
+import tourPackages from "../data/tourPackages";
 
-export const TourPackages = () => {
+const TourPackagesCard = () => {
+    // Get 1 featured package from each park
+    const featuredPackages = React.useMemo(() => {
+        const parks = ["Kanha", "Bandhavgarh", "Pench"];
+        const featured = [];
+        
+        parks.forEach(park => {
+            const parkPackage = tourPackages
+                .find(pkg => pkg.park === park || pkg.title.includes(park));
+            if (parkPackage) {
+                featured.push(parkPackage);
+            }
+        });
+        
+        return featured;
+    }, []);
+
     return (
         <div className="relative rounded-3xl overflow-hidden p-4 sm:p-10 lg:p-12 backdrop-blur-xl bg-green-900/20 border border-white/10 shadow-xl">
             <div className="flex items-center mb-6 justify-center">
@@ -15,42 +31,66 @@ export const TourPackages = () => {
                 </h4>
             </div>
 
-            <p className="text-gray-200 text-lg leading-relaxed font-medium mb-8">
-                Discover Kanha with our affordable, customizable tour
-                packages—ranging from budget weekend escapes to luxurious week-long
-                adventures. Enjoy accommodation, safari bookings, meals, and
-                transportation, with special options for photographers and families.
+            <p className="text-gray-200 text-lg leading-relaxed font-medium mb-8 text-center max-w-4xl mx-auto">
+                Discover the wilderness with our customizable tour packages across Kanha, Bandhavgarh, and Pench National Parks. 
+                Each package includes accommodation, safari bookings, meals, and transportation.
             </p>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {packages.map((pkg, index) => (
+            <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
+                {featuredPackages.map((pkg, index) => (
                     <div
                         key={index}
                         className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-900/30 group"
                     >
-                        <h5 className="text-xl font-bold text-white mb-2">
+                        <div className="flex items-center mb-2">
+                            <MapPin className="h-4 w-4 text-emerald-400 mr-2" />
+                            <span className="text-emerald-300 font-medium">{pkg.park || pkg.title.split(" ")[0]}</span>
+                        </div>
+                        
+                        <h5 className="text-xl font-bold text-white mb-1">
                             {pkg.title}
                         </h5>
-                        <p className="text-emerald-300 text-2xl font-bold mb-4">
+                        
+                        <div className="flex items-center mb-3">
+                            <Clock className="h-4 w-4 text-emerald-400 mr-2" />
+                            <span className="text-gray-300 text-sm">{pkg.duration}</span>
+                        </div>
+                        
+                        <p className="text-emerald-300 text-2xl font-bold mb-3">
                             {pkg.price}
+                            <span className="text-sm text-emerald-200 font-normal ml-2">{pkg.safaris}</span>
                         </p>
+                        
                         <ul className="space-y-2 mb-6">
-                            {pkg.features.map((feature, i) => (
-                                <li key={i} className="flex items-center text-gray-300">
-                                    <ChevronRight className="h-4 w-4 text-emerald-400 mr-2 flex-shrink-0" />
-                                    <span>{feature}</span>
+                            {pkg.features.slice(0, 3).map((feature, i) => (
+                                <li key={i} className="flex items-start text-gray-300">
+                                    <ChevronRight className="h-4 w-4 text-emerald-400 mr-2 flex-shrink-0 mt-1" />
+                                    <span className="text-sm">{feature}</span>
                                 </li>
                             ))}
                         </ul>
+                        
                         <Link
-                            to="/tour-packages"
-                            className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 group-hover:bg-emerald-500"
+                            to={`/tour/${pkg.id}`}
+                            className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 group-hover:bg-emerald-500 font-medium"
                         >
-                            Book Now
+                            View Details
                         </Link>
                     </div>
                 ))}
             </div>
+            
+            <div className="mt-8 text-center">
+                <Link 
+                    to="/tour-packages" 
+                    className="inline-flex items-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg transition-colors duration-300"
+                >
+                    View All Packages
+                    <ChevronRight className="ml-2 h-5 w-5" />
+                </Link>
+            </div>
         </div>
-    )
-}
+    );
+};
+
+export default TourPackagesCard;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Eye, EyeOff } from "lucide-react";
 
 function AdminLogin() {
   const [credentials, setCredentials] = useState({
@@ -7,6 +8,7 @@ function AdminLogin() {
     password: "",
   });
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -14,6 +16,10 @@ function AdminLogin() {
       ...credentials,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   const handleSubmit = (e) => {
@@ -56,14 +62,27 @@ function AdminLogin() {
           </div>
           <div>
             <label className="block text-emerald-100 mb-2">Password</label>
-            <input
-              type="password"
-              name="password"
-              value={credentials.password}
-              onChange={handleChange}
-              className="w-full p-3 bg-white/5 border border-emerald-500/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
-              required
-            />
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                value={credentials.password}
+                onChange={handleChange}
+                className="w-full p-3 bg-white/5 border border-emerald-500/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                required
+              />
+              <button
+                type="button"
+                onClick={togglePasswordVisibility}
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-emerald-300 hover:text-emerald-100 focus:outline-none"
+              >
+                {showPassword ? (
+                  <EyeOff size={18} />
+                ) : (
+                  <Eye size={18} />
+                )}
+              </button>
+            </div>
           </div>
           <button
             type="submit"

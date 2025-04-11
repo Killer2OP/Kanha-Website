@@ -9,7 +9,7 @@ function App() {
           {/* Left side - Image */}
           <div className="relative">
             <img 
-              src="https://african-safari.sites.motocms.com/res/62625786d6eae90022049e05/6274f806015ea20022fe5da7_optimized_1104.webp" 
+              src="https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/geolocation.webp" 
               alt="Kanha Tiger Reserve"
               className=" w-full h-auto object-cover shadow-green-900/30"
             />
