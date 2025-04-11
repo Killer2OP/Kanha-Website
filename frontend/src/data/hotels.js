@@ -23,7 +23,7 @@ export const allHotels = [
         description: "Comfortable room with all basic amenities",
         priceMultiplier: 1.0,
         img: [
-          "https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/bgdefault_bg.jpg"
+          "https://r1imghtlak.mmtcdn.com/fcc0be884c5c11ec93c30a58a9feac02.jfif"
         ]
       },
       deluxe: {
@@ -31,9 +31,7 @@ export const allHotels = [
         description: "Spacious room with premium furnishings and forest view",
         priceMultiplier: 1.3,
         img: [
-          "https://www.kanhanationalparkonline.in/uploads/krishnajungle-deluxe1.jpg",
-          "https://www.kanhanationalparkonline.in/uploads/krishnajungle-deluxe2.jpg",
-          "https://www.kanhanationalparkonline.in/uploads/krishnajungle-deluxe3.jpg"
+          "https://r1imghtlak.mmtcdn.com/fc70a0424c5c11ecb85a0a58a9feac02.jfif"
         ]
       },
       suite: {
@@ -41,9 +39,7 @@ export const allHotels = [
         description: "Luxurious suite with separate living area and panoramic views",
         priceMultiplier: 1.8,
         img: [
-          "https://www.kanhanationalparkonline.in/uploads/krishnajungle-suite1.jpg",
-          "https://www.kanhanationalparkonline.in/uploads/krishnajungle-suite2.jpg",
-          "https://www.kanhanationalparkonline.in/uploads/krishnajungle-suite3.jpg"
+          "https://r1imghtlak.mmtcdn.com/fc5570ba4c5c11ec9cdb0a58a9feac02.jfif",
         ]
       }
     },
@@ -1057,6 +1053,32 @@ export const allHotels = [
       "Safari Booking",
       "Free Wifi"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/201109221300006114-1250010-151be0e2475a11ebb6c70242ac110003.jpg",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/201109221300006114-21748-76c6e54c40e711ee944f0a58a9feac02.jpg",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/201109221300006114-2968-820d8464417e11ee80140a58a9feac02.jpg",
+        ]
+      }
+    },
     featured: true,
     description: "Mogli Bandhavgarh offers a comfortable stay in the heart of tiger territory. With well-appointed rooms, excellent dining options, and easy access to safari tours, it's the perfect base for wildlife enthusiasts.",
     images: [
@@ -1118,6 +1140,32 @@ export const allHotels = [
       "Free Wifi",
       "Parking"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/201806291325395876-24133-8ce0623004c211ecb0530a58a9feac02.jpg",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/16d5020a7c7811eeac9f0a58a9feac02.jpg",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201806291325395876-1ecfad8019ab11eb953e0242ac110002.jpg",
+        ]
+      }
+    },
     featured: false,
     description: "White Tiger MPT offers affordable accommodations near Bandhavgarh National Park. With clean rooms, a restaurant serving delicious meals, and helpful staff, it's a great choice for budget-conscious travelers.",
     images: [
@@ -1176,6 +1224,32 @@ export const allHotels = [
       "Garden",
       "Free Wifi"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/8f1f9426506511e4af41daf4768ad8d9.jfif",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/ca9588ea66c811e78ae102755708f0b3.jfif",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/6fc8930c66c411e782950a9df65c8753.jfif",
+        ]
+      }
+    },
     featured: false,
     description: "Sun Resort offers budget-friendly accommodations close to Bandhavgarh National Park. With clean rooms, a restaurant serving delicious meals, and helpful staff, it's an ideal base for tiger safaris and wildlife exploration.",
     images: [
@@ -1234,6 +1308,32 @@ export const allHotels = [
       "Safari Booking",
       "Free Wifi"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/9e93d5ce6ed111e7886e0a4cef95d023.jpg",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/3836f7c6f52611e791590a4cef95d023.jpg",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/432fdce3-358e-475d-a131-f67ce20071a0.jpeg",
+        ]
+      }
+    },
     featured: true,
     description: "Celebration Van Vilas offers a perfect blend of luxury and wilderness experience. Located near Tala Gate, the resort provides comfortable accommodations, excellent dining options, and easy access to Bandhavgarh National Park.",
     images: [
@@ -1295,6 +1395,32 @@ export const allHotels = [
       "Safari Booking",
       "Spa"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/114d672f-7812-4b45-b59b-3791e204dad9.jpeg",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/d460c23e-3f24-44cf-96fb-d443a0e76c8b.jpeg",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/8ca6d2e061a511ed9f770a58a9feac02.jpeg",
+        ]
+      }
+    },
     featured: true,
     description: "Monsoon Forest offers luxury accommodations in a beautiful natural setting. The resort features a swimming pool, restaurant serving delicious meals, and spa facilities. Perfect for wildlife enthusiasts seeking comfort and luxury.",
     images: [
@@ -1341,8 +1467,8 @@ export const allHotels = [
   },
   {
     id: 31,
-    name: "Infinite Resort Bandhavgarh",
-    slug: "infinite-resort-bandhavgarh",
+    name: "Infinity Resort Bandhavgarh",
+    slug: "infinity-resort-bandhavgarh",
     rating: 4.3,
     stars: 4,
     reviews: 130,
@@ -1356,6 +1482,32 @@ export const allHotels = [
       "Safari Booking",
       "Free Wifi"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/o7a1t793c90kf7srdhvt5feu005c.jpg",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/1cae05e8a78c11e998f70242ac110006.jfif",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/045fef2448cc11ea94650242ac110004.jfif",
+        ]
+      }
+    },
     featured: false,
     description: "Infinite Resort offers comfortable accommodations in a serene natural setting. The resort features a swimming pool, restaurant serving delicious meals, and beautiful gardens. Perfect for wildlife enthusiasts seeking a peaceful retreat.",
     images: [
@@ -1417,6 +1569,32 @@ export const allHotels = [
       "Safari Booking",
       "Free Wifi"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/00fdd2a8-6a61-431f-b9c0-ff16da8ae035.jpeg",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/19190e924f8e11e4935bdaf4768ad8d9.jfif",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/14d1192ef52611e7aeb3025f77df004f.jpg",
+        ]
+      }
+    },
     featured: false,
     description: "Ananyek offers a comfortable stay in the heart of tiger territory. With well-appointed rooms, excellent dining options, and easy access to safari tours, it's the perfect base for wildlife enthusiasts.",
     images: [
@@ -1479,6 +1657,32 @@ export const allHotels = [
       "Safari Booking",
       "Free Wifi"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/7b6fecc4e78111e9bd820242ac110003.jpg",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/2cde8d00e0f511e9a6fd0242ac110004.jpg",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/d1007c38e0ee11e9bfb50242ac110003.jpg",
+        ]
+      }
+    },
     featured: false,
     description: "Nature Heritage offers comfortable accommodations in a serene natural setting. The resort features a swimming pool, restaurant serving delicious meals, and beautiful gardens. Perfect for wildlife enthusiasts seeking a peaceful retreat.",
     images: [
@@ -1541,6 +1745,32 @@ export const allHotels = [
       "Safari Booking",
       "Spa"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/58f3415e-5f86-4d0e-899a-b4b65a0c5137.JPG",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/5c6fe1aa-2569-4d87-935f-15d04f30fb83.JPG",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/08c09246-8748-4513-a624-3f44014c4391.jpeg",
+        ]
+      }
+    },
     featured: false,
     description: "Mahi Jungle Lodge offers luxury accommodations in a beautiful natural setting. The resort features a swimming pool, restaurant serving delicious meals, and spa facilities. Perfect for wildlife enthusiasts seeking comfort and luxury.",
     images: [
@@ -1604,6 +1834,32 @@ export const allHotels = [
       "Safari Booking",
       "Garden"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/edd55c09-cc8a-437a-9c0c-560213c9ce99.jpg",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/e0119d1d-7997-405b-8785-ea746625f0fd.jpg",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/974871cb-cd2b-4fd0-a992-9f0b1c9eb5b5.jpeg",
+        ]
+      }
+    },
     featured: false,
     description: "Tathastu Bandhavgarh offers comfortable accommodations in a serene natural setting. The resort features a swimming pool, restaurant serving delicious meals, and beautiful gardens. Perfect for wildlife enthusiasts seeking a peaceful retreat.",
     images: [
@@ -1669,6 +1925,32 @@ export const allHotels = [
       "Safari Booking",
       "Spa"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/202003031324227870-2249-8c71e5aa636811eaadc70242ac110006.jpg"
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/202003031324227870-2249-501e04307b3b11eb8baa0242ac110002.jpg"
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/202003031324227870-2249-d7c0f2367b3a11eb81cb0242ac110002.jpg"
+        ]
+      }
+    },
     featured: true,
     description: "Experience luxury in the wilderness at Mahua One. Our premium cottages blend modern comfort with natural surroundings, offering an unforgettable stay in Pench National Park.",
     images: [
@@ -1733,6 +2015,32 @@ export const allHotels = [
       "Safari Booking",
       "Garden"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/d7a497b8778611ed9c1a0a58a9feac02.jpg",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/179e10ee-bde3-43b2-9963-4b25692e2584.jpg",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/9cbc4c7cb27311ed80bf0a58a9feac02.jpeg",
+        ]
+      }
+    },
     featured: true,
     description: "Olive Resort offers comfortable accommodations with modern amenities. Surrounded by nature, the resort provides a perfect base for exploring Pench National Park.",
     images: [
@@ -1799,6 +2107,32 @@ export const allHotels = [
       "Safari Booking",
       "Spa"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/202211151652042459-6782036-ec49e746a15511ee80730a58a9feac02.jpg",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/202211151652042459-6782032-5e4d63d8642411ed988d0a58a9feac02.jpg",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/202211151652042459-1241774-fb32c3a4627b11ee9d4b0a58a9feac02.jpg",
+        ]
+      }
+    },
     featured: false,
     description: "Sterling Ruddan offers a perfect blend of comfort and nature. With well-appointed rooms and excellent amenities, it's an ideal choice for wildlife enthusiasts.",
     images: [
@@ -1863,6 +2197,32 @@ export const allHotels = [
       "Safari Booking",
       "Nature Walks"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/a3b091bc2d1811eeb8430a58a9feac02.jpg",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/1d5a98fa2d1911ee84ff0a58a9feac02.jpg",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/d75dcd2c2d1811ee8c660a58a9feac02.jpg",
+        ]
+      }
+    },
     featured: true,
     description: "Experience the wilderness in comfort at Pench Wilderness Camp. Our luxury tents offer a unique blend of adventure and comfort in the heart of nature.",
     images: [
@@ -1928,6 +2288,32 @@ export const allHotels = [
       "Garden",
       "Parking"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/845531de-9fa5-4dda-b6c2-84d1d5526b4e.jpg",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/7f5ac86a-5169-4a37-9009-d1cc0906f68d.jpg",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/201102051442039885-169917-c323e7c0ee6e11e9a2430242ac110003.jpg",
+        ]
+      }
+    },
     featured: false,
     description: "Tigers & Woods offers comfortable accommodations at affordable prices. Perfect for budget-conscious travelers who want to explore Pench National Park.",
     images: [
@@ -1988,6 +2374,32 @@ export const allHotels = [
       "Safari Booking",
       "Garden"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/a0eca88a-ca8c-4c7a-89e8-a2fcf315b2d4.jpg",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/07d7349e1e7511e69401001ec9b85d13.jpg",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/a723c9f6cb6f11ecb8390a58a9feac02.jpg",
+        ]
+      }
+    },
     featured: false,
     description: "Tathastu Pench offers a comfortable stay with modern amenities in the heart of nature. Perfect for wildlife enthusiasts looking for a peaceful retreat near Pench National Park.",
     images: [
@@ -2058,6 +2470,32 @@ export const allHotels = [
       "Spa",
       "Safari Booking"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+         "https://r1imghtlak.mmtcdn.com/383dd9acf62311edbe640a58a9feac02.jpg"
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/2528eb9a7dd911eca5620a58a9feac02.jpg",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/d02ef3ccf61e11edb3970a58a9feac02.jpg"
+        ]
+      }
+    },
     featured: true,
     description: "Welcome Heritage Jungle Home offers a luxurious stay in traditional heritage-style cottages. Experience the perfect blend of comfort and wilderness with world-class amenities.",
     images: [
@@ -2119,6 +2557,32 @@ export const allHotels = [
       "Parking",
       "Garden"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/201806291739504237-108-8468d064d39d11edb8fc0a58a9feac02.jpg",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/201806291739504237-1326-41e20f26d39d11ed89cf0a58a9feac02.jpg",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/201806291739504237-1326-350b282cd39e11ed82270a58a9feac02.jpg",
+        ]
+      }
+    },
     featured: false,
     description: "Kipling Court - MPT offers comfortable accommodations at affordable prices. Run by Madhya Pradesh Tourism, it provides essential amenities and easy access to Pench National Park.",
     images: [
@@ -2176,6 +2640,32 @@ export const allHotels = [
       "Safari Booking",
       "Spa"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/2d392d9a0e7411ee95360a58a9feac02.jpg",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/14f8bf000e6711ee951a0a58a9feac02.jpg"
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          " https://r1imghtlak.mmtcdn.com/f3eb549c0e7211eea7b40a58a9feac02.jpg"
+        ]
+      }
+    },
     featured: true,
     description: "Mayur - The Kipling offers a luxurious stay inspired by Rudyard Kipling's works. Experience comfort and elegance while exploring the wilderness of Pench.",
     images: [
@@ -2233,6 +2723,34 @@ export const allHotels = [
       "Restaurant",
       "Safari Booking"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/caf8f2de8aa911ee9c2a0a58a9feac02.jpg",
+
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/b5d2a8ba87a611ee8d0f0a58a9feac02.jpeg",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/740ca4507dfe11ee9ce10a58a9feac02.jpg",
+
+        ]
+      }
+    },
     featured: true,
     description: "Golf Resort Pench combines the thrill of wildlife with the pleasure of golf. Enjoy a unique stay with world-class amenities and sporting facilities.",
     images: [
@@ -2295,6 +2813,32 @@ export const allHotels = [
       "Garden",
       "Parking"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/6848693c72ec11e9becd0242ac110003.jpg",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/201309031338039191-124933-67ffe454e69711e997780242ac110002.jpg",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/618cc18872ec11e98ce00242ac110004.jpg",
+        ]
+      }
+    },
     featured: false,
     description: "Revanwood Pench offers a comfortable stay in natural surroundings. Perfect for nature lovers seeking a peaceful retreat with essential amenities.",
     images: [
@@ -2356,6 +2900,32 @@ export const allHotels = [
       "Safari Booking",
       "Village Experience"
     ],
+    rooms: {
+      standard: {
+        name: "Standard Room",
+        description: "Comfortable room with all basic amenities",
+        priceMultiplier: 1.0,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/74cdc2f82fe511eba0d70242ac110002.jfif",
+        ]
+      },
+      deluxe: {
+        name: "Deluxe Room",
+        description: "Spacious room with premium furnishings and forest view",
+        priceMultiplier: 1.3,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/699efdac652811eb8c370242ac110002.jpeg",
+        ]
+      },
+      suite: {
+        name: "Luxury Suite",
+        description: "Luxurious suite with separate living area and panoramic views",
+        priceMultiplier: 1.8,
+        img: [
+          "https://r1imghtlak.mmtcdn.com/ca35618688f611e7b2b3025f77df004f.jpg",
+        ]
+      }
+    },
     featured: false,
     description: "Village Machaan offers a unique stay in traditional tree houses. Experience rural life while enjoying modern comforts and easy access to wildlife.",
     images: [

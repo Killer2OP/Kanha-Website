@@ -40,20 +40,20 @@ function HotelDetail() {
       name: "Standard Room",
       description: "Comfortable room with all basic amenities",
       priceMultiplier: 1.0,
-      img: [hotel?.images?.[3]], // Fallback to hotel images if rooms not defined
+      img: [hotel.rooms.img],
     },
     deluxe: {
       name: "Deluxe Room",
       description: "Spacious room with premium furnishings and forest view",
       priceMultiplier: 1.3,
-      img: [hotel?.images?.[3]],
+      img: [hotel.rooms.img],
     },
     suite: {
       name: "Luxury Suite",
       description:
         "Luxurious suite with separate living area and panoramic views",
       priceMultiplier: 1.8,
-      img: [hotel?.images?.[4]],
+      img: [hotel.rooms.img],
     },
   };
 
@@ -623,12 +623,12 @@ function HotelDetail() {
                 About this place
               </h3>
               <p className="text-gray-700 mb-4">{hotel.description}</p>
-              <button
+              {/* <button
                 onClick={() => alert("Full description would be shown here")}
                 className="text-gray-900 font-semibold underline"
               >
                 Show more
-              </button>
+              </button> */}
             </div>
 
             {/* What this place offers */}
