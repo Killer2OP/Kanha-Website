@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Star, MapPin, Check, Filter, ArrowUpDown, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Star,
+  MapPin,
+  Check,
+  Filter,
+  ArrowUpDown,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { useLocation, Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -15,7 +23,11 @@ function Hotels() {
   const [hotelsPerPage] = useState(5);
 
   // Define the available parks
-  const availableParks = ["Kanha National Park", "Bandhavgarh National Park", "Pench National Park"];
+  const availableParks = [
+    "Kanha National Park",
+    "Bandhavgarh National Park",
+    "Pench National Park",
+  ];
 
   const { pathname } = useLocation();
 
@@ -26,20 +38,26 @@ function Hotels() {
   // Initial load - assign parks to hotels if not already assigned
   useEffect(() => {
     // Assign default parks to hotels that don't have a park property
-    const hotelsWithParks = allHotels.map(hotel => {
+    const hotelsWithParks = allHotels.map((hotel) => {
       if (!hotel.park) {
         // Assign default park based on hotel name or location
-        if (hotel.name.toLowerCase().includes('kanha') || 
-            hotel.location.toLowerCase().includes('kanha') ||
-            hotel.address.toLowerCase().includes('kanha')) {
+        if (
+          hotel.name.toLowerCase().includes("kanha") ||
+          hotel.location.toLowerCase().includes("kanha") ||
+          hotel.address.toLowerCase().includes("kanha")
+        ) {
           return { ...hotel, park: "Kanha National Park" };
-        } else if (hotel.name.toLowerCase().includes('bandhavgarh') || 
-                  hotel.location.toLowerCase().includes('bandhavgarh') ||
-                  hotel.address.toLowerCase().includes('bandhavgarh')) {
+        } else if (
+          hotel.name.toLowerCase().includes("bandhavgarh") ||
+          hotel.location.toLowerCase().includes("bandhavgarh") ||
+          hotel.address.toLowerCase().includes("bandhavgarh")
+        ) {
           return { ...hotel, park: "Bandhavgarh National Park" };
-        } else if (hotel.name.toLowerCase().includes('pench') || 
-                  hotel.location.toLowerCase().includes('pench') ||
-                  hotel.address.toLowerCase().includes('pench')) {
+        } else if (
+          hotel.name.toLowerCase().includes("pench") ||
+          hotel.location.toLowerCase().includes("pench") ||
+          hotel.address.toLowerCase().includes("pench")
+        ) {
           return { ...hotel, park: "Pench National Park" };
         } else {
           // Default to Kanha if no specific park is identified
@@ -48,7 +66,7 @@ function Hotels() {
       }
       return hotel;
     });
-    
+
     setHotels(hotelsWithParks);
   }, []);
 
@@ -60,8 +78,9 @@ function Hotels() {
 
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-  const nextPage = () => setCurrentPage(prev => Math.min(prev + 1, totalPages));
-  const prevPage = () => setCurrentPage(prev => Math.max(prev - 1, 1));
+  const nextPage = () =>
+    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+  const prevPage = () => setCurrentPage((prev) => Math.max(prev - 1, 1));
 
   const handleSort = (criteria) => {
     setSortBy(criteria);
@@ -87,19 +106,25 @@ function Hotels() {
         break;
       default:
         // Reset to all hotels with parks assigned
-        sortedHotels = allHotels.map(hotel => {
+        sortedHotels = allHotels.map((hotel) => {
           if (!hotel.park) {
-            if (hotel.name.toLowerCase().includes('kanha') || 
-                hotel.location.toLowerCase().includes('kanha') ||
-                hotel.address.toLowerCase().includes('kanha')) {
+            if (
+              hotel.name.toLowerCase().includes("kanha") ||
+              hotel.location.toLowerCase().includes("kanha") ||
+              hotel.address.toLowerCase().includes("kanha")
+            ) {
               return { ...hotel, park: "Kanha National Park" };
-            } else if (hotel.name.toLowerCase().includes('bandhavgarh') || 
-                      hotel.location.toLowerCase().includes('bandhavgarh') ||
-                      hotel.address.toLowerCase().includes('bandhavgarh')) {
+            } else if (
+              hotel.name.toLowerCase().includes("bandhavgarh") ||
+              hotel.location.toLowerCase().includes("bandhavgarh") ||
+              hotel.address.toLowerCase().includes("bandhavgarh")
+            ) {
               return { ...hotel, park: "Bandhavgarh National Park" };
-            } else if (hotel.name.toLowerCase().includes('pench') || 
-                      hotel.location.toLowerCase().includes('pench') ||
-                      hotel.address.toLowerCase().includes('pench')) {
+            } else if (
+              hotel.name.toLowerCase().includes("pench") ||
+              hotel.location.toLowerCase().includes("pench") ||
+              hotel.address.toLowerCase().includes("pench")
+            ) {
               return { ...hotel, park: "Pench National Park" };
             } else {
               return { ...hotel, park: "Kanha National Park" };
@@ -138,19 +163,25 @@ function Hotels() {
   // Updated applyFilters function to include park filter
   const applyFilters = (stars, parks, price) => {
     // Start with all hotels, ensuring they have park properties
-    let filteredHotels = allHotels.map(hotel => {
+    let filteredHotels = allHotels.map((hotel) => {
       if (!hotel.park) {
-        if (hotel.name.toLowerCase().includes('kanha') || 
-            hotel.location.toLowerCase().includes('kanha') ||
-            hotel.address.toLowerCase().includes('kanha')) {
+        if (
+          hotel.name.toLowerCase().includes("kanha") ||
+          hotel.location.toLowerCase().includes("kanha") ||
+          hotel.address.toLowerCase().includes("kanha")
+        ) {
           return { ...hotel, park: "Kanha National Park" };
-        } else if (hotel.name.toLowerCase().includes('bandhavgarh') || 
-                  hotel.location.toLowerCase().includes('bandhavgarh') ||
-                  hotel.address.toLowerCase().includes('bandhavgarh')) {
+        } else if (
+          hotel.name.toLowerCase().includes("bandhavgarh") ||
+          hotel.location.toLowerCase().includes("bandhavgarh") ||
+          hotel.address.toLowerCase().includes("bandhavgarh")
+        ) {
           return { ...hotel, park: "Bandhavgarh National Park" };
-        } else if (hotel.name.toLowerCase().includes('pench') || 
-                  hotel.location.toLowerCase().includes('pench') ||
-                  hotel.address.toLowerCase().includes('pench')) {
+        } else if (
+          hotel.name.toLowerCase().includes("pench") ||
+          hotel.location.toLowerCase().includes("pench") ||
+          hotel.address.toLowerCase().includes("pench")
+        ) {
           return { ...hotel, park: "Pench National Park" };
         } else {
           return { ...hotel, park: "Kanha National Park" };
@@ -194,7 +225,7 @@ function Hotels() {
     } else {
       title = "Hotels in Wildlife Parks";
     }
-    
+
     document.title = title;
   }, [selectedParks]);
 
@@ -214,11 +245,11 @@ function Hotels() {
             Hotel Booking
           </h1>
           <p className="text-xl text-emerald-100 max-w-6xl">
-            Here we are empowering wildlife travelers with instant hotel
-            and resort booking with comprehensive choices in Kanha, Bandhavgarh,
-            and Pench National Parks. We have tie-ups with a vast network of hotels
-            across these parks which include both luxury and budget accommodations
-            to suit every traveler's needs.
+            Here we are empowering wildlife travelers with instant hotel and
+            resort booking with comprehensive choices in Kanha, Bandhavgarh, and
+            Pench National Parks. We have tie-ups with a vast network of hotels
+            across these parks which include both luxury and budget
+            accommodations to suit every traveler's needs.
           </p>
         </div>
       </div>
@@ -236,7 +267,11 @@ function Hotels() {
                 Select National Park
               </h3>
               <div className="flex flex-wrap gap-3">
-                {["Kanha National Park", "Bandhavgarh National Park", "Pench National Park"].map((park) => (
+                {[
+                  "Kanha National Park",
+                  "Bandhavgarh National Park",
+                  "Pench National Park",
+                ].map((park) => (
                   <button
                     key={park}
                     onClick={() => handleParkFilter(park)}
@@ -343,7 +378,10 @@ function Hotels() {
                 >
                   <div className="grid md:grid-cols-3 gap-6">
                     {/* Hotel Image */}
-                    <Link to={`/hotels-resorts/${hotel.slug}`} className="relative h-72 md:h-full">
+                    <Link
+                      to={`/hotels-resorts/${hotel.slug}`}
+                      className="relative h-72 md:h-full"
+                    >
                       <img
                         src={hotel.image}
                         alt={hotel.name}
@@ -365,7 +403,10 @@ function Hotels() {
                     <div className="p-6 md:col-span-2">
                       <div className="flex justify-between items-start mb-4">
                         <div>
-                          <Link to={`/hotels-resorts/${hotel.slug}`} className="hover:text-emerald-300 transition-colors">
+                          <Link
+                            to={`/hotels-resorts/${hotel.slug}`}
+                            className="hover:text-emerald-300 transition-colors"
+                          >
                             <h3 className="text-2xl font-bold text-white mb-2">
                               {hotel.name}
                             </h3>
@@ -411,33 +452,37 @@ function Hotels() {
                         ))}
                       </div>
 
-                      <Link to={`/hotels-resorts/${hotel.slug}`} className="inline-block w-full md:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 font-semibold text-sm text-center">
+                      <Link
+                        to={`/hotels-resorts/${hotel.slug}`}
+                        className="inline-block w-full md:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300 font-semibold text-sm text-center"
+                      >
                         Book Now
                       </Link>
                     </div>
                   </div>
                 </div>
               ))
-            
-) : (
-  <div className="text-center py-8">
-    <p className="text-white text-xl">No hotels found matching your criteria.</p>
-  </div>
-)}
+            ) : (
+              <div className="text-center py-8">
+                <p className="text-white text-xl">
+                  No hotels found matching your criteria.
+                </p>
+              </div>
+            )}
             {hotels.length > hotelsPerPage && (
               <div className="flex justify-center items-center mt-8 space-x-2">
-                <button 
-                  onClick={prevPage} 
+                <button
+                  onClick={prevPage}
                   disabled={currentPage === 1}
                   className={`flex items-center justify-center w-10 h-10 rounded-full ${
-                    currentPage === 1 
-                      ? 'bg-emerald-800/50 text-emerald-300/50 cursor-not-allowed' 
-                      : 'bg-emerald-600 text-white hover:bg-emerald-700'
+                    currentPage === 1
+                      ? "bg-emerald-800/50 text-emerald-300/50 cursor-not-allowed"
+                      : "bg-emerald-600 text-white hover:bg-emerald-700"
                   } transition-colors duration-200`}
                 >
                   <ChevronLeft size={20} />
                 </button>
-                
+
                 <div className="flex space-x-1">
                   {Array.from({ length: totalPages }, (_, i) => (
                     <button
@@ -445,22 +490,22 @@ function Hotels() {
                       onClick={() => paginate(i + 1)}
                       className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200 ${
                         currentPage === i + 1
-                          ? 'bg-emerald-500 text-white'
-                          : 'bg-emerald-900/50 text-emerald-100 hover:bg-emerald-800'
+                          ? "bg-emerald-500 text-white"
+                          : "bg-emerald-900/50 text-emerald-100 hover:bg-emerald-800"
                       }`}
                     >
                       {i + 1}
                     </button>
                   ))}
                 </div>
-                
-                <button 
-                  onClick={nextPage} 
+
+                <button
+                  onClick={nextPage}
                   disabled={currentPage === totalPages}
                   className={`flex items-center justify-center w-10 h-10 rounded-full ${
-                    currentPage === totalPages 
-                      ? 'bg-emerald-800/50 text-emerald-300/50 cursor-not-allowed' 
-                      : 'bg-emerald-600 text-white hover:bg-emerald-700'
+                    currentPage === totalPages
+                      ? "bg-emerald-800/50 text-emerald-300/50 cursor-not-allowed"
+                      : "bg-emerald-600 text-white hover:bg-emerald-700"
                   } transition-colors duration-200`}
                 >
                   <ChevronRight size={20} />

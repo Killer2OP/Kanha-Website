@@ -1,9 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Star, MapPin, Check, Share, Calendar, Users, X } from "lucide-react";
+import { Star, MapPin, Check, Share, Calendar, X } from "lucide-react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { allHotels } from "../data/hotels";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+// Add custom styles for the date picker
+import "./datepicker-custom.css";
 
 function HotelDetail() {
   const { slug } = useParams();
@@ -11,25 +16,21 @@ function HotelDetail() {
   const navigate = useNavigate();
   const [showAllPhotos, setShowAllPhotos] = useState(false);
   const today = new Date();
-  const [checkInDate, setCheckInDate] = useState(
-    `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`
-  );
+  const [checkInDate, setCheckInDate] = useState(today);
+
   const tomorrow = new Date(today);
   tomorrow.setDate(tomorrow.getDate() + 1);
-  const [checkOutDate, setCheckOutDate] = useState(
-    `${tomorrow.getMonth() + 1}/${tomorrow.getDate()}/${tomorrow.getFullYear()}`
-  );
+  const [checkOutDate, setCheckOutDate] = useState(tomorrow);
   const [guests, setGuests] = useState(1);
   const [showGuestDropdown, setShowGuestDropdown] = useState(false);
-  const [showDatePicker, setShowDatePicker] = useState(false);
   const [isBookingConfirmed, setIsBookingConfirmed] = useState(false);
   const [selectedRoomType, setSelectedRoomType] = useState("standard");
-  const [showRoomTypeDropdown, setShowRoomTypeDropdown] = useState(false);
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [activeDateField, setActiveDateField] = useState(null); // 'checkin' or 'checkout'
 
   // Add refs to handle outside clicks
   const guestDropdownRef = useRef(null);
   const datePickerRef = useRef(null);
-  const roomTypeDropdownRef = useRef(null);
 
   const hotel = allHotels.find((h) => h.slug === slug);
 
@@ -66,17 +67,13 @@ function HotelDetail() {
       ) {
         setShowGuestDropdown(false);
       }
+
       if (
         datePickerRef.current &&
-        !datePickerRef.current.contains(event.target)
+        !datePickerRef.current.contains(event.target) &&
+        !event.target.closest(".date-field")
       ) {
         setShowDatePicker(false);
-      }
-      if (
-        roomTypeDropdownRef.current &&
-        !roomTypeDropdownRef.current.contains(event.target)
-      ) {
-        setShowRoomTypeDropdown(false);
       }
     }
 
@@ -98,32 +95,13 @@ function HotelDetail() {
     );
   }
 
-  // Generate date options for the next 6 months
-  const generateDateOptions = (startFromDate) => {
-    const dates = [];
-    const today = startFromDate || new Date();
-    const endDate = new Date();
-    endDate.setMonth(today.getMonth() + 6);
-
-    const currentDate = new Date(today);
-    while (currentDate <= endDate) {
-      const formattedDate = `${
-        currentDate.getMonth() + 1
-      }/${currentDate.getDate()}/${currentDate.getFullYear()}`;
-      dates.push(formattedDate);
-      currentDate.setDate(currentDate.getDate() + 1);
-    }
-
-    return dates;
-  };
-
   // Calculate total price
   const calculateNights = () => {
     const checkin = new Date(checkInDate);
     const checkout = new Date(checkOutDate);
     const timeDiff = checkout.getTime() - checkin.getTime();
     const nightCount = Math.ceil(timeDiff / (1000 * 3600 * 24));
-    return nightCount > 0 ? nightCount : 5; // Default to 5 nights if dates are invalid
+    return nightCount > 0 ? nightCount : 1; // Default to 1 night if dates are invalid
   };
 
   const nights = calculateNights();
@@ -164,23 +142,33 @@ function HotelDetail() {
     // Don't close dropdown automatically to allow multiple adjustments
   };
 
-  // Add date selection handlers
-  const handleDateSelect = (type, date) => {
-    if (type === "checkin") {
+  // Handle date field clicks
+  const handleDateFieldClick = (field) => {
+    setActiveDateField(field);
+    setShowDatePicker(true);
+  };
+
+  // Handle date changes
+  const handleDateChange = (date) => {
+    if (activeDateField === "checkin") {
       setCheckInDate(date);
-      // If checkout date is before new checkin date, adjust checkout
-      const checkinDate = new Date(date);
-      const checkoutDate = new Date(checkOutDate);
-      if (checkoutDate <= checkinDate) {
+      // If checkout date is before or equal to new checkin date, adjust checkout
+      if (checkOutDate <= date) {
         // Set checkout to checkin + 1 day
-        checkinDate.setDate(checkinDate.getDate() + 1);
-        const newCheckout = `${
-          checkinDate.getMonth() + 1
-        }/${checkinDate.getDate()}/${checkinDate.getFullYear()}`;
-        setCheckOutDate(newCheckout);
+        const nextDay = new Date(date);
+        nextDay.setDate(nextDay.getDate() + 1);
+        setCheckOutDate(nextDay);
       }
-    } else {
+      // Close the date picker after a short delay to allow the user to see the selection
+      setTimeout(() => {
+        setShowDatePicker(false);
+      }, 300);
+    } else if (activeDateField === "checkout") {
       setCheckOutDate(date);
+      // Close the date picker after a short delay
+      setTimeout(() => {
+        setShowDatePicker(false);
+      }, 300);
     }
   };
 
@@ -255,7 +243,7 @@ function HotelDetail() {
         throw new Error(errorData.message || "Failed to create booking");
       }
 
-      const responseData = await response.json();
+      await response.json(); // Process the response
       setIsBookingConfirmed(true);
       alert("Booking confirmed successfully!");
       navigate("/hotels-resorts");
@@ -361,7 +349,7 @@ function HotelDetail() {
               onClick={handleShare}
               className="flex items-center gap-2 text-gray-700 hover:text-gray-900"
             >
-              <Share className="h-5 w-5" />
+              <Share size={20} strokeWidth={1.5} />
               <span>Share</span>
             </button>
             {/* <button
@@ -803,123 +791,37 @@ function HotelDetail() {
               {/* Booking Form */}
               <div className="border border-gray-300 rounded-lg overflow-hidden mb-4 relative">
                 <div className="grid grid-cols-2 divide-x divide-gray-300">
-                  <div
-                    className="p-3 cursor-pointer hover:bg-gray-50"
-                    onClick={() => setShowDatePicker(!showDatePicker)}
-                  >
+                  <div className="p-3">
                     <label className="block text-xs font-semibold text-gray-700 mb-1">
                       CHECK-IN
                     </label>
-                    <div className="text-sm">{checkInDate}</div>
+                    <div
+                      className="w-full text-sm p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer date-field"
+                      onClick={() => handleDateFieldClick("checkin")}
+                    >
+                      {checkInDate.toLocaleDateString("en-US", {
+                        month: "2-digit",
+                        day: "2-digit",
+                        year: "numeric",
+                      })}
+                    </div>
                   </div>
-                  <div
-                    className="p-3 cursor-pointer hover:bg-gray-50"
-                    onClick={() => setShowDatePicker(!showDatePicker)}
-                  >
+                  <div className="p-3">
                     <label className="block text-xs font-semibold text-gray-700 mb-1">
                       CHECKOUT
                     </label>
-                    <div className="text-sm">{checkOutDate}</div>
-                  </div>
-                </div>
-
-                {/* Date Picker Dropdown */}
-                {showDatePicker && (
-                  <div
-                    ref={datePickerRef}
-                    className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
-                    onClick={() => setShowDatePicker(false)}
-                  >
                     <div
-                      className="bg-white rounded-xl shadow-xl p-6 max-w-md w-full mx-4"
-                      onClick={(e) => e.stopPropagation()}
+                      className="w-full text-sm p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer date-field"
+                      onClick={() => handleDateFieldClick("checkout")}
                     >
-                      <div className="flex justify-between items-center mb-6">
-                        <h3 className="font-bold text-xl text-gray-900">
-                          Select Dates
-                        </h3>
-                        <button
-                          onClick={() => setShowDatePicker(false)}
-                          className="text-gray-500 hover:text-gray-700 rounded-full p-1 hover:bg-gray-100"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={1.5}
-                            stroke="currentColor"
-                            className="w-6 h-6"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M6 18L18 6M6 6l12 12"
-                            />
-                          </svg>
-                        </button>
-                      </div>
-
-                      <div className="space-y-6">
-                        <div>
-                          <h4 className="font-medium mb-3 text-gray-800">
-                            Check-in Date
-                          </h4>
-                          <div className="grid grid-cols-3 gap-2">
-                            {generateDateOptions()
-                              .slice(0, 6)
-                              .map((date) => (
-                                <button
-                                  key={`checkin-${date}`}
-                                  onClick={() =>
-                                    handleDateSelect("checkin", date)
-                                  }
-                                  className={`p-3 border rounded-lg text-sm transition-colors ${
-                                    checkInDate === date
-                                      ? "bg-emerald-100 border-emerald-500 text-emerald-700 font-medium"
-                                      : "border-gray-300 hover:border-emerald-300 hover:bg-emerald-50"
-                                  }`}
-                                >
-                                  {date}
-                                </button>
-                              ))}
-                          </div>
-                        </div>
-
-                        <div>
-                          <h4 className="font-medium mb-3 text-gray-800">
-                            Check-out Date
-                          </h4>
-                          <div className="grid grid-cols-3 gap-2">
-                            {generateDateOptions(new Date(checkInDate))
-                              .slice(1, 7)
-                              .map((date) => (
-                                <button
-                                  key={`checkout-${date}`}
-                                  onClick={() =>
-                                    handleDateSelect("checkout", date)
-                                  }
-                                  className={`p-3 border rounded-lg text-sm transition-colors ${
-                                    checkOutDate === date
-                                      ? "bg-emerald-100 border-emerald-500 text-emerald-700 font-medium"
-                                      : "border-gray-300 hover:border-emerald-300 hover:bg-emerald-50"
-                                  }`}
-                                >
-                                  {date}
-                                </button>
-                              ))}
-                          </div>
-                        </div>
-                      </div>
-
-                      <button
-                        className="mt-6 w-full bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors"
-                        onClick={() => setShowDatePicker(false)}
-                      >
-                        Apply Dates
-                      </button>
+                      {checkOutDate.toLocaleDateString("en-US", {
+                        month: "2-digit",
+                        day: "2-digit",
+                        year: "numeric",
+                      })}
                     </div>
                   </div>
-                )}
+                </div>
 
                 <div
                   className="border-t border-gray-300 p-3 cursor-pointer hover:bg-gray-50 relative"
@@ -949,6 +851,48 @@ function HotelDetail() {
                   </div>
                 </div>
               </div>
+
+              {/* Floating Date Picker */}
+              {showDatePicker && (
+                <div
+                  ref={datePickerRef}
+                  className="absolute z-50 bg-white border border-gray-200 rounded-lg shadow-lg p-4"
+                  style={{
+                    top: activeDateField === "checkin" ? "180px" : "180px",
+                    left: activeDateField === "checkin" ? "20px" : "50%",
+                    transform:
+                      activeDateField === "checkin"
+                        ? "none"
+                        : "translateX(-50%)",
+                    width: "300px",
+                  }}
+                >
+                  <DatePicker
+                    inline
+                    selected={
+                      activeDateField === "checkin" ? checkInDate : checkOutDate
+                    }
+                    onChange={handleDateChange}
+                    minDate={
+                      activeDateField === "checkin"
+                        ? new Date()
+                        : new Date(checkInDate.getTime() + 86400000)
+                    }
+                    calendarClassName="w-full"
+                    monthsShown={1}
+                    showDisabledMonthNavigation
+                    shouldCloseOnSelect={false}
+                    highlightDates={[
+                      {
+                        "react-datepicker__day--highlighted-custom-1":
+                          activeDateField === "checkin"
+                            ? [checkInDate]
+                            : [checkOutDate],
+                      },
+                    ]}
+                  />
+                </div>
+              )}
 
               {/* Guest Dropdown - Moved outside the booking form for better positioning */}
               {showGuestDropdown && (

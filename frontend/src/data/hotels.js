@@ -111,9 +111,7 @@ export const allHotels = [
         description: "Comfortable room with all basic amenities",
         priceMultiplier: 1.0,
         img: [
-          "https://www.kanhanationalparkonline.in/uploads/tuli4.jpg",
-          "https://www.kanhanationalparkonline.in/uploads/tulibed.jpg",
-          "https://www.kanhanationalparkonline.in/uploads/tuli5.jpg"
+          "https://i.travelapi.com/lodging/12000000/11070000/11067400/11067352/f8fc9cb9_z.jpg"
         ]
       },
       deluxe: {
@@ -121,9 +119,7 @@ export const allHotels = [
         description: "Spacious room with premium furnishings and forest view",
         priceMultiplier: 1.3,
         img: [
-          "https://www.kanhanationalparkonline.in/uploads/tulibed.jpg",
-          "https://www.kanhanationalparkonline.in/uploads/tuli5.jpg",
-          "https://www.kanhanationalparkonline.in/uploads/tulitiger.jpg"
+          "https://r1imghtlak.mmtcdn.com/9d3a6e524bc211ee955e0a58a9feac02.jpg"
         ]
       },
       suite: {
@@ -131,9 +127,7 @@ export const allHotels = [
         description: "Luxurious suite with separate living area and panoramic views",
         priceMultiplier: 1.8,
         img: [
-          "https://www.kanhanationalparkonline.in/uploads/tulitiger.jpg",
-          "https://www.kanhanationalparkonline.in/uploads/tuli3.jpg",
-          "https://www.kanhanationalparkonline.in/uploads/tuli4.jpg"
+          "https://r1imghtlak.mmtcdn.com/cb19818088f211e785a60a4cef95d023.jpg"
         ]
       }
     },
@@ -200,9 +194,7 @@ export const allHotels = [
         description: "Comfortable room with all basic amenities",
         priceMultiplier: 1.0,
         img: [
-          "https://r1imghtlak.mmtcdn.com/fd47999880e111e889570a664b86a0a6.jpg",
-          "https://r1imghtlak.mmtcdn.com/fcfeb7fa80e111e8ba080ad03efb9e28.jpg",
-          "https://r1imghtlak.mmtcdn.com/1000cb58926211e4b5ab32e76f7e45c9.jfif"
+          "https://r1imghtlak.mmtcdn.com/2da79b38-ce0d-47a7-9f09-3b521e9ac0c0.jpg"
         ]
       },
       deluxe: {
@@ -210,9 +202,7 @@ export const allHotels = [
         description: "Spacious room with premium furnishings and forest view",
         priceMultiplier: 1.3,
         img: [
-          "https://r1imghtlak.mmtcdn.com/a0bb14f878be11ea84a40242ac110003.jpg",
-          "https://r1imghtlak.mmtcdn.com/ee88199c78be11eaaebe0242ac110003.jpg",
-          "https://r1imghtlak.mmtcdn.com/97647152-a409-40d7-81d5-dff5ac16bf28.jpg"
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/201201131102236695-a4098397-7f41-4a59-9e25-97955f0daf82.jpg"
         ]
       },
       suite: {
@@ -220,9 +210,8 @@ export const allHotels = [
         description: "Luxurious suite with separate living area and panoramic views",
         priceMultiplier: 1.8,
         img: [
-          "https://r1imghtlak.mmtcdn.com/038314b880e211e89beb0ad03efb9e28.jpg",
-          "https://r1imghtlak.mmtcdn.com/cccbbebc78be11eaa0200242ac110002.jpg",
-          "https://r1imghtlak.mmtcdn.com/9f0bdbd2926011e4aff2daf4768ad8d9.jfif"
+          "https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/room-imgs/201201131102236695-4556368-e98006a02f6711ed8b030a58a9feac02.jpg"
+
         ]
       }
     },
@@ -297,9 +286,7 @@ export const allHotels = [
         description: "Comfortable room with all basic amenities",
         priceMultiplier: 1.0,
         img: [
-          "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort.jpeg",
-          "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort5.jpeg",
-          "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort4.jpeg"
+          "https://r1imghtlak.mmtcdn.com/387f943e001e11ec94e00a58a9feac02.jpeg"
         ]
       },
       deluxe: {
@@ -307,9 +294,7 @@ export const allHotels = [
         description: "Spacious room with premium furnishings and forest view",
         priceMultiplier: 1.3,
         img: [
-          "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort2.jpeg",
-          "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort3.jpeg",
-          "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort1.jpeg"
+          "https://r1imghtlak.mmtcdn.com/faf36cc8dc7c11ea81b20242ac110006.jpg"
         ]
       },
       suite: {
@@ -317,9 +302,8 @@ export const allHotels = [
         description: "Luxurious suite with separate living area and panoramic views",
         priceMultiplier: 1.8,
         img: [
-          "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort1.jpeg",
-          "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort2.jpeg",
-          "https://www.kanhanationalparkonline.in/uploads/0000/25/2022/03/23/kusumresort3.jpeg"
+          "https://r1imghtlak.mmtcdn.com/faf36cc8dc7c11ea81b20242ac110006.jpg"
+        
         ]
       }
     },
@@ -389,9 +373,7 @@ export const allHotels = [
         description: "Comfortable room with all basic amenities",
         priceMultiplier: 1.0,
         img: [
-          "https://r1imghtlak.mmtcdn.com/850390866ed111e78bf60a4cef95d023.jpg",
-          "https://r1imghtlak.mmtcdn.com/faf996e8260411ec8bc10a58a9feac02.jpeg",
-          "https://r1imghtlak.mmtcdn.com/4a4ba602480b11e5aef65ee5da2daa2a.jfif"
+          ""
         ]
       },
       deluxe: {
@@ -399,9 +381,7 @@ export const allHotels = [
         description: "Spacious room with premium furnishings and forest view",
         priceMultiplier: 1.3,
         img: [
-          "https://r1imghtlak.mmtcdn.com/6f0b0b8c6ed211e78f69025f77df004f.jpg",
-          "https://r1imghtlak.mmtcdn.com/6451ac18260311ec85c20a58a9feac02.jpeg",
-          "https://r1imghtlak.mmtcdn.com/850390866ed111e78bf60a4cef95d023.jpg"
+          ""
         ]
       },
       suite: {
@@ -409,9 +389,7 @@ export const allHotels = [
         description: "Luxurious suite with separate living area and panoramic views",
         priceMultiplier: 1.8,
         img: [
-          "https://r1imghtlak.mmtcdn.com/6451ac18260311ec85c20a58a9feac02.jpeg",
-          "https://r1imghtlak.mmtcdn.com/4a4ba602480b11e5aef65ee5da2daa2a.jfif",
-          "https://r1imghtlak.mmtcdn.com/6f0b0b8c6ed211e78f69025f77df004f.jpg"
+          ""
         ]
       }
     },
