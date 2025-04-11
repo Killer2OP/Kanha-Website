@@ -12,7 +12,6 @@ import {
 import { useMediaQuery } from "react-responsive";
 import { Link, useLocation } from "react-router-dom";
 
-
 function Header() {
   const navItems = [
     { name: "Home", icon: Home, path: "/" },
@@ -44,19 +43,21 @@ function Header() {
       setPrevScrollPos(currentScrollPos);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos]);
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center bg-black/30 justify-between px-8 py-1 backdrop-blur-sm transition-transform duration-300 ${
-        isVisible ? 'translate-y-0' : '-translate-y-full'
-      }`}>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center bg-black/30 justify-between px-8 py-1 backdrop-blur-sm transition-transform duration-300 ${
+          isVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
         <div className="flex items-center max-h-16">
           <Link to="/">
             <img
-              src="/assets/logo.jpg"
+              src="https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/logo.png.jpeg"
               alt="Kanha Logo"
               className={" h-16 xl:h-14 w-auto cursor-pointer object-cover"}
             />

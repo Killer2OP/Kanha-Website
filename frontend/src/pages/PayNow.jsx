@@ -22,7 +22,7 @@ function PayNow() {
     // Format the UPI payment string with amount parameter to ensure it shows on scanning
     if (formData.amount) {
       setIsQrLoading(true);
-      const upiPaymentString = `upi://pay?pa=yourUPI@ybl&pn=KanhaWildlife&am=${
+      const upiPaymentString = `upi://pay?pa=sachita.ppatel-1@oksbi&pn=KanhaWildlife&am=${
         formData.amount
       }&cu=INR&tn=${encodeURIComponent(
         `Payment for ${formData.paymentFor || "Services"}`

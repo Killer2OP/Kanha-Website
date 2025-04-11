@@ -25,42 +25,42 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-        const response = await fetch('http://localhost:5000/api/enquiries', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                name: formData.name,
-                email: formData.email,
-                subject: formData.subject,
-                message: formData.message
-            }),
-        });
+      const response = await fetch("http://localhost:5000/api/enquiries", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
 
-        if (response.ok) {
-            setSubmitStatus('success');
-            setFormData({
-                name: '',
-                email: '',
-                message: '',
-                subject: 'General Enquiry'
-            });
-            setTimeout(() => {
-                setSubmitStatus(null);
-            }, 3000);
-        } else {
-            const errorData = await response.json();
-            console.error('Submission error:', errorData);
-            setSubmitStatus('error');
-        }
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+          subject: "General Enquiry",
+        });
+        setTimeout(() => {
+          setSubmitStatus(null);
+        }, 3000);
+      } else {
+        const errorData = await response.json();
+        console.error("Submission error:", errorData);
+        setSubmitStatus("error");
+      }
     } catch (error) {
-        console.error('Submission error:', error);
-        setSubmitStatus('error');
+      console.error("Submission error:", error);
+      setSubmitStatus("error");
     } finally {
-        setIsSubmitting(false);
+      setIsSubmitting(false);
     }
-};
+  };
 
   return (
     <>
@@ -106,20 +106,32 @@ const ContactForm = () => {
               required
               className="w-full p-3 border border-white/30 bg-transparent text-white rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 placeholder-gray-400"
             />
-             <select
+            <select
               name="subject"
               value={formData.subject}
               onChange={handleChange}
               required
               className="w-full p-3 border border-white/30 bg-transparent text-white rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 appearance-none cursor-pointer"
-              style={{ WebkitAppearance: 'none', MozAppearance: 'none' }}
+              style={{ WebkitAppearance: "none", MozAppearance: "none" }}
             >
-              <option value="General Enquiry" className="bg-green-900">General Enquiry</option>
-              <option value="Safari Booking" className="bg-green-900">Safari Booking</option>
-              <option value="Hotel Booking" className="bg-green-900">Hotel Booking</option>
-              <option value="Package Information" className="bg-green-900">Package Information</option>
-              <option value="Feedback" className="bg-green-900">Feedback</option>
-              <option value="Other" className="bg-green-900">Other</option>
+              <option value="General Enquiry" className="bg-green-900">
+                General Enquiry
+              </option>
+              <option value="Safari Booking" className="bg-green-900">
+                Safari Booking
+              </option>
+              <option value="Hotel Booking" className="bg-green-900">
+                Hotel Booking
+              </option>
+              <option value="Package Information" className="bg-green-900">
+                Package Information
+              </option>
+              <option value="Feedback" className="bg-green-900">
+                Feedback
+              </option>
+              <option value="Other" className="bg-green-900">
+                Other
+              </option>
             </select>
 
             <textarea
@@ -131,20 +143,24 @@ const ContactForm = () => {
               className="w-full p-3 border border-white/30 bg-transparent text-white rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 placeholder-gray-400"
               rows="4"
             ></textarea>
-            
-            <button 
+
+            <button
               type="submit"
               disabled={isSubmitting}
               className="bg-green-600 text-white py-3 px-6 rounded-md w-full text-lg font-semibold shadow-md hover:bg-green-700 transition duration-300 disabled:opacity-50"
             >
-              {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
+              {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
             </button>
 
-            {submitStatus === 'success' && (
-              <p className="text-green-400 text-center">Message sent successfully!</p>
+            {submitStatus === "success" && (
+              <p className="text-green-400 text-center">
+                Message sent successfully!
+              </p>
             )}
-            {submitStatus === 'error' && (
-              <p className="text-red-400 text-center">Failed to send message. Please try again.</p>
+            {submitStatus === "error" && (
+              <p className="text-red-400 text-center">
+                Failed to send message. Please try again.
+              </p>
             )}
           </form>
         </div>
@@ -152,11 +168,11 @@ const ContactForm = () => {
         {/* Info Card */}
         <div className="relative w-full sm:w-3/4 md:w-1/2 flex justify-center my-4 md:mt-10">
           <div className="relative bg-green-950/20 text-white p-5 rounded-lg w-full md:w-3/4 shadow-xl backdrop-blur-sm">
-            <h3 className="text-xl font-bold mb-2">Kanha National Park</h3>
+            <h3 className="text-xl font-bold mb-2">MP JUNGLE SAFARI</h3>
             <p className="text-lg">
-              Tel: <span className="font-semibold">+91-8287522404</span>
+              Tel: <span className="font-semibold">+91-8305040485</span>
             </p>
-            <p className="text-lg">
+            {/* <p className="text-lg">
               Email:{" "}
               <a
                 href="mailto:contact@kanhanationalparkonline.in"
@@ -168,7 +184,7 @@ const ContactForm = () => {
             <p className="text-lg">
               District Centre, Laxmi Deep Building, 314, Laxmi Nagar, New Delhi,
               Delhi 110092, India
-            </p>
+            </p> */}
 
             {/* Google Map Card */}
             <div className="mt-4 bg-green-950/30 text-white p-3 rounded-lg w-full shadow-lg backdrop-blur-sm">
@@ -185,7 +201,7 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
-    <Footer/>
+      <Footer />
     </>
   );
 };
