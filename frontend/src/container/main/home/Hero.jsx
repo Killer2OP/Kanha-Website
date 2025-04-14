@@ -4,7 +4,8 @@ import Header from "../../../components/Header";
 
 const LOGO_PATH =
   "https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/Jungle1.webp";
-const VIDEO_PATH = "https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/KanhaBg.mp4";
+const VIDEO_PATH =
+  "https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/KanhaBg.mp4";
 
 function App() {
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 768);
@@ -17,15 +18,15 @@ function App() {
   useEffect(() => {
     if (videoRef.current) {
       const video = videoRef.current;
-      
+
       // Set video attributes
       video.src = VIDEO_PATH;
       video.preload = "auto";
-      
+
       // Event listeners for video
       const handleCanPlay = () => {
         setVideoLoaded(true);
-        video.play().catch(error => {
+        video.play().catch((error) => {
           console.error("Video autoplay failed:", error);
         });
       };
@@ -35,15 +36,15 @@ function App() {
         setVideoLoaded(false);
       };
 
-      video.addEventListener('canplay', handleCanPlay);
-      video.addEventListener('error', handleError);
+      video.addEventListener("canplay", handleCanPlay);
+      video.addEventListener("error", handleError);
 
       // Load video
       video.load();
 
       return () => {
-        video.removeEventListener('canplay', handleCanPlay);
-        video.removeEventListener('error', handleError);
+        video.removeEventListener("canplay", handleCanPlay);
+        video.removeEventListener("error", handleError);
       };
     }
   }, []);
@@ -73,7 +74,7 @@ function App() {
   }
 
   return (
-    <div className="relative w-full md:h-screen h-[75vh] overflow-hidden flex flex-col">
+    <div className="relative w-full md:h-screen h-[70vh] overflow-hidden flex flex-col">
       {/* Background Video Container */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <video
@@ -83,15 +84,19 @@ function App() {
           playsInline
           muted
           className={`absolute inset-0 object-cover ${
-            isLargeScreen ? "w-[105%] h-[105%]" : "w-full h-[100vh]"
-          } ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
-          style={{ transition: 'opacity 0.5s ease-in-out' }}
+            isLargeScreen ? "w-[105%] h-[105%]" : "w-full h-[70vh]"
+          } ${videoLoaded ? "opacity-100" : "opacity-0"}`}
+          style={{ transition: "opacity 0.5s ease-in-out" }}
         >
           <source src={VIDEO_PATH} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         {/* Fallback background color while video loads */}
-        <div className={`absolute inset-0 bg-black transition-opacity duration-500 ${videoLoaded ? 'opacity-0' : 'opacity-100'}`} />
+        <div
+          className={`absolute inset-0 bg-black transition-opacity duration-500 ${
+            videoLoaded ? "opacity-0" : "opacity-100"
+          }`}
+        />
         <div className="absolute inset-0 bg-black/60 sm:bg-black/50 md:bg-black/40" />
       </div>
 
@@ -108,7 +113,7 @@ function App() {
           fetchpriority="high"
           decoding="async"
           loading="eager"
-          className="w-68 sm:w-74 md:w-90 lg:w-96 xl:w-[850px] mx-auto object-contain"
+          className="w-70 sm:w-74 md:w-90 lg:w-96 xl:w-[850px] mx-auto object-contain"
           style={{
             contentVisibility: "auto",
             contain: "paint",
@@ -128,4 +133,3 @@ function App() {
 }
 
 export default App;
-
