@@ -103,7 +103,7 @@ function App() {
       };
       
       // Send data to backend
-      const response = await axios.post('http://localhost:7000/api/safari-bookings', bookingData);
+      const response = await axios.post('http://localhost:5000/api/safari-bookings', bookingData);
       
       console.log("Booking successful:", response.data);
       setBookingStatus({ 
@@ -166,7 +166,7 @@ function App() {
   return (
     <div className="flex flex-col lg:flex-row gap-4">
       {/* Tariff Details Section - unchanged */}
-      <div className="flex-[1.5] min-h-[480px] max-h-[450px] md:max-h-[450px] lg:max-h-[790px]  
+      <div className="flex-[1.5] min-h-[400px] max-h-[420px] md:max-h-[450px] lg:max-h-[790px]  
                 bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-4 text-white 
                 overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full
                 [&::-webkit-scrollbar-track]:bg-green-100 [&::-webkit-scrollbar-thumb]:rounded-full

@@ -48,7 +48,7 @@
 
 /* Make weekday headers larger and styled */
 .safari-calendar .react-calendar__month-view__weekdays {
-  font-size: 0.9rem !important;
+  font-size: 0.7rem !important;
   font-weight: bold !important;
   text-transform: uppercase !important;
   color: #10b981 !important; /* emerald-500 */
