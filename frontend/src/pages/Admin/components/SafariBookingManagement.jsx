@@ -4,7 +4,7 @@ import axios from "axios";
 import { exportToCSV } from '../../../utils/exportToCSV';
 
 // Configure axios with the backend URL
-axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.baseURL = 'http://localhost:7000';
 
 function SafariBookingManagement() {
   const [bookings, setBookings] = useState([]);

@@ -6,9 +6,9 @@ const Footer = () => {
     const bgImage = "url('https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/Footer.jpg')";
 
     const data1 = {
-        link : "https://www.kanhanationalparkonline.in/uploads/0000/1/2022/03/29/kanha-new-logo.png",
+        link : "https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/logo.png",
         alt : "Kanha Logo",
-        text : "Note: This is a Registered Private Travel Agency under \"GTI TRAVELS PRIVATE LIMITED\" which organizes Kanha Tour Packages & Jeep Safari Packages.",
+        text : "Note: This is a Registered Private Travel Agency under \"MP JUNGLE SAFARI\" which organizes Wildlife Tour Packages & Jeep Safari Packages across Madhya Pradesh.",
     }
 
     const information = [

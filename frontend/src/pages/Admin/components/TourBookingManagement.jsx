@@ -18,7 +18,7 @@ function TourBookingManagement() {
     const fetchBookings = async () => {
         try {
             setLoading(true);
-            const response = await fetch('http://localhost:5000/api/tour-bookings');
+            const response = await fetch('http://localhost:7000/api/tour-bookings');
             if (!response.ok) {
                 throw new Error('Failed to fetch bookings');
             }
@@ -36,7 +36,7 @@ function TourBookingManagement() {
     // Update the handleStatusChange function to use _id
     const handleStatusChange = async (id, newStatus) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/tour-bookings/${id}/status`, {
+            const response = await fetch(`http://localhost:7000/api/tour-bookings/${id}/status`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -71,7 +71,7 @@ function TourBookingManagement() {
 
     const handleSendConfirmation = async (booking) => {
         try {
-            const response = await fetch('http://localhost:5000/api/send-email', {
+            const response = await fetch('http://localhost:7000/api/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

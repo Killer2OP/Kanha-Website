@@ -57,9 +57,9 @@ function Header() {
         <div className="flex items-center max-h-16">
           <Link to="/">
             <img
-              src="https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/logo.png.jpeg"
+              src="https://sin1.contabostorage.com/d1fa3867924f4c149226431ef8cbe8ee:kanha/logo.png"
               alt="Kanha Logo"
-              className={" h-16 xl:h-14 w-auto cursor-pointer object-cover"}
+              className={" h-10 md:h-12 xl:h-14 w-auto cursor-pointer object-cover"}
             />
           </Link>
         </div>

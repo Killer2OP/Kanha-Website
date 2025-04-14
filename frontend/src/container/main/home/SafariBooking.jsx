@@ -103,7 +103,7 @@ function App() {
       };
       
       // Send data to backend
-      const response = await axios.post('http://localhost:5000/api/safari-bookings', bookingData);
+      const response = await axios.post('http://localhost:7000/api/safari-bookings', bookingData);
       
       console.log("Booking successful:", response.data);
       setBookingStatus({ 

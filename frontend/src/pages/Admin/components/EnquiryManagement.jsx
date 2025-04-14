@@ -34,7 +34,7 @@ function EnquiryManagement() {
 
   const handleStatusChange = async (id, newStatus) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/enquiries/${id}/status`, {
+      const response = await fetch(`http://localhost:7000/api/enquiries/${id}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ function EnquiryManagement() {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/enquiries/${selectedEnquiry.enquiryId}/reply`, {
+      const response = await fetch(`http://localhost:7000/api/enquiries/${selectedEnquiry.enquiryId}/reply`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -101,7 +101,7 @@ function EnquiryManagement() {
 
   const fetchEnquiries = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/enquiries');
+      const response = await fetch('http://localhost:7000/api/enquiries');
       if (response.ok) {
         const data = await response.json();
         // Format dates consistently

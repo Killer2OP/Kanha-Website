@@ -20,7 +20,7 @@ function BookingManagement() {
   const fetchBookings = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/hotel-bookings');
+      const response = await fetch('http://localhost:7000/api/hotel-bookings');
       if (!response.ok) {
         throw new Error('Failed to fetch bookings');
       }
@@ -55,7 +55,7 @@ function BookingManagement() {
   const handleStatusChange = async (id, newStatus) => {
     try {
       // Updated endpoint to match the backend route
-      const response = await fetch(`http://localhost:5000/api/hotel-bookings/${id}/status`, {
+      const response = await fetch(`http://localhost:7000/api/hotel-bookings/${id}/status`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -109,7 +109,7 @@ function BookingManagement() {
         year: 'numeric', month: 'long', day: 'numeric'
       });
 
-      const response = await fetch('http://localhost:5000/api/send-email', {
+      const response = await fetch('http://localhost:7000/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -25,7 +25,7 @@ function TourDetail() {
     const handleBookingSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5000/api/tour-bookings', {
+            const response = await fetch('http://localhost:7000/api/tour-bookings', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

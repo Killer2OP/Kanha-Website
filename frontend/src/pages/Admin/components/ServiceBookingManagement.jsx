@@ -21,7 +21,7 @@ function ServiceBookingManagement() {
   const fetchBookings = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/bookings');
+      const response = await axios.get('http://localhost:7000/api/bookings');
       if (response.data) {
         setBookings(response.data);
         setError(null);
@@ -65,7 +65,7 @@ function ServiceBookingManagement() {
       
       console.log(`Updating booking ${id} to status: ${newStatus}`);
       
-      const response = await axios.patch(`http://localhost:5000/api/bookings/${id}/status`, {
+      const response = await axios.patch(`http://localhost:7000/api/bookings/${id}/status`, {
         status: newStatus
       });
   

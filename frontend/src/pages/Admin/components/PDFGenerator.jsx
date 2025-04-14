@@ -142,7 +142,7 @@ function PDFGenerator() {
       formData.append('customerName', bookingDetails.customerName);
       formData.append('bookingType', selectedTemplate);
   
-      const response = await fetch('http://localhost:5000/api/send-ticket', {
+      const response = await fetch('http://localhost:7000/api/send-ticket', {
         method: 'POST',
         body: formData,
       });

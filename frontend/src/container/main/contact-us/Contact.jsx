@@ -25,7 +25,7 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/enquiries", {
+      const response = await fetch("http://localhost:7000/api/enquiries", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
