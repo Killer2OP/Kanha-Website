@@ -40,7 +40,7 @@ function AdminDashboard() {
     const fetchDashboardStats = async () => {
       try {
         const response = await fetch(
-          "http://localhost:7000/api/admin/dashboard-stats"
+          "http://localhost:5000/api/admin/dashboard-stats"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch dashboard stats");

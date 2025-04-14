@@ -234,16 +234,35 @@ const HotelBooking = () => {
             
             {/* 5-Star Hotels Section */}
             <p className="text-[24px] font-semibold text-emerald-300 mb-8">
-                {" "}
-                <span className="text-amber-400"> 5-Star </span> Luxury
-                Accommodations
+                <span className="text-amber-400">5-Star</span> Luxury Accommodations
             </p>
 
             <div className="grid md:grid-cols-3 gap-6">
                 {fiveStarHotels.length > 0 ? (
-                    fiveStarHotels.slice(0, 3).map((hotel) => (
-                        <HotelCard key={hotel.id} hotel={hotel} defaultStars={5} />
-                    ))
+                    <>
+                        {/* Show only first hotel on mobile, all three on desktop */}
+                        <HotelCard 
+                            key={fiveStarHotels[0].id} 
+                            hotel={fiveStarHotels[0]} 
+                            defaultStars={5} 
+                        />
+                        {fiveStarHotels.slice(1, 3).map((hotel) => (
+                            <div key={hotel.id} className="hidden md:block">
+                                <HotelCard hotel={hotel} defaultStars={5} />
+                            </div>
+                        ))}
+                        {/* View More button on mobile if there are more hotels */}
+                        {fiveStarHotels.length > 1 && (
+                            <div className="md:hidden mt-4">
+                                <Link
+                                    to="/hotels-resorts?category=5-star"
+                                    className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300"
+                                >
+                                    View More Luxury Hotels
+                                </Link>
+                            </div>
+                        )}
+                    </>
                 ) : (
                     <div className="col-span-3 text-center py-8 text-gray-300">
                         No luxury accommodations found for {selectedPark}
@@ -254,15 +273,33 @@ const HotelBooking = () => {
             {/* 4-Star Hotels Section */}
             <div className="mt-10">
                 <p className="text-[24px] font-semibold text-emerald-300 mb-6">
-                    {" "}
-                    <span className="text-amber-400"> 4-Star </span> Comfortable Stays
+                    <span className="text-amber-400">4-Star</span> Comfortable Stays
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-6">
                     {fourStarHotels.length > 0 ? (
-                        fourStarHotels.slice(0, 3).map((hotel) => (
-                            <HotelCard key={hotel.id} hotel={hotel} defaultStars={4} />
-                        ))
+                        <>
+                            <HotelCard 
+                                key={fourStarHotels[0].id} 
+                                hotel={fourStarHotels[0]} 
+                                defaultStars={4} 
+                            />
+                            {fourStarHotels.slice(1, 3).map((hotel) => (
+                                <div key={hotel.id} className="hidden md:block">
+                                    <HotelCard hotel={hotel} defaultStars={4} />
+                                </div>
+                            ))}
+                            {fourStarHotels.length > 1 && (
+                                <div className="md:hidden mt-4">
+                                    <Link
+                                        to="/hotels-resorts?category=4-star"
+                                        className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300"
+                                    >
+                                        View More Comfortable Stays
+                                    </Link>
+                                </div>
+                            )}
+                        </>
                     ) : (
                         <div className="col-span-3 text-center py-8 text-gray-300">
                             No 4-star accommodations found for {selectedPark}
@@ -274,15 +311,33 @@ const HotelBooking = () => {
             {/* 3-Star Hotels Section */}
             <div className="mt-10">
                 <p className="text-[24px] font-semibold text-emerald-300 mb-6">
-                    <span className="text-amber-400"> 3-Star </span> Budget-Friendly
-                    Options
+                    <span className="text-amber-400">3-Star</span> Budget-Friendly Options
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-6">
                     {threeStarHotels.length > 0 ? (
-                        threeStarHotels.slice(0, 3).map((hotel) => (
-                            <HotelCard key={hotel.id} hotel={hotel} defaultStars={3} />
-                        ))
+                        <>
+                            <HotelCard 
+                                key={threeStarHotels[0].id} 
+                                hotel={threeStarHotels[0]} 
+                                defaultStars={3} 
+                            />
+                            {threeStarHotels.slice(1, 3).map((hotel) => (
+                                <div key={hotel.id} className="hidden md:block">
+                                    <HotelCard hotel={hotel} defaultStars={3} />
+                                </div>
+                            ))}
+                            {threeStarHotels.length > 1 && (
+                                <div className="md:hidden mt-4">
+                                    <Link
+                                        to="/hotels-resorts?category=3-star"
+                                        className="block text-center py-2 px-4 bg-emerald-600/80 hover:bg-emerald-600 text-white rounded-lg transition-colors duration-300"
+                                    >
+                                        View More Budget-Friendly Options
+                                    </Link>
+                                </div>
+                            )}
+                        </>
                     ) : (
                         <div className="col-span-3 text-center py-8 text-gray-300">
                             No budget-friendly options found for {selectedPark}

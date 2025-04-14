@@ -230,7 +230,7 @@ function HotelDetail() {
         createdAt: new Date().toISOString(),
       };
 
-      const response = await fetch("http://localhost:7000/api/hotel-bookings", {
+      const response = await fetch("http://localhost:5000/api/hotel-bookings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
