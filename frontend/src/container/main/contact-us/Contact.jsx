@@ -180,17 +180,16 @@ const ContactForm = () => {
               >
                 contact@kanhanationalparkonline.in
               </a>
-            </p>
-            <p className="text-lg">
-              District Centre, Laxmi Deep Building, 314, Laxmi Nagar, New Delhi,
-              Delhi 110092, India
             </p> */}
+            <p className="text-lg">
+              Jabalpur, Madhya Pradesh, India
+            </p>
 
             {/* Google Map Card */}
             <div className="mt-4 bg-green-950/30 text-white p-3 rounded-lg w-full shadow-lg backdrop-blur-sm">
               <h3 className="text-xl font-bold mb-3">Find Us on Google Maps</h3>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d291442.1774200785!2d80.2756455541871!3d22.223956940137473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a2a085bc4dd23f3%3A0x59131aabc7236a4c!2sKanha%20Tiger%20Reserve!5e0!3m2!1sen!2sin!4v1743424867980!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117714.50351171073!2d79.86648765!3d23.181466499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981ae1a0fb6a97d%3A0x44020616bc43e3b9!2sJabalpur%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1703424867980!5m2!1sen!2sin"
                 className="w-full h-46 sm:h-54 md:h-62 lg:h-70 rounded-md shadow-md"
                 style={{ border: 0 }}
                 allowFullScreen
