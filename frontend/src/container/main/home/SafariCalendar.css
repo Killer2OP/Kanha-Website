@@ -1,8 +1,16 @@
-/* Safari Calendar Custom Styling */
+/* Add these new styles at the top of your file */
+.safari-booking-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Update your existing styles */
 .safari-calendar-container {
   width: 100%;
   max-width: 100%;
   padding: 0;
+  height: auto;
 }
 
 .safari-calendar {
@@ -12,6 +20,7 @@
   border: none !important;
   font-family: inherit !important;
   line-height: 1.5 !important;
+  height: auto !important;
 }
 
 /* Fix for broken layout */
@@ -113,6 +122,19 @@
 /* Fix for neighbor month days */
 .safari-calendar .react-calendar__month-view__days__day--neighboringMonth {
   opacity: 0.5 !important;
+}
+
+/* Add these new styles for better mobile handling */
+@media (max-width: 768px) {
+  .safari-calendar-container {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    max-height: calc(100vh - 200px);
+  }
+
+  .safari-calendar {
+    min-height: 450px;
+  }
 }
 
 /* Responsive adjustments */

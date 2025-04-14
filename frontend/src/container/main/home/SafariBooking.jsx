@@ -11,7 +11,10 @@ function App() {
   const [date, setDate] = useState(new Date());
   const [isFlipped, setIsFlipped] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [bookingStatus, setBookingStatus] = useState({ success: false, message: "" });
+  const [bookingStatus, setBookingStatus] = useState({
+    success: false,
+    message: "",
+  });
 
   const [formData, setFormData] = useState({
     name: "",
@@ -89,7 +92,7 @@ function App() {
     e.preventDefault();
     setLoading(true);
     setBookingStatus({ success: false, message: "" });
-    
+
     try {
       // Prepare booking data
       const bookingData = {
@@ -97,23 +100,27 @@ function App() {
         formattedDate: date instanceof Date ? format(date, "dd MMMM yyyy") : "",
         time: formData.safariType ? safariTypes[formData.safariType].time : "",
         parkName: parks[formData.park].name,
-        safariTypeName: formData.safariType ? safariTypes[formData.safariType].title : "",
+        safariTypeName: formData.safariType
+          ? safariTypes[formData.safariType].title
+          : "",
         totalAmount: getPrice(),
         ...formData,
       };
-      
+
       // Send data to backend
-      const response = await axios.post('http://localhost:5000/api/safari-bookings', bookingData);
-      
-      console.log("Booking successful:", response.data);
-      setBookingStatus({ 
-        success: true, 
-        message: "Your safari booking has been confirmed! Check your email for details." 
-      });
-      alert(
-        "Booking confirmed! We will contact you soon for confirmation."
+      const response = await axios.post(
+        "http://localhost:5000/api/safari-bookings",
+        bookingData
       );
-      
+
+      console.log("Booking successful:", response.data);
+      setBookingStatus({
+        success: true,
+        message:
+          "Your safari booking has been confirmed! Check your email for details.",
+      });
+      alert("Booking confirmed! We will contact you soon for confirmation.");
+
       // Reset form after successful submission
       setFormData({
         name: "",
@@ -125,12 +132,13 @@ function App() {
         park: "kanha",
       });
       setIsFlipped(false);
-      
     } catch (error) {
       console.error("Booking error:", error);
-      setBookingStatus({ 
-        success: false, 
-        message: error.response?.data?.message || "Failed to book safari. Please try again." 
+      setBookingStatus({
+        success: false,
+        message:
+          error.response?.data?.message ||
+          "Failed to book safari. Please try again.",
       });
     } finally {
       setLoading(false);
@@ -166,11 +174,13 @@ function App() {
   return (
     <div className="flex flex-col lg:flex-row gap-4">
       {/* Tariff Details Section - unchanged */}
-      <div className="flex-[1.5] min-h-[400px] max-h-[420px] md:max-h-[450px] lg:max-h-[790px]  
+      <div
+        className="flex-[1.5] min-h-[400px] max-h-[420px] md:max-h-[450px] lg:max-h-[790px]  
                 bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-4 text-white 
                 overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full
                 [&::-webkit-scrollbar-track]:bg-green-100 [&::-webkit-scrollbar-thumb]:rounded-full
-                [&::-webkit-scrollbar-thumb]:bg-emerald-300">
+                [&::-webkit-scrollbar-thumb]:bg-emerald-300"
+      >
         <h2 className="text-2xl font-bold mb-4">National Park Safari Tariff</h2>
 
         {/* Park Selection Tabs - Enhanced with better styling */}
@@ -203,41 +213,6 @@ function App() {
             <p className="text-gray-200 mb-2">
               {parks[formData.park].fullDescription}
             </p>
-
-            {/* Additional park information */}
-            <div className="mt-3 space-y-2">
-              {/* <div>
-                  <h4 className="text-sm font-semibold text-emerald-200">
-                    Entry Gates:
-                  </h4>
-                  <p className="text-gray-300">
-                    {parks[formData.park].gates.join(", ")}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-emerald-200">
-                    Best Time to Visit:
-                  </h4>
-                  <p className="text-gray-300">
-                    {parks[formData.park].bestTimeToVisit}
-                  </p>
-                </div> */}
-              <div>
-                <h4 className="text-sm font-semibold text-emerald-200">
-                  Famous For:
-                </h4>
-                <div className="flex flex-wrap gap-2 mt-1">
-                  {parks[formData.park].famousFor.map((item, i) => (
-                    <span
-                      key={i}
-                      className="bg-emerald-900/50 text-emerald-100 text-xs px-2 py-1 rounded-full"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
           </div>
 
           {tariffData.map((item, index) => (
@@ -277,15 +252,15 @@ function App() {
       </div>
 
       {/* Calendar and Booking Form Section - Updated for larger calendar */}
-      <div className="flex-[1.5] min-h-[480px] md:max-w-2xl lg:max-w-none mx-auto w-full">
-        <div className="relative min-h-[650px] md:min-h-[700px] perspective-1000">
+      <div className="flex-[1.5] w-full">
+        <div className="relative min-h-[620px] perspective-1000">
           <div
-            className={`absolute inset-0 duration-700 preserve-3d ${
+            className={`duration-700 preserve-3d ${
               isFlipped ? "rotate-y-180" : ""
             }`}
           >
-            {/* Front - Calendar - Increased size */}
-            <div className="absolute inset-0 h-[450px] md:h-[850px] max-h-[620px] mx-auto bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-3 md:p-6 backface-hidden">
+            {/* Front - Calendar */}
+            <div className="h-full bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-3 md:p-6 backface-hidden">
               <h2 className="text-2xl font-bold text-white mb-4 text-center">
                 Select Your Safari Date
               </h2>
@@ -299,8 +274,8 @@ function App() {
               </div>
             </div>
 
-            {/* Back - Booking Form - unchanged */}
-            <div className="absolute inset-0 bg-black/30 backdrop-blur-xl h-[480px] md:h-[780px] border border-white/10 rounded-xl p-3 md:p-6 overflow-y-auto backface-hidden rotate-y-180">
+            {/* Back - Booking Form */}
+            <div className="absolute inset-0 bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-3 md:p-6 backface-hidden rotate-y-180 overflow-y-auto">
               <div className="flex justify-between items-center mb-7 px-6">
                 <h2 className="text-2xl font-bold text-white">
                   Booking Details
@@ -575,16 +550,32 @@ function App() {
                   type="submit"
                   disabled={loading}
                   className={`w-full ${
-                    loading 
-                      ? "bg-emerald-700 cursor-wait" 
+                    loading
+                      ? "bg-emerald-700 cursor-wait"
                       : "bg-emerald-600 hover:bg-emerald-700"
                   } text-white py-3 md:py-4 px-8 rounded-xl transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2 text-lg font-semibold`}
                 >
                   {loading ? (
                     <>
-                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      <svg
+                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
                       </svg>
                       Processing...
                     </>
@@ -593,9 +584,9 @@ function App() {
                       <Clock className="size-5 md:size-6" />
                       Confirm Booking
                     </>
-                  )} 
+                  )}
                 </button>
-                </form>
+              </form>
             </div>
           </div>
         </div>
